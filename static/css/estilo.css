@@ -1,0 +1,55 @@
+/* :root {
+    --bs-dark-rgb: 163, 166, 81;
+} */
+
+.cor-navbar {
+    background-color: rgba(191, 192, 153, 0.43);
+}
+
+.bi-bell {
+    margin-bottom: 5px; /* Ajuste o valor conforme necessário */
+}
+
+.backgroundbuscar {
+    background-color: #2E331C;
+    color: white;
+    
+    
+}
+/* Estilos para o placeholder */
+.backgroundbuscar::placeholder {
+    color: #FFFFFF; /* Altera a cor do placeholder para branco */
+    opacity: 1; /* Garante que a opacidade seja aplicada */
+}
+
+/* Navegadores mais antigos do Firefox */
+.backgroundbuscar:-moz-placeholder {
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+/* Internet Explorer 10+ */
+.backgroundbuscar:-ms-input-placeholder {
+    color: #FFFFFF;
+}
+
+/* Navegadores mais antigos do WebKit (Chrome/Safari) */
+.backgroundbuscar::-webkit-input-placeholder {
+    color: #FFFFFF;
+}
+.backgroundbuscar:focus {
+    background-color: #2E331C; /* Mantém a cor de fundo original quando em foco */
+    color: #FFFFFF; /* Mantém a cor do texto original quando em foco */
+}
+
+
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url('/static/img/imagem_fundo.png');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}

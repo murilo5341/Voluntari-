@@ -1,0 +1,57 @@
+.card {
+  font-family: Arial, sans-serif;
+  max-width: 340px;
+  max-height: 510px;
+  border-radius: 17px;
+  overflow: hidden;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+  background-image: url('/static/img/imagem_fundo.png'); /* Substitua pelo caminho da imagem do cachorro */
+  background-size: cover;
+  height: 200px;
+  width: 350px;
+}
+
+.card-content {
+  padding: 15px;
+  background-color: #feffe3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card-content h1 {
+  font-size: 20px;
+  color: #2E331C;
+  text-align: center;
+}
+
+.username {
+  color: #aaa;
+  font-size: 14px;
+  text-align: center;
+  margin-top: -5px;
+  color: #75773C60;
+}
+
+.description {
+  color: #2E331C;
+  font-size: 15px;
+  line-height: normal;
+}
+
+.address,.date {
+  color: #75773C60;
+  font-size: 12px;
+  margin-right: 20px;  
+}
+
+.contagem,.people-icon {
+  margin-top: -10px;
+  color: #A3A651;
+  font-size: 15px;
+  font-weight: bold;
+}

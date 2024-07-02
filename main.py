@@ -18,7 +18,7 @@ app.include_router(main_routes.router)
 
 app = FastAPI()
 app.mount(path="/static", app=StaticFiles(directory="static"), name="static")
-templates = Jinja2Templates(directory="templates/main\pages")
+templates = Jinja2Templates(directory="templates")
 
 @app.get("/")
 def get_root(request: Request):

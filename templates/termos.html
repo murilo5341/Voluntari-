@@ -1,11 +1,11 @@
 {% extends "pages/base.html" %}
-{% block subtitulo %}Entrar{% endblock %}
+{% block subtitulo %}termos{% endblock %}
 {% block conteudo %}
-<head>
+
     <style>
         .termos-de-uso {
-            width: 1440px;
-            height: 340px;
+            width: auto;
+            height: auto;
             background-color: rgba(174, 176, 115, 0.5);
             display: flex;
             justify-content: center;
@@ -18,9 +18,9 @@
         }
     </style>
     <link rel="stylesheet" href="/static/css/estilos.css">
-</head>
 
-<body class="Termo">
+
+<div class="termo">
     <div class="termos-de-uso">
         <img src="/static/img/logo_voluntarie.png" alt="Descrição da imagem">
     </div>
@@ -80,5 +80,13 @@
 
     <p>Agradecemos por dedicar seu tempo e habilidades para fazer a diferença através do VoluntariÊ. Juntos, podemos contribuir para um mundo melhor!</p>
 
-</body>
+</div>
+<script>
+    window.onload = function() {
+        var element = document.querySelector('.termos-de-uso');
+        var height = element.offsetHeight; // Obtém a altura atual
+        element.style.height = (height + 100) + 'px'; // Adiciona 100px à altura atual
+    };
+</script>
 {% endblock %}
+

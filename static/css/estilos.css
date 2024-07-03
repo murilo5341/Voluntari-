@@ -39,3 +39,16 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
+.Termo{
+    background-color: ;
+    text-align: justify;
+    color: ;
+    
+}
+.termo>h1{
+    color: #ABAE59;
+}
+.termo>p{
+    color: #2E331C;
+}

@@ -1,26 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="static/css/custom_voluntarie.css">
-    <style>
-        .navbar-nav {
-            display: flex;
-            align-items: center;
-            flex: 1; /* Para ocupar todo o espaço disponível */
-            margin-left: 20px; /* Espaço à esquerda para afastar da margem da barra */
-        }
-        .navbar-nav .nav-item {
-            margin: 0 10px; /* Espaçamento entre os itens */
-        }
-    </style>
+    <link rel="stylesheet" href="/static/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/lib/bootstrap-icons/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="static/css/estilo.css">
     <title>Voluntariê</title>
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark cor-navbar">
+    <nav class="navbar navbar-expand-sm navbar-dark cor-navbar">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="/static/img/logo_voluntarie.png" alt="Logotipo" height="48">
@@ -30,8 +21,8 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse p-3" id="collapsibleNavId">
-                <ul class="navbar-nav mt-2 mt-lg-0">
+            <div class="collapse navbar-collapse p-3" id="collapsibleNavId" align-center>
+                <ul class="navbar-nav mt-2 mt-lg-0 w-100 d-flex justify-content-evenly">
                     <li class="nav-item">
                         <a class="nav-link active" href="#">
                             <i class="bi bi-person-fill"></i>
@@ -53,15 +44,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Sobre Nós</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="#">
                             <i class="bi bi-bell text-white"></i>
                         </a>
                     </li>
+                    
                 </ul>
-                <form class="d-flex my-2 my-lg-0">
-                    <input class="form-control me-sm-2 rounded-5 text-bg-dark border-0" type="text"
+                <form class="d-flex my-2 my-lg-0  buscar">
+                    <input class="form-control me-sm-2 rounded-5  border-0 backgroundbuscar" type="text"
                         placeholder="Buscar..." style="width: 300px;">
                     <button class="btn my-2 my-sm-0" type="submit">
                         <i class="bi bi-search text-white"></i>
@@ -69,4 +60,10 @@
                 </form>
             </div>
         </div>
+        
     </nav>
+
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

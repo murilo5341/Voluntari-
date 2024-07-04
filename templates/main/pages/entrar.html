@@ -1,34 +1,43 @@
+
 {% extends "pages/base.html" %}
 
 {% block subtitulo %}Entrar{% endblock %}
-
+{% block custom_header %}{% endblock %}
 {% block conteudo %}
 
 <style>
     .botao-verde {
         --bs-btn-bg: #aeb073;
     }
-</style>
+    /*.tamanho{tentei mudar o tamanho utilizando o comando Bootstrap h-390 e w-430, porém ele não alterou */
 
+    
+
+     
+</style>
+<div class="container text-center">
 <img src="/static/img/logo/logopreta.png" alt="VOLUNTÁRIE" width="220px" style="padding: 50px;">
+</div>
 <main class="container my-3">
     <div class="row">
-        <div class="offset-4 col-4 bg-light p-3 h-100">
-            <span class="fechar">✖</span>
-            <div class="entrar">Entrar</div>
-            <div class="mensagem">Entre com a sua conta</div>
+        <div class=" tamanho offset-4 col-4 bg-light p-3 ">
+            <span class= "fs-4">
+                <i class="bi bi-x-circle"></i>
+            </span>
+            <div class="text-center" style="font-size: 40px;">Entrar</div>
+            <div class="text-center mt-2">Entre com a sua conta</div>
             <form action="/formulario_enviado" method="post">
-                <div class="text-center">
+                <div class="text-center mt-3">
                     <input class="border border-1 rounded-0 p-2 w-50 mb-3" id="email" name="email" placeholder="Email"><br>
 
-                    <input class="border border-1 rounded-0 p-2 w-50 mb-3" id="senha" name="senha" placeholder="Senha"><br>
+                    <input class="border border-1 p-2 w-50 mb-3" style="border-radius:5px" id="senha" name="senha" placeholder="Senha"><br>
 
                     <button class="btn btn-secondary botao-verde w-50" type="submit" text-center>Confirmar</button>
                     
                 </div>
             </form>
-            <div class="links">
-                <a href="/esqueceusenha">Esqueceu sua senha?</a><br>
+            <div class="mt-5 mb-3 text-center">
+                <a href="/esqueceusenha" bs5>Esqueceu sua senha?</a><br>
                 <a href="/cadastro">Não possui cadastro? Clique aqui</a>
             </div>
         </div>

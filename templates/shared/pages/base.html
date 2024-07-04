@@ -10,7 +10,9 @@
     <title>VoluntariÊ :: {% block subtitulo %}{% endblock %}</title>
     </head>
 <body class="d-flex flex-column min-vh-100">
+    {% block custom_header %}
     {%include "includes/header.html"%}
+    {% endblock %}
     <main class="container">
         {% block conteudo %}{% endblock %}
     </main>

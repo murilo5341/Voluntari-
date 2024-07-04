@@ -1,36 +1,42 @@
 {% extends "pages/base.html" %}
 
 {% block subtitulo %}Entrar{% endblock %}
+
 {% block conteudo %}
 
 <img src="/static/img/logopreta.png" alt="VOLUNTÁRIE" width="220px" style="padding: 50px;">
-    <main class="container my-3">
-        <span class="fechar">✖</span>
-        <div class="entrar">Entrar</div>
-        <div class="mensagem">Entre com a sua conta</div>
-        <form action="/formulario_enviado" method="post">
-            <div class="centralizar">
-                <input class="email" id="email" name="email" placeholder=" "><br>
-                <input class="password" id="senha" name="senha" placeholder=" "><br>
-                <button type="submit">Confirmar</button>
+    <main class="containerm my-3">
+        <div class="row">
+            <div class="col-4 offset-4">
             </div>
-        </form>
-        <div class="links">
-            <a href="/esqueceusenha">Esqueceu sua senha?</a><br>
-            <a href="/cadastro">Não possui cadastro? Clique aqui</a>
+            <span class="fechar">✖</span>
+            <div class="entrar">Entrar</div>
+            <div class="mensagem">Entre com a sua conta</div>
+            <form action="/formulario_enviado" method="post">
+                <div class="centralizar">
+                    <input class="email" id="email" name="email" placeholder=" "><br>
+                    <input class="password" id="senha" name="senha" placeholder=" "><br>
+                    <button type="submit">Confirmar</button>
+                </div>
+            </form>
+            <div class="links">
+                <a href="/esqueceusenha">Esqueceu sua senha?</a><br>
+                <a href="/cadastro">Não possui cadastro? Clique aqui</a>
+            </div>
         </div>
-    </main>
+            </main>
+       
     <style>
         
-.container {
+.row {
     width: 600px;
     height: 526px;
     background-color: #2e331c0a;
     padding: 20px;
-    box-sizing: border-box;
     position: relative;
     border-radius: 5px; 
-}
+    justify-items: center;
+} 
 
 .fechar {
     position: absolute;

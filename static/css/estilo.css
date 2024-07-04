@@ -14,7 +14,6 @@
     background-color: #2E331C;
     color: white;
     
-    
 }
 /* Estilos para o placeholder */
 .backgroundbuscar::placeholder {
@@ -42,81 +41,60 @@
     color: #FFFFFF; /* Mantém a cor do texto original quando em foco */
 }
 
-/* pagina entrar */
+/* Termos de uso */
 
-.container {
-    width: 600px;
-    height: 526px;
-    background-color: #2e331c0a;
-    padding: 20px;
-    box-sizing: border-box;
-    position: relative;
-    border-radius: 5px; 
+.page-link {
+    color: var(--bs-danger);
+    background-color: var(--bs-white);
+    border: 1px solid var(--bs-danger);
 }
 
-.fechar {
-    position: absolute;
-    right: 25px;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 5px;
+.page-link:hover {
+    color: var(--bs-dark);
+    background-color: var(--bs-light);
+    border: 1px solid var(--bs-danger);
 }
 
-.entrar {
-    font-family: 'Lato', sans-serif;
-    font-size: 40px;
+.page-link.active,
+.page-link.active:hover {
+    background-color: var(--bs-danger);
+    border-color: var(--bs-danger);
+    color: var(--bs-white);
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
     text-align: center;
-    margin-top: 50px;
+    white-space: nowrap;
 }
 
-.mensagem {
-    font-family: 'Lato', sans-serif;
-    font-size: 18px;
-    text-align: center;
-    margin-top: 10px;
+.texto-3-linhas {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
-.email,
-.password,
-button {
-    width: 287px;
-    height: 50px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    padding-left: 10px;
+.texto-1-linha {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
-button {
-    width: 298px;
-    background-color: #AEB073;
-    color: white;
-    border: none;
-    cursor: pointer;
+.Termo{
+    text-align: justify;
+    
 }
-
-button:hover {
-    opacity: 0.9;
+.termo>h1{
+    color: #ABAE59;
 }
-
-.centralizar {
-    margin-top: 40px;
-    text-align: center;
+.termo>p{
+    color: #2E331C;
 }
-
-.links {
-    font-family: 'Lato', sans-serif;
-    font-size: 15px;
-    text-align: center;
-    margin-top: 18px;
+.titletermo{
+    margin-top: 1em;
 }
-
-a {
-    color: #4C5630;
-}
-
-.links a:hover {
-    color: #8a9470;
-}
-
-

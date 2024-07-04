@@ -19,7 +19,7 @@ async def get_entrar(request: Request):
 async def get_termos(request: Request):
     return templates.TemplateResponse("pages/termos.html", {"request": request})
 
-@router.get("/", response_class=HTMLResponse)
+@router.get("/contaexcluida", response_class=HTMLResponse)
 async def get_contaexcluida(request: Request):
     return templates.TemplateResponse("pages/contaexcluida.html", {"request": request})
 

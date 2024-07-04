@@ -3,3 +3,49 @@
 {% block subtitulo %}Conta Excluir{% endblock %}
 
 {% block conteudo %}
+
+<img src="/static/img/logopreta.png" alt="VOLUNTÁRIE" width="220px" style="padding: 50px;">
+    <main class="container my-3">
+        <div class="tab">
+            <p class="message">Sua conta foi excluída com sucesso!</p>
+            <button class="button">OK</button>
+          </div>
+            </div>
+    </main>
+
+<style>
+    .tab {
+        width: 513px; /* Largura da caixa */
+        height: 243px; /* Altura da caixa */
+        background-color: rgba(46, 51, 28, 0.05); /* Cor de fundo com 5% de opacidade */
+        border-radius: 17px; /* Bordas arredondadas em 17% */
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      /* Estilos para o texto "Sua conta foi excluída com sucesso!" */
+      .message {
+        color: #2E331C; /* Cor do texto */
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+      
+      /* Estilos para o botão "ok" */
+      .button {
+        background-color: #AEB073; /* Cor de fundo do botão */
+        color: #2E331C; /* Cor do texto do botão */
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px; /* 5% de arredondamento */
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      
+      .button:hover {
+        background-color: #8D944F; /* Cor de fundo do botão ao passar o mouse */
+      }
+</style>
+{ % endblock %}

@@ -44,12 +44,3 @@
 
 
 
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: url('/static/img/imagem_fundo.png');
-    background-size: cover;
-    background-position: center;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-}

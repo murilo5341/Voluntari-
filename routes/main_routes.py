@@ -19,3 +19,7 @@ async def get_entrar(request: Request):
 async def get_termos(request: Request):
     return templates.TemplateResponse("pages/termos.html", {"request": request})
 
+@router.get("/ajuda", response_class=HTMLResponse)
+async def get_termos(request: Request):
+    return templates.TemplateResponse("pages/ajuda.html", {"request": request})
+

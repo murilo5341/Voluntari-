@@ -8,37 +8,44 @@
 <style>
     .botao-verde {
         --bs-btn-bg: #aeb073;
-    }
-    /*.tamanho{tentei mudar o tamanho utilizando o comando Bootstrap h-390 e w-430, porém ele não alterou */
-
     
+    }
+    .tamanho{
+        color: #2E331C;
+    }
+    .link-verde {
+        color: #aeb073;
+    }
+    .link-verde:hover {
+        color: #d1d39a;
+    }
 
-     
 </style>
+
 <div class="container text-center">
-<img src="/static/img/logo/logopreta.png" alt="VOLUNTÁRIE" width="220px" style="padding: 50px;">
+<img src="/static/img/logo/logoverde.png" alt="VOLUNTÁRIE" width="240px" style="padding: 50px;">
 </div>
 <main class="container my-3">
     <div class="row">
-        <div class=" tamanho offset-4 col-4 bg-light p-3 ">
-            <span class= "fs-4">
-                <i class="bi bi-x-circle"></i>
+        <div class="  offset-4 col-4 bg-light p-3 rounded">
+            <span class= "fs-5">
+                <i class="bi bi-x-lg"></i>
             </span>
             <div class="text-center" style="font-size: 40px;">Entrar</div>
             <div class="text-center mt-2">Entre com a sua conta</div>
             <form action="/formulario_enviado" method="post">
                 <div class="text-center mt-3">
-                    <input class="border border-1 rounded-0 p-2 w-50 mb-3" id="email" name="email" placeholder="Email"><br>
+                    <input class="border border-1 rounded p-2 w-75 mb-3" id="email" name="email" placeholder="Email"><br>
 
-                    <input class="border border-1 p-2 w-50 mb-3" style="border-radius:5px" id="senha" name="senha" placeholder="Senha"><br>
+                    <input class="border border-1 rounded p-2 w-75 mb-3" id="senha" name="senha" placeholder="Senha"><br>
 
-                    <button class="btn btn-secondary botao-verde w-50" type="submit" text-center>Confirmar</button>
+                    <button class="btn btn-secondary mt-3 border p-2 botao-verde w-75" type="submit" text-center>Confirmar</button>
                     
                 </div>
             </form>
-            <div class="mt-5 mb-3 text-center">
-                <a href="/esqueceusenha" bs5>Esqueceu sua senha?</a><br>
-                <a href="/cadastro">Não possui cadastro? Clique aqui</a>
+            <div class="mt-3 mb-3 text-center" >
+                <a href="/esqueceusenha" class="link-verde">Esqueceu sua senha?</a><br>
+                <a href="/cadastro" class="link-verde">Não possui cadastro? Clique aqui</a>
             </div>
         </div>
     </div>

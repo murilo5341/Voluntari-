@@ -1,70 +1,94 @@
-
 {% extends "pages/base.html" %}
 
 {% block subtitulo %}Entrar{% endblock %}
 {% block conteudo %}
 
 <style>
-    
+    .container-options {
+        width: 270px;
+        margin-top: 80px;
+        background-color: #ffffff; /* cor desejada para o container-options */
+    }
+    .container-forms {
+        margin-top: 40px;
+        background-color: #2e331c07; /* cor desejada para o container-forms */
+    }
+    .botao-verde{
+        --bs-btn-bg: #aeb073;
+
+    }
+    .person{
+      color: #aeb073;
+    }
+    .link-ativo {
+      color: #aeb073 !important; /* cor desejada para o link ativo */
+  }
+  .campo{
+    width: 400px;
+  }
 </style>
-<div class="container mt-5 pt-5">
 
-    <div class="line g-2">
-        <div class="col-6">
-            <div class="p-1">
-                <h4>Minha Conta</h4>
+<div class="container my-3">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="container-options p-3 rounded">
+                <div class="row g-2">
+                    <div class="col-12">
+                        <h5><i class="person bi bi-person"></i>Minha Conta</h5>
+                    </div>
+                    <div class="col-12">
+                        <a href="meuPerfil" class="link-dark link-underline-opacity-0 link-ativo">Meu Perfil</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="projetosIngressados" class="link-dark link-underline-opacity-0">Projetos Ingressados</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="projetosCriados" class="link-dark link-underline-opacity-0">Projetos Criados</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="projetosFinalizados" class="link-dark link-underline-opacity-0">Projetos Finalizados</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="doacoes" class="link-dark link-underline-opacity-0">Doações</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="solicitarExclusao" class="link-dark link-underline-opacity-0">Solicitar exclusão de conta</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="notificao" class="link-dark link-underline-opacity-0">Notificações</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="alterarSenha" class="link-dark link-underline-opacity-0">Alterar Senha</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="assinatura" class="link-dark link-underline-opacity-0">Assinatura</a>
+                    </div>
+                </div>
             </div>
-          </div>
-      <div class="col-6">
-        <div class="p-1">
-            <a href="meuPerfil" class="link-dark">Meu Perfil</a>
         </div>
-      </div>
-      <div class="col-6">
-        <div class="p-1"> 
-            <a href="projetosIngressados" class="link-dark">Projetos Ingressados</a>
+        <div class="col-md-6">
+            <div class="container-forms p-3 rounded">
+                <div style="font-size: 30px;">Meu Perfil</div>
+                <div class="text-center">
+                    <img src="/static/img/quemSomos.png" class="rounded-circle img-fluid" alt="..." style="width: 200px; height:200px;">
+                </div><br>
+                
+                <div class="input-group mb-3 w-75 mx-auto">
+                    <input type="file" class="form-control" id="inputGroupFile02">
+                    <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                </div>
+                <form action="/formulario_enviado" method="post">
+                    <div class="text-center mt-3">
+                        <label for="email">Nome:</label>
+                        <input class="campo border border-1 rounded p-2 mb-3" id="nome" name="nome" placeholder="Voluntario123"><br>
+                        <label for="email">Email:</label>
+                        <input class="campo border border-1 rounded p-2 mb-3" id="celular" name="celular" placeholder="28999391820"><br>
+                        <button class="btn btn-secondary mt-3 border p-2 botao-verde w-25" type="submit" text-center>Gravar</button>
+                    </div>
+                </form>
+            </div>
         </div>
-      </div>
-      <div class="col-6">
-        <div class="p-1">
-            <a href="projetosCriados" class="link-dark">Projetos Criados</a>
-        </div>
-      </div>
-      <div class="col-6">
-        <div class="p-1">
-            <a href="projetosFinalizados" class="link-dark">Projetos Finalizados</a>
-        </div>
-      </div>
-      <div class="col-6">
-        <div class="p-1">
-            <a href="doacoes" class="link-dark">Doações</a>
-        </div>
-      </div>
-      <div class="col-6">
-        <div class="p-1">
-            <a href="solicitarExclusao" class="link-dark">Solicitar exclusão de conta</a>
-        </div>
-      </div>
-      <div class="col-6">
-        <div class="p-1">
-            <a href="notificao" class="link-dark">Notificações</a>
-        </div>
-      </div>
-      <div class="col-6">
-        <div class="p-1">
-            <a href="alterarSenha" class="link-dark">Alterar Senha</a>
-        </div>
-      </div>
-      <div class="col-6">
-        <div class="p-1">
-            <a href="assinatura" class="link-dark">Assinatura</a>
-        </div>
-      </div>
     </div>
-  </div>
-{% endblock %}
+</div>
 
-    
-    
-    
-    
+{% endblock %}

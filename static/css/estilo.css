@@ -2,7 +2,9 @@
     --bs-dark-rgb: 163, 166, 81;
 } */
 
-
+.cor-navbar {
+    background-color: rgba(191, 192, 153, 0.43);
+}
 
 .bi-bell {
     margin-bottom: 5px; /* Ajuste o valor conforme necessário */

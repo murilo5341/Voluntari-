@@ -23,3 +23,7 @@ async def get_termos(request: Request):
 async def get_termos(request: Request):
     return templates.TemplateResponse("pages/ajuda.html", {"request": request})
 
+@router.get("/perfil", response_class=HTMLResponse)
+async def get_termos(request: Request):
+    return templates.TemplateResponse("pages/perfil.html", {"request": request})
+

@@ -1,0 +1,141 @@
+{% extends "pages/base.html" %}
+
+{% block subtitulo %}Entrar{% endblock %}
+
+{% block conteudo %}
+<style>
+    .container-assinatura {
+        background-color:#a3a6518f ;
+        border-radius: 15px;
+        padding: 15px;
+        text-align: center;
+        width: 100%; /* Ajusta a largura do container para 100% do contêiner pai */
+    }
+
+    
+    h1 {
+        font-size: 22px;
+        color: rgb(46, 51, 28); /* cor com opacidade 0.73 */
+        margin-bottom: 20px;
+    }
+    h2 {
+        font-size: 17px;
+        color: rgba(46, 51, 28, 0.678); /* cor com opacidade 0.73 */
+        margin-bottom: 20px;
+    }
+    h3 {
+        font-size: 17px;
+        color: #2e331ce5; /* cor com opacidade 0.73 */
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 17px;
+        color: #2e331ce5; /* cor com opacidade 0.73 */
+        margin-bottom: 20px;
+    }
+    
+    .benefits {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        
+    }
+    
+    .benefit {
+        background-color: #ffffff;
+        border-radius: 15px;
+        padding: 5px;
+        width: 70%;
+        margin: 0 auto; 
+        
+
+        
+    }
+    
+    .note {
+        font-size: 15px;
+        color: rgb(46, 51, 28); /* cor sem opacidade */
+        margin-top: 40px;
+    }
+    
+    .validity {
+        font-size: 15px;
+        color: #82862e; /* cor #A3A651 */
+    }
+    
+    /* Estilos para o menu lateral */
+    .container-options {
+        width: 270px;
+        margin-top: 80px;
+        background-color: #ffffff; /* cor desejada para o container-options */
+    }
+
+    .person{
+      color: #aeb073;
+    }
+    .link-ativo {
+      color: #aeb073 !important; /* cor desejada para o link ativo */
+  }
+  .campo{
+    width: 400px;
+  }
+</style>
+<div class="container my-3">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="container-options p-3 rounded">
+                <div class="row g-2">
+                    <div class="col-12">
+                        <h5>
+                            <i class="person bi bi-person"></i> Minha Conta
+                        </h5>
+                    </div>
+                    <div class="col-12">
+                        <a href="meuPerfil" class="link-dark link-underline-opacity-0 link-ativo">Meu Perfil</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="projetosIngressados" class="link-dark link-underline-opacity-0">Projetos Ingressados</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="projetosCriados" class="link-dark link-underline-opacity-0">Projetos Criados</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="projetosFinalizados" class="link-dark link-underline-opacity-0">Projetos Finalizados</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="doacoes" class="link-dark link-underline-opacity-0">Doações</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="solicitarExclusao" class="link-dark link-underline-opacity-0">Solicitar exclusão de conta</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="notificao" class="link-dark link-underline-opacity-0">Notificações</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="alterarSenha" class="link-dark link-underline-opacity-0">Alterar Senha</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="assinatura" class="link-dark link-underline-opacity-0">Assinatura</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="container-assinatura">
+                <h1>Minha Assinatura</h1>
+                <h2>Desfrute de seus novos benefícios como assinante</h2>
+                <div class="benefits">
+                    <div class="benefit">
+                        <h3>Agora você pode criar e gerenciar até 5 projetos ao mesmo tempo!</h3>
+                    </div>
+                    <div class="benefit">
+                        <h3>Seu projeto agora terá mais destaques que os demais</h3>
+                    </div>
+                    <div class="benefit">
+                        <h3>Ausência de anúncios durante a navegação</h3>
+                    </div>
+                </div>
+                <p class="note">Sem renovação automática</p>
+                <p class="validity">Assinatura válida até 23/08/2025</p>
+            </div>
+            {% endblock %}

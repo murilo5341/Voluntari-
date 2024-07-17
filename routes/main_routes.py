@@ -27,3 +27,7 @@ async def get_termos(request: Request):
 async def get_termos(request: Request):
     return templates.TemplateResponse("pages/perfil.html", {"request": request})
 
+@router.get("/assinaturadousuarioassinante", response_class=HTMLResponse)
+async def get_termos(request: Request):
+    return templates.TemplateResponse("pages/assinaturadousuarioassinante.html", {"request": request})
+

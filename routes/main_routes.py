@@ -31,3 +31,7 @@ async def get_termos(request: Request):
 async def get_termos(request: Request):
     return templates.TemplateResponse("pages/assinaturadousuarioassinante.html", {"request": request})
 
+@router.get("/desativarconta", response_class=HTMLResponse)
+async def get_termos(request: Request):
+    return templates.TemplateResponse("pages/desativarconta.html", {"request": request})
+

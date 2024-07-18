@@ -1,5 +1,200 @@
 {% extends "pages/base_fundo.html" %}
 {% block subtitulo %}Principal{% endblock %}
 {% block conteudo %}
+<style>
+    .green-rectangle {
+      background-color: #2E331C; /* Verde */
+      width: 550px;
+      height: 100px;
+       /* Centraliza horizontalmente e adiciona margens superior e inferior de 5px */
+    }
+    h1{
+        font-family: 'lato';
+        font-weight: bold;
+        padding-top: 150px;
+        color: #2E331C;
+    }
+    h2{
+        color: #A3A651;
+        font-family: 'lato';
+        font-weight: bold;
+    }
+    .cards-wrapper{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap
+      }
+      .card img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      .card {
+        margin: 0 0.5em;
+        box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+        border: none;
+        border-radius: 0;
+        width: 20rem;
+        background-color: #F4F5F3;
 
+      }
+      .carousel-inner {
+        padding: 1em;
+      }
+      .carousel-control-prev,
+      .carousel-control-next {
+        background-color: #e1e1e1;
+        width: 5vh;
+        height: 5vh;
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .card-text{
+        white-space: pre-wrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-family: 'lato';
+        display: -webkit-box;
+        -webkit-line-clamp: 4; /* Limita o número de linhas */
+        -webkit-box-orient: vertical;
+        
+    }
+    .address,.date {
+      color: #a3a651b2;
+      font-size: 15px;
+      margin-right: 20px;  
+      text-align: center;
+    }
+    .card-subtitle{
+      color: #a3a651b2;
+    }
+    .contagem,.people-icon {
+      color: #A3A651;
+      font-size: 15px;
+    }
+      @media (min-width: 768px) {
+        .card img {
+          height: 13em;
+        }
+      }
+  </style>
+<div class="green-rectangle rounded mt-5 mx-auto"></div>
+
+<h1>Projetos em Destaque</h1>
+<h2>Projetos impulsionados pelos criadores.</h2>
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="cards-wrapper">
+        <div class="card">
+          <img src="/static/img/imagem_fundo.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title text-center fs-4">Praias Limpas</h5>
+            <h6 class="card-subtitle text-center">@nickCreator</h6>
+            <p class="card-text">Focado na restauração e preservação de florestas nativas, este projeto envolve o plantio de árvores, manutenção de áreas reflorestadas e combate a incêndios florestais. Os voluntários participam de atividades de reflorestamento, monitoramento da biodiversidade e campanhas educativas para a proteção das florestas.</p>
+            <p>
+              <span class="address">Rua Lorem Ipsum, 91, ES </span>
+              <span class="date">19/02/2024</span>
+            </p>
+            <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver projeto</a>
+            <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i> 8/10</p>
+          </div>
+        </div>
+        <div class="card d-none d-md-block">
+          <img src="/static/img/quemSomos.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title text-center fs-4">Florestas Sustentáveis</h5>
+            <h6 class="card-subtitle text-center">@nickCreator</h6>
+            <p class="card-text">Focado na restauração e preservação de florestas nativas, este projeto envolve o plantio de árvores, manutenção de áreas reflorestadas e combate a incêndios florestais. Os voluntários participam de atividades de reflorestamento, monitoramento da biodiversidade e campanhas educativas para a proteção das florestas.</p>
+              <p>
+                <span class="address">Rua Lorem Ipsum, 91, ES </span>
+                <span class="date">19/02/2024</span>
+              </p>
+              <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver projeto</a>
+              <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i> 8/10</p>
+            </div>
+        </div>
+        <div class="card d-none d-md-block">
+          <img src="/static/img/projetos.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title text-center fs-4">Jardins Comunitários</h5>
+            <h6 class="card-subtitle text-center">@nickCreator</h6>
+            <p class="card-text">Este projeto busca transformar áreas urbanas abandonadas em jardins comunitários, proporcionando espaços verdes e promovendo a agricultura urbana. Voluntários trabalham juntos para preparar o solo, plantar hortaliças e flores, e manter os jardins. Além disso, o projeto promove oficinas de jardinagem e sustentabilidade para a comunidade local.</p>
+            <p>
+              <span class="address">Rua Lorem Ipsum, 91, ES </span>
+              <span class="date">19/02/2024</span>
+            </p>
+            <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver projeto</a>
+            <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i> 8/10</p>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="carousel-item">
+        <div class="cards-wrapper">
+          <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Florestas Sustentáveis</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Ver projeto</a>
+            </div>
+          </div>
+          <div class="card d-none d-md-block">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Ver projeto</a>
+            </div>
+          </div>
+          <div class="card d-none d-md-block">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Ver projeto</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="cards-wrapper">
+          <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Ver projeto</a>
+            </div>
+          </div>
+          <div class="card d-none d-md-block">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Ver projeto</a>
+            </div>
+          </div>
+          <div class="card d-none d-md-block">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="projeto.html" class="btn btn-primary mx-auto"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only"></span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only"></span>
+    </a>
+  </div>
 {% endblock %}

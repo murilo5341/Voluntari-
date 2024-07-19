@@ -8,7 +8,7 @@
       height: 100px;
        /* Centraliza horizontalmente e adiciona margens superior e inferior de 5px */
     }
-    h1{
+    #titulo1{
         font-size: 30px;
         font-family: 'lato';
         font-weight: bold;
@@ -97,23 +97,19 @@
       transform: translate(-50%, -50%);
       text-align: center;
   }
-
-  .centered-content h1 {
-      margin: 0;
-      font-size: 2em;
-  }
-
-  .centered-content button {
+  .centered-content a {
       padding: 10px 20px;
       font-size: 1em;
-      background-color: #2E331C;
+      background-color: #A3A651;
+      text-decoration: none;
       color: white;
-      border: none;
+      border-radius: 8px;
       cursor: pointer;
+      font-size: 25px;
   }
 
-  .centered-content button:hover {
-      background-color: #3a3f2a; 
+  .centered-content a:hover {
+      background-color: #7b7e45; 
   }
       @media (min-width: 768px) {
         .card img {
@@ -123,7 +119,7 @@
   </style>
 <div class="green-rectangle rounded mt-5 mx-auto"></div>
 
-<h1>Projetos em Destaque</h1>
+<h1 id="titulo1">Projetos em Destaque</h1>
 <h2>Projetos impulsionados pelos criadores.</h2>
 
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -275,7 +271,7 @@
     </button>
   </div>
 
-  <h1>Projetos recentes</h1>
+  <h1 id="titulo1">Projetos recentes</h1>
 <h2><a href="projetos.html" style="color:#2E331C59">Veja todos os projetos</a></h2>
 
 <div id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
@@ -395,8 +391,8 @@
 <div class="image-container">
     <img src="/static/img/homepageCriarProjeto.png" alt="Imagem de fundo">
     <div class="centered-content">
-        <h1 class="">Crie seu próprio projeto</h1>
-        <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Criar projeto</a>
+        <h1 class="mb-5">Crie seu próprio projeto!</h1>
+        <a href="#">Criar projeto</a>
     </div>
 </div>
 {% endblock %}

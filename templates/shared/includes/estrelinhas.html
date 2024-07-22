@@ -1,0 +1,45 @@
+<style>
+    .avaliacao{
+        display: flex;
+        margin-left: 60px;
+       }
+      .star-icon{
+        list-style-type: none;
+        cursor: pointer;
+        color: #A3A651;
+        font-size: 35px;/* alterar o tamanho das estrelas */
+      }
+      .star-icon::before{
+        content: "\2605";
+      }
+      .star-icon.ativo ~ .star-icon::before{
+        content: "\2606";
+      }
+      .avaliacao:hover .star-icon::before{
+        content: "\2605";
+      }
+      .star-icon:hover ~ .star-icon::before{
+        content: "\2606";
+      }
+</style>
+<ul class="avaliacao">
+    <li class="star-icon ativo" data-avaliacao="1"></li>
+    <li class="star-icon" data-avaliacao="2"></li>
+    <li class="star-icon" data-avaliacao="3"></li>
+    <li class="star-icon" data-avaliacao="4"></li>
+    <li class="star-icon" data-avaliacao="5"></li>
+  </ul>
+  <script>
+    var stars = document.querySelectorAll('.star-icon');
+                    
+  document.addEventListener('click', function(e){
+    var classStar = e.target.classList;
+    if(!classStar.contains('ativo')){
+      stars.forEach(function(star){
+        star.classList.remove('ativo');
+      });
+      classStar.add('ativo');
+      console.log(e.target.getAttribute('data-avaliacao'));
+    }
+  });
+  </script>

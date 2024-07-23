@@ -35,7 +35,22 @@ async def get_termos(request: Request):
 async def get_termos(request: Request):
     return templates.TemplateResponse("pages/desativarconta.html", {"request": request})
 
+@router.get("/projetos", response_class=HTMLResponse)
+async def get_termos(request: Request):
+    return templates.TemplateResponse("pages/projetos.html", {"request": request})
+
+@router.get("/colaboradores", response_class=HTMLResponse)
+async def get_termos(request: Request):
+    return templates.TemplateResponse("pages/colaboradores.html", {"request": request})
+
 @router.get("/patrocinador", response_class=HTMLResponse)
 async def get_termos(request: Request):
     return templates.TemplateResponse("pages/patrocinador.html", {"request": request})
+
+@router.get("/sobre", response_class=HTMLResponse)
+async def get_termos(request: Request):
+    return templates.TemplateResponse("pages/sobre.html", {"request": request})
+
+
+
 

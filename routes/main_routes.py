@@ -34,4 +34,7 @@ async def get_termos(request: Request):
 @router.get("/desativarconta", response_class=HTMLResponse)
 async def get_termos(request: Request):
     return templates.TemplateResponse("pages/desativarconta.html", {"request": request})
+@router.get("/patrocinador", response_class=HTMLResponse)
+async def get_termos(request: Request):
+    return templates.TemplateResponse("pages/patrocinador.html", {"request": request})
 

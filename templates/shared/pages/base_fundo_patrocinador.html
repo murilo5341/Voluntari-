@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/lib/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/static/css/estilo.css">
+    
+    <title>VoluntariÊ :: {% block subtitulo %}{% endblock %}</title>
+    </head>
+<body class="d-flex flex-column min-vh-100">
+    {%include "includes/header_fundo_patrocinador.html"%}
+    <main class="container">
+        {% block conteudo %}{% endblock %}
+    </main>
+    {%include "includes/footer.html"%}
+    <script src="/static/lib/bootstrap/js/bootstrap.bundle.js"></script>
+
+</body>
+</html>

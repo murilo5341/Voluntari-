@@ -1,0 +1,71 @@
+<style>
+    div.bg-header {
+       font-family: Arial, Helvetica, sans-serif;
+       background-image: url('/static/img/projetos.png');
+       background-size: cover;
+       background-position: center;
+       margin: 0;
+       padding: 0;
+       height: 100vh;
+   }
+   h1{
+    padding-top: 350px;
+   }
+</style>
+<div class="bg-header">
+   <nav class="navbar navbar-expand-sm navbar-dark cor-navbar">
+       <div class="container">
+           <a class="navbar-brand" href="#">
+               <img src="/static/img/logo/logo_voluntarie.png" alt="Logotipo" height="48">
+           </a>
+           <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+               data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+               aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+           </button>
+           <div class="collapse navbar-collapse p-3" id="collapsibleNavId" align-center>
+               <ul class="navbar-nav mt-2 mt-lg-0 w-100 d-flex justify-content-evenly">
+                   <li class="nav-item">
+                       <a class="nav-link active" href="/entrar">
+                           <i class="bi bi-person-fill"></i>
+                           Olá, Fulano
+                       </a>
+                   </li>
+                   <li class="nav-item">
+                       <a class="nav-link" href="/projetos">Projetos</a>
+                   </li>
+                   <li class="nav-item">
+                       <a class="nav-link" href="/colaboradores">Colaboradores</a>
+                   </li>
+                   <li class="nav-item">
+                       <a class="nav-link" href="/patrocinador">Patrocinadores</a>
+                   </li>
+                   <li class="nav-item">
+                       <a class="nav-link" href="/ajuda">Ajuda</a>
+                   </li>
+                   <li class="nav-item">
+                       <a class="nav-link" href="/sobre">Sobre Nós</a>
+                   </li>
+                   <li class="nav-item">
+                       <a class="nav-link" href="#">
+                           <i class="bi bi-bell text-white"></i>
+                       </a>
+                   </li>
+
+               </ul>
+               <form class="d-flex my-2 my-lg-0  buscar">
+                   <input class="form-control me-sm-2 rounded-5  border-0 backgroundbuscar" type="text"
+                       placeholder="Buscar..." style="width: 300px;">
+                   <button class="btn my-2 my-sm-0" type="submit">
+                       <i class="bi bi-search text-white"></i>
+                   </button>
+               </form>
+           </div>
+       </div>
+
+   </nav>
+   <h1 class="text-center fw-bold text-light">Você também pode criar um <br> projeto!</h1><br>
+   <p class="text-center text-light">Quem ama preserva, quem ama ajuda</p><br>
+   <a href="#" class="btn fw-semibold d-grid col-2 mx-auto" style="color:white; background-color:#A3A651;">Crie seu projeto</a>
+</div>
+

@@ -1,0 +1,13 @@
+{% extends "pages/base_fundo_projeto.html" %}
+{% block subtitulo %}Principal{% endblock %}
+{% block conteudo %}
+<br>
+<p class="text-secondary">Ordenar Por</p>
+<select class="form-select form-select mb-3 " aria-label="default select example" style="width: 150px; font-size: 16px; padding: 5px;">
+    <option selected>Todos</option>
+    <option value="1">Todos</option>    
+    <option value="1">Relevantes</option>
+    <option value="2">Disponível</option>
+    <option value="3">Recém Criados</option>
+  </select>
+{% endblock %}

@@ -3,7 +3,7 @@
 {% block conteudo %}
 
 <style>
-    h3{
+    .nossos_patrocinadores{
           font-size: 25px;
           color: black;
           font-family: 'lato';
@@ -19,11 +19,34 @@
         color: #000;
         opacity: 100%;
     }
+    .MODALIDADE_OURO{
+         color: black;
+          font-family: 'lato';
+          font-weight: bold;
+          text-align: center;
+          padding: auto;
+          left: auto;
+          right: auto;
+          height: 30px;
+          
+    }
+    .medalha{
+        height: 100px;
+        width: 100px;
+        margin: 0 auto;
+        justify-content: center;
+             
+    }
 </style>
 <div class="green-rectangle rounded mt-5 mx-auto"></div>
 <br><br><br>
-<h3>Nossos Patrocinadores</h3>
+<h3 class="nossos_patrocinadores">Nossos Patrocinadores</h3>
 <hr>
+<div class="modalidades"></div>
+<p class="MODALIDADE_OURO">MODALIDADE OURO</p>
+<div  class="medalha">
+<img class="medalha" src="/static/img/gold-medal.png" alt="">
+</div>
 
 
 {% endblock %}

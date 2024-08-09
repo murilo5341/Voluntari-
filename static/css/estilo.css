@@ -98,3 +98,12 @@
 .titletermo{
     margin-top: 1em;
 }
+.saiba_mais{
+    color: white; 
+    background-color: #A3A651;
+    position: absolute; /* Permite o posicionamento absoluto */
+    bottom: 100px; /* Posiciona o botão a 100px do fundo da imagem */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajusta a centralização */
+    text-align: center;
+}

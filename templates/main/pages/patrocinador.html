@@ -1,11 +1,11 @@
 {% extends "pages/base_fundo_patrocinador.html" %}
-{% block subtitulo %}Principal{% endblock %}
+{% block subtitulo %}Patrocinadores{% endblock %}
 {% block conteudo %}
 
 <style>
     .nossos_patrocinadores{
-          font-size: 25px;
-          color: black;
+          font-size: 36px;
+          color: #2E331C;
           font-family: 'lato';
           font-weight: bold;
           text-align: center;
@@ -13,11 +13,12 @@
           left: auto;
           right: auto;
           height: 50px;
-          width: ;
+          
       }
     hr{
         color: #000;
         opacity: 100%;
+        
     }
     .MODALIDADES{
          color: black;
@@ -28,6 +29,8 @@
           left: auto;
           right: auto;
           height: 30px;
+          font-size: 26px;
+          color: #2E331C;
           
     }
     .medalha{
@@ -44,17 +47,18 @@
 <hr>
 <p class="MODALIDADES">MODALIDADE OURO</p>
 <div  class="medalha">
-<img class="medalha" src="/static/img/gold-medal.png" alt="">
+<img class="medalha" src="/static/img/gold-medal.png" alt="goldmedal">
 </div>
+
 <hr>
 <p class="MODALIDADES">MODALIDADE PRATA</p>
 <div  class="medalha">
-<img class="medalha" src="/static/img/silver-medal.png" alt="">
+<img class="medalha" src="/static/img/silver-medal.png" alt="silvermedal">
 </div>
 <hr>
 <p class="MODALIDADES">MODALIDADE BRONZE</p>
 <div  class="medalha">
-<img class="medalha" src="/static/img/bronze-medal.png" alt="">
+<img class="medalha" src="/static/img/bronze-medal.png" alt="bronzemedal">
 </div>
 
 {% endblock %}

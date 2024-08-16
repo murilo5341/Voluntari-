@@ -1,57 +1,46 @@
-.card {
-  font-family: Arial, sans-serif;
-  max-width: 340px;
-  max-height: 510px;
-  border-radius: 17px;
-  overflow: hidden;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
-}
-
-.card-image {
-  background-image: url('/static/img/imagem_fundo.png'); /* Substitua pelo caminho da imagem do cachorro */
-  background-size: cover;
-  height: 200px;
-  width: 350px;
-}
-
-.card-content {
-  padding: 15px;
-  background-color: #feffe3;
+.cards-wrapper{
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap
 }
-
-.card-content h1 {
-  font-size: 20px;
-  color: #2E331C;
-  text-align: center;
+.card img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  max-width: 100%;
+  max-height: 100%;
 }
+.card {
+  margin: 0 0.5em;
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+  border: none;
+  border-radius: 15px;
+  width: 20rem;
+  background-color: #F4F5F3;
+  margin-bottom: 40px;
 
-.username {
-  color: #aaa;
-  font-size: 14px;
-  text-align: center;
-  margin-top: -5px;
-  color: #75773C60;
 }
-
-.description {
-  color: #2E331C;
-  font-size: 15px;
-  line-height: normal;
+.card-text{
+  white-space: pre-wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'lato';
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Limita o número de linhas */
+  -webkit-box-orient: vertical;
+  
 }
-
 .address,.date {
-  color: #75773C60;
-  font-size: 12px;
-  margin-right: 20px;  
+color: #a3a651b2;
+font-size: 15px;
+margin-right: 20px;  
+text-align: center;
 }
-
+.card-subtitle{
+color: #a3a651b2;
+}
 .contagem,.people-icon {
-  margin-top: -10px;
-  color: #A3A651;
-  font-size: 15px;
-  font-weight: bold;
+color: #A3A651;
+font-size: 15px;
 }

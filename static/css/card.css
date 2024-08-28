@@ -44,3 +44,13 @@ color: #a3a651b2;
 color: #A3A651;
 font-size: 15px;
 }
+
+.card-avaliacao{
+  margin: 0 0.5em;
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+  border: none;
+  border-radius: 15px;
+  width: 21rem;
+  height: 450px;
+  background-color: #F4F5F3;
+}

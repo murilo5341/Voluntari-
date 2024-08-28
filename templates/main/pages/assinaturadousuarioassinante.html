@@ -5,9 +5,9 @@
 {% block conteudo %}
 <style>
     .container-assinatura {
-        background-color:#a3a6518f ;
-        border-radius: 15px;
-        padding: 15px;
+        background-color:#2e331c13 ;
+        border-radius: 7px;
+        padding: 45px;
         text-align: center;
         width: 100%; /* Ajusta a largura do container para 100% do contêiner pai */
     }
@@ -15,7 +15,7 @@
     
     h1 {
         font-size: 22px;
-        color: rgb(46, 51, 28); /* cor com opacidade 0.73 */
+        color: rgb(139, 160, 62); /* cor com opacidade 0.73 */
         margin-bottom: 20px;
     }
     h2 {
@@ -24,7 +24,7 @@
         margin-bottom: 20px;
     }
     h3 {
-        font-size: 17px;
+        font-size: 20px;
         color: #2e331ce5; /* cor com opacidade 0.73 */
         margin-bottom: 20px;
     }
@@ -33,22 +33,34 @@
         color: #2e331ce5; /* cor com opacidade 0.73 */
         margin-bottom: 20px;
     }
+    h4 {
+        font-size: 16px;
+        color: #5e6448e5; /* cor com opacidade 0.73 */
+        margin-bottom: 20px;
+
+    }
     
     .benefits {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 40px;
         
     }
     
     .benefit {
         background-color: #ffffff;
-        border-radius: 15px;
-        padding: 5px;
-        width: 70%;
-        margin: 0 auto; 
-        
-
+        border-radius: 5px;
+        padding: 12px;
+        width: 50%;
+        margin-right: auto;
+    }    
+    .benefit2 {
+        background-color: #ffffff;
+        border-radius: 5px;
+        padding: 12px;
+        width: 50%;
+        margin-left: auto; 
+            
         
     }
     
@@ -86,6 +98,7 @@
             <div class="container-options p-3 rounded">
                 <div class="row g-2">
                     <div class="col-12">
+
                         <h5>
                             <i class="person bi bi-person"></i> Minha Conta
                         </h5>
@@ -126,14 +139,19 @@
                 <h2>Desfrute de seus novos benefícios como assinante</h2>
                 <div class="benefits">
                     <div class="benefit">
-                        <h3>Agora você pode criar e gerenciar até 5 projetos ao mesmo tempo!</h3>
+                        <h3>Crie mais projetos</h3>
+                        <h4>Possibilidade de criar até 5 projetos por vez</h4>
                     </div>
                     <div class="benefit">
-                        <h3>Seu projeto agora terá mais destaques que os demais</h3>
+                        <h3>Projeto Destaque</h3>
+                        <h4>Seu projeto com mais visibilidade</h4>
                     </div>
-                    <div class="benefit">
-                        <h3>Ausência de anúncios durante a navegação</h3>
+
+                    <div class="benefit2">
+                        <h3>Ausência de anúncios</h3>
+                        <h4>Navegue em nosso site sem interrupções</h4>
                     </div>
+
                 </div>
                 <p class="note">Sem renovação automática</p>
                 <p class="validity">Assinatura válida até 23/08/2025</p>

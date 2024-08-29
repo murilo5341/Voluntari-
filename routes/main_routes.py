@@ -57,6 +57,10 @@ async def get_termos(request: Request):
 async def get_termos(request: Request):
     return templates.TemplateResponse("pages/sobre.html", {"request": request})
 
+@router.get("/denuncia-projeto", response_class=HTMLResponse)
+async def get_denunciaProjeto(request: Request):
+    return templates.TemplateResponse("pages/denunciaProjeto.html", {"request": request})
+
 
 
 

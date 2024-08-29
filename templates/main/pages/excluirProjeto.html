@@ -1,0 +1,55 @@
+
+{% extends "pages/base.html" %}
+
+{% block subtitulo %}Excluir Projeto{% endblock %}
+{% block conteudo %}
+
+<style>
+    .botao-verde {
+        --bs-btn-bg: #aeb073;
+    
+    }
+    .tamanho{
+        color: #2E331C;
+    }
+    .link-verde {
+        color: #aeb073;
+    }
+    .link-verde:hover {
+        color: #d1d39a;
+    }
+
+</style>
+<!-- FALTA RESOLVER RESPONSIVIDADE -->
+<main class="container my-3 pt-5">
+    
+    <div class="row">
+        
+        <div class="offset-4 col-4 bg-light p-3 rounded">
+            <div class="container text-center ">
+                <img src="/static/img/logo/logoverdeclaro.png" alt="VOLUNTÁRIE" width="240px" style="padding: 50px;">
+            </div>
+            <div class="text-center" style="font-size: 28px;">Poxa... que pena</div>
+            <div class="text-center mt-2" style="font-size: 18px;">Deseja realmente excluir seu projeto?</div>
+            <form action="/formulario_enviado" method="post">
+                <div class="text-center mt-3">
+
+                    <div class="mb-3">
+                         <textarea class="form-control" id="validationTextarea" placeholder="Nos informe o motivo da exclusão (opcional)"></textarea>
+                      </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          Estou ciente que o projeto excluido não poderá ser recuperado.
+                        </label>
+                      </div>
+
+                    <button class="btn btn-secondary mt-3 border p-2 botao-verde w-75" type="submit" text-center>Excluir Projeto</button>
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}

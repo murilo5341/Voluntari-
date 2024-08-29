@@ -61,6 +61,10 @@ async def get_termos(request: Request):
 async def get_denunciaProjeto(request: Request):
     return templates.TemplateResponse("pages/denunciaProjeto.html", {"request": request})
 
+@router.get("/excluir-projeto", response_class=HTMLResponse)
+async def get_excluirProjeto(request: Request):
+    return templates.TemplateResponse("pages/excluirProjeto.html", {"request": request})
+
 
 
 

@@ -1,0 +1,86 @@
+{% extends "pages/base.html" %}
+
+{% block subtitulo %}Cadastro{% endblock %}
+{% block custom_header %}{% endblock %}
+{% block conteudo %}
+
+<style>
+    .botao-verde {
+        --bs-btn-bg: #aeb073;
+    
+    }
+    .tamanho{
+        color: #2E331C;
+    }
+
+</style>
+<!-- FALTA RESOLVER RESPONSIVIDADE -->
+<div class="container text-center">
+<img src="/static/img/logo/logoverde.png" alt="VOLUNTÁRIE" width="240px" style="padding: 50px;">
+</div>
+<main class="container my-3">
+    <div class="row pb-5">
+        <div class="  offset-4 col-4 bg-light p-3 rounded">
+            <div class="text-center" style="font-size: 40px;">Cadastre-se</div>
+            <div class="text-center mt-2">Crie uma conta</div>
+            <form action="/formulario_enviado" method="post">
+                <div class="mt-3">
+
+                    <div class="text-center">
+                        <input class="border border-1 rounded p-2 w-75 mb-3" id="nome" name="nome" placeholder="Nome"required><br>
+                    </div>
+
+                    <div class="text-center">
+                        <input type="date" class="border border-1 rounded p-2 w-75 mb-3" id="dtnascimento" name="dtnascimento" placeholder="Data de Nascimento"required><br>
+                    </div>
+
+                    <div class="text-center">
+                        <input class="border border-1 rounded p-2 w-75 mb-3" id="cpf" name="cpf" placeholder="CPF"required><br>
+                    </div>
+
+                    <div class="text-center">
+                        <input type="email" class="border border-1 rounded p-2 w-75 mb-3" id="email" name="email" placeholder="Email"required><br>
+                    </div>
+
+                    <div class="text-center">
+                        <input type="password" class="border border-1 rounded p-2 w-75 mb-3" id="senha" name="senha" placeholder="Senha"required><br>
+                    </div>
+
+                    <div class="text-center">
+                        <input type="password" class="border border-1 rounded p-2 w-75 mb-3" id="confsenha" name="confsenha" placeholder="Confirmar Senha"required><br>
+                    </div>
+                    <div class="mt-2 rounded-2" style="background-color: #aeb0732c; color:#606148;">
+                        <p>Ao cadastrar-se, você assume que leu e que concorda com nossos termos:</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"required>
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Termos de Privacidade
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"required>
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Termos de Uso
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"required>
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Consentimento de Tratamento de Dados Pessoais
+                            </label>
+                          </div>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-secondary mt-3 border p-2 botao-verde w-75" type="submit" text-center>Confirmar</button>
+                    </div>
+                </div>
+            </form>
+            
+            <div class="mt-3 mb-3 text-center" >
+                <a href="/entrar" class="link-dark">Já possui uma conta? Clique aqui</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

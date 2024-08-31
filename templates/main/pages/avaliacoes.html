@@ -3,8 +3,6 @@
 {% block subtitulo %}Avaliações{% endblock %}
 
 {% block conteudo %}
-
-
 <style>
     .container-options {
         width: 270px;
@@ -14,7 +12,6 @@
     .container-forms {
         margin-top: 40px;
         background-color: #A3A65159;
-        
     }
     .container-under {
         background-color: #2e331c05; 
@@ -36,131 +33,297 @@
         object-fit: cover; /* Garante que a imagem preencha o espaço de maneira proporcional */
         border-radius: 50%;
     }
+    /* Estilo da sobreposição */
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+    
+    .overlay-content p {
+        margin: 0;
+    }
+    .btn-custom {
+        background-color: #A3A651;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-weight: 500;
+    }
+    .btn-custom:hover {
+        background-color: #8c8f4a;
+    }
+    .feedback-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    /* Classe para desabilitar o scroll do body */
+.no-scroll {
+    overflow: hidden;
+}
+.avaliacao {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.star-icon {
+    cursor: pointer;
+    color: #A3A651;
+    font-size: 35px;
+    margin-right: 5px;
+}
+.star-item {
+    display: flex;
+    margin-right: 20px;
+}
+
+.star-text {
+    display: flex;
+    align-items: center;
+}
+
+.star-text p {
+    margin: 0;
+    font-weight: 500;
+    color: #A3A651;
+}
+.star-rating-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  .star-icon::before{
+    content: "\2605";
+  }
+  .star-icon.ativo ~ .star-icon::before{
+    content: "\2606";
+  }
+  .avaliacao:hover .star-icon::before{
+    content: "\2605";
+  }
+  .star-icon:hover ~ .star-icon::before{
+    content: "\2606";
+  }
+
 </style>
+
 <div class="container my-3">
-<div class="row">
-    <div class="container-forms p-3 rounded"> <!--PARTE DE CIMA (verde) -->
-        <div style="font-size: 30px; color:#2E331C; font-weight:500;">Projeto</div>
-        <div class="text-center">
-            <img src="/static/img/elon musk.png" class="rounded-circle img-fluid" alt="..." style="width: 200px; height:200px;">
-        </div>
-        <p class="text-center mt-2 fs-4" style="color:#2E331C;">@nickcriador</p>
-        <p class="text-center fs-3 mb-1" style="color:#2E331C; font-weight:500;">Plantio de Aralcárias</p>                
-    </div>
-    <div class="container-under rounded"><!-- PARTE DE BAIXO (cinza) -->
-        <div class="row ms-5 mt-4" style="color:#2E331C; font-weight:500; font-size:21px;">
-            <div class="col">
-                <p>Local:</p>
-                <p>Data de criação:</p>
-                <p>Inscritos:</p>
+    <div class="row">
+        <div class="container-forms p-3 rounded"> <!--PARTE DE CIMA (verde) -->
+            <div style="font-size: 30px; color:#2E331C; font-weight:500;">Projeto</div>
+            <div class="text-center">
+                <img src="/static/img/elon musk.png" class="rounded-circle img-fluid" alt="..." style="width: 200px; height:200px;">
             </div>
-            <div class="col-4">
-                <p>Data de início:</p>
-                <p>Data de término:</p>
-                <p>Meta:</p>
-            </div>
+            <p class="text-center mt-2 fs-4" style="color:#2E331C;">@nickcriador</p>
+            <p class="text-center fs-3 mb-1" style="color:#2E331C; font-weight:500;">Plantio de Aralcárias</p>                
         </div>
-        <div class="row ms-5 mt-4" style="color:#2E331C; font-weight:500; font-size:21px;">
-            <div class="col">
-                <p class="mt-3">Descrição do projeto:</p>
-            </div>
-        </div>
-        <div class="row ms-5 mt-2">
-            <div class="col">
-                <div class="rounded bg-white p-3" style="max-width:860px"> <!-- Campo redondo com fundo branco -->
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, obcaecati eum. Cumque aut voluptatibus alias eaque expedita fugiat. Illum dignissimos voluptatem suscipit iure id obcaecati? Minima, voluptates ipsam. Ad dolore nobis possimus accusamus tempore impedit quia nisi doloremque expedita nam!</p>
+        <div class="container-under rounded"><!-- PARTE DE BAIXO (cinza) -->
+            <div class="row ms-5 mt-4" style="color:#2E331C; font-weight:500; font-size:21px;">
+                <div class="col">
+                    <p>Local:</p>
+                    <p>Data de criação:</p>
+                    <p>Inscritos:</p>
+                </div>
+                <div class="col-4">
+                    <p>Data de início:</p>
+                    <p>Data de término:</p>
+                    <p>Meta:</p>
                 </div>
             </div>
-            <div class="text-center">
-                <p class="mt-3" style="font-weight: 500; font-size:21px;">Projeto Finalizado</p>
-                <button class="btn btn-secondary mt-3 mb-4 border p-2 texte-center" type="submit" text-center style="background-color: #a3a651; font-weight: 500;">Avaliar Projeto</button>
+            <div class="row ms-5 mt-4" style="color:#2E331C; font-weight:500; font-size:21px;">
+                <div class="col">
+                    <p class="mt-3">Descrição do projeto:</p>
+                </div>
+            </div>
+            <div class="row ms-5 mt-2">
+                <div class="col">
+                    <div class="rounded bg-white p-3" style="max-width:860px"> <!-- Campo redondo com fundo branco -->
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, obcaecati eum. Cumque aut voluptatibus alias eaque expedita fugiat. Illum dignissimos voluptatem suscipit iure id obcaecati? Minima, voluptates ipsam. Ad dolore nobis possimus accusamus tempore impedit quia nisi doloremque expedita nam!</p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <p class="mt-3" style="font-weight: 500; font-size:21px;">Projeto Finalizado</p>
+                    <button class="btn btn-secondary mt-3 mb-4 border p-2" type="button" style="background-color: #a3a651; font-weight: 500;" onclick="showOverlay()">Avaliar Projeto</button>
+                </div>
             </div>
         </div>
-</div>
-<p class="text-center fs-3 mt-5">Avaliações dos participantes</p>
+        <p class="text-center fs-3 mt-5">Avaliações dos participantes</p>
 
-    <div class="container mt-5">
-        <!-- Comentário 1 -->
-        <div class="comment-container d-flex">
+        <div class="container mt-5">
+            <!-- Comentário 1 -->
+            <div class="comment-container d-flex">
                 <img src="/static/img/bolsonaroL.png" alt="Foto de perfil" class="profile-picture me-3">
-            <div class="flex-grow-1">
-                <div class="d-flex justify-content-between">
-                    <div>
-                        <strong>@nickVoluntário</strong>
-                        <div class="star-rating">
-                            <div>
+                <div class="flex-grow-1">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <strong>@nickVoluntário</strong>
+                            <div class="star-rating">
                                 <i class="bi bi-star-fill"></i>
                                 <i class="bi bi-star-fill"></i>
                                 <i class="bi bi-star-fill"></i>
                                 <i class="bi bi-star-fill"></i>
                                 <i class="bi bi-star-fill"></i>
                             </div>
+                            <small class="text-muted">2024-03-01 12:45</small>
                         </div>
-                        <small class="text-muted">2024-03-01 12:45</small>
+                        <div class="three-dots">
+                            &#8942; <!-- Três pontos verticais -->
+                        </div>
                     </div>
-                    <div class="three-dots">
-                        &#8942; <!-- Três pontos verticais -->
-                    </div>
+                    <p class="mt-2">
+                        Participar deste projeto voluntário foi uma experiência extremamente enriquecedora. A organização e a dedicação de todos os envolvidos foram impressionantes.
+                    </p>
                 </div>
-                <p class="mt-2">
-                    Participar deste projeto voluntário foi uma experiência extremamente enriquecedora. A organização e a dedicação de todos os envolvidos foram impressionantes.
-                </p>
             </div>
-        </div>
 
-        <!-- Comentário 2 -->
-        <div class="comment-container d-flex">
-            <img src="/static/img/lula.png" alt="Foto de perfil" class="profile-picture me-3">
-            <div class="flex-grow-1">
-                <div class="d-flex justify-content-between">
-                    <div>
-                        <strong>@nickVoluntário</strong>
-                        <div class="star-rating">
-                            <div>
+            <!-- Comentário 2 -->
+            <div class="comment-container d-flex">
+                <img src="/static/img/lula.png" alt="Foto de perfil" class="profile-picture me-3">
+                <div class="flex-grow-1">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <strong>@nickVoluntário</strong>
+                            <div class="star-rating">
                                 <i class="bi bi-star-fill"></i>
                                 <i class="bi bi-star-fill"></i>
                                 <i class="bi bi-star-fill"></i>
                                 <i class="bi bi-star-fill"></i>
                                 <i class="bi bi-star"></i>
                             </div>
+                            <small class="text-muted">2024-03-01 12:45</small>
                         </div>
-                        <small class="text-muted">2024-03-01 12:45</small>
+                        <div class="three-dots">
+                            &#8942;
+                        </div>
                     </div>
-                    <div class="three-dots">
-                        &#8942;
-                    </div>
+                    <p class="mt-2">
+                        Participar deste projeto voluntário foi uma experiência muito boa.
+                    </p>
                 </div>
-                <p class="mt-2">
-                    Participar deste projeto voluntário foi uma experiência muito boa.
-                </p>
             </div>
-        </div>
 
-        <!-- Comentário 3 -->
-        <div class="comment-container d-flex">
-            <img src="/static/img/brunohenrique.png" alt="Foto de perfil" class="profile-picture me-3">
-            <div class="flex-grow-1">
-                <div class="d-flex justify-content-between">
-                    <div>
-                        <strong>@nickVoluntário</strong>
+            <!-- Comentário 3 -->
+            <div class="comment-container d-flex">
+                <img src="/static/img/brunohenrique.png" alt="Foto de perfil" class="profile-picture me-3">
+                <div class="flex-grow-1">
+                    <div class="d-flex justify-content-between">
                         <div>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star"></i>
-                            <i class="bi bi-star"></i>
-                            <i class="bi bi-star"></i>
-                            <i class="bi bi-star"></i>
+                            <strong>@nickVoluntário</strong>
+                            <div class="star-rating">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                            </div>
+                            <small class="text-muted">2024-03-01 12:45</small>
                         </div>
-                        <small class="text-muted">2024-03-01 12:45</small>
+                        <div class="three-dots">
+                            &#8942;
+                        </div>
                     </div>
-                    <div class="three-dots">
-                        &#8942;
-                    </div>
+                    <p class="mt-2">
+                        Péssimo, odiei as pessoas e todos os envolvidos, gostaria de matar todos!
+                    </p>
                 </div>
-                <p class="mt-2">
-                    Péssimo, odiei as pessoas e todos os envolvidos, gostaria de matar todos!
-                </p>
             </div>
         </div>
     </div>
 
+    <!-- Overlay -->
+    <div id="overlay" class="overlay">
+        <div class="container mt-5">
+            <div class="feedback-container p-4">
+                <h3 class="text-center mb-2" style="color: #2E331C; font-weight: 500;">Avaliação do projeto "Plantio de Aralcárias"</h3>
+                <p class="text-center" style="color: #7D7D7D;">Avalie o projeto de acordo com sua experiência</p>
+                
+                <div class="star-rating-container">
+                    <div class="star-item">
+                        <ul class="avaliacao">
+                            <li class="star-icon" data-avaliacao="1"></li>
+                            <li class="star-icon" data-avaliacao="2"></li>
+                            <li class="star-icon" data-avaliacao="3"></li>
+                            <li class="star-icon" data-avaliacao="4"></li>
+                            <li class="star-icon" data-avaliacao="5"></li>
+                        </ul>
+                    </div>
+                    <div class="star-text">
+                        <p id="star-text">Selecione a estrela desejada</p>
+                    </div>
+                </div>
+                
+                <textarea class="form-control mb-3" rows="4" placeholder="Conte-nos um pouco mais sobre a sua experiência no projeto"></textarea>
+        
+                <p class="text-center" style="color: #7D7D7D;">Lembre-se de ser gentil em seu comentário</p>
+                <p class="text-center mb-4" style="color: #7D7D7D;">Seu feedback será muito importante para novos voluntários!</p>
+        
+                <div class="text-center">
+                    <button class="btn btn-custom" type="submit">Enviar</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        // Mostra a sobreposição
+        function showOverlay() {
+            document.getElementById('overlay').style.display = 'flex';
+            document.body.classList.add('no-scroll');
+        }
+    
+        // Esconde a sobreposição
+        function hideOverlay() {
+            document.getElementById('overlay').style.display = 'none';
+            document.body.classList.remove('no-scroll');
+        }
+    
+        // Fecha a sobreposição apenas quando clicar fora do conteúdo principal
+        document.getElementById('overlay').addEventListener('click', function (event) {
+            if (event.target === this) { // Checa se o clique é diretamente na sobreposição
+                hideOverlay();
+            }
+        });
+    
+        var stars = document.querySelectorAll('.star-icon');
+        var starText = document.getElementById('star-text');
+    
+        // Mapeamento dos textos para cada estrela
+        var starTexts = {
+            1: "Péssimo",
+            2: "Ruim",
+            3: "Regular",
+            4: "Muito bom",
+            5: "Incrível"
+        };
+    
+        document.addEventListener('click', function(e){
+            var classStar = e.target.classList;
+            if(classStar.contains('star-icon')){
+                stars.forEach(function(star){
+                    star.classList.remove('ativo');
+                });
+                classStar.add('ativo');
+                var rating = e.target.getAttribute('data-avaliacao');
+                starText.textContent = starTexts[rating];
+                console.log(rating);
+            }
+        });
+    </script>
+    
+    
+
 {% endblock %}
+    

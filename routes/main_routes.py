@@ -65,10 +65,6 @@ async def get_denunciaProjeto(request: Request):
 async def get_excluirProjeto(request: Request):
     return templates.TemplateResponse("pages/excluirProjeto.html", {"request": request})
 
-@router.get("/teste", response_class=HTMLResponse)
-async def get_teste(request: Request):
-    return templates.TemplateResponse("pages/testeSobreposicao.html", {"request": request})
-
 @router.get("/avaliacoes", response_class=HTMLResponse)
 async def get_avaliacoes(request: Request):
     return templates.TemplateResponse("pages/avaliacoes.html", {"request": request})

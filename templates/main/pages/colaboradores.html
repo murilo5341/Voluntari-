@@ -2,122 +2,76 @@
 {% block subtitulo %}colaboradores{% endblock %}
 {% block conteudo %}
 <style>
-    h3{
-        font-family: 'Lato';
-        font-weight: bold;
-        color: #A3A651;
-    }
-    
+  h3 {
+    font-family: 'Lato';
+    font-weight: bold;
+    color: #A3A651;
+  }
+
+  .card {
+    width: 426px;
+    /* Define uma largura específica para os cards */
+    height: 227px;
+    /* Define uma altura específica para os cards */
+    background-color: rgba(180, 189, 148, 0.05) 
+
+    ;
+  }
 </style>
 
 <div class="green-rectangle rounded mt-5 mx-auto"></div>
 <br><br>
 <h3>Maiores doações:</h3>
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel"><!-- PEDIR MAROQUIO AJUDA PRA ARRUMAR OS SLIDES DO CARROSEL -->
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <!-- PEDIR MAROQUIO AJUDA PRA ARRUMAR OS SLIDES DO CARROSEL -->
 
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="cards-wrapper">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="cards-wrapper">
+        {% for i in range(4) %}
         <div class="card">
-          <img src="/static/img/gatoabandonado.png" class="card-img-top " alt="...">
+
           <div class="card-body">
-            <h5 class="card-title text-center fs-4">Abandono de Animais</h5>
-            <h6 class="card-subtitle text-center">@nickCreator</h6>
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit, repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
+            <h5 class="card-title text-center fs-4"><i class="bi bi-person-circle fs-1"></i></h5>
+            <h6 class="card-subtitle text-center">@nickCreator </h6>
             <p>
               <span class="address">Rua Lorem Ipsum, 91, ES </span>
               <span class="date">19/02/2024</span>
             </p>
-            <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver projeto</a>
-            <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i> 8/10</p>
           </div>
         </div>
-        <div class="card d-none d-md-block">
-          <img src="/static/img/plantioarvores.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title text-center fs-4">Manejo Florestal</h5>
-            <h6 class="card-subtitle text-center">@nickCreator</h6>
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit, repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
-            <p>
-                <span class="address">Rua Lorem Ipsum, 91, ES </span>
-                <span class="date">19/02/2024</span>
-              </p>
-              <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver projeto</a>
-              <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i> 8/10</p>
-            </div>
-        </div>
-        <div class="card d-none d-md-block">
-          <img src="/static/img/limpezarios.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title text-center fs-4">Limpeza de rios</h5>
-            <h6 class="card-subtitle text-center">@nickCreator</h6>
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit, repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
-            <p>
-              <span class="address">Rua Lorem Ipsum, 91, ES </span>
-              <span class="date">19/02/2024</span>
-            </p>
-            <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver projeto</a>
-            <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i> 8/10</p>
-          </div>
-        </div>
-      </div>
-      </div>
-      <div class="carousel-item">
-        <div class="cards-wrapper">
-          <div class="card">
-            <img src="/static/img/tartaruga.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title text-center fs-4">Ajuda marinha</h5>
-              <h6 class="card-subtitle text-center">@nickCreator</h6>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit, repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
-              <p>
-                <span class="address">Rua Lorem Ipsum, 91, ES </span>
-                <span class="date">19/02/2024</span>
-              </p>
-              <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver projeto</a>
-              <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i> 8/10</p>
-            </div>
-          </div>
-          <div class="card d-none d-md-block">
-            <img src="/static/img/prenvencaodengue.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title text-center fs-4">Prevencao contra Dengue</h5>
-              <h6 class="card-subtitle text-center">@nickCreator</h6>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit, repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
-              <p>
-                <span class="address">Rua Lorem Ipsum, 91, ES </span>
-                <span class="date">19/02/2024</span>
-              </p>
-              <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver projeto</a>
-              <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i> 8/10</p>
-            </div>
-          </div>
-          <div class="card d-none d-md-block">
-            <img src="/static/img/ong.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title text-center fs-4">Doacão de cães</h5>
-              <h6 class="card-subtitle text-center">@nickCreator</h6>
-              <p class="card-text">Focado na restauração e preservação de florestas nativas, este projeto envolve o plantio de árvores, manutenção de áreas reflorestadas e combate a incêndios florestais. Os voluntários participam de atividades de reflorestamento, monitoramento da biodiversidade e campanhas educativas para a proteção das florestas.</p>
-              <p>
-                <span class="address">Rua Lorem Ipsum, 91, ES </span>
-                <span class="date">19/02/2024</span>
-              </p>
-              <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver projeto</a>
-              <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i> 8/10</p>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
-    <button class="carousel-control-prev" data-bs-target = "#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" data-bs-target = "#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
+    <div class="carousel-item">
+      <div class="cards-wrapper">
+                {% for i in range(4) %}
+        <div class="card">
+
+          <div class="card-body">
+            <h5 class="card-title text-center fs-4"><i class="bi bi-person-circle fs-1"></i></h5>
+            <h6 class="card-subtitle text-center">@nickCreator </h6>
+            <p>
+              <span class="address">Rua Lorem Ipsum, 91, ES </span>
+              <span class="date">19/02/2024</span>
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+        
+      </div>
+    </div>
   </div>
+  <button class="carousel-control-prev" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
 
 <h3>doações recentes:</h3>
+
 
 
 

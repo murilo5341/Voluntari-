@@ -19,8 +19,6 @@ async def get_entrar(request: Request):
 async def get_cadastro(request: Request):
     return templates.TemplateResponse("pages/cadastro.html", {"request": request})
 
-
-
 @router.get("/termos", response_class=HTMLResponse)
 async def get_termos(request: Request):
     return templates.TemplateResponse("pages/termos.html", {"request": request})
@@ -53,15 +51,11 @@ async def get_termos(request: Request):
 async def get_termos(request: Request):
     return templates.TemplateResponse("pages/patrocinador.html", {"request": request})
 
-@router.get("/sobre", response_class=HTMLResponse)
-async def get_termos(request: Request):
-    return templates.TemplateResponse("pages/sobre.html", {"request": request})
-
-@router.get("/denuncia-projeto", response_class=HTMLResponse)
+@router.get("/denunciaprojeto", response_class=HTMLResponse)
 async def get_denunciaProjeto(request: Request):
     return templates.TemplateResponse("pages/denunciaProjeto.html", {"request": request})
 
-@router.get("/excluir-projeto", response_class=HTMLResponse)
+@router.get("/excluirprojeto", response_class=HTMLResponse)
 async def get_excluirProjeto(request: Request):
     return templates.TemplateResponse("pages/excluirProjeto.html", {"request": request})
 
@@ -69,6 +63,13 @@ async def get_excluirProjeto(request: Request):
 async def get_avaliacoes(request: Request):
     return templates.TemplateResponse("pages/avaliacoes.html", {"request": request})
 
+@router.get("/visualizarprojeto", response_class=HTMLResponse)
+async def get_visualizarProjeto(request: Request):
+    return templates.TemplateResponse("pages/visualizarProjeto.html", {"request": request})
+
+@router.get("/ingressarprojeto", response_class=HTMLResponse)
+async def get_ingressarProjeto(request: Request):
+    return templates.TemplateResponse("pages/ingressarProjeto.html", {"request": request})
 
 
 

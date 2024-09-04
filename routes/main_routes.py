@@ -71,6 +71,11 @@ async def get_visualizarProjeto(request: Request):
 async def get_ingressarProjeto(request: Request):
     return templates.TemplateResponse("pages/ingressarProjeto.html", {"request": request})
 
+@router.get("/bloquearprojeto", response_class=HTMLResponse)
+async def get_bloquearProjeto(request: Request):
+    return templates.TemplateResponse("pages/bloquearProjeto.html", {"request": request})
+
+
 
 
 

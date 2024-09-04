@@ -198,7 +198,7 @@
                         <div class="dropdown hover-object">
                             <i class="bi bi-three-dots-vertical" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></i>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#">Denunciar avaliação</a></li>
+                                <li><a class="dropdown-item" href="#"onclick="showOverlay1()">Denunciar avaliação</a></li>
                               </ul>
                         </div>
                     </div>
@@ -227,7 +227,7 @@
                         <div class="dropdown hover-object">
                             <i class="bi bi-three-dots-vertical" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></i>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#">Denunciar avaliação</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showOverlay1()">Denunciar avaliação</a></li>
                               </ul>
                         </div>
                     </div>
@@ -256,7 +256,7 @@
                         <div class="dropdown hover-object">
                             <i class="bi bi-three-dots-vertical" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></i>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#">Denunciar avaliação</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showOverlay1()">Denunciar avaliação</a></li>
                               </ul>
                         </div>
                     </div>
@@ -268,7 +268,7 @@
         </div>
     </div>
 </div>
-    <!-- Overlay -->
+    <!-- Overlay Avaliar Projeto -->
     <div id="overlay" class="overlay">
         <div class="container mt-5">
             <div class="feedback-container p-4">
@@ -303,23 +303,78 @@
         
     </div>
 
+<!-- Overlay Denunciar Avaliação -->
+<div id="overlayavaliacao" class="overlay">
+    <div class="container mt-5">
+        <div class="feedback-container p-4">
+            <h3 class="text-center mb-2" style="color: #2E331C; font-weight: 500;">Denunciar avaliação</h3>
+            <p class="text-center" style="color: #7D7D7D;">Por favor, selecione o motivo do relatório</p>
+            
+            <div class="form-check form-check-inline">
+                <input class="form-text-input" type="radio" name="disponibilidade" id="manha" value="sim">
+                <label class="form-text-label mt-1" for="manha">Avaliação rude/abusiva/grosseira</label><br>
+                
+                <input class="form-text-input" type="radio" name="disponibilidade" id="tarde" value="sim">
+                <label class="form-text-label mt-1" for="tarde">Spam</label><br>
+                
+                <input class="form-text-input" type="radio" name="disponibilidade" id="noite" value="sim">
+                <label class="form-text-label mt-1" for="noite">Exposição de informações/dados pessoais</label><br>
+                
+                <input class="form-text-input" type="radio" name="disponibilidade" id="fds" value="sim">
+                <label class="form-text-label mt-1" for="fds">Direcionamento para fora da plataforma</label><br>
+
+                <input class="form-text-input" type="radio" name="disponibilidade" id="fds" value="sim">
+                <label class="form-text-label mt-1" for="fds">Outros</label>
+                
+            </div><br>
+            
+
+            <div class="text-center">
+                <button class="btn border mb" type="submit">Cancelar</button>
+
+                <button class="btn btn-custom p-2" type="submit">Enviar</button>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
     <script>
-        // Mostra a sobreposição
+        // Mostra a sobreposição avaliar projeto
         function showOverlay() {
             document.getElementById('overlay').style.display = 'flex';
             document.body.classList.add('no-scroll');
         }
     
-        // Esconde a sobreposição
+        // Esconde a sobreposição avaliar projeto
         function hideOverlay() {
             document.getElementById('overlay').style.display = 'none';
             document.body.classList.remove('no-scroll');
         }
     
-        // Fecha a sobreposição apenas quando clicar fora do conteúdo principal
+        // Fecha a sobreposição avaliar projeto apenas quando clicar fora do conteúdo principal 
         document.getElementById('overlay').addEventListener('click', function (event) {
             if (event.target === this) { // Checa se o clique é diretamente na sobreposição
                 hideOverlay();
+            }
+        });
+
+        // Mostra a sobreposição denunciar avaliacao
+        function showOverlay1() {
+            document.getElementById('overlayavaliacao').style.display = 'flex';
+            document.body.classList.add('no-scroll');
+        }
+    
+        // Esconde a sobreposição denunciar avaliacao
+        function hideOverlay1() {
+            document.getElementById('overlayavaliacao').style.display = 'none';
+            document.body.classList.remove('no-scroll');
+        }
+    
+        // Fecha a sobreposição denunciar avaliacao apenas quando clicar fora do conteúdo principal 
+        document.getElementById('overlayavaliacao').addEventListener('click', function (event) {
+            if (event.target === this) { // Checa se o clique é diretamente na sobreposição
+                hideOverlay1();
             }
         });
     

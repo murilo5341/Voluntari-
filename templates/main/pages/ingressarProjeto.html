@@ -29,6 +29,7 @@
     .hover-object:hover {
         background-color: #E0E0C9; /* Cor de fundo quando o mouse está sobre o objeto */
     }
+   
 </style>
 
 <div class="container my-3">
@@ -73,14 +74,39 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, obcaecati eum. Cumque aut voluptatibus alias eaque expedita fugiat. Illum dignissimos voluptatem suscipit iure id obcaecati? Minima, voluptates ipsam. Ad dolore nobis possimus accusamus tempore impedit quia nisi doloremque expedita nam!</p>
                     </div>
                 </div>
-                <div class="container-white mt-4 rounded">
-                    <p class="text-center fw-bold">Preencha os campos a seguir para a sua ingressão</p>
-
+                
+            </div>
+            <div class="container-white mt-4 rounded ">
+                <p class="text-center fw-bold fs-5 pt-3">Preencha os campos a seguir para a sua ingressão</p>
+                <p class="ms-2 fw-bold ">Disponibilidade</p>
+                <div class="form-check form-check-inline">
+                    <input class="form-text-input" type="radio" name="disponibilidade" id="manha" value="sim">
+                    <label class="form-text-label" for="manha">Manhã</label><br>
+                    
+                    <input class="form-text-input" type="radio" name="disponibilidade" id="tarde" value="sim">
+                    <label class="form-text-label" for="tarde">Tarde</label><br>
+                    
+                    <input class="form-text-input" type="radio" name="disponibilidade" id="noite" value="sim">
+                    <label class="form-text-label" for="noite">Noite</label><br>
+                    
+                    <input class="form-text-input" type="radio" name="disponibilidade" id="fds" value="sim">
+                    <label class="form-text-label" for="fds">Fins de Semana</label>
+                    
+                </div><br>
+                <div class="form-check form-check-inline mt-3">
+                    <input class="form-text-input" type="radio" name="compromissoVoluntario" id="compromisso" value="sim">
+                    <label class="form-text-label fw-bold" for="manha">Compromisso Voluntário</label>
+                    <p class="text-secondary ms-3 mt-1" style="font-size:15px;">Estou ciente da importância do meu compromisso e me comprometo a cumprir as responsabilidades e horários acordados com o projeto selecionado</p>
                 </div>
                 <div class="text-center">
-                    <a href="ingressar-projeto" class="btn btn-secondary mt-3 mb-4 border p-2" type="button" style="background-color: #a3a651; font-weight: 500;">Inscrever-se</a>
+                    <a href="ingressar-projeto" class="btn btn-secondary mt-3 mb-4 border p-2" type="button" style="background-color: #a3a651; font-weight: 500;">Confirmar inscrição</a>
                 </div>
             </div>
+            <div class="text-center mt-5">
+                <p class="fw-bold fs-5">Contribua para a realização do projeto!</p>
+                <a href="doar-projeto" class="btn btn-secondary mt-3 mb-4 border p-2" type="button" style="background-color: #a3a651; font-weight: 500;">Doar para o projeto</a>
+            </div>
+            
         </div>
     </div>
 

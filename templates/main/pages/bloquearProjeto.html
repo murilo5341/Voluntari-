@@ -1,0 +1,74 @@
+{% extends "pages/base.html" %}
+
+{% block subtitulo %}Bloquear Projeto{% endblock %}
+{% block conteudo %}
+
+<style>
+    .container-options {
+        width: 270px;
+        margin-top: 80px;
+        background-color: #ffffff; 
+    }
+    .container-forms {
+        margin-top: 40px;
+        background-color: #2e331c07;
+    }
+    .botao-verde{
+        --bs-btn-bg: #aeb073;
+
+    }
+    .person{
+      color: #aeb073;
+    }
+    .link-ativo {
+      color: #aeb073 !important; 
+  }
+  .campo{
+    width: 400px;
+  }
+
+  .link-verde {
+    color: #aeb073;
+}
+</style>
+
+<div class="container my-3">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="container-options p-3 rounded">
+                <div class="row g-2">
+                    <div class="col-12">
+                        <h5><i class="person bi bi-person"></i>Minha Conta</h5>
+                    </div>
+                    <div class="col-12">
+                        <a href="meu-perfil" class="link-dark link-underline-opacity-0">Meu Perfil</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="denuncia-projeto" class="link-dark link-underline-opacity-0 link-ativo">Denúncias de Projetos</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="patrocinadores" class="link-dark link-underline-opacity-0">Patrocinadores</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="adiministradores" class="link-dark link-underline-opacity-0">Administradores</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="moderadores" class="link-dark link-underline-opacity-0">Moderadores</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="denuncia-voluntario" class="link-dark link-underline-opacity-0">Denúncias de Voluntários</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="notificao" class="link-dark link-underline-opacity-0">Notificações</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="patrocinio" class="link-dark link-underline-opacity-0">Patrocínio</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="alterarSenha" class="link-dark link-underline-opacity-0">Alterar Senha</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}

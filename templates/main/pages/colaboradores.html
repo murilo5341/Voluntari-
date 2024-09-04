@@ -11,31 +11,35 @@
   .card {
     width: 426px;
     /* Define uma largura específica para os cards */
-    height: 227px;
+    height: 170px;
     /* Define uma altura específica para os cards */
-    background-color: rgba(180, 189, 148, 0.05) 
+    background-color: rgba(180, 189, 148, 0.05) ;
 
-    ;
+    .frase{
+      font-family: 'Lato';
+      font-weight: bold;
+      color: #A3A651;
+    }
   }
 </style>
 
 <div class="green-rectangle rounded mt-5 mx-auto"></div>
 <br><br>
 <h3>Maiores doações:</h3>
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+<hr>
+<div id="carouselcontrolmaiordoacao" class="carousel slide" data-ride="carousel">
   <!-- PEDIR MAROQUIO AJUDA PRA ARRUMAR OS SLIDES DO CARROSEL -->
 
   <div class="carousel-inner">
     <div class="carousel-item active">
       <div class="cards-wrapper">
-        {% for i in range(4) %}
+        {% for i in range(6) %}
         <div class="card">
 
           <div class="card-body">
-            <h5 class="card-title text-center fs-4"><i class="bi bi-person-circle fs-1"></i></h5>
-            <h6 class="card-subtitle text-center">@nickCreator </h6>
+            <h5 class="card-title text-center"><i class="bi bi-person-circle fs-1"></i>
+            <h5 class="frase"> @nickCreator acabou de doar R$:900,00 para o projeto "Nome do projeto"</h5>
             <p>
-              <span class="address">Rua Lorem Ipsum, 91, ES </span>
               <span class="date">19/02/2024</span>
             </p>
           </div>
@@ -45,14 +49,12 @@
     </div>
     <div class="carousel-item">
       <div class="cards-wrapper">
-                {% for i in range(4) %}
+                {% for i in range(6) %}
         <div class="card">
 
           <div class="card-body">
             <h5 class="card-title text-center fs-4"><i class="bi bi-person-circle fs-1"></i></h5>
-            <h6 class="card-subtitle text-center">@nickCreator </h6>
-            <p>
-              <span class="address">Rua Lorem Ipsum, 91, ES </span>
+            <h5 class="frase"> @nickCreator acabou de doar R$:900,00 para o projeto "Nome do projeto"</h5>
               <span class="date">19/02/2024</span>
             </p>
           </div>
@@ -62,15 +64,60 @@
       </div>
     </div>
   </div>
-  <button class="carousel-control-prev" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+  <button class="carousel-control-prev" data-bs-target="#carouselcontrolmaiordoacao" data-bs-slide="prev">
     <span class="carousel-control-prev-icon"></span>
   </button>
-  <button class="carousel-control-next" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+  <button class="carousel-control-next" data-bs-target="#carouselcontrolmaiordoacao" data-bs-slide="next">
     <span class="carousel-control-next-icon"></span>
   </button>
 </div>
 
 <h3>doações recentes:</h3>
+<hr>
+<div id="carouselcontroldoacaorecente" class="carousel slide" data-ride="carousel">
+  <!-- PEDIR MAROQUIO AJUDA PRA ARRUMAR OS SLIDES DO CARROSEL -->
+
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="cards-wrapper">
+        {% for i in range(6) %}
+        <div class="card">
+
+          <div class="card-body">
+            <h5 class="card-title text-center"><i class="bi bi-person-circle fs-1"></i>
+            <h5 class="frase"> @nickCreator acabou de doar R$:900,00 para o projeto "Nome do projeto"</h5>
+            <p>
+              <span class="date">19/02/2024</span>
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="cards-wrapper">
+                {% for i in range(6) %}
+        <div class="card">
+
+          <div class="card-body">
+            <h5 class="card-title text-center fs-4"><i class="bi bi-person-circle fs-1"></i></h5>
+            <h5 class="frase"> @nickCreator acabou de doar R$:900,00 para o projeto "Nome do projeto"</h5>
+              <span class="date">19/02/2024</span>
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+        
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" data-bs-target="#carouselcontroldoacaorecente" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" data-bs-target="#carouselcontroldoacaorecente" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
 
 
 

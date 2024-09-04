@@ -5,35 +5,39 @@
 
 <style>
     .container-options {
-        width: 270px;
-        margin-top: 80px;
-        background-color: #ffffff; 
+        width: 100%;
+        background-color: #ffffff;
     }
+
     .container-forms {
         margin-top: 40px;
         background-color: #2e331c07;
     }
-    .botao-verde{
+
+    .botao-verde {
         --bs-btn-bg: #aeb073;
+    }
 
+    .person {
+        color: #aeb073;
     }
-    .person{
-      color: #aeb073;
-    }
+
     .link-ativo {
-      color: #aeb073 !important; 
-  }
-  .campo{
-    width: 400px;
-  }
+        color: #aeb073 !important;
+    }
 
-  .link-verde {
-    color: #aeb073;
-}
+    .campo {
+        width: 400px;
+    }
+
+    .link-verde {
+        color: #aeb073;
+    }
 </style>
 
 <div class="container my-3">
     <div class="row">
+        <!-- Menu "Minha Conta" -->
         <div class="col-md-4">
             <div class="container-options p-3 rounded">
                 <div class="row g-2">
@@ -44,7 +48,8 @@
                         <a href="meu-perfil" class="link-dark link-underline-opacity-0">Meu Perfil</a>
                     </div>
                     <div class="col-12">
-                        <a href="denuncia-projeto" class="link-dark link-underline-opacity-0 link-ativo">Denúncias de Projetos</a>
+                        <a href="denuncia-projeto" class="link-dark link-underline-opacity-0 link-ativo">Denúncias de
+                            Projetos</a>
                     </div>
                     <div class="col-12">
                         <a href="patrocinadores" class="link-dark link-underline-opacity-0">Patrocinadores</a>
@@ -56,7 +61,8 @@
                         <a href="moderadores" class="link-dark link-underline-opacity-0">Moderadores</a>
                     </div>
                     <div class="col-12">
-                        <a href="denuncia-voluntario" class="link-dark link-underline-opacity-0">Denúncias de Voluntários</a>
+                        <a href="denuncia-voluntario" class="link-dark link-underline-opacity-0">Denúncias de
+                            Voluntários</a>
                     </div>
                     <div class="col-12">
                         <a href="notificao" class="link-dark link-underline-opacity-0">Notificações</a>
@@ -70,5 +76,62 @@
                 </div>
             </div>
         </div>
+
+        <!-- Tabela e Botões -->
+        <div class="col-md-8" style="padding-top: 80px;">
+            <a>Projeto A bloqueado com sucesso!</a>
+            <h5>Denúncias Aprovadas de Projetos</h5>
+            <div class="table-container">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Projeto</th>
+                            <th scope="col">Motivo</th>
+                            <th scope="col">Voluntário</th>
+                            <th scope="col">Data</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Projeto B</td>
+                            <td>Outros</td>
+                            <td>Alice</td>
+                            <td>02/05/2024</td>
+                        </tr>
+                        <tr>
+                            <td>Projeto C</td>
+                            <td>Spam</td>
+                            <td>Camila</td>
+                            <td>02/05/2024</td>
+                        </tr>
+                        <tr>
+                            <td>Projeto D</td>
+                            <td>Spam</td>
+                            <td>Leila</td>
+                            <td>02/05/2024</td>
+                        </tr>
+                        <tr>
+                            <td>Projeto A</td>
+                            <td>Spam</td>
+                            <td>Carlos</td>
+                            <td>02/05/2024</td>
+                        </tr>
+                        <tr>
+                            <td>Projeto F</td>
+                            <td>Spam</td>
+                            <td>Bianca</td>
+                            <td>02/05/2024</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h6>Selecione o projeto desejado</h6>
+                <button type="button" class="btn btn-light" disabled style="background-color: #aeb073;">Visualizar
+                    Denúncia</button>
+                <button type="button" class="btn btn-light" disabled style="background-color: #aeb073;">Desbloquear
+                    Projeto</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

@@ -3,5 +3,149 @@
 {% block subtitulo %}assinatura{% endblock %}
 
 {% block conteudo %}
- 
+<style>
+ .assinatura {
+        background-color:#2e331c13;
+        border-radius: 17px;
+        padding: 45px;
+        margin-top: 2%;
+        margin-left: 2cm;
+        margin: 0 auto;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 2cm;
+        width: 50%;
+    }
+    .title{
+        text-align: center;
+        font-family: 'lato';
+        font-weight: bold;
+        color: black;
+        margin-top: 0.5cm;
+    }
+    .subtitle{
+        text-align: center;
+        font-family: 'lato';
+        font-weight: normal;
+        color: rgb(71, 82, 94);
+    }
+    .escolherassinatura{
+        text-align: center;
+        font-family: 'lato';
+        font-weight: bold;
+        color: #2E331C;
+        margin-top: 0.5cm;
+    }
+    h1 {
+        font-size: 22px;
+        color: rgb(139, 160, 62);
+        margin-bottom: 20px;
+    }
+    h2 {
+        font-size: 17px;
+        color: rgba(46, 51, 28, 0.678);
+        margin-bottom: 20px;
+    }
+    .circular-button {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: transparent;
+        border: 2px solid #007bff;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .circular-button.filled {
+        background-color: #007bff;
+        color: white;
+    }
+
+    h3 {
+        font-size: 20px;
+        color: #2e331ce5;
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 17px;
+        color: #2e331ce5;
+        margin-bottom: 20px;
+    }
+    h4 {
+        font-size: 16px;
+        color: #5e6448e5;
+        margin-bottom: 20px;
+    }
+    
+    .benefits {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .benefit {
+        background-color: #ffffff;
+        border-radius: 5px;
+        padding: 12px;
+        width: 50%;
+        margin-right: auto;
+    }    
+    .benefit2 {
+        background-color: #ffffff;
+        border-radius: 5px;
+        padding: 12px;
+        width: 50%;
+        margin-left: auto; 
+    }
+
+    .botao-escolha {
+        display: inline-block;
+        margin-right: 15px;
+    }
+    .botao-escolha-label h3 {
+        display: inline;
+        font-size: 18px;
+        margin-left: 8px;
+        color: #2E331C;
+    }
+</style>
+
+<h1 class="title">Assinatura para os voluntários</h1>
+<h2 class="subtitle">A assinatura eleva sua experiência em nosso site. Escolha o plano que mais combine com você</h2>
+
+<br><br>
+
+<div class="assinatura">
+    <div class="benefits">
+        <div class="benefit">
+            <h3>Crie mais projetos</h3>
+            <h4>Possibilidade de criar até 5 projetos por vez</h4>
+        </div>
+        <div class="benefit">
+            <h3>Projeto Destaque</h3>
+            <h4>Seu projeto com mais visibilidade</h4>
+        </div>
+        <div class="benefit2">
+            <h3>Ausência de anúncios</h3>
+            <h4>Navegue em nosso site sem interrupções</h4>
+        </div>
+    </div>
+    <hr>
+    <h3 class="escolherassinatura">Escolha qual assinatura é a sua cara</h3>
+
+    <div class="botao-escolha">
+        <input class="botao-escolha-input" type="radio" name="flexRadioDefault" id="mensal">
+        <label class="botao-escolha-label" for="mensal">
+            <p>assinatura mensal</p><h3>R$15,00/mes</h3>        
+        </label>
+    </div>
+
+    <div class="botao-escolha">
+        <input class="botao-escolha-input" type="radio" name="flexRadioDefault" id="anual">
+        <label class="botao-escolha-label" for="anual">
+            <p>assinatura anual</p><h3>12 meses: R$150,00</h3>
+        </label>
+    </div>
+
+</div>
 {% endblock %}

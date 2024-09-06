@@ -83,6 +83,10 @@ async def get_assinatura(request: Request):
 async def get_criarProjeto(request: Request):
     return templates.TemplateResponse("pages/criarProjeto.html", {"request": request})
 
+@router.get("/doacao", response_class=HTMLResponse)
+async def get_doacao(request: Request):
+    return templates.TemplateResponse("pages/doacao.html", {"request": request})
+
 
 
 

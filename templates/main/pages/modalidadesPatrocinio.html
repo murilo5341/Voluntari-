@@ -1,0 +1,147 @@
+{% extends "pages/base.html" %}
+
+{% block subtitulo %}Modalidades Patrocínio{% endblock %}
+
+{% block conteudo %}
+<style>
+    .container-assinatura {
+        background-color: #2e331c13;
+        border-radius: 10px;
+        padding: 45px;
+        text-align: center;
+        width: 100%;
+        /* Ajusta a largura do container para 100% do contêiner pai */
+
+    }
+
+
+    h1 {
+        font-size: 22px;
+        color: rgb(139, 160, 62);
+        /* cor com opacidade 0.73 */
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 17px;
+        color: rgba(46, 51, 28, 0.678);
+        /* cor com opacidade 0.73 */
+        margin-bottom: 2px;
+    }
+
+    h3 {
+        font-size: 20px;
+        color: #2e331ce5;
+        /* cor com opacidade 0.73 */
+        margin-bottom: 20px;
+        word-break: break-word;
+    }
+
+    p {
+        font-size: 15px;
+        color: #485030b2;
+        /* cor com opacidade 0.73 */
+        margin-bottom: 20px;
+    }
+
+    h5 {
+        font-size: 16px;
+        color: #5e6448e5;
+        /* cor com opacidade 0.73 */
+        margin-bottom: 20px;
+
+    }
+
+    h6 {
+        font-size: 15px;
+        color: #5e64487e;
+        /* cor com opacidade 0.73 */
+        margin-bottom: 20px;
+
+    }
+
+
+
+
+    .benefit,
+    .benefit2 {
+        background-color: #ffffff;
+        border-radius: 10px;
+        padding: 20px;
+        width: 100%;
+        /* Ajusta a largura para 100% do contêiner pai */
+        max-width: 600px;
+        /* Largura máxima para evitar que fique muito grande */
+        text-align: left;
+        /* Alinha o texto à esquerda dentro do benefício */
+        margin: 0 auto;
+        /* Centraliza horizontalmente */
+
+    }
+
+    .note {
+        font-size: 15px;
+        color: rgb(46, 51, 28);
+        /* cor sem opacidade */
+        margin-top: 40px;
+    }
+
+    .validity {
+        font-size: 15px;
+        color: #82862e;
+        /* cor #A3A651 */
+    }
+
+    .valor {
+        text-align: center;
+    }
+</style>
+<div class="container text-center">
+    <img src="/static/img/logo/logoverdeclaro.png" alt="VOLUNTÁRIE" width="240px" style="padding: 50px;">
+</div>
+<div class="col-6 mx-auto d-flex mb-3" style="align-items: center;">
+    <div class="container-assinatura">
+        <img src="/static/img/coroa.png" alt="" width="35px" height="35px">
+        <h1>Seja nosso patrocinador!</h1>
+        <h2 class="mt-5 mb-3">Patrocinador ouro</h2>
+        <img src="/static/img/gold-medal.png" alt="" width="35px" height="35px" class="mb-4">
+            <div class="benefit">
+                <h3>• Destaque Premium:</h3>
+                <h5>sua empresa no topo da nossa página de patrocinadores.</h5>
+                <h3>• Visibilidade Ampliada:</h3>
+                <h5>Propagandas frequentes e estratégicas em nosso site.</h5>
+                <h3>• Reconhecimento Público:</h3>
+                <h5>Honra e agradecimento especial em nossas redes sociais e eventos.</h5>
+                <div class="valor">
+                    <h6>R$920,00 por mês</h6>
+                </div>
+
+            </div>
+            <h2 class="mt-5 mb-3">Patrocinador prata</h2>
+            <img src="/static/img/silver-medal.png" alt="" width="35px" height="35px" class="mb-4">
+            <div class="benefit">
+                <h3>• Visibilidade Relevante:</h3>
+                <h5>Sua empresa em posição de destaque na nossa página de patrocinadores.</h5>
+                <h3>• Reconhecimento público</h3>
+                <h5>Agradecimento especial em nossas redes sociais e eventos.</h5>
+                <div class="valor">
+                    <h6>R$750,00 por mês</h6>
+                </div>
+            </div>
+
+            <h2 class="mt-5 mb-3">Patrocinador bronze</h2>
+            <img src="/static/img/bronze-medal.png" alt="" width="35px" height="35px" class="mb-4">
+            <div class="benefit2">
+                <h3>• Visibilidade na Página de Patrocinadores:</h3>
+                <h5>Seu nome ou empresa listado entre nossos apoiadores.</h5>
+                <div class="valor">
+                    <h6>R$100,00 por mês</h6>
+                </div>
+
+            </div>
+            <p class="mt-5 mb-3">Não perca essa oportunidade de se vincular a equipe VoluntariÊ. Entre em contato através do nosso email
+                lalalala@gmail.com</p>
+        </div>
+    </div>
+</div>
+    {% endblock %}

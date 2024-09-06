@@ -87,6 +87,10 @@ async def get_criarProjeto(request: Request):
 async def get_doacao(request: Request):
     return templates.TemplateResponse("pages/doacao.html", {"request": request})
 
+@router.get("/modalidadespatrocinio", response_class=HTMLResponse)
+async def get_modalidadesPatrocinio(request: Request):
+    return templates.TemplateResponse("pages/modalidadesPatrocinio.html", {"request": request})
+
 
 
 

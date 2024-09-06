@@ -57,6 +57,12 @@
         padding: 10px 20px;
         font-weight: 500;
     }
+    .btn-custom2{
+        background-color: #A3A651;
+        color: white;
+        border: none;
+        font-weight: 500;
+    }
     .btn-custom:hover {
         background-color: #8c8f4a;
     }
@@ -305,7 +311,7 @@
 
 <!-- Overlay Denunciar Avaliação -->
 <div id="overlayavaliacao" class="overlay">
-    <div class="container mt-5">
+    <div class="container mt-5" style="max-width: 500px;">
         <div class="feedback-container p-4">
             <h3 class="text-center mb-2" style="color: #2E331C; font-weight: 500;">Denunciar avaliação</h3>
             <p class="text-center" style="color: #7D7D7D;">Por favor, selecione o motivo do relatório</p>
@@ -330,9 +336,9 @@
             
 
             <div class="text-center">
-                <button class="btn border mb" type="submit">Cancelar</button>
+                <button class="btn border me-5" type="submit"onclick="hideOverlay1()">Cancelar</button>
 
-                <button class="btn btn-custom p-2" type="submit">Enviar</button>
+                <button class="btn btn-custom2" type="submit">Enviar</button>
             </div>
         </div>
     </div>

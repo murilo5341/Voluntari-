@@ -1,0 +1,69 @@
+{% extends "pages/base.html" %}
+
+{% block subtitulo %}Criar Projeto{% endblock %}
+{% block conteudo %}
+
+<style>
+    .botao-verde {
+        --bs-btn-bg: #aeb073;
+    }
+    .link-verde {
+        color: #aeb073;
+    }
+    .link-verde:hover {
+        color: #d1d39a;
+    }
+    .custom-container {
+        max-width: 700px; /* Ajuste a largura conforme necessário */
+        margin: 0 auto; /* Centraliza o container horizontalmente */
+    }
+</style>
+
+<main class="container pt-5 mb-3 custom-container">
+    <div class="row">
+        <div class="bg-light rounded">
+            <div class="container text-center">
+                <p class="fs-2 pt-3" style="color: #aeb073;">Criação de Projeto</p>
+                <img src="/static/img/quemSomos.png" class="img-fluid mt-2" alt="..." style="width: 350px; height:200px; border-radius: 10px;">
+            </div>
+            <div class="w-75" style="margin-left:70px;">
+                <div class="input-group mb-3 mx-auto mt-5">
+                    <input type="file" class="form-control" id="inputGroupFile02">
+                    <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                </div>
+                <label class="text-secondary">Título do Projeto:</label>
+                <div>
+                    <input class="border border-1 rounded p-2 w-100 mb-3" id="titulo" name="titulo" placeholder="Ex: Projeto do Gugu Gaiteiro" required>
+                </div>
+                <label class="text-secondary">Quantidade de Voluntários:</label>
+                <div>
+                    <input class="border border-1 rounded p-2 w-100 mb-3" type="number" min="0" max="20" id="qtdvoluntarios" name="qtdvoluntarios" placeholder="Ex: 5" required>
+                </div>
+                <label class="text-secondary">Endereço do Projeto:</label>
+                <div>
+                    <input class="border border-1 rounded p-2 w-100 mb-3" id="endereco" name="endereco" placeholder=" Ex: Rua Evanilda Lima Soares" required>
+                </div>
+                <label class="text-secondary">Data de Início do Projeto:</label>
+                <div>
+                    <input class="border border-1 rounded p-2 w-100 mb-3" type="date" id="dtinicio" name="dtinicio" required>
+                </div>
+                <label class="text-secondary">Data de Previsão do Término do Projeto:</label>
+                <div>
+                    <input class="border border-1 rounded p-2 w-100 mb-3" id="dttermino" type="date" name="dttermino" required>
+                </div>
+                <label class="text-secondary">Meta a ser atingida através das doações:</label>
+                <div>
+                    <input class="currency-input border border-1 rounded p-2 w-100 mb-3" id="meta" type="number" min="0" name="meta" placeholder="Escreva apenas o número" required><br>
+                </div>
+                <label class="text-secondary">Descrição do Projeto:</label>
+                <div>
+                    <textarea class="border border-1 rounded p-2 w-100 mb-3" id="descricao" name="descricao" placeholder="Escreva do que se trata o projeto" required></textarea>
+                </div>
+            </div>
+                <div class="text-center">
+                    <button class="btn btn-secondary mb-3 border p-2 botao-verde w-50" type="submit">Criar Projeto</button>
+                </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

@@ -107,3 +107,10 @@
     transform: translateX(-50%); /* Ajusta a centralização */
     text-align: center;
 }
+.background005{
+    background-color: rgb(163, 166, 81, 0.05);
+}
+
+.backgroundnormal{
+    background-color: #A3A651;
+}

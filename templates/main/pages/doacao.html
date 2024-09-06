@@ -108,7 +108,7 @@
         margin-top: 5%;
     }
 
-    .valor-adicional > p {
+    .valor-adicional>p {
         font-size: x-small;
         margin-bottom: 0.5rem;
         font-weight: bold;
@@ -118,46 +118,60 @@
         margin-top: 3%;
         margin-left: 40%;
     }
+    .doacao-superior{
+        text-align: center;
+        color: white;
+    }
 </style>
 
-<div class="container-doacao">
-    <div class="container-passos">
-    </div>
-    <h5>Quero doar:</h5>
-    <div class="medalhas">
-        <div class="medalha-ouro"><img src="/static/img/gold-medal.png" alt="Medalha de Ouro"></div>
-        <div class="medalha-prata"><img src="/static/img/silver-medal.png" alt="Medalha de Prata"></div>
-        <div class="medalha-bronze"><img src="/static/img/bronze-medal.png" alt="Medalha de Bronze"></div>
-    </div>
-    <div class="opcoes">
-        <button class="opcao-doacao">
-            <h3>R$60,00</h3>
-            <h6>O doador terá seu nome exibido na categoria ouro</h6>
-        </button>
-        <button class="opcao-doacao">
-            <h3>R$35,00</h3>
-            <h6>O doador terá seu nome exibido na categoria prata</h6>
-        </button>
-        <button class="opcao-doacao">
-            <h3>R$15,00</h3>
-            <h6>O doador terá seu nome exibido na categoria bronze</h6>
-        </button>
-    </div>
-    <h6 class="non-container">Quer doar mais? Insira abaixo a quantia desejada</h6>
+<div class="row flex-column justify-content-center">
 
-    <div class="valor-adicional">
-        <p>Apenas valores acima de R$60,00</p>
-        <input class="form-control me-1 input-custom" type="search" placeholder="ex: R$100,00" aria-label="Search">
+    
+    <div class="col-6 mx-auto backgroundnormal p-4 rounded-top-4 doacao-superior">
+        <h1>DOACAO</h1><br>
+        <h3>DOE PARA UM PROJETO</h3>
+        <br>
+        <h6>"SUA DOAÇÃO HOJE É A ESPERANÇA DE UM FUTURO MELHOR DE AMANHÃ."</h6>
+
     </div>
-    <a href="#" class="btn fw-semibold d-grid col-2 confirmar" style="color:white; background-color:#A3A651;">Confirmar</a>
+    <div class="col-6 mx-auto  background005 p-4 rounded-bottom-4">
+        <h5>Quero doar:</h5>
+        <div class="medalhas">
+            <div class="medalha-ouro"><img src="/static/img/gold-medal.png" alt="Medalha de Ouro"></div>
+            <div class="medalha-prata"><img src="/static/img/silver-medal.png" alt="Medalha de Prata"></div>
+            <div class="medalha-bronze"><img src="/static/img/bronze-medal.png" alt="Medalha de Bronze"></div>
+        </div>
+        <div class="d-flex gap-5">
+            <button class="opcao-doacao">
+                <h3>R$60,00</h3>
+                <h6>O doador terá seu nome exibido na categoria ouro</h6>
+            </button>
+            <button class="opcao-doacao">
+                <h3>R$35,00</h3>
+                <h6>O doador terá seu nome exibido na categoria prata</h6>
+            </button>
+            <button class="opcao-doacao">
+                <h3>R$15,00</h3>
+                <h6>O doador terá seu nome exibido na categoria bronze</h6>
+            </button>
+        </div>
+        <h6 class="non-container">Quer doar mais? Insira abaixo a quantia desejada</h6>
+
+        <div class="valor-adicional">
+            <p>Apenas valores acima de R$60,00</p>
+            <input class="form-control me-1 input-custom" type="search" placeholder="ex: R$100,00" aria-label="Search">
+        </div>
+        <a href="#" class="btn fw-semibold d-grid col-2 confirmar"
+            style="color:white; background-color:#A3A651;">Confirmar</a>
+    </div>
 </div>
 
 <script>
     document.querySelectorAll('.opcao-doacao').forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             // Remove a classe 'active' de todos os botões
             document.querySelectorAll('.opcao-doacao').forEach(btn => btn.classList.remove('active'));
-            
+
             // Adiciona a classe 'active' ao botão clicado
             this.classList.add('active');
         });

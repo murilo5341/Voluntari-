@@ -11,14 +11,6 @@
         position: relative;
     }
 
-    .container-passos {
-        text-align: center;
-        font-family: "Lato", sans-serif;
-        font-weight: bold;
-        color: #2E331C;
-        margin-bottom: 2rem;
-    }
-
     .medalhas {
         display: flex;
         justify-content: center;
@@ -48,24 +40,19 @@
         flex: 1 1 30%;
         cursor: pointer;
         transition: background-color 0.3s, border-color 0.3s, transform 0.5s;
-        box-shadow: 0 0 0 transparent;
         z-index: 1;
     }
 
     .opcao-doacao:hover {
-        background-color: rgb(208, 208, 208, 0.05);
+        background-color: rgba(208, 208, 208, 0.05);
         border-color: #8a9a5b;
     }
 
-    .opcao-doacao:active {
-        transform: scale(1.2);
-        z-index: 2;
-    }
-
+    .opcao-doacao:active,
     .opcao-doacao.active {
         transform: scale(1.2);
         z-index: 2;
-        background-color: rgb(208, 208, 208, 0.05);
+        background-color: rgba(208, 208, 208, 0.05);
         border-color: #8a9a5b;
     }
 
@@ -77,18 +64,8 @@
         color: #666;
     }
 
-    .medalha-ouro,
-    .medalha-prata,
-    .medalha-bronze {
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-
     .non-container {
         text-align: center;
-        font-family: 'Lato';
-        font-style: normal;
         margin-top: 4%;
     }
 
@@ -117,10 +94,12 @@
         margin-top: 3%;
         margin-left: 40%;
     }
-    .doacao-superior{
+
+    .doacao-superior {
         text-align: center;
         color: white;
     }
+
     .image-top-container {
         width: 100px;
         display: block;
@@ -128,22 +107,24 @@
         margin-top: 3%;
         margin-bottom: 5%;
     }
+    .principal{
+        align-self: center;
+        margin-bottom: 10%;
+    }
 </style>
+
 <div class="custom-container">
     <img src="/static/img/logo/logopreta.png" alt="Doação" class="image-top-container">
 </div>
 
-<div class="row flex-column justify-content-center">
-
-    
+<div class="row flex-column justify-content-center principal">
     <div class="col-6 mx-auto backgroundnormal p-4 rounded-top-4 doacao-superior">
-        <h1>DOACAO</h1><br>
+        <h1>DOAÇÃO</h1><br>
         <h3>DOE PARA UM PROJETO</h3>
         <br>
         <h6>"SUA DOAÇÃO HOJE É A ESPERANÇA DE UM FUTURO MELHOR DE AMANHÃ."</h6>
-
     </div>
-    <div class="col-6 mx-auto  background005 p-4 rounded-bottom-4">
+    <div class="col-6 mx-auto background005 p-4 rounded-bottom-4">
         <h5>Quero doar:</h5>
         <div class="medalhas">
             <div class="medalha-ouro"><img src="/static/img/gold-medal.png" alt="Medalha de Ouro"></div>
@@ -178,10 +159,7 @@
 <script>
     document.querySelectorAll('.opcao-doacao').forEach(button => {
         button.addEventListener('click', function () {
-            // Remove a classe 'active' de todos os botões
             document.querySelectorAll('.opcao-doacao').forEach(btn => btn.classList.remove('active'));
-
-            // Adiciona a classe 'active' ao botão clicado
             this.classList.add('active');
         });
     });

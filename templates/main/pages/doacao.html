@@ -4,14 +4,12 @@
 {% block custom_header %}{% endblock %}
 {% block conteudo %}
 <style>
-
     .container-doacao {
         background-color: rgba(46, 51, 28, 0.05);
         margin: 8% 18%;
         padding: 2cm;
         border-radius: 3%;
         position: relative;
-        /* Permite o posicionamento absoluto dos elementos internos */
     }
 
     .container-passos {
@@ -20,7 +18,6 @@
         font-weight: bold;
         color: #2E331C;
         margin-bottom: 2rem;
-        /* Adiciona um espaço entre o título e as medalhas */
     }
 
     .medalhas {
@@ -28,7 +25,6 @@
         justify-content: center;
         gap: 1rem;
         margin-bottom: 2rem;
-        /* Espaço entre as medalhas e as opções de doação */
     }
 
     .medalhas img {
@@ -46,14 +42,40 @@
 
     .opcao-doacao {
         background-color: white;
+        border: 2px solid #A3A651;
         border-radius: 5%;
         text-align: center;
         padding: 1rem;
         flex: 1 1 30%;
+        cursor: pointer;
+        transition: background-color 0.3s, border-color 0.3s, transform 0.5s;
+        box-shadow: 0 0 0 transparent;
+        z-index: 1;
     }
 
-    .opcao-doacao > h3 {
+    .opcao-doacao:hover {
+        background-color: rgb(208, 208, 208, 0.05);
+        border-color: #8a9a5b;
+    }
+
+    .opcao-doacao:active {
+        transform: scale(1.2);
+        z-index: 2;
+    }
+
+    .opcao-doacao.active {
+        transform: scale(1.2);
+        z-index: 2;
+        background-color: rgb(208, 208, 208, 0.05);
+        border-color: #8a9a5b;
+    }
+
+    .opcao-doacao h3 {
         color: rgb(163, 166, 81);
+    }
+
+    .opcao-doacao h6 {
+        color: #666;
     }
 
     .medalha-ouro,
@@ -92,12 +114,14 @@
         font-weight: bold;
     }
 
+    .confirmar {
+        margin-top: 3%;
+        margin-left: 40%;
+    }
 </style>
 
 <div class="container-doacao">
     <div class="container-passos">
-        <!-- Adicione aqui quaisquer etapas ou indicadores de progresso, se necessário -->
-        a
     </div>
     <h5>Quero doar:</h5>
     <div class="medalhas">
@@ -106,29 +130,38 @@
         <div class="medalha-bronze"><img src="/static/img/bronze-medal.png" alt="Medalha de Bronze"></div>
     </div>
     <div class="opcoes">
-        <div class="opcao-doacao">
+        <button class="opcao-doacao">
             <h3>R$60,00</h3>
             <h6>O doador terá seu nome exibido na categoria ouro</h6>
-        </div>
-        <div class="opcao-doacao">
-            <h3>R$60,00</h3>
-            <h6>O doador terá seu nome exibido na categoria ouro</h6>
-        </div>
-        <div class="opcao-doacao">
-            <h3>R$60,00</h3>
-            <h6>O doador terá seu nome exibido na categoria ouro</h6>
-        </div>
+        </button>
+        <button class="opcao-doacao">
+            <h3>R$35,00</h3>
+            <h6>O doador terá seu nome exibido na categoria prata</h6>
+        </button>
+        <button class="opcao-doacao">
+            <h3>R$15,00</h3>
+            <h6>O doador terá seu nome exibido na categoria bronze</h6>
+        </button>
     </div>
-    <h6 class="non-container">quer doar mais? insira abaixo a quantia desejada</h6>
-    
+    <h6 class="non-container">Quer doar mais? Insira abaixo a quantia desejada</h6>
+
     <div class="valor-adicional">
-        <p>apenas valores acima de R$60,00</p>
+        <p>Apenas valores acima de R$60,00</p>
         <input class="form-control me-1 input-custom" type="search" placeholder="ex: R$100,00" aria-label="Search">
-        
-        
     </div>
-    <a href="#" class="btn fw-semibold d-grid col-2 confirmar" style="color:white; background-color:#A3A651;">confirmar</a>
-    
+    <a href="#" class="btn fw-semibold d-grid col-2 confirmar" style="color:white; background-color:#A3A651;">Confirmar</a>
 </div>
+
+<script>
+    document.querySelectorAll('.opcao-doacao').forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove a classe 'active' de todos os botões
+            document.querySelectorAll('.opcao-doacao').forEach(btn => btn.classList.remove('active'));
+            
+            // Adiciona a classe 'active' ao botão clicado
+            this.classList.add('active');
+        });
+    });
+</script>
 
 {% endblock %}

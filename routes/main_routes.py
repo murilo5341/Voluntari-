@@ -74,9 +74,14 @@ async def get_ingressarProjeto(request: Request):
 @router.get("/bloquearprojeto", response_class=HTMLResponse)
 async def get_bloquearProjeto(request: Request):
     return templates.TemplateResponse("pages/bloquearProjeto.html", {"request": request})
+
 @router.get("/assinatura", response_class=HTMLResponse)
-async def get_root(request: Request):
+async def get_assinatura(request: Request):
     return templates.TemplateResponse("pages/assinatura.html", {"request": request})
+
+@router.get("/criarprojeto", response_class=HTMLResponse)
+async def get_criarProjeto(request: Request):
+    return templates.TemplateResponse("pages/criarProjeto.html", {"request": request})
 
 
 

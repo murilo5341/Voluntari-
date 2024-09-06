@@ -77,8 +77,6 @@ async def get_bloquearProjeto(request: Request):
 @router.get("/assinatura", response_class=HTMLResponse)
 async def get_root(request: Request):
     return templates.TemplateResponse("pages/assinatura.html", {"request": request})
-
-
-
-
-
+@router.get("/doacao", response_class=HTMLResponse)
+async def get_root(request: Request):
+    return templates.TemplateResponse("pages/doacao.html", {"request": request})

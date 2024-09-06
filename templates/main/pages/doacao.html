@@ -4,6 +4,7 @@
 {% block custom_header %}{% endblock %}
 {% block conteudo %}
 <style>
+
     .container-doacao {
         background-color: rgba(46, 51, 28, 0.05);
         margin: 8% 18%;
@@ -51,7 +52,7 @@
         flex: 1 1 30%;
     }
 
-    .opcao-doacao>h3 {
+    .opcao-doacao > h3 {
         color: rgb(163, 166, 81);
     }
 
@@ -61,14 +62,36 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-
     }
-    .non-container{
+
+    .non-container {
         text-align: center;
-        font-family: 'lato';
+        font-family: 'Lato';
         font-style: normal;
         margin-top: 4%;
     }
+
+    .input-custom {
+        width: 40%;
+        display: block;
+    }
+
+    .input-custom::placeholder {
+        color: #888;
+        font-size: 1em;
+    }
+
+    .valor-adicional {
+        margin-left: 35%;
+        margin-top: 5%;
+    }
+
+    .valor-adicional > p {
+        font-size: x-small;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+    }
+
 </style>
 
 <div class="container-doacao">
@@ -81,9 +104,6 @@
         <div class="medalha-ouro"><img src="/static/img/gold-medal.png" alt="Medalha de Ouro"></div>
         <div class="medalha-prata"><img src="/static/img/silver-medal.png" alt="Medalha de Prata"></div>
         <div class="medalha-bronze"><img src="/static/img/bronze-medal.png" alt="Medalha de Bronze"></div>
-
-
-
     </div>
     <div class="opcoes">
         <div class="opcao-doacao">
@@ -100,6 +120,15 @@
         </div>
     </div>
     <h6 class="non-container">quer doar mais? insira abaixo a quantia desejada</h6>
+    
+    <div class="valor-adicional">
+        <p>apenas valores acima de R$60,00</p>
+        <input class="form-control me-1 input-custom" type="search" placeholder="ex: R$100,00" aria-label="Search">
+        
+        
+    </div>
+    <a href="#" class="btn fw-semibold d-grid col-2 confirmar" style="color:white; background-color:#A3A651;">confirmar</a>
+    
 </div>
 
 {% endblock %}

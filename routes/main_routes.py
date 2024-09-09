@@ -91,6 +91,11 @@ async def get_doacao(request: Request):
 async def get_modalidadesPatrocinio(request: Request):
     return templates.TemplateResponse("pages/modalidadesPatrocinio.html", {"request": request})
 
+@router.get("/esquecisenha", response_class=HTMLResponse)
+async def get_EsqueciSenha(request: Request):
+    return templates.TemplateResponse("pages/esquecisenha.html", {"request": request})
+
+
 
 
 

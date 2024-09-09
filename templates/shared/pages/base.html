@@ -10,9 +10,7 @@
     <title>VoluntariÊ :: {% block subtitulo %}{% endblock %}</title>
     </head>
 <body class="d-flex flex-column min-vh-100">
-    {% block custom_header %}
     {%include "includes/header.html"%}
-    {% endblock %}
     <main class="container">
         {% block conteudo %}{% endblock %}
     </main>
@@ -20,3 +18,10 @@
     <script src="/static/lib/bootstrap/js/bootstrap.bundle.js"></script>
 </body>
 </html>
+
+<!--
+se algo ficar errado, só to fazendo oq o professor falou que fica melhor(Pedro)
+    {% block custom_header %}
+    {%include "includes/header.html"%}
+    {% endblock %}
+-->

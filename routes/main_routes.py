@@ -95,6 +95,13 @@ async def get_modalidadesPatrocinio(request: Request):
 async def get_EsqueciSenha(request: Request):
     return templates.TemplateResponse("pages/esquecisenha.html", {"request": request})
 
+@router.get("/cadastrarpatrocinador", response_class=HTMLResponse)
+async def get_cadastrarPatrocinador(request: Request):
+    return templates.TemplateResponse("pages/cadastrarPatrocinador.html", {"request": request})
+
+@router.get("/exibirmoderador", response_class=HTMLResponse)
+async def get_exibirModerador(request: Request):
+    return templates.TemplateResponse("pages/exibirModerador.html", {"request": request})
 
 
 

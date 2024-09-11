@@ -18,3 +18,7 @@ async def get_bloquearProjeto(request: Request):
 @router.get("/denunciaprojeto", response_class=HTMLResponse)
 async def get_denunciaProjeto(request: Request):
     return templates.TemplateResponse("pages/denunciaProjeto.html", {"request": request})
+
+@router.get("/cadastrarpatrocinador", response_class=HTMLResponse)
+async def get_cadastrarPatrocinador(request: Request):
+    return templates.TemplateResponse("pages/cadastrarPatrocinador.html", {"request": request})

@@ -98,7 +98,9 @@ async def get_EsqueciSenha(request: Request):
 @router.get("/verificaremail", response_class=HTMLResponse)
 async def get_EsqueciSenha(request: Request):
     return templates.TemplateResponse("pages/verificaremail.html", {"request": request})
-
+@router.get("/sobre", response_class=HTMLResponse)
+async def get_EsqueciSenha(request: Request):
+    return templates.TemplateResponse("pages/sobre.html", {"request": request})
 
 
 

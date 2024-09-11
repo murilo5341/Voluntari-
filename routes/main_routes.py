@@ -95,6 +95,10 @@ async def get_modalidadesPatrocinio(request: Request):
 async def get_EsqueciSenha(request: Request):
     return templates.TemplateResponse("pages/esquecisenha.html", {"request": request})
 
+@router.get("/verificaremail", response_class=HTMLResponse)
+async def get_EsqueciSenha(request: Request):
+    return templates.TemplateResponse("pages/verificaremail.html", {"request": request})
+
 
 
 

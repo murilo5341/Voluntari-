@@ -42,3 +42,7 @@ async def get_doacao(request: Request):
 @router.get("/excluirprojeto", response_class=HTMLResponse)
 async def get_excluirProjeto(request: Request):
     return templates.TemplateResponse("pages/excluirProjeto.html", {"request": request})
+
+@router.get("/projetosingressados", response_class=HTMLResponse)
+async def get_projetosIngressados(request: Request):
+    return templates.TemplateResponse("pages/projetosingressados.html", {"request": request})

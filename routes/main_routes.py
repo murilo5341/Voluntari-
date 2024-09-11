@@ -43,10 +43,6 @@ async def get_modalidadesPatrocinio(request: Request):
 async def get_EsqueciSenha(request: Request):
     return templates.TemplateResponse("pages/esquecisenha.html", {"request": request})
 
-@router.get("/projetosingressados", response_class=HTMLResponse)
-async def get_projetosIngressados(request: Request):
-    return templates.TemplateResponse("pages/projetosingressados.html", {"request": request})
-
 @router.get("/patrocinador", response_class=HTMLResponse)
 async def get_root(request: Request):
     return templates.TemplateResponse("pages/patrocinador.html", {"request": request})

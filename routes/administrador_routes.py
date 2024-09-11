@@ -11,3 +11,10 @@ templates = obter_jinja_templates("templates/administrador")
 async def get_root(request: Request):
     return templates.TemplateResponse("pages/index.html", {"request": request})
 
+@router.get("/bloquearprojeto", response_class=HTMLResponse)
+async def get_bloquearProjeto(request: Request):
+    return templates.TemplateResponse("pages/bloquearProjeto.html", {"request": request})
+
+@router.get("/denunciaprojeto", response_class=HTMLResponse)
+async def get_denunciaProjeto(request: Request):
+    return templates.TemplateResponse("pages/denunciaProjeto.html", {"request": request})

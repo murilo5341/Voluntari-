@@ -47,10 +47,6 @@ async def get_termos(request: Request):
 async def get_termos(request: Request):
     return templates.TemplateResponse("pages/colaboradores.html", {"request": request})
 
-@router.get("/patrocinador", response_class=HTMLResponse)
-async def get_termos(request: Request):
-    return templates.TemplateResponse("pages/patrocinador.html", {"request": request})
-
 @router.get("/denunciaprojeto", response_class=HTMLResponse)
 async def get_denunciaProjeto(request: Request):
     return templates.TemplateResponse("pages/denunciaProjeto.html", {"request": request})
@@ -95,8 +91,11 @@ async def get_modalidadesPatrocinio(request: Request):
 async def get_EsqueciSenha(request: Request):
     return templates.TemplateResponse("pages/esquecisenha.html", {"request": request})
 
+@router.get("/projetosingressados", response_class=HTMLResponse)
+async def get_projetosIngressados(request: Request):
+    return templates.TemplateResponse("pages/projetosingressados.html", {"request": request})
 
-
-
-
+@router.get("/patrocinador", response_class=HTMLResponse)
+async def get_root(request: Request):
+    return templates.TemplateResponse("pages/patrocinador.html", {"request": request})
 

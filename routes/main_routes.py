@@ -27,18 +27,6 @@ async def get_termos(request: Request):
 async def get_termos(request: Request):
     return templates.TemplateResponse("pages/ajuda.html", {"request": request})
 
-@router.get("/perfil", response_class=HTMLResponse)
-async def get_termos(request: Request):
-    return templates.TemplateResponse("pages/perfil.html", {"request": request})
-
-@router.get("/assinaturadousuarioassinante", response_class=HTMLResponse)
-async def get_termos(request: Request):
-    return templates.TemplateResponse("pages/assinaturadousuarioassinante.html", {"request": request})
-
-@router.get("/desativarconta", response_class=HTMLResponse)
-async def get_termos(request: Request):
-    return templates.TemplateResponse("pages/desativarconta.html", {"request": request})
-
 @router.get("/projetos", response_class=HTMLResponse)
 async def get_termos(request: Request):
     return templates.TemplateResponse("pages/projetos.html", {"request": request})
@@ -46,42 +34,6 @@ async def get_termos(request: Request):
 @router.get("/colaboradores", response_class=HTMLResponse)
 async def get_termos(request: Request):
     return templates.TemplateResponse("pages/colaboradores.html", {"request": request})
-
-@router.get("/denunciaprojeto", response_class=HTMLResponse)
-async def get_denunciaProjeto(request: Request):
-    return templates.TemplateResponse("pages/denunciaProjeto.html", {"request": request})
-
-@router.get("/excluirprojeto", response_class=HTMLResponse)
-async def get_excluirProjeto(request: Request):
-    return templates.TemplateResponse("pages/excluirProjeto.html", {"request": request})
-
-@router.get("/avaliacoes", response_class=HTMLResponse)
-async def get_avaliacoes(request: Request):
-    return templates.TemplateResponse("pages/avaliacoes.html", {"request": request})
-
-@router.get("/visualizarprojeto", response_class=HTMLResponse)
-async def get_visualizarProjeto(request: Request):
-    return templates.TemplateResponse("pages/visualizarProjeto.html", {"request": request})
-
-@router.get("/ingressarprojeto", response_class=HTMLResponse)
-async def get_ingressarProjeto(request: Request):
-    return templates.TemplateResponse("pages/ingressarProjeto.html", {"request": request})
-
-@router.get("/bloquearprojeto", response_class=HTMLResponse)
-async def get_bloquearProjeto(request: Request):
-    return templates.TemplateResponse("pages/bloquearProjeto.html", {"request": request})
-
-@router.get("/assinatura", response_class=HTMLResponse)
-async def get_assinatura(request: Request):
-    return templates.TemplateResponse("pages/assinatura.html", {"request": request})
-
-@router.get("/criarprojeto", response_class=HTMLResponse)
-async def get_criarProjeto(request: Request):
-    return templates.TemplateResponse("pages/criarProjeto.html", {"request": request})
-
-@router.get("/doacao", response_class=HTMLResponse)
-async def get_doacao(request: Request):
-    return templates.TemplateResponse("pages/doacao.html", {"request": request})
 
 @router.get("/modalidadespatrocinio", response_class=HTMLResponse)
 async def get_modalidadesPatrocinio(request: Request):
@@ -98,9 +50,11 @@ async def get_projetosIngressados(request: Request):
 @router.get("/patrocinador", response_class=HTMLResponse)
 async def get_root(request: Request):
     return templates.TemplateResponse("pages/patrocinador.html", {"request": request})
+
 @router.get("/verificaremail", response_class=HTMLResponse)
 async def get_EsqueciSenha(request: Request):
     return templates.TemplateResponse("pages/verificaremail.html", {"request": request})
+
 @router.get("/sobre", response_class=HTMLResponse)
 async def get_EsqueciSenha(request: Request):
     return templates.TemplateResponse("pages/sobre.html", {"request": request})

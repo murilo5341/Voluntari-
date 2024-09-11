@@ -9,7 +9,3 @@ templates = obter_jinja_templates("templates/moderador")
 @router.get("/", response_class=HTMLResponse)
 async def get_root(request: Request):
     return templates.TemplateResponse("pages/index.html", {"request": request})
-
-
-
-""

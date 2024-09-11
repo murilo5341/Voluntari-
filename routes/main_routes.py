@@ -98,4 +98,14 @@ async def get_projetosIngressados(request: Request):
 @router.get("/patrocinador", response_class=HTMLResponse)
 async def get_root(request: Request):
     return templates.TemplateResponse("pages/patrocinador.html", {"request": request})
+@router.get("/verificaremail", response_class=HTMLResponse)
+async def get_EsqueciSenha(request: Request):
+    return templates.TemplateResponse("pages/verificaremail.html", {"request": request})
+@router.get("/sobre", response_class=HTMLResponse)
+async def get_EsqueciSenha(request: Request):
+    return templates.TemplateResponse("pages/sobre.html", {"request": request})
+
+
+
+
 

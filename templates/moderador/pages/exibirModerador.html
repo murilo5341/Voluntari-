@@ -1,0 +1,183 @@
+{% extends "pages/base.html" %}
+
+{% block subtitulo %}Cadastrar Patrocinador{% endblock %}
+{% block conteudo %}
+
+<style>
+    .container-options {
+        width: 100%;
+        max-width: 400px;
+        margin-top: 80px;
+        background-color: #ffffff;
+        padding: 20px;
+    }
+    .container-forms {
+        margin-top: 40px;
+        background-color: #2e331c07;
+        padding: 40px; /* Espaçamento interno do container */
+        width: 90%; /* Ajustei a largura para maior controle */
+        max-width: 1000px; /* Aumentei a largura máxima para dar mais espaço */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .botao-verde {
+        --bs-btn-bg: #aeb073;
+    }
+    .person {
+        color: #aeb073;
+    }
+    .link-ativo {
+        color: #aeb073 !important;
+    }
+    .campo {
+        width: 100%;
+    }
+    .input-group {
+        width: 100%;
+    }
+    .form-title {
+        font-size: 24px;
+        text-align: left; /* Alinha o título à esquerda */
+        margin-bottom: 20px;
+    }
+    .profile-username {
+        color: #2E331C;
+        opacity: 0.61;
+        font-size: 18px;
+        margin-top: 10px;
+    }
+    .project-stats {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px; /* Ajustei o espaçamento superior */
+        align-items: center;
+    }
+    .project-stats div {
+        font-size: 16px;
+        margin-right: 30px; /* Ajustei o espaço entre os itens */
+    }
+    .project-stats .stat-number {
+        background-color: #A3A651;
+        color: #ffffff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+    .moderador-since {
+        font-size: 14px;
+        color: #2E331C;
+        opacity: 0.75;
+        margin-top: 20px; /* Espaçamento superior */
+        text-align: left; /* Alinha o texto à esquerda */
+    }
+    .moderador-since span {
+        color: #A3A651; /* Cor da data */
+    }
+    .info-container {
+        text-align: center; /* Centraliza o texto */
+    }
+    .info-container .title {
+        font-size: 16px;
+        margin: 10px 0; /* Espaçamento vertical */
+    }
+    .delete-link {
+        text-align: center;
+        margin-top: 20px; /* Espaçamento superior */
+        margin-bottom: 40px; /* Espaçamento inferior */
+    }
+    .delete-link a {
+        color: rgba(46, 51, 28, 0.59); /* Cor #2E331C com 59% de opacidade */
+        font-size: 16px;
+        text-decoration: none; /* Remove o sublinhado */
+    }
+    .delete-link a:hover {
+        text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+    }
+    @media (max-width: 576px) {
+        .container-options, .container-forms {
+            width: 100%;
+            max-width: 100%;
+        }
+        .project-stats {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .project-stats div {
+            margin-bottom: 15px;
+            margin-right: 0;
+        }
+    }
+</style>
+
+<div class="container my-3">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="container-options p-3 rounded">
+                <div class="row g-2">
+                    <div class="col-12">
+                        <h5><i class="person bi bi-person"></i>Minha Conta</h5>
+                    </div>
+                    <div class="col-12">
+                        <a href="meuPerfil" class="link-dark link-underline-opacity-0">Meu Perfil</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="projetosIngressados" class="link-dark link-underline-opacity-0">Denúncias de Projetos</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="projetosCriados" class="link-dark link-underline-opacity-0">Patrocinadores</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="projetosFinalizados" class="link-dark link-underline-opacity-0">Administradores</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="doacoes" class="link-dark link-underline-opacity-0  link-ativo">Moderadores</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="solicitarExclusao" class="link-dark link-underline-opacity-0">Denúncias de Voluntários</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="notificao" class="link-dark link-underline-opacity-0">Notificações</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="alterarSenha" class="link-dark link-underline-opacity-0">Cadastrar novo Patrocínio</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="/assinatura" class="link-dark link-underline-opacity-0">Alterar Senha</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="container-forms p-3 rounded">
+                <div class="form-title">Perfil Moderador</div>
+                <div class="text-center">
+                    <img src="/static/img/quemSomos.png" class="rounded-circle img-fluid" alt="..." style="width: 200px; height: 200px;">
+                    <div class="profile-username">@nickmoderador</div>
+                </div>
+
+                <div class="info-container mb-4">
+                    <div class="title">Nome: Joana D'Arc</div>
+                    <div class="title">Celular: (28)999436131</div>
+                    <div class="title">Email: Joanadarc0@gmail.com</div>
+                </div>
+
+                <div class="project-stats">
+                    <div>Projetos Criados: <span class="stat-number">6</span></div>
+                    <div>Projetos Participados: <span class="stat-number">8</span></div>
+                </div>
+
+                <div class="moderador-since">
+                    Moderador desde: <span>5 de julho de 2024</span>
+                </div>
+            </div>
+            <div class="delete-link">
+                <a href="/excluirModerador" onclick="return confirm('Tem certeza que deseja excluir este moderador?');">Excluir moderador</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+

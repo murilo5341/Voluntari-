@@ -1,8 +1,59 @@
 {% extends 'pages/base_fundo_sobre.html' %}
 {% block subtitulo %}
-    
+sobre
 {% endblock %}
 
 {% block conteudo %}
-    
+<style>
+    .letra {
+        color: #2E331C;
+        font-weight: normal;
+        margin-bottom: 4%;
+    }
+
+    .letrasemopacidade {
+        color: rgba(46, 51, 28, 0.5);
+        /* Mantém a opacidade */
+        font-weight: normal;
+        margin-bottom: 4%;
+        font-style: italic;
+        /* Adiciona um toque elegante */
+        letter-spacing: 0.05em;
+        /* Aumenta o espaçamento entre letras */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        /* Sombra suave */
+    }
+</style>
+
+<div class="green-rectangle rounded mt-5 mx-auto mb-5"></div><br><br>
+
+<h2>Nossa missão</h2>
+<h5 class="letra">
+    Bem-vindo ao VoluntariÊ, a sua plataforma dedicada a tornar os projetos voluntários mais acessíveis e eficientes.
+    Nosso propósito é simples e poderoso: conectar pessoas que desejam fazer a diferença com oportunidades
+    significativas de voluntariado, facilitando tanto a descoberta de projetos existentes quanto a criação de novas
+    iniciativas.
+</h5>
+<h5 class="letra">Acreditamos que cada um de nós possui o poder de transformar a realidade ao nosso redor. Por isso,
+    aqui no VoluntariÊ, trabalhamos arduamente para tornar visíveis todos os tipos de projetos voluntários, desde ações
+    locais até campanhas globais. Queremos que qualquer pessoa, em qualquer lugar, encontre um projeto que ressoe com
+    seus interesses e valores, para que possam contribuir de forma genuína e significativa para causas que são
+    importantes para elas.</h5>
+<h5 class="letra">Seja você um voluntário experiente ou alguém que está apenas começando a explorar o impacto positivo
+    que pode gerar, o VoluntariÊ é o seu ponto de partida para transformar intenções em ações concretas. </h5>
+<h5 class="letrasemopacidade">Conecte-se conosco hoje e faça parte de uma rede vibrante de agentes de mudança que estão
+    tornando o mundo um lugar mais solidário e compassivo para todos.
+</h5>
+<!--
+<div class="imagemebotao d-flex allign-items-center justify-content-center mb-5">
+    <img src="/static/img/logo/logoverdeclaro.png" alt="logoverde" height="80px">
+    oi
+</div>
+-->
+<div class="d-flex flex-column align-items-center mb-5">
+    <img src="/static/img/logo/logoverdeclaro.png" alt="logoverde" height="80px">
+
+
+</div>
+
 {% endblock %}

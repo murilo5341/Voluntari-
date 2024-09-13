@@ -1,29 +1,63 @@
-{% extends "pages/base_fundo_projeto.html" %}
+{% extends "pages/base_fundo.html" %}
 {% block subtitulo %}Principal{% endblock %}
 {% block conteudo %}
+<style>
+  div.bg-header {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url('/static/img/projetos.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+
+  }
+  h1{
+    padding-top: 400px;
+   }
+
+</style>
+<div class="bg-header">
+  <h1 class="text-center fw-bold text-light fixed-text">Você também pode criar um <br> projeto!</h1><br>
+  <p class="text-center text-light fixed-text">Quem ama preserva, quem ama ajuda</p><br>
+  <a href="#" class="btn fw-semibold d-grid col-2 mx-auto fixed-text"
+    style="color:white; background-color:#A3A651;">Crie seu projeto</a>
+    
+</div>
+<div class="min-vh-100"></div>
 <br>
 <p class="text-secondary">Ordenar Por</p>
-<select class="form-select form-select mb-3 " aria-label="default select example" style="width: 150px; font-size: 16px; padding: 5px;">
-    <option selected>Todos</option>    
-    <option value="1">Relevantes</option>
-    <option value="2">Disponível</option>
-    <option value="3">Recém Criados</option>
-  </select>
+<select class="form-select form-select mb-3 " aria-label="default select example"
+  style="width: 150px; font-size: 16px; padding: 5px;">
+  <option selected>Todos</option>
+  <option value="1">Relevantes</option>
+  <option value="2">Disponível</option>
+  <option value="3">Recém Criados</option>
+</select>
 
 
-  <div class="cards-wrapper">
+<div class="cards-wrapper">
   <div class="card">
     <img src="/static/img/gatoabandonado.png" class="card-img-top " alt="...">
     <div class="card-body">
       <h5 class="card-title text-center fs-4">Abandono de Animais</h5>
       <h6 class="card-subtitle text-center">@nickCreator</h6>
-      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit, repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
+      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit,
+        repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit
+        aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
       <p>
         <span class="address">Rua Lorem Ipsum, 91, ES </span>
         <span class="date">19/02/2024</span>
       </p>
-      <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver projeto</a>
-      <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i> 8/10</p>
+      <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver
+        projeto</a>
+      <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i>
+        8/10</p>
     </div>
   </div>
   <div class="card">
@@ -31,13 +65,17 @@
     <div class="card-body">
       <h5 class="card-title text-center fs-4">Abandono de Animais</h5>
       <h6 class="card-subtitle text-center">@nickCreator</h6>
-      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit, repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
+      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit,
+        repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit
+        aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
       <p>
         <span class="address">Rua Lorem Ipsum, 91, ES </span>
         <span class="date">19/02/2024</span>
       </p>
-      <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver projeto</a>
-      <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i> 8/10</p>
+      <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver
+        projeto</a>
+      <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i>
+        8/10</p>
     </div>
   </div>
   <div class="card">
@@ -45,13 +83,17 @@
     <div class="card-body">
       <h5 class="card-title text-center fs-4">Abandono de Animais</h5>
       <h6 class="card-subtitle text-center">@nickCreator</h6>
-      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit, repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
+      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit,
+        repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit
+        aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
       <p>
         <span class="address">Rua Lorem Ipsum, 91, ES </span>
         <span class="date">19/02/2024</span>
       </p>
-      <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver projeto</a>
-      <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i> 8/10</p>
+      <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver
+        projeto</a>
+      <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i>
+        8/10</p>
     </div>
   </div>
   <!-- 3 CARDS POR LINHA -->
@@ -60,13 +102,17 @@
     <div class="card-body">
       <h5 class="card-title text-center fs-4">Abandono de Animais</h5>
       <h6 class="card-subtitle text-center">@nickCreator</h6>
-      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit, repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
+      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit,
+        repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit
+        aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
       <p>
         <span class="address">Rua Lorem Ipsum, 91, ES </span>
         <span class="date">19/02/2024</span>
       </p>
-      <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver projeto</a>
-      <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i> 8/10</p>
+      <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver
+        projeto</a>
+      <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i>
+        8/10</p>
     </div>
   </div>
   <div class="card">
@@ -74,13 +120,17 @@
     <div class="card-body">
       <h5 class="card-title text-center fs-4">Abandono de Animais</h5>
       <h6 class="card-subtitle text-center">@nickCreator</h6>
-      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit, repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
+      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit,
+        repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit
+        aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
       <p>
         <span class="address">Rua Lorem Ipsum, 91, ES </span>
         <span class="date">19/02/2024</span>
       </p>
-      <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver projeto</a>
-      <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i> 8/10</p>
+      <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver
+        projeto</a>
+      <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i>
+        8/10</p>
     </div>
   </div>
   <div class="card">
@@ -88,13 +138,17 @@
     <div class="card-body">
       <h5 class="card-title text-center fs-4">Abandono de Animais</h5>
       <h6 class="card-subtitle text-center">@nickCreator</h6>
-      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit, repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
+      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit,
+        repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit
+        aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
       <p>
         <span class="address">Rua Lorem Ipsum, 91, ES </span>
         <span class="date">19/02/2024</span>
       </p>
-      <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver projeto</a>
-      <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i> 8/10</p>
+      <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver
+        projeto</a>
+      <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i>
+        8/10</p>
     </div>
   </div>
   <!-- 3 CARDS POR LINHA -->
@@ -103,13 +157,17 @@
     <div class="card-body">
       <h5 class="card-title text-center fs-4">Abandono de Animais</h5>
       <h6 class="card-subtitle text-center">@nickCreator</h6>
-      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit, repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
+      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit,
+        repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit
+        aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
       <p>
         <span class="address">Rua Lorem Ipsum, 91, ES </span>
         <span class="date">19/02/2024</span>
       </p>
-      <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver projeto</a>
-      <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i> 8/10</p>
+      <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver
+        projeto</a>
+      <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i>
+        8/10</p>
     </div>
   </div>
   <div class="card">
@@ -117,13 +175,17 @@
     <div class="card-body">
       <h5 class="card-title text-center fs-4">Abandono de Animais</h5>
       <h6 class="card-subtitle text-center">@nickCreator</h6>
-      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit, repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
+      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit,
+        repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit
+        aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
       <p>
         <span class="address">Rua Lorem Ipsum, 91, ES </span>
         <span class="date">19/02/2024</span>
       </p>
-      <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver projeto</a>
-      <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i> 8/10</p>
+      <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver
+        projeto</a>
+      <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i>
+        8/10</p>
     </div>
   </div>
   <div class="card">
@@ -131,13 +193,17 @@
     <div class="card-body">
       <h5 class="card-title text-center fs-4">Abandono de Animais</h5>
       <h6 class="card-subtitle text-center">@nickCreator</h6>
-      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit, repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
+      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit,
+        repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit
+        aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
       <p>
         <span class="address">Rua Lorem Ipsum, 91, ES </span>
         <span class="date">19/02/2024</span>
       </p>
-      <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver projeto</a>
-      <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i> 8/10</p>
+      <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver
+        projeto</a>
+      <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i>
+        8/10</p>
     </div>
   </div>
 </div>

@@ -5,18 +5,13 @@
 
 <style>
     .container-options {
-        width: 100%;
-        max-width: 270px;
+        width: 270px;
         margin-top: 80px;
         background-color: #ffffff;
     }
     .container-forms {
         margin-top: 40px;
         background-color: #2e331c07;
-        padding: 20px;
-        max-width: 600px; /* Ajuste a largura máxima conforme necessário */
-        margin-left: auto;
-        margin-right: auto;
     }
     .botao-verde {
         --bs-btn-bg: #aeb073;
@@ -28,88 +23,46 @@
         color: #aeb073 !important;
     }
     .campo {
-        width: 100%;
+        width: 400px;
     }
-    .input-group {
-        width: 100%;
-    }
-    .form-title {
-        font-size: 20px;
-        text-align: center; /* Centraliza o título */
-    }
-    .btn-container {
-        text-align: center; /* Centraliza o botão */
-        margin-top: 20px;
-    }
-    @media (max-width: 576px) {
-        .container-options, .container-forms {
-            width: 100%;
-            max-width: 100%;
-        }
+    .form-label {
+        text-align: left;
+        font-weight: 500;
+        display: block;
+        margin-bottom: .5rem;
     }
 </style>
 
 <div class="container my-3">
     <div class="row">
-        <div class="col-md-4">
-            <div class="container-options p-3 rounded">
-                <div class="row g-2">
-                    <div class="col-12">
-                        <h5><i class="person bi bi-person"></i>Minha Conta</h5>
-                    </div>
-                    <div class="col-12">
-                        <a href="meuPerfil" class="link-dark link-underline-opacity-0">Meu Perfil</a>
-                    </div>
-                    <div class="col-12">
-                        <a href="projetosIngressados" class="link-dark link-underline-opacity-0">Denúncias de Projetos</a>
-                    </div>
-                    <div class="col-12">
-                        <a href="projetosCriados" class="link-dark link-underline-opacity-0 link-ativo">Patrocinadores</a>
-                    </div>
-                    <div class="col-12">
-                        <a href="projetosFinalizados" class="link-dark link-underline-opacity-0">Administradores</a>
-                    </div>
-                    <div class="col-12">
-                        <a href="doacoes" class="link-dark link-underline-opacity-0">Moderadores</a>
-                    </div>
-                    <div class="col-12">
-                        <a href="solicitarExclusao" class="link-dark link-underline-opacity-0">Denúncias de Voluntários</a>
-                    </div>
-                    <div class="col-12">
-                        <a href="notificao" class="link-dark link-underline-opacity-0">Notificações</a>
-                    </div>
-                    <div class="col-12">
-                        <a href="alterarSenha" class="link-dark link-underline-opacity-0">Cadastrar novo Patrocínio</a>
-                    </div>
-                    <div class="col-12">
-                        <a href="/assinatura" class="link-dark link-underline-opacity-0">Alterar Senha</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-8 d-flex justify-content-center">
+        {% include "includes/menuAdministrador.html" %}
+        <div class="col-md-6">
             <div class="container-forms p-3 rounded">
-                <div class="form-title">Cadastrar Patrocinador</div>
+                <div class="form-title d-flex justify-content-between ms-4" style="font-size: 30px;">
+                    Cadastrar Patrocinador
+                </div>
                 <div class="text-center">
                     <img src="/static/img/quemSomos.png" class="rounded-circle img-fluid" alt="..." style="width: 200px; height: 200px;">
                 </div><br>
 
-                <div class="input-group mb-3 mx-auto">
+                <div class="input-group mb-3 w-75 mx-auto">
                     <input type="file" class="form-control" id="inputGroupFile02">
                     <label class="input-group-text" for="inputGroupFile02">Upload</label>
                 </div>
 
                 <form action="/formulario_enviado" method="post">
-                    <div class="mb-3">
-                        <label for="nomeFantasia" class="form-label">Nome Fantasia:</label>
-                        <input type="text" id="nomeFantasia" class="form-control campo" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="cnpj" class="form-label">CNPJ:</label>
-                        <input type="text" id="cnpj" class="form-control campo" required>
-                    </div>
-                    <div class="btn-container">
-                        <button class="btn btn-secondary border p-2 botao-verde" type="submit">Cadastrar</button>
+                    <div class="w-75 text-center mt-3 container">
+                        <div class="text-start mb-3">
+                            <label for="nomeFantasia" class="form-label">Nome Fantasia:</label>
+                            <input type="text" id="nomeFantasia" class="campo border border-1 rounded p-2 mb-3 w-100" required>
+                        </div>
+                        <div class="text-start mb-3">
+                            <label for="cnpj" class="form-label">CNPJ:</label>
+                            <input type="text" id="cnpj" class="campo border border-1 rounded p-2 mb-3 w-100" required>
+                        </div>
+                        <div>
+                            <button class="btn btn-secondary mt-3 border p-2 botao-verde w-25" type="submit">Cadastrar</button>
+                        </div>
                     </div>
                 </form>
             </div>

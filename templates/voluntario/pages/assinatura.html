@@ -120,14 +120,6 @@
         margin-top: 30%;
 
     }
-
-
-
-    .botao-escolha {
-        display: inline-block;
-        margin-right: 15px;
-    }
-
     .botao-escolha-label h3 {
         display: inline;
         font-size: 18px;
@@ -169,9 +161,10 @@
                 </div>
                 <hr>
                 <div class="text-center">
+                    
                     <h3 class="escolherassinatura">Escolha qual assinatura é a sua cara</h3>
-
-                    <div class="botao-escolha">
+                    <div class="row">
+                    <div class="col">
                         <input class="botao-escolha-input" type="radio" name="flexRadioDefault" id="mensal">
                         <label class="botao-escolha-label" for="mensal">
                             <p>assinatura mensal</p>
@@ -179,7 +172,7 @@
                         </label>
                     </div>
 
-                    <div class="botao-escolha">
+                    <div class="col">
                         <input class="botao-escolha-input" type="radio" name="flexRadioDefault" id="anual">
                         <label class="botao-escolha-label" for="anual">
                             <p>assinatura anual</p>
@@ -187,7 +180,7 @@
                         </label>
                         <h4></h4>
                     </div>
-
+                </div>
                     <div class="text-center">
                         <a href="#" class="btn fw-semibold fixed-text"
                         style="color:white; background-color:#A3A651;">Junte-se a nós</a>

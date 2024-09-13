@@ -13,3 +13,9 @@ async def get_root(request: Request):
 @router.get("/exibirmoderador", response_class=HTMLResponse)
 async def get_exibirModerador(request: Request):
     return templates.TemplateResponse("pages/exibirModerador.html", {"request": request})
+
+@router.get("/perfilmoderador", response_class=HTMLResponse)
+async def get_perfilModerador(request: Request):
+    return templates.TemplateResponse("pages/perfilModerador.html", {"request": request})
+
+

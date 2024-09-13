@@ -1,0 +1,165 @@
+{% extends "pages/base.html" %}
+
+{% block subtitulo %}Projetos Criados{% endblock %}
+{% block conteudo %}
+
+<style>
+    .container-custom {
+      background-color: #f8f8f8;
+      border-radius: 15px;
+      padding: 30px;
+      margin: 20px auto;
+      max-width: 800px; /* Limitar a largura máxima do container */
+    }
+
+    .project-photo {
+        width: 160px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+      }
+  
+      .project-photo img {
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 10px;
+        object-fit: cover; /* Isso garante que a imagem se encaixe corretamente no quadrado */
+      }
+
+    .project-card {
+      border: 1px solid #e0e0e0;
+      border-radius: 15px;
+      padding-right: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #fff;
+      width: 650px;
+    }
+
+    .project-details {
+      flex-grow: 1;
+      padding-left: 20px;
+    }
+
+    .btn-chat {
+      background-color: #9b9b63;
+      color: white;
+      border-radius: 30px;
+      padding: 10px 20px;
+    }
+
+    .btn-chat:hover {
+      background-color: #888855;
+    }
+
+    .project-end {
+      margin-top: 30px;
+      text-align: center;
+      color: #888;
+    }
+
+  </style>
+
+  <div class="container container-custom d-flex flex-column align-items-center">
+    <h3 class="text-center mb-4">Projetos em Andamento</h3><hr>
+
+    <!-- Projeto 1 -->
+    <div class="card mb-3" style="max-width: 680px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="/static/img/cachorrodesnutrido.png" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <div class="justify-content-between d-flex">
+            <h5 class="card-title">Cachorro Desnutrido</h5>
+            <p style="color: rgb(139, 160, 62);"> Nº de Inscrições: 2/8</p>
+            </div>
+            <p class="card-text">Início: 23/05/2024</p>
+            <div class="d-flex justify-content-between">
+            <p class="card-text">Término: 23/05/2024</p>
+            <a href="membrosprojeto" class="btn" style="background-color: #888855; color:#ffffff;"> Ver Membros</a>
+          </div>
+            <p class="card-text" style="color: #888;">Localização</p>
+          </div>
+        </div>
+      </div>
+    </div><hr>
+
+     <!-- Projeto 2 -->
+     <div class="card mb-3" style="max-width: 680px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="/static/img/cachorrodesnutrido.png" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <div class="justify-content-between d-flex">
+            <h5 class="card-title">Cachorro Desnutrido</h5>
+            <p style="color: rgb(139, 160, 62);"> Nº de Inscrições: 2/8</p>
+            </div>
+            <p class="card-text">Início: 23/05/2024</p>
+            <div class="d-flex justify-content-between">
+              <p class="card-text">Término: 23/05/2024</p>
+              <a href="membrosprojeto" class="btn" style="background-color: #888855; color:#ffffff;"> Ver Membros</a>
+            </div>
+            <p class="card-text" style="color: #888;">Localização</p>
+
+          </div>
+        </div>
+      </div>
+    </div><hr>
+
+     <!-- Projeto 3 -->
+     <div class="card mb-3" style="max-width: 680px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="/static/img/cachorrodesnutrido.png" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <div class="justify-content-between d-flex">
+            <h5 class="card-title">Cachorro Desnutrido</h5>
+            <p style="color: rgb(139, 160, 62);"> Nº de Inscrições: 2/8</p>
+            </div>
+            <p class="card-text">Início: 23/05/2024</p>
+            <div class="d-flex justify-content-between">
+              <p class="card-text">Término: 23/05/2024</p>
+              <a href="membrosprojeto" class="btn" style="background-color: #888855; color:#ffffff;"> Ver Membros</a>
+            </div>            <p class="card-text" style="color: #888;">Localização</p>
+
+          </div>
+        </div>
+      </div>
+    </div><hr>
+
+     <!-- Projeto 4 -->
+     <div class="card mb-3" style="max-width: 680px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="/static/img/cachorrodesnutrido.png" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <div class="justify-content-between d-flex">
+            <h5 class="card-title">Cachorro Desnutrido</h5>
+            <p style="color: rgb(139, 160, 62);"> Nº de Inscrições: 2/8</p>
+            </div>
+            <p class="card-text">Início: 23/05/2024</p>
+            <div class="d-flex justify-content-between">
+              <p class="card-text">Término: 23/05/2024</p>
+              <a href="membrosprojeto" class="btn" style="background-color: #888855; color:#ffffff;"> Ver Membros</a>
+            </div>            <p class="card-text" style="color: #888;">Localização</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <p class="project-end">Você não possui mais projetos</p>
+  </div>
+
+{% endblock %}

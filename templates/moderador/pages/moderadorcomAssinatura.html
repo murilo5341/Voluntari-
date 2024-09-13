@@ -7,7 +7,7 @@
     .container-options {
         width: 270px;
         margin-top: 80px;
-        background-color: #ffffff; 
+        background-color: #ffffff;
     }
     .container-forms {
         margin-top: 40px;
@@ -15,6 +15,10 @@
         max-width: 600px; /* Define a largura máxima do container */
         margin: auto; /* Centraliza o container horizontalmente */
         padding: 20px; /* Ajusta o padding interno para melhor apresentação */
+        position: relative; /* Define o container como relativo para posicionar o texto absoluto */
+        display: flex;
+        flex-direction: column; /* Organiza os itens em coluna */
+        gap: 20px; /* Espaço entre os itens */
     }
     .botao-verde {
         --bs-btn-bg: #aeb073;
@@ -40,17 +44,20 @@
     .text-center-custom {
         text-align: center;
     }
+    .signature-text {
+        color: #A3A651; /* Define a cor do texto */
+        font-size: 14px; /* Define o tamanho da fonte */
+        margin-top: auto; /* Empurra o texto para o fundo do contêiner flexível */
+        text-align: right; /* Alinha o texto à direita */
+    }
     @media (max-width: 768px) {
         .container-options, .container-forms {
             margin-top: 20px; /* Reduz a margem superior em telas menores */
         }
     }
     @media (max-width: 576px) {
-        .container-options {
-            width: 100%; /* Garante que o contêiner de opções ocupe toda a largura disponível */
-        }
-        .container-forms {
-            width: 100%; /* Garante que o contêiner de formulários ocupe toda a largura disponível */
+        .container-options, .container-forms {
+            width: 100%; /* Garante que o contêiner ocupe toda a largura disponível */
         }
     }
 </style>
@@ -114,7 +121,7 @@
                     <label class="input-group-text" for="inputGroupFile02">Upload</label>
                 </div>
                 <form action="/formulario_enviado" method="post">
-                    <div class="text-center-custom mt-3">
+                    <div class="text-center-custom">
                         <div class="text-start mb-3">
                             <label for="nome" class="form-label">Nome:</label>
                             <input class="campo border border-1 rounded p-2 mb-3" id="nome" name="nome" placeholder="Moderador123">
@@ -125,6 +132,9 @@
                         </div>
                         <div>
                             <button class="btn btn-secondary mt-3 border p-2 botao-verde w-25" type="submit">Gravar</button>
+                        </div>
+                        <div class="signature-text">
+                            Assinatura válida até 23/08/2025
                         </div>
                     </div>
                 </form>

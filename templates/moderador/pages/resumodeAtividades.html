@@ -1,0 +1,185 @@
+{% extends "pages/base.html" %}
+
+{% block subtitulo %}Perfil{% endblock %}
+{% block conteudo %}
+
+<style>
+    .container-options,
+    .container-forms {
+        margin-top: 80px;
+    }
+
+    .container-options {
+        width: 270px;
+        background-color: #ffffff;
+    }
+
+    .container-forms {
+        max-width: 600px;
+        background-color: #2e331c07;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .botao-verde {
+        --bs-btn-bg: #aeb073;
+    }
+
+    .person,
+    .bi-exclamation-square {
+        color: #aeb073;
+    }
+
+    .link-ativo {
+        color: #aeb073 !important;
+    }
+
+    .campo {
+        width: 100%;
+    }
+
+    .form-label {
+        text-align: left;
+        font-weight: 500;
+        display: block;
+        margin-bottom: .5rem;
+    }
+
+    .text-center-custom {
+        text-align: center;
+    }
+
+    .resumo-atividades {
+        font-size: 20px;
+        margin-bottom: 20px; /* Espaço abaixo para separar do contêiner */
+        text-align: center;
+        width: 100%;
+    }
+
+    .container-forms .card {
+        background-color: #ffffff;
+        border: 1px solid #fff; /* Alterado para borda branca */
+        border-radius: 8px;
+        padding: 15px; /* Ajustado para melhor visualização */
+        margin-bottom: 20px;
+        text-align: center; /* Centralizar o conteúdo dentro do card */
+    }
+
+    .card-title {
+        font-size: 16px; /* Diminuído o tamanho da fonte */
+        margin-bottom: 15px;
+    }
+
+    .card-button {
+        --bs-btn-bg: #aeb073;
+        width: 100%;
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .project-number {
+        color: rgba(120, 121, 117, 0.61); /* Cor #787975 com 61% de opacidade */
+        font-size: 20px; /* Tamanho do número, ajuste se necessário */
+        display: block;
+        margin-bottom: 15px; /* Espaço entre o número e o botão */
+    }
+
+    @media (max-width: 768px) {
+        .container-options,
+        .container-forms {
+            margin-top: 20px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .container-options,
+        .container-forms {
+            width: 100%;
+            
+        }
+    }
+</style>
+
+<div class="container my-3">
+    <div class="row">
+        <div class="col-md-4 col-lg-3">
+            <div class="container-options p-3 rounded">
+                <div class="row g-2">
+                    <div class="col-12">
+                        <h5><i class="person bi bi-person"></i> Minha Conta</h5>
+                    </div>
+                    <div class="col-12">
+                        <a href="meuPerfil" class="link-dark link-underline-opacity-0">Meu Perfil</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="projetosIngressados" class="link-dark link-underline-opacity-0">Projetos Ingressados</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="projetosCriados" class="link-dark link-underline-opacity-0">Projetos Criados</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="projetosFinalizados" class="link-dark link-underline-opacity-0">Projetos Finalizados</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="doacoes" class="link-dark link-underline-opacity-0">Doações</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="solicitarExclusao" class="link-dark link-underline-opacity-0">Solicitar exclusão de conta</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="notificacaovoluntario" class="link-dark link-underline-opacity-0">Notificações</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="alterarSenha" class="link-dark link-underline-opacity-0">Alterar Senha</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="/assinatura" class="link-dark link-underline-opacity-0">Assinatura</a>
+                    </div>
+                    <div class="col-12">
+                        <h5><i class="bi bi-exclamation-square"></i> Moderador</h5>
+                    </div>
+                    <div class="col-12">
+                        <a href="/assinatura" class="link-dark link-underline-opacity-0 link-ativo">Painel do Moderador</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 col-lg-9" style="margin-top: 100px;">
+            <div class="resumo-atividades">
+                Resumo de Atividades
+            </div>
+            <div class="container-forms p-3 rounded">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-title">Projetos Pendentes</div>
+                            <span class="project-number">4</span>
+                            <button class="btn btn-secondary mt-3 border botao-verde" type="button">Exibir</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-title">Projetos Rejeitados</div>
+                            <span class="project-number">1</span>
+                            <button class="btn btn-secondary mt-3 border botao-verde" type="button">Exibir</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-title">Projetos Aprovados</div>
+                            <span class="project-number">10</span>
+                            <button class="btn btn-secondary mt-3 border botao-verde" type="button">Exibir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+

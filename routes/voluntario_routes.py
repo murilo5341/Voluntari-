@@ -54,3 +54,7 @@ async def get_membrosProjeto(request: Request):
 @router.get("/solicitarmoderacao", response_class=HTMLResponse)
 async def get_solicitarmoderacao(request: Request):
     return templates.TemplateResponse("pages/solicitacaoModeracao.html", {"request": request})
+
+@router.get("/notificacaovoluntario", response_class=HTMLResponse)
+async def get_notificacaovoluntario(request: Request):
+    return templates.TemplateResponse("pages/notificacaoVoluntario.html", {"request": request})

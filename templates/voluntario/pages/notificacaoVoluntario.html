@@ -1,0 +1,149 @@
+{% extends "pages/base.html" %}
+
+{% block subtitulo %}Notificação{% endblock %}
+{% block conteudo %}
+
+<style>
+    .container-options {
+        width: 270px;
+        margin-top: 80px;
+        background-color: #ffffff; 
+    }
+    .container-forms {
+        margin-top: 40px;
+        background-color: #f8f9fa;
+        border: 1px solid #d3d3d3;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .botao-verde {
+        --bs-btn-bg: #aeb073;
+    }
+    .person {
+        color: #aeb073;
+    }
+    .link-ativo {
+        color: #aeb073 !important; 
+    }
+    .campo {
+        width: 400px;
+    }
+    .notification-item {
+        border-bottom: 1px solid #ddd;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        background-color: #f0f4ec;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        transition: background-color 0.3s;
+    }
+    .notification-item:hover {
+        background-color: #e3e8da;
+    }
+    .notification-icon {
+        font-size: 1.5rem;
+        color: #81a651; /* Tom de verde do site */
+        margin-right: 10px;
+    }
+    .notification-content {
+        flex-grow: 1;
+    }
+    .notification-time {
+        font-size: 0.9rem;
+        color: #6c757d;
+    }
+</style>
+
+<div class="container my-3">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="container-options p-3 rounded">
+                <div class="row g-2">
+                    <div class="col-12">
+                        <h5><i class="person bi bi-person"></i>Minha Conta</h5>
+                    </div>
+                    <div class="col-12">
+                        <a href="meuPerfil" class="link-dark link-underline-opacity-0">Meu Perfil</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="projetosIngressados" class="link-dark link-underline-opacity-0">Projetos Ingressados</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="projetosCriados" class="link-dark link-underline-opacity-0">Projetos Criados</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="projetosFinalizados" class="link-dark link-underline-opacity-0">Projetos Finalizados</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="doacoes" class="link-dark link-underline-opacity-0">Doações</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="solicitarExclusao" class="link-dark link-underline-opacity-0">Solicitar exclusão de conta</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="notificao" class="link-dark link-underline-opacity-0 link-ativo">Notificações</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="alterarSenha" class="link-dark link-underline-opacity-0">Alterar Senha</a>
+                    </div>
+                    <div class="col-12">
+                        <a href="/assinatura" class="link-dark link-underline-opacity-0">Assinatura</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="container-forms p-3 rounded">
+                <h4 class="mb-3">Notificações</h4>
+                <div id="notifications-list">
+                    <!-- Notificação de Aprovação de Projeto -->
+                    <div class="notification-item">
+                        <i class="notification-icon bi bi-check-circle-fill"></i>
+                        <div class="notification-content">
+                            <strong>Projeto Aprovado:</strong> Seu projeto "Salvar as Tartarugas" foi aprovado com sucesso!
+                        </div>
+                        <span class="notification-time">2 dias atrás</span>
+                    </div>
+                    
+                    <!-- Notificação de Negação de Projeto -->
+                    <div class="notification-item">
+                        <i class="notification-icon bi bi-x-circle-fill" style="color: #d9534f;"></i>
+                        <div class="notification-content">
+                            <strong>Projeto Negado:</strong> Infelizmente, seu projeto "Limpeza do Rio" não atendeu aos requisitos.
+                        </div>
+                        <span class="notification-time">3 dias atrás</span>
+                    </div>
+
+                    <!-- Notificação de Mensagem do CHAT -->
+                    <div class="notification-item">
+                        <i class="notification-icon bi bi-chat-dots-fill" style="color: #2E331C;"></i>
+                        <div class="notification-content">
+                            <strong>Nova Mensagem:</strong> Maria enviou uma nova mensagem no chat do projeto "Reciclagem nas Escolas".
+                        </div>
+                        <span class="notification-time">5 horas atrás</span>
+                    </div>
+
+                    <!-- Notificação de Aprovação de Solicitação de Moderação -->
+                    <div class="notification-item">
+                        <i class="notification-icon bi bi-person-check-fill"></i>
+                        <div class="notification-content">
+                            <strong>Solicitação Aprovada:</strong> Sua solicitação para ser moderador foi aprovada.
+                        </div>
+                        <span class="notification-time">1 dia atrás</span>
+                    </div>
+                    
+                    <!-- Notificação de Negação de Solicitação de Moderação -->
+                    <div class="notification-item">
+                        <i class="notification-icon bi bi-person-x-fill" style="color: #d9534f;"></i>
+                        <div class="notification-content">
+                            <strong>Solicitação Negada:</strong> Sua solicitação para ser moderador foi negada.
+                        </div>
+                        <span class="notification-time">2 dias atrás</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

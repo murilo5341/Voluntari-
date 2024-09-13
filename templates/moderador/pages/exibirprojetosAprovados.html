@@ -1,6 +1,6 @@
 {% extends "pages/base.html" %}
 
-{% block subtitulo %}Projetos Recentes{% endblock %}
+{% block subtitulo %}Projetos Aprovados{% endblock %}
 {% block conteudo %}
 
 <style>
@@ -74,7 +74,7 @@
     <div class="row">
         {% include "includes/menuModerador.html" %}
         <div class="col-md-8" style="padding-top: 80px;">
-            <h5 class="mt-3">Projetos Recentes</h5>
+            <h5 class="mt-3">Projetos Aprovados</h5>
             <div class="table-container mt-5">
                 <div class="table-wrapper">
                     <table class="table table-hover" id="projectTable">
@@ -87,54 +87,69 @@
                         </thead>
                         <tbody>
                             <tr>
+                                <td>Projeto A</td>
+                                <td>Alice</td>
+                                <td>01/01/2024</td>
+                            </tr>
+                            <tr>
+                                <td>Projeto B</td>
+                                <td>Bob</td>
+                                <td>15/02/2024</td>
+                            </tr>
+                            <tr>
+                                <td>Projeto C</td>
+                                <td>Camila</td>
+                                <td>20/03/2024</td>
+                            </tr>
+                            <tr>
                                 <td>Projeto D</td>
                                 <td>David</td>
-                                <td>10/09/2024</td>
+                                <td>10/04/2024</td>
                             </tr>
                             <tr>
                                 <td>Projeto E</td>
                                 <td>Eve</td>
-                                <td>10/09/2024</td>
+                                <td>25/05/2024</td>
                             </tr>
                             <tr>
                                 <td>Projeto F</td>
                                 <td>Frank</td>
-                                <td>10/09/2024</td>
+                                <td>30/06/2024</td>
                             </tr>
                             <tr>
                                 <td>Projeto G</td>
                                 <td>Grace</td>
-                                <td>10/09/2024</td>
+                                <td>05/07/2024</td>
                             </tr>
                             <tr>
                                 <td>Projeto H</td>
                                 <td>Hank</td>
-                                <td>09/09/2024</td>
+                                <td>12/08/2024</td>
                             </tr>
                             <tr>
                                 <td>Projeto I</td>
                                 <td>Ivy</td>
-                                <td>09/09/2024</td>
+                                <td>18/09/2024</td>
                             </tr>
                             <tr>
                                 <td>Projeto J</td>
                                 <td>John</td>
-                                <td>09/09/2024</td>
+                                <td>22/10/2024</td>
                             </tr>
                             <tr>
                                 <td>Projeto K</td>
                                 <td>Karen</td>
-                                <td>09/09/2024</td>
+                                <td>01/11/2024</td>
                             </tr>
                             <tr>
                                 <td>Projeto L</td>
                                 <td>Liam</td>
-                                <td>09/09/2024</td>
+                                <td>15/11/2024</td>
                             </tr>
                             <tr>
                                 <td>Projeto M</td>
                                 <td>Mike</td>
-                                <td>09/09/2024</td>
+                                <td>30/11/2024</td>
                             </tr>
                             <!-- Adicione mais linhas aqui para testar o scroll -->
                         </tbody>
@@ -174,6 +189,4 @@
 </script>
 
 {% endblock %}
-
-
 

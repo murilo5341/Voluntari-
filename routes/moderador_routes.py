@@ -33,3 +33,11 @@ async def get_desativarcontaModerador(request: Request):
 @router.get("/exibirprojetosrecentes", response_class=HTMLResponse)
 async def get_exibirprojetosRecentes(request: Request):
     return templates.TemplateResponse("pages/exibirprojetosRecentes.html", {"request": request})
+
+@router.get("/exibirprojetosaprovados", response_class=HTMLResponse)
+async def get_exibirprojetosAprovados(request: Request):
+    return templates.TemplateResponse("pages/exibirprojetosAprovados.html", {"request": request})
+
+@router.get("/exibirprojetosrejeitados", response_class=HTMLResponse)
+async def get_exibirprojetosRejeitados(request: Request):
+    return templates.TemplateResponse("pages/exibirprojetosRejeitados.html", {"request": request})

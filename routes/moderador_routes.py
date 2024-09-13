@@ -10,10 +10,6 @@ templates = obter_jinja_templates("templates/moderador")
 async def get_root(request: Request):
     return templates.TemplateResponse("pages/index.html", {"request": request})
 
-@router.get("/exibirmoderador", response_class=HTMLResponse)
-async def get_exibirModerador(request: Request):
-    return templates.TemplateResponse("pages/exibirModerador.html", {"request": request})
-
 @router.get("/perfilmoderador", response_class=HTMLResponse)
 async def get_perfilModerador(request: Request):
     return templates.TemplateResponse("pages/perfilModerador.html", {"request": request})
@@ -41,3 +37,12 @@ async def get_exibirprojetosAprovados(request: Request):
 @router.get("/exibirprojetosrejeitados", response_class=HTMLResponse)
 async def get_exibirprojetosRejeitados(request: Request):
     return templates.TemplateResponse("pages/exibirprojetosRejeitados.html", {"request": request})
+
+@router.get("/exibirprojetoespecifico", response_class=HTMLResponse)
+async def get_exibirprojetoEspecifico(request: Request):
+    return templates.TemplateResponse("pages/exibirprojetoEspecifico.html", {"request": request})
+
+@router.get("/alterarsenhamoderador", response_class=HTMLResponse)
+async def get_alterarsenhaModerador(request: Request):
+    return templates.TemplateResponse("pages/alterarsenhaModerador.html", {"request": request})
+

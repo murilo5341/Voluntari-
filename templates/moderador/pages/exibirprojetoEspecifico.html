@@ -1,0 +1,96 @@
+{% extends "pages/base.html" %}
+
+{% block subtitulo %}Exibir{% endblock %}
+
+{% block conteudo %}
+<style>
+    .container-options {
+        width: 270px;
+        margin-top: 80px;
+        background-color: #ffffff; 
+    }
+    .container-forms {
+        margin-top: 40px;
+        background-color: #A3A65159;
+    }
+    .container-under {
+        background-color: #2e331c05; 
+    }
+    .hover-object {
+        border-radius: 10px;
+        height: 25px;
+        text-align: center;
+        transition: background-color 0.3s; /* Transição suave para a mudança de fundo */
+    }
+    
+    .hover-object:hover {
+        background-color: #E0E0C9; /* Cor de fundo quando o mouse está sobre o objeto */
+    }
+
+    /* Estilo para o botão */
+    .btn-secondary {
+        background-color: #a3a651; /* Cor de fundo do botão */
+        color: white; /* Cor do texto do botão */
+        border: none; /* Remove a borda do botão */
+        font-weight: 500; /* Peso da fonte do botão */
+        padding: 10px 20px; /* Padding dos botões */
+    }
+
+    /* Centralização dos botões */
+    .button-container {
+        text-align: center; /* Centraliza o conteúdo dentro do container */
+        margin-top: 20px; /* Espaço acima do container */
+    }
+</style>
+
+<div class="container my-3">
+    <div class="row">
+        <div class="container-forms p-3 rounded"> <!--PARTE DE CIMA (verde) -->
+            <div class="d-flex justify-content-between align-items-center">
+                <div style="font-size: 30px; color:#2E331C; font-weight:500;">Projeto</div>
+                <div class="dropdown hover-object">
+                    <i class="bi bi-three-dots-vertical" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">Denunciar projeto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center">
+                <img src="/static/img/gato.png" class="rounded-circle img-fluid" alt="..." style="width: 200px; height:200px;">
+            </div>
+            <p class="text-center mt-2 fs-4" style="color:#2E331C;">@nickCriador</p>
+            <p class="text-center fs-3 mb-1" style="color:#2E331C; font-weight:500;">Combate a dengue</p>                
+        </div>
+        <div class="container-under rounded"><!-- PARTE DE BAIXO (cinza) -->
+            <div class="row ms-5 mt-4" style="color:#2E331C; font-weight:500; font-size:21px;">
+                <div class="col">
+                    <p>Local:</p>
+                    <p>Data de criação:</p>
+                    <p>Inscritos:</p>
+                </div>
+                <div class="col-4">
+                    <p>Data de início:</p>
+                    <p>Data de término:</p>
+                    <p>Meta:</p>
+                </div>
+            </div>
+            <div class="row ms-5 mt-4" style="color:#2E331C; font-weight:500; font-size:21px;">
+                <div class="col">
+                    <p class="mt-3">Descrição do projeto:</p>
+                </div>
+            </div>
+            <div class="row ms-5 mt-2">
+                <div class="col">
+                    <div class="rounded bg-white" style="max-width:1060px"> <!-- Campo redondo com fundo branco -->
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, obcaecati eum. Cumque aut voluptatibus alias eaque expedita fugiat. Illum dignissimos voluptatem suscipit iure id obcaecati? Minima, voluptates ipsam.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="text-center fs-3 mt-5">Contribua para a realização do projeto!</p>
+        <div class="button-container">
+            <a href="doarprojeto" class="btn btn-secondary" type="button">Doar para o projeto</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,56 @@
+
+{% extends "pages/base.html" %}
+
+{% block subtitulo %}Solicitar Moderação{% endblock %}
+{% block conteudo %}
+
+<style>
+    .botao-verde {
+        --bs-btn-bg: #aeb073;
+    
+    }
+    .tamanho{
+        color: #2E331C;
+    }
+    .link-verde {
+        color: #aeb073;
+    }
+    .link-verde:hover {
+        color: #d1d39a;
+    }
+
+</style>
+<img src="/static/img/logo/logopreta.png" alt="VOLUNTÁRIE" width="240px" style="padding: 50px;" class="mx-auto d-flex">
+
+<main class="container pt-2"style="max-width: 700px;">
+    
+    <div class="row">
+        
+        <div class="bg-light p-3 rounded">
+            
+            <div class="container text-center ">
+            </div>
+            <div class="text-center" style="font-size:28px; font-weight:550;">Entenda o que é ser um moderador</div>
+
+            <div class="mt-2" style="font-size: 18px; color:#2e331cbb">
+            <p >
+                Ser um moderador em nosso site de voluntariado significa garantir a qualidade e a segurança dos projetos. Você revisará projetos submetidos por outros usuários antes da publicação, verificando conformidade com diretrizes, estrutura adequada e potencial de impacto positivo.
+            </p>
+            <p >Esta posição exige comprometimento, integridade e habilidades de comunicação eficazes. É uma oportunidade para desenvolver sua liderança e contribuir significativamente para promover o voluntariado. 
+            </p>
+        </div>
+            <form action="/solicitacao_enviada" method="post">
+                <div class="mt-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"required>
+                        <label class="form-check-label" for="flexRadioDefault1" style="font-size: 13px; font-weight:550;">Concordo com os termos e condições do site</label>
+                      </div>
+                      <div class="text-center">
+                    <button class="btn btn-secondary mt-3 border p-2 botao-verde w-50" type="submit" text-center>Enviar Solicitação</button>
+                </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}

@@ -50,3 +50,7 @@ async def get_projetosIngressados(request: Request):
 @router.get("/membrosprojeto", response_class=HTMLResponse)
 async def get_membrosProjeto(request: Request):
     return templates.TemplateResponse("pages/membrosProjeto.html", {"request": request})
+
+@router.get("/solicitarmoderacao", response_class=HTMLResponse)
+async def get_solicitarmoderacao(request: Request):
+    return templates.TemplateResponse("pages/solicitacaoModeracao.html", {"request": request})

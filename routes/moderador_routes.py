@@ -29,3 +29,7 @@ async def get_resumodeAtividades(request: Request):
 @router.get("/desativarcontamoderador", response_class=HTMLResponse)
 async def get_desativarcontaModerador(request: Request):
     return templates.TemplateResponse("pages/desativarcontaModerador.html", {"request": request})
+
+@router.get("/exibirprojetosrecentes", response_class=HTMLResponse)
+async def get_exibirprojetosRecentes(request: Request):
+    return templates.TemplateResponse("pages/exibirprojetosRecentes.html", {"request": request})

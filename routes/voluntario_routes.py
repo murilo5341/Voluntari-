@@ -11,12 +11,12 @@ templates = obter_jinja_templates("templates/voluntario")
 async def get_root(request: Request):
     return templates.TemplateResponse("pages/index.html", {"request": request})
 
-@router.get("/assinaturadousuarioassinante", response_class=HTMLResponse)
-async def get_termos(request: Request):
-    return templates.TemplateResponse("pages/assinaturadousuarioassinante.html", {"request": request})
+@router.get("/voluntarioassinante", response_class=HTMLResponse)
+async def get_voluntarioassinante(request: Request):
+    return templates.TemplateResponse("pages/voluntarioassinante.html", {"request": request})
 
 @router.get("/desativarconta", response_class=HTMLResponse)
-async def get_termos(request: Request):
+async def get_desativarconta(request: Request):
     return templates.TemplateResponse("pages/desativarconta.html", {"request": request})
 
 @router.get("/avaliacoes", response_class=HTMLResponse)
@@ -58,3 +58,7 @@ async def get_solicitarmoderacao(request: Request):
 @router.get("/notificacaovoluntario", response_class=HTMLResponse)
 async def get_notificacaovoluntario(request: Request):
     return templates.TemplateResponse("pages/notificacaoVoluntario.html", {"request": request})
+
+@router.get("/alterarsenha", response_class=HTMLResponse)
+async def get_alterarsenha(request: Request):
+    return templates.TemplateResponse("pages/alterarsenha.html", {"request": request})

@@ -18,4 +18,7 @@ async def get_exibirModerador(request: Request):
 async def get_perfilModerador(request: Request):
     return templates.TemplateResponse("pages/perfilModerador.html", {"request": request})
 
+@router.get("/moderadorcomassinatura", response_class=HTMLResponse)
+async def get_moderadorcomAssinatura(request: Request):
+    return templates.TemplateResponse("pages/moderadorcomAssinatura.html", {"request": request})
 

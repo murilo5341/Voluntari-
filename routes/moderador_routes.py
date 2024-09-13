@@ -22,3 +22,6 @@ async def get_perfilModerador(request: Request):
 async def get_moderadorcomAssinatura(request: Request):
     return templates.TemplateResponse("pages/moderadorcomAssinatura.html", {"request": request})
 
+@router.get("/resumodeatividades", response_class=HTMLResponse)
+async def get_resumodeAtividades(request: Request):
+    return templates.TemplateResponse("pages/resumodeAtividades.html", {"request": request})

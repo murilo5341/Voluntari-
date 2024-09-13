@@ -1,4 +1,4 @@
-{% extends 'pages/base_fundo_sobre.html' %}
+{% extends 'pages/base_fundo.html' %}
 {% block subtitulo %}
 sobre
 {% endblock %}
@@ -23,8 +23,44 @@ sobre
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         /* Sombra suave */
     }
-</style>
 
+    div.bg-header {
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: url('/static/img/quemsomos.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        z-index: -1;
+        
+    }
+    .quemsomos {
+        margin-top: 10cm;
+        margin-right: 5%;
+        font-family: 'Lato';
+        font-weight: bold;
+        color: #AEB073;
+    }
+    .objetivo {
+        color: white;
+        margin-right: 5%;
+        font-family: 'Lato';
+        font-weight: normal;
+    }
+</style>
+<div class="bg-header">
+    <h1 class="quemsomos d-flex justify-content-end text-end">QUEM SOMOS</h1>
+    <h2 class="objetivo d-flex justify-content-end text-end">VoluntariÊ tem como objetivo mobilizar pessoas e promover
+        mudanças benéficas <br> na sociedade. Junte-se ao movimento e faça parte desta jornada inspiradora de <br>
+        mudança e esperança.</h2>
+</div>
+<div class="min-vh-100"></div>
 <div class="green-rectangle rounded mt-5 mx-auto mb-5"></div><br><br>
 
 <h2>Nossa missão</h2>

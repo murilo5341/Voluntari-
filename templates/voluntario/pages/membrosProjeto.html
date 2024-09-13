@@ -1,0 +1,166 @@
+{% extends "pages/base.html" %}
+
+{% block subtitulo %}Projetos Ingressados{% endblock %}
+{% block conteudo %}
+
+<style>
+    .table-responsive {
+        max-height: 300px; /* Altura máxima da tabela para scroll */
+        overflow-y: auto; /* Scroll vertical */
+    }
+
+    .card-header {
+        font-weight: bold; /* Negrito para o título */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .card-body {
+        padding: 0; /* Remove o padding interno do card body para se ajustar melhor ao design */
+    }
+
+    .container-verde {
+        background-color: #2e331c28;
+    }
+
+    /* Estiliza as células que contêm datas */
+    td:nth-child(2), td:nth-child(3) {
+        color: #A3A651; /* Cor verde para as datas */
+    }
+    td:nth-child(1){
+        color: #2e331cab;
+    }
+</style>
+
+<h2 class="text-center mt-5">Membros do Projeto</h2>
+<h5 class="text-center pt-2">Título do Projeto</h5>
+<p class="text-center">@NickCriador</p>
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-white text-center" style="background-color:#A3A651;">Presentes</div>
+                <div class="card-body">
+                    <div class="table-responsive" style="max-height: 300px; overflow-y: auto;">
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th>Nome voluntário</th>
+                                    <th>Data da Ingresso</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Exemplo de linhas; repita conforme necessário -->
+                                <tr>
+                                    <td>Nome voluntário</td>
+                                    <td>xx/xx/xxxx</td>
+                                </tr>
+                                <tr>
+                                    <td>Nome voluntário</td>
+                                    <td>xx/xx/xxxx</td>
+                                </tr>
+                                <tr>
+                                    <td>Nome voluntário</td>
+                                    <td>xx/xx/xxxx</td>
+                                </tr>
+                                <tr>
+                                    <td>Nome voluntário</td>
+                                    <td>xx/xx/xxxx</td>
+                                </tr>
+                                <tr>
+                                    <td>Nome voluntário</td>
+                                    <td>xx/xx/xxxx</td>
+                                </tr>
+                                <tr>
+                                    <td>Nome voluntário</td>
+                                    <td>xx/xx/xxxx</td>
+                                </tr>
+                                <tr>
+                                    <td>Nome voluntário</td>
+                                    <td>xx/xx/xxxx</td>
+                                </tr>
+                                <tr>
+                                    <td>Nome voluntário</td>
+                                    <td>xx/xx/xxxx</td>
+                                </tr>
+                                <tr>
+                                    <td>Nome voluntário</td>
+                                    <td>xx/xx/xxxx</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-white text-center" style="background-color: #2E331C;">Desistentes/Removidos</div>
+                <div class="card-body">
+                    <div class="table-responsive" style="max-height: 300px; overflow-y: auto;">
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th>Nome voluntário</th>
+                                    <th>Data de Ingresso</th>
+                                    <th>Data da Desistência</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Exemplo de linhas; repita conforme necessário -->
+                                <tr>
+                                    <td>Nome voluntário</td>
+                                    <td>xx/xx/xxxx</td>
+                                    <td>xx/xx/xxxx</td>
+                                </tr>
+                                <tr>
+                                    <td>Nome voluntário</td>
+                                    <td>xx/xx/xxxx</td>
+                                    <td>xx/xx/xxxx</td>
+                                </tr>
+                                <tr>
+                                    <td>Nome voluntário</td>
+                                    <td>xx/xx/xxxx</td>
+                                    <td>xx/xx/xxxx</td>
+                                </tr>
+                                <tr>
+                                    <td>Nome voluntário</td>
+                                    <td>xx/xx/xxxx</td>
+                                    <td>xx/xx/xxxx</td>
+                                </tr>
+                                <tr>
+                                    <td>Nome voluntário</td>
+                                    <td>xx/xx/xxxx</td>
+                                    <td>xx/xx/xxxx</td>
+                                </tr>
+                                <tr>
+                                    <td>Nome voluntário</td>
+                                    <td>xx/xx/xxxx</td>
+                                    <td>xx/xx/xxxx</td>
+                                </tr>
+                                <tr>
+                                    <td>Nome voluntário</td>
+                                    <td>xx/xx/xxxx</td>
+                                    <td>xx/xx/xxxx</td>
+                                </tr>
+                                <tr>
+                                    <td>Nome voluntário</td>
+                                    <td>xx/xx/xxxx</td>
+                                    <td>xx/xx/xxxx</td>
+                                </tr>
+                                <tr>
+                                    <td>Nome voluntário</td>
+                                    <td>xx/xx/xxxx</td>
+                                    <td>xx/xx/xxxx</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

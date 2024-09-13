@@ -46,3 +46,7 @@ async def get_excluirProjeto(request: Request):
 @router.get("/projetosingressados", response_class=HTMLResponse)
 async def get_projetosIngressados(request: Request):
     return templates.TemplateResponse("pages/projetosingressados.html", {"request": request})
+
+@router.get("/membrosprojeto", response_class=HTMLResponse)
+async def get_membrosProjeto(request: Request):
+    return templates.TemplateResponse("pages/membrosProjeto.html", {"request": request})

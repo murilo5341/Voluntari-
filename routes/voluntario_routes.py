@@ -75,3 +75,7 @@ async def get_projetoscriados(request: Request):
 @router.get("/assinatura", response_class=HTMLResponse)
 async def get_assinatura(request: Request):
     return templates.TemplateResponse("pages/assinatura.html", {"request": request})
+
+@router.get("/projetoscriados", response_class=HTMLResponse)
+async def get_projetoscriados(request: Request):
+    return templates.TemplateResponse("pages/projetoscriados.html", {"request": request})

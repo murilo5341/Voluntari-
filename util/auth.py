@@ -30,8 +30,8 @@ async def middleware_autenticacao(request: Request, call_next):
 
 async def checar_permissao(request: Request):
     usuario = request.state.usuario if hasattr(request.state, "usuario") else None
-    area_do_usuario = request.url.path.startswith("/usuario")
-    area_do_admin = request.url.path.startswith("/admin")    
+    area_do_usuario = request.url.path.startswith("/ww")
+    area_do_admin = request.url.path.startswith("/yyy")    
     if (area_do_usuario or area_do_admin) and not usuario:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED)
     if area_do_usuario and usuario.perfil != 1:

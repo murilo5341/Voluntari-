@@ -25,3 +25,7 @@ async def get_moderadorcomAssinatura(request: Request):
 @router.get("/resumodeatividades", response_class=HTMLResponse)
 async def get_resumodeAtividades(request: Request):
     return templates.TemplateResponse("pages/resumodeAtividades.html", {"request": request})
+
+@router.get("/desativarcontamoderador", response_class=HTMLResponse)
+async def get_desativarcontaModerador(request: Request):
+    return templates.TemplateResponse("pages/desativarcontaModerador.html", {"request": request})

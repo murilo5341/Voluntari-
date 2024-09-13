@@ -1,0 +1,71 @@
+{% extends "pages/base.html" %}
+
+{% block subtitulo %}Projetos Criados{% endblock %}
+{% block conteudo %}
+
+<style>
+    .container-custom {
+        background-color: #f8f8f8;
+        border-radius: 15px;
+    }
+
+    .project-end {
+        margin-top: 30px;
+        text-align: center;
+        color: #888;
+    }
+
+    .card {
+        position: relative;
+        border: none;
+        box-shadow: 2px 6px 8px rgba(22, 22, 26, 0.18);
+        border-radius: 15px;
+    }
+
+    .card-img-top {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+    }
+
+    .watermark {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 60px; /* Ajuste conforme necessário */
+        opacity: 0.7; /* Ajuste a opacidade conforme necessário */
+        z-index: 1;
+    }
+
+</style>
+
+<div class="container container-custom flex-column d-flex align-items-center mt-3 mb-3 py-3 w-75 text-center">
+    <img src="/static/img/logo/logopreta.png" alt="" width="100px" class="mt-3">
+    <div class="mt-4 fs-3 fw-semibold mb-3">Compartilhar Projeto</div>
+    <div style="color: #2e331c8e;">Compartilhe seu projeto para atingir mais pessoas!</div>
+    <div class="mt-2" style="color: #2e331c8e; font-size:14px">Pré visualização de compartilhamento</div>
+
+    <div class="card mt-4" style="width: 18rem;">
+        <div class="position-relative">
+            <img src="/static/img/capaProjetos/gatoabandonado.png" class="card-img-top" alt="Imagem de projeto">
+            <!-- Marca d'água -->
+            <img src="/static/img/logo/logo_voluntarie.png" class="watermark" alt="Marca d'água">
+        </div>
+        <div class="card-body">
+            <div class="card-title fs-5 fw-semibold">Felinos em Risco</div>
+            <div class="mb-3" style="color: #2e331c8e;">@JelemarVoluntario</div>
+            <p class="card-text">Você também pode fazer a diferença!</p>
+        </div>
+    </div><hr>
+    <p class="fs-5 fw-semibold">Compartilhe utilizando</p>
+    <div class="d-flex justify-content-between">
+        <i class="bi bi-instagram fs-2" style="color: #e914bb;"></i>
+        <i class="bi bi-facebook fs-2 me-3 ms-3" style="color: #1457d3;"></i>
+        <i class="bi bi-whatsapp fs-2" style="color: #23c41e;"></i>
+    </div>
+    <a class="project-end">Copiar link</a>
+</div>
+
+{% endblock %}

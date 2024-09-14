@@ -15,39 +15,79 @@
     }
     .botao-verde{
         --bs-btn-bg: #aeb073;
-
     }
     .person{
       color: #aeb073;
     }
     .link-ativo {
       color: #aeb073 !important; 
-  }
-
-  .form-label{
-    text-align: left;
+    }
+    .form-label{
+        text-align: left;
         font-weight: 500;
-        display: block; /* Garante que o label seja exibido como bloco */
-        margin-bottom: .5rem; /* Espaço abaixo do label */
-  }
+        display: block;
+        margin-bottom: .5rem;
+    }
+    
+    /* Estilo para a imagem de perfil */
+    .profile-pic-wrapper {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+    }
+
+    .profile-pic-wrapper img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        background-color: white;
+    }
+
+    /* Estilo para o ícone de lápis */
+    .edit-icon {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 10px;
+        border-radius: 100px;
+        cursor: pointer;
+        display: none;
+        width: 20%;
+    }
+
+    /* Exibir o ícone quando o mouse estiver sobre a imagem */
+    .profile-pic-wrapper:hover .edit-icon {
+        display: block;
+    }
+
+    /* Ocultar input de upload padrão */
+    #fileInput {
+        display: none;
+    }
 </style>
 
 <div class="container my-3 ">
     <div class="row">
-        {%include "includes/menuVoluntario.html"%}
+        {% include "includes/menuVoluntario.html" %}
         <div class="col-md-6">
             <div class="container-forms p-3 rounded">
-                <div  class="d-flex justify-content-between ms-4" style="font-size: 30px;">Meu Perfil
+                <div class="d-flex justify-content-between ms-4" style="font-size: 30px;">
+                    Meu Perfil
                     <p class="mt-2 me-4" style="font-size: 15px; color:#aeb073;">Saldo doação: R$00,00</p>
                 </div>
-                <div class="text-center">
-                    <img src="/static/img/quemSomos.png" class="rounded-circle img-fluid" alt="..." style="width: 200px; height:200px;">
+                <div class="profile-pic-wrapper text-center">
+                    <img src="/static/img/quemSomos.png" alt="..." class="rounded-circle img-fluid">
+                    <span class="edit-icon" onclick="document.getElementById('fileInput').click();">
+                        <i class="bi bi-pencil-fill"></i> <!-- Ícone de lápis do Bootstrap Icons -->
+                    </span>
                 </div><br>
-                
-                <div class="input-group mb-3 w-75 mx-auto">
-                    <input type="file" class="form-control" id="inputGroupFile02">
-                    <label class="input-group-text" for="inputGroupFile02">Upload</label>
-                </div>
+
+                <input type="file" id="fileInput" accept="image/*">
+
                 <form action="/formulario_enviado" method="post">
                     <div class="w-75 text-center mt-3 container">
                         <div class="text-start mb-3">
@@ -55,7 +95,7 @@
                             <input class="border border-1 rounded p-2 mb-3 w-100" id="nome" name="nome" placeholder="Voluntario123">
                         </div>
                         <div class="text-start mb-3">
-                            <label for="email" class="form-label">Celular:</label>
+                            <label for="celular" class="form-label">Celular:</label>
                             <input class="border border-1 rounded p-2 mb-3 w-100" id="celular" name="celular" placeholder="28999391820"><br>
                         </div>
                         <div>
@@ -68,4 +108,19 @@
         </div>
     </div>
 </div>
+
+<script>
+    // Ao selecionar um arquivo, exibir a pré-visualização da imagem
+    document.getElementById('fileInput').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                document.querySelector('.profile-pic-wrapper img').src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+</script>
+
 {% endblock %}

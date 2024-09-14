@@ -80,6 +80,14 @@ async def get_assinatura(request: Request):
 async def get_projetoscriados(request: Request):
     return templates.TemplateResponse("pages/projetoscriados.html", {"request": request})
 
-@router.get("/compartilhar", response_class=HTMLResponse)
+@router.get("/compartilharprojeto", response_class=HTMLResponse)
 async def get_compartilhar(request: Request):
     return templates.TemplateResponse("pages/compartilhar.html", {"request": request})
+
+@router.get("/projetosfinalizados", response_class=HTMLResponse)
+async def get_projetosfinalizados(request: Request):
+    return templates.TemplateResponse("pages/projetosfinalizados.html", {"request": request})
+
+@router.get("/doacoesfeitas", response_class=HTMLResponse)
+async def get_doacoesfeitas(request: Request):
+    return templates.TemplateResponse("pages/doacoesfeitas.html", {"request": request})

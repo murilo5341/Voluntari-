@@ -1,0 +1,119 @@
+{% extends "pages/base.html" %}
+
+{% block subtitulo %}Doações Realizadas{% endblock %}
+
+{% block conteudo %}
+<style>
+    .table-header {
+        background-color: #A3A651; /* Verde-escuro com transparência */
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .table-body {
+        background-color: #F8F8F8; /* Cor de fundo para o corpo das tabelas */
+        color: #2E331C;
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+
+    .ad-space {
+        background-color: #2E331C; /* Verde-escuro */
+        color: white;
+        text-align: center;
+        padding: 100px;
+        font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+        .ad-space {
+            margin-top: 20px;
+        }
+    }
+</style>
+
+<div class="container my-5">
+    <h2 class="mb-4">Doações Realizadas</h2>
+    <div class="row">
+        <!-- Conteúdo das Doações -->
+        <div class="col-lg-5">
+            <div class="mb-4">
+                <div class="row table-header p-2 rounded">
+                    <div class="col-6">Projeto Limpeza dos Mares</div>
+                    <div class="col-6">R$ 500,00</div>
+                </div>
+                <div class="row table-body p-2 rounded-bottom">
+                    <div class="col-6">
+                        <p>Criador: Lucas Santos</p>
+                        <p>Status: Concluído</p>
+                    </div>
+                    <div class="col-6">
+                        <p>Data Doação: 05/09/2024</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <div class="row table-header p-2 rounded">
+                    <div class="col-6">Projeto Reflorestar</div>
+                    <div class="col-6">R$ 1.200,00</div>
+                </div>
+                <div class="row table-body p-2 rounded-bottom">
+                    <div class="col-6">
+                        <p>Criador: Ana Souza</p>
+                        <p>Status: Concluído</p>
+                    </div>
+                    <div class="col-6">
+                        <p>Data Doação: 01/09/2024</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <div class="row table-header p-2 rounded">
+                    <div class="col-6">Projeto Energia Solar para Todos</div>
+                    <div class="col-6">R$ 800,00</div>
+                </div>
+                <div class="row table-body p-2 rounded-bottom">
+                    <div class="col-6">
+                        <p>Criador: Pedro Almeida</p>
+                        <p>Status: Pendente</p>
+                    </div>
+                    <div class="col-6">
+                        <p>Data Doação: 28/08/2024</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <div class="row table-header p-2 rounded">
+                    <div class="col-6">Projeto Educação Sustentável</div>
+                    <div class="col-6">R$ 300,00</div>
+                </div>
+                <div class="row table-body p-2 rounded-bottom">
+                    <div class="col-6">
+                        <p>Criador: Maria Fernandes</p>
+                        <p>Status: Concluído</p>
+                    </div>
+                    <div class="col-6">
+                        <p>Data Doação: 20/08/2024</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="col-lg-2"> <!--COLUNA EM BRANCO PARA ESPACAMENTO ENTRE AS DUAS COLUNAS -->
+
+        </div>
+        <!-- Espaço para Propaganda -->
+        <div class="col-lg-5">
+            <div class="ad-space mb-4">
+                Propaganda do patrocinador
+            </div>
+            <div class="ad-space mb-4">
+                Propaganda do patrocinador
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

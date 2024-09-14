@@ -32,13 +32,12 @@
   }
 </style>
 
-<div class="container my-3 mb-5 ">
+<div class="container my-3 mb-5  ">
     <div class="row">
         {%include "includes/menuAdministrador.html"%}
-        <div class="col-md-6">
+        <div class="col-md-6 mx-lg-5">
             <div class="container-forms p-3 rounded">
                 <div  class="d-flex justify-content-between ms-4" style="font-size: 30px;">Meu Perfil
-                    <p class="mt-2 me-4" style="font-size: 15px; color:#aeb073;">Saldo doação: R$00,00</p>
                 </div>
                 <div class="text-center">
                     <img src="/static/img/quemSomos.png" class="rounded-circle img-fluid" alt="..." style="width: 200px; height:200px;">
@@ -52,14 +51,14 @@
                     <div class="w-75 text-center mt-3 container">
                         <div class="text-start mb-3">
                             <label for="nome" class="form-label">Nome:</label>
-                            <input class="border border-1 rounded p-2 mb-3 w-100" id="nome" name="nome" placeholder="administrador">
+                            <input class="border border-1 rounded p-2 mb-3 w-100" id="nome" name="nome" placeholder="administrador" required>
                         </div>
                         <div class="text-start mb-3">
                             <label for="email" class="form-label">Celular:</label>
-                            <input class="border border-1 rounded p-2 mb-3 w-100" id="celular" name="celular" placeholder="(28)00000-0000"><br>
+                            <input class="border border-1 rounded p-2 mb-3 w-100" id="celular" name="celular" placeholder="(28)00000-0000" required><br>
                         </div>
                         <div>
-                            <button class="btn btn-secondary mt-3 border botao-verde" type="submit">Gravar</button>
+                            <button class="btn btn-secondary mt-3 border botao-verde" type="submit">alterar dados</button>
                         </div>
                     </div>
                 </form>

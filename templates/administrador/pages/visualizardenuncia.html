@@ -4,42 +4,45 @@
 {% block conteudo %}
 
 <style>
-    .container-options {
-        width: 270px;
-        margin-top: 80px;
-        background-color: #ffffff;
+
+    .container-custom {
+        background-color: #f8f9fa; /* Definindo uma cor de fundo clara para o container */
+        border: 1px solid #dee2e6; /* Definindo uma borda padrão */
+        border-radius: 0.375rem; /* Bordas arredondadas padrão do Bootstrap */
+        padding: 1rem; /* Adicionando um pouco de preenchimento */
     }
-
-    .container-forms {
-        margin-top: 40px;
-        background-color: #2e331c07;
+    .descricao{
+        background-color: #FFFFFF;
+        
+        width: 95%;
+        min-height: 140px;
+        
+        
     }
-
-    .botao-verde {
-        --bs-btn-bg: #aeb073;
-
+    .descricao>h6{
+        margin-top: 2%;
+        color: #A3A651;
+        opacity: 46%;
     }
-
-    .person {
-        color: #aeb073;
+    .descricao2>h6{
+        margin-top: 2%;
+        color: #A3A651;
+        opacity: 46%;
+        padding-left: 2%;
     }
-
-    .link-ativo {
-        color: #aeb073 !important;
-    }
-
-    .campo {
-        width: 400px;
-    }
-
-    .link-verde {
-        color: #aeb073;
-        text-decoration: underline;
+    .descricao2{
+        background-color: #FFFFFF;
+        
+        width: 99%;
+        min-height: 180px;
+        
+        
+        
     }
 </style>
 
 <div class="container my-3">
-    <div class="row">
+    <div class="row ">
         {% include "includes/menuAdministrador.html" %}
         <div class="col-6">
             <div class="p-3">
@@ -47,8 +50,40 @@
                     <p>Detalhes do usuario reportado</p>
                 </div>
             </div><br>
+            <div class="container-custom">
+                <div class="row ms-3 mb-3">
+                    <h5>Nome do usuario reportado: </h5>
+                </div>
+                <div class="row ms-3">
+                    <h5>Bio: </h5>
+                    <div class="descricao border rounded">
+                        <h6>Descrição: </h6>
+                    </div>
+                    
+                </div>
+                <div class="row ms-3 mt-3">
+                    <h5>Email do usuario: </h5>
+                </div>
+                <div class="row ms-3 mt-3">
+                    <h5>Denúncia recebida: </h5>
+                </div>
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col"><h4>Nome</h4></div>
+                        <div class="col"><h4>Data</h4></div>
+                        <div class="col"><h4>Motivo</h4></div>
 
-
+                    </div>
+                    <div class="row text-center">
+                        <div class="col"><h6>Serio Alves</h6></div>
+                        <div class="col"><h6>(01/06/2024)</h6></div>
+                        <div class="col"><h6>spam</h6></div>
+                    </div>
+                    <div class="descricao2 border rounded">
+                        <h6>Descrição: </h6>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

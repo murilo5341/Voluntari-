@@ -1,0 +1,42 @@
+
+{% extends "pages/base.html" %}
+
+{% block subtitulo %}Alterar Senha{% endblock %}
+{% block conteudo %}
+
+<style>
+    .botao-verde {
+        --bs-btn-bg: #aeb073;
+    
+    }
+    .tamanho{
+        color: #2E331C;
+    }
+    .link-verde {
+        color: #aeb073;
+    }
+    .link-verde:hover {
+        color: #d1d39a;
+    }
+
+</style>
+<div class="container text-center">
+<img src="/static/img/logo/logoverde.png" alt="VOLUNTÁRIE" width="240px" style="padding: 50px;">
+</div>
+<main class="container d-flex justify-content-center align-items-center my-3" style="min-height: 10vh;">
+    <div class="col-12 col-md-6 col-lg-4 bg-light p-4 rounded">
+        <div class="text-center" style="font-size: 28px; font-weight: 500;">Alterar sua senha</div>
+        <form action="/formulario_enviado" method="post">
+            <div class="text-center mt-3">
+                <input class="border border-1 rounded p-2 w-75 mb-3" id="senhaatual" name="senhaatual" placeholder="Senha atual" required><br>
+
+                <input class="border border-1 rounded p-2 w-75 mb-3" id="novasenha" name="novasenha" placeholder="Nova senha" required><br>
+
+                <input class="border border-1 rounded p-2 w-75 mb-3" id="confnovasenha" name="confnovasenha" placeholder="Confirmar nova senha" required><br>
+
+                <button class="btn btn-secondary mt-3 border p-2 botao-verde w-75" type="submit">Confirmar</button>
+            </div>
+        </form>
+    </div>
+</main>
+{% endblock %}

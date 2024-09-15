@@ -26,3 +26,7 @@ async def get_cadastrarPatrocinador(request: Request):
 @router.get("/exibirmoderador", response_class=HTMLResponse)
 async def get_exibirModerador(request: Request):
     return templates.TemplateResponse("pages/exibirModerador.html", {"request": request})
+
+@router.get("/alterarsenha", response_class=HTMLResponse)
+async def get_alterarsenha(request: Request):
+    return templates.TemplateResponse("pages/alterarsenhaadministrador.html", {"request": request})

@@ -1,0 +1,102 @@
+{% extends "pages/base.html" %}
+
+{% block subtitulo %}Denúncia de Projetos{% endblock %}
+{% block conteudo %}
+
+<style>
+    .container-options {
+        width: 270px;
+        margin-top: 80px;
+        background-color: #ffffff; 
+    }
+    .container-forms {
+        margin-top: 40px;
+        background-color: #2e331c07;
+    }
+    .botao-verde{
+        --bs-btn-bg: #aeb073;
+
+    }
+    .person{
+      color: #aeb073;
+    }
+    .link-ativo {
+      color: #aeb073 !important; 
+  }
+  .campo{
+    width: 400px;
+  }
+
+  .link-verde {
+    color: #aeb073;
+    text-decoration: underline;
+}
+</style>
+
+<div class="container my-3">
+    <div class="row">
+ {% include "includes/menuAdministrador.html"   %}
+        <div class="col-6">
+            <div class="p-3" >
+                <div style="font-size: 35px;">
+                        <p>Denúncias aprovadas de usuario</p> 
+                </div>
+            </div><br>
+            <table class="table table-hover table-striped">
+                <thead class="table-success">
+                  <tr>
+                    <th scope="col">Voluntario</th>
+                    <th scope="col">Motivo</th>
+                    <th scope="col">reportado por</th>
+                    <th scope="col">Data</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">nick 002</th>
+                    <td >Spam</td>
+                    <td>Sérgio</td>
+                    <td>01/06/2024</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">nick 003</th>
+                    <td>Outros</td>
+                    <td>Alice</td>
+                    <td>01/06/2024</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">nick 004</th>
+                    <td>Spam</td>
+                    <td>Camila</td>
+                    <td>01/06/2024</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">nick 005</th>
+                    <td>Spam</td>
+                    <td>Leila</td>
+                    <td>01/06/2024</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">nick 006</th>
+                    <td>Spam</td>
+                    <td>Carlos</td>
+                    <td>01/06/2024</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">nick 006</th>
+                    <td>Spam</td>
+                    <td>Bianca</td>
+                    <td>01/06/2024</td>
+                  </tr>
+                </tbody>
+              </table>           
+              <div class="d-flex">
+                <a href="visualizardenuncia" class="link-verde">visualizar denuncia</a>
+              <!--falta conseguir colocar a caixa--><p class="link-verde ms-auto">banir usuário</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+  
+{% endblock %}

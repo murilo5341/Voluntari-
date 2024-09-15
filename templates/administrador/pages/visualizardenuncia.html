@@ -1,0 +1,56 @@
+{% extends "pages/base.html" %}
+
+{% block subtitulo %}Denúncia de Projetos{% endblock %}
+{% block conteudo %}
+
+<style>
+    .container-options {
+        width: 270px;
+        margin-top: 80px;
+        background-color: #ffffff;
+    }
+
+    .container-forms {
+        margin-top: 40px;
+        background-color: #2e331c07;
+    }
+
+    .botao-verde {
+        --bs-btn-bg: #aeb073;
+
+    }
+
+    .person {
+        color: #aeb073;
+    }
+
+    .link-ativo {
+        color: #aeb073 !important;
+    }
+
+    .campo {
+        width: 400px;
+    }
+
+    .link-verde {
+        color: #aeb073;
+        text-decoration: underline;
+    }
+</style>
+
+<div class="container my-3">
+    <div class="row">
+        {% include "includes/menuAdministrador.html" %}
+        <div class="col-6">
+            <div class="p-3">
+                <div style="font-size: 25px; font-weight: bold;" class="text-center">
+                    <p>Detalhes do usuario reportado</p>
+                </div>
+            </div><br>
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

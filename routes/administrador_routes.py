@@ -30,3 +30,6 @@ async def get_exibirModerador(request: Request):
 @router.get("/alterarsenha", response_class=HTMLResponse)
 async def get_alterarsenha(request: Request):
     return templates.TemplateResponse("pages/alterarsenhaadministrador.html", {"request": request})
+@router.get("/notificacao", response_class=HTMLResponse)
+async def get_alterarsenha(request: Request):
+    return templates.TemplateResponse("pages/notificacaoadministrador.html", {"request": request})

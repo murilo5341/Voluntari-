@@ -46,3 +46,6 @@ async def get_exibirprojetoEspecifico(request: Request):
 async def get_alterarsenhaModerador(request: Request):
     return templates.TemplateResponse("pages/alterarsenhaModerador.html", {"request": request})
 
+@router.get("/mensagemexclusao", response_class=HTMLResponse)
+async def get_mensagemExclusao(request: Request):
+    return templates.TemplateResponse("pages/mensagemExclusao.html", {"request": request})

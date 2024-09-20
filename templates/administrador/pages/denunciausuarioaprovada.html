@@ -13,90 +13,185 @@
         margin-top: 40px;
         background-color: #2e331c07;
     }
-    .botao-verde{
+    .botao-verde {
         --bs-btn-bg: #aeb073;
-
     }
-    .person{
-      color: #aeb073;
+    .person {
+        color: #aeb073;
     }
     .link-ativo {
-      color: #aeb073 !important; 
-  }
-  .campo{
-    width: 400px;
-  }
+        color: #aeb073 !important; 
+    }
+    .campo {
+        width: 400px;
+    }
+    .link-verde {
+        color: #aeb073;
+        text-decoration: underline;
+    }
 
-  .link-verde {
-    color: #aeb073;
-    text-decoration: underline;
-}
+    /* Deixar as linhas transparentes */
+    tbody tr {
+        background-color: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+    }
+
+    /* Destacar a linha selecionada */
+    tbody tr.selected {
+        background-color: rgba(174, 176, 115, 0.5);
+        border: 2px solid #aeb073;
+    }
+
+    /* Estilos para o modal de confirmação */
+    .modal-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+    }
+
+    .modal-content {
+        width: 15%;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 5px;
+        text-align: center;
+    }
 </style>
 
 <div class="container my-3">
     <div class="row">
- {% include "includes/menuAdministrador.html"   %}
+        {% include "includes/menuAdministrador.html" %}
         <div class="col-6">
-            <div class="p-3" >
+            <div class="p-3">
                 <div style="font-size: 35px;">
-                        <p class="text-center">Denúncias aprovadas de usuario</p> 
+                    <p class="text-center">Denúncias aprovadas de usuário</p> 
                 </div>
             </div><br>
             <table class="table table-hover table-striped">
                 <thead class="table-success">
-                  <tr>
-                    <th scope="col">Voluntario</th>
-                    <th scope="col">Motivo</th>
-                    <th scope="col">reportado por</th>
-                    <th scope="col">Data</th>
-                  </tr>
+                    <tr>
+                        <th scope="col">Voluntário</th>
+                        <th scope="col">Motivo</th>
+                        <th scope="col">Reportado por</th>
+                        <th scope="col">Data</th>
+                    </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">nick 002</th>
-                    <td >Spam</td>
-                    <td>Sérgio</td>
-                    <td>01/06/2024</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">nick 003</th>
-                    <td>Outros</td>
-                    <td>Alice</td>
-                    <td>01/06/2024</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">nick 004</th>
-                    <td>Spam</td>
-                    <td>Camila</td>
-                    <td>01/06/2024</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">nick 005</th>
-                    <td>Spam</td>
-                    <td>Leila</td>
-                    <td>01/06/2024</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">nick 006</th>
-                    <td>Spam</td>
-                    <td>Carlos</td>
-                    <td>01/06/2024</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">nick 006</th>
-                    <td>Spam</td>
-                    <td>Bianca</td>
-                    <td>01/06/2024</td>
-                  </tr>
+                <tbody id="denuncias-table-body">
+                    <tr data-id="002">
+                        <th scope="row">nick 002</th>
+                        <td>Spam</td>
+                        <td>Sérgio</td>
+                        <td>01/06/2024</td>
+                    </tr>
+                    <tr data-id="003">
+                        <th scope="row">nick 003</th>
+                        <td>Outros</td>
+                        <td>Alice</td>
+                        <td>01/06/2024</td>
+                    </tr>
+                    <tr data-id="004">
+                        <th scope="row">nick 004</th>
+                        <td>Spam</td>
+                        <td>Camila</td>
+                        <td>01/06/2024</td>
+                    </tr>
+                    <tr data-id="005">
+                        <th scope="row">nick 005</th>
+                        <td>Spam</td>
+                        <td>Leila</td>
+                        <td>01/06/2024</td>
+                    </tr>
+                    <tr data-id="006">
+                        <th scope="row">nick 006</th>
+                        <td>Spam</td>
+                        <td>Carlos</td>
+                        <td>01/06/2024</td>
+                    </tr>
                 </tbody>
-              </table>           
-              <div class="d-flex">
-                <a href="visualizardenuncia" class="link-verde">visualizar denuncia</a>
-              <!--falta conseguir colocar o backend--> <a href="usuariobanido" class="link-verde ms-auto">banir usuário</a>
-
+            </table>
+            <div class="d-flex">
+                <a href="visualizardenuncia" class="link-verde" id="visualizar-denuncia" style="pointer-events: none;">Visualizar denúncia</a>
+                <a href="#" class="link-verde ms-auto" id="ban-user" style="pointer-events: none;">Banir usuário</a>
             </div>
         </div>
     </div>
 </div>
-  
+
+<!-- Modal de Confirmação -->
+<div class="modal-overlay" id="modal-overlay">
+    <div class="modal-content">
+        <h5>Confirmar banimento</h5>
+        <p id="user-name"></p>
+        <button style="background-color: #aeb073; margin-bottom: 10%; height: 1cm" class="border rounded" id="confirm-banir">Confirmar</button>
+        <button style="background-color: #aeb073; height: 1cm" class="border rounded" id="cancelar">Cancelar</button>
+    </div>
+</div>
+
+<script>
+    const tableBody = document.getElementById('denuncias-table-body');
+    const modalOverlay = document.getElementById('modal-overlay');
+    const userName = document.getElementById('user-name');
+    const visualizarDenuncia = document.getElementById('visualizar-denuncia');
+    const banUserButton = document.getElementById('ban-user');
+
+    let selectedRow = null;
+
+    tableBody.addEventListener('click', function(e) {
+        const row = e.target.closest('tr');
+        if (!row) return;
+
+        // Remove a seleção anterior, se houver
+        if (selectedRow) {
+            selectedRow.classList.remove('selected');
+        }
+
+        // Seleciona a nova linha
+        row.classList.add('selected');
+        selectedRow = row;
+
+        // Habilita os links
+        visualizarDenuncia.style.pointerEvents = 'auto';
+        banUserButton.style.pointerEvents = 'auto';
+
+        // Define o nome do usuário para o modal
+        const user = row.querySelector('th').innerText;
+        userName.innerText = `Você realmente deseja banir ${user}?`;
+    });
+
+    banUserButton.addEventListener('click', function() {
+        if (selectedRow) {
+            modalOverlay.style.display = 'flex'; // Exibe o modal
+        }
+    });
+
+    document.getElementById('cancelar').addEventListener('click', function() {
+        modalOverlay.style.display = 'none'; // Fecha o modal
+    });
+
+    document.getElementById('confirm-banir').addEventListener('click', function() {
+        const userId = selectedRow.getAttribute('data-id');
+        const userNameText = selectedRow.querySelector('th').innerText;
+
+        // Aqui você pode adicionar a lógica para banir o usuário no backend
+        alert(`Usuário ${userNameText} banido!`); // Mensagem de confirmação
+
+        modalOverlay.style.display = 'none'; // Fecha o modal
+    });
+
+    visualizarDenuncia.addEventListener('click', function() {
+        if (selectedRow) {
+            const userId = selectedRow.getAttribute('data-id');
+            // Redirecionar para a página de visualização da denúncia
+            window.location.href = `visualizardenuncia?id=${userId}`;
+        }
+    });
+</script>
+
 {% endblock %}

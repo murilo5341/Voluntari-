@@ -1,6 +1,6 @@
 {% extends "pages/base.html" %}
 
-{% block subtitulo %}Usuários banidos{% endblock %}
+{% block subtitulo %}Usuários Banidos{% endblock %}
 {% block conteudo %}
 
 <style>
@@ -13,44 +13,65 @@
         margin-top: 40px;
         background-color: #2e331c07;
     }
-    .botao-verde{
+    .botao-verde {
         --bs-btn-bg: #aeb073;
-
     }
-    .person{
-      color: #aeb073;
+    .person {
+        color: #aeb073;
     }
     .link-ativo {
-      color: #aeb073 !important; 
-  }
-  .campo{
-    width: 400px;
-  }
+        color: #aeb073 !important; 
+    }
+    .campo {
+        width: 400px;
+    }
+    .link-verde {
+        color: #aeb073;
+        text-decoration: underline;
+    }
 
-  .link-verde {
-    color: #aeb073;
-    text-decoration: underline;
-}
-/* Deixar as linhas transparentes */
-tbody tr {
-    background-color: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-}
+    /* Deixar as linhas transparentes */
+    tbody tr {
+        background-color: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+    }
 
-/* Destacar a linha selecionada */
-tbody tr.selected {
-    background-color: rgba(174, 176, 115, 0.5);
-    border: 2px solid #aeb073;
-}
+    /* Destacar a linha selecionada */
+    tbody tr.selected {
+        background-color: rgba(174, 176, 115, 0.5);
+        border: 2px solid #aeb073;
+    }
 
+    /* Estilos para o modal de confirmação */
+    .modal-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+    }
+
+    .modal-content {
+        width: 15%;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 5px;
+        text-align: center;
+    }
 </style>
+
 <div class="container my-3">
     <div class="row">
         {% include "includes/menuAdministrador.html" %}
         <div class="col-6">
             <div class="p-3">
                 <div style="font-size: 35px;">
-                    <p class="text-center">Usuários banidos</p>
+                    <p class="text-center">Usuários Banidos</p>
                 </div>
             </div><br>
             <table class="table table-hover table-striped">
@@ -103,9 +124,23 @@ tbody tr.selected {
     </div>
 </div>
 
+<!-- Modal de Confirmação -->
+<div class="modal-overlay" id="modal-overlay">
+    <div class="modal-content">
+        <h5>Confirmar Desbanimento</h5>
+        <p id="user-name"></p>
+        <button style="background-color: #aeb073; margin-bottom: 10%; height: 1cm " class="border rounded" id="confirm-desbanir">Confirmar</button>
+        <button style="background-color: #aeb073; height: 1cm " class="border rounded" id="cancelar">Cancelar</button>
+    </div>
+</div>
+
 <script>
-    // Função para selecionar uma linha e habilitar os links
     const tableBody = document.getElementById('banidos-table-body');
+    const modalOverlay = document.getElementById('modal-overlay');
+    const userName = document.getElementById('user-name');
+    const visualizarDenuncia = document.getElementById('visualizar-denuncia');
+    const desbanirUsuario = document.getElementById('desbanir-usuario');
+
     let selectedRow = null;
 
     tableBody.addEventListener('click', function(e) {
@@ -121,17 +156,43 @@ tbody tr.selected {
         row.classList.add('selected');
         selectedRow = row;
 
-        // Habilita os links e define suas ações
-        document.getElementById('visualizar-denuncia').style.pointerEvents = 'auto';
-        document.getElementById('desbanir-usuario').style.pointerEvents = 'auto';
+        // Habilita os links
+        visualizarDenuncia.style.pointerEvents = 'auto';
+        desbanirUsuario.style.pointerEvents = 'auto';
 
-        const userId = row.getAttribute('data-id');
+        // Define o nome do usuário para o modal
+        const user = row.querySelector('th').innerText;
+        userName.innerText = `Você realmente deseja desbanir ${user}?`;
+    });
 
-        // Adiciona ações aos links
-        document.getElementById('visualizar-denuncia').href = `visualizardenuncia`;
-        document.getElementById('desbanir-usuario').href = `desbanirusuario`;
+    desbanirUsuario.addEventListener('click', function() {
+        if (selectedRow) {
+            modalOverlay.style.display = 'flex'; // Exibe o modal
+        }
+    });
+
+    document.getElementById('cancelar').addEventListener('click', function() {
+        modalOverlay.style.display = 'none'; // Fecha o modal
+    });
+
+    document.getElementById('confirm-desbanir').addEventListener('click', function() {
+        const userId = selectedRow.getAttribute('data-id');
+        const userNameText = selectedRow.querySelector('th').innerText;
+
+        // Atualiza o motivo para "Nenhum" ou outro status apropriado
+        selectedRow.querySelector('td:nth-child(2)').innerText = 'Nenhum'; 
+        alert(`Usuário ${userNameText} desbanido!`); // Mensagem de confirmação
+
+        modalOverlay.style.display = 'none'; // Fecha o modal
+    });
+
+    visualizarDenuncia.addEventListener('click', function() {
+        if (selectedRow) {
+            const userId = selectedRow.getAttribute('data-id');
+            // Redirecionar para a página de visualização da denúncia
+            window.location.href = `visualizardenuncia?id=${userId}`;
+        }
     });
 </script>
 
-  
 {% endblock %}

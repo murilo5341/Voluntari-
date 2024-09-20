@@ -6,16 +6,14 @@
   }
   #titulo1{
       font-size: 30px;
-      font-family: 'lato';
-      font-weight: bold;
+
       padding-top: 150px;
       color: #2E331C;
   }
   h2{
     font-size: 25px;
       color: #A3A651;
-      font-family: 'lato';
-      font-weight: bold;
+
   }
     
     .carousel-inner {

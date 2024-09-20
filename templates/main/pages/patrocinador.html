@@ -6,8 +6,6 @@
     .nossos_patrocinadores{
           font-size: 36px;
           color: #2E331C;
-          font-family: 'lato';
-          font-weight: bold;
           text-align: center;
           padding: auto;
           left: auto;
@@ -25,8 +23,6 @@
     }
     .MODALIDADES{
          color: black;
-          font-family: 'lato';
-          font-weight: bold;
           text-align: center;
           padding: auto;
           left: auto;
@@ -50,8 +46,7 @@
         
     }
     div.bg-header {
-        font-family: Arial, Helvetica, sans-serif;
-        background-image: url('/static/img/headerfotopatrocinador.svg');
+        background-image: url('/static/img/imgnovapatroci.svg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -61,10 +56,45 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 100vw;
-        }
+        width: 100vw;  
+      }
+      .sejapatroci {
+        margin-top: 10cm;
+        margin-left: 2cm;
+        color: white;
+    
+    }
+    .linha-vertical {
+        width: 3px;
+        /* Largura da linha vertical */
+        height: 140px;
+        /* Altura da linha vertical */
+        background-color: #AEB073;
+        opacity: 100%;
+    
+    }
+    .linha-vertical-container {
+        display: flex;
+        align-items: center;
+        /* Alinha verticalmente no centro */
+        margin-left: 2cm;
+        /* Centraliza horizontalmente no contêiner */
+        height: 10;
+        /* Altura total da viewport para centralização vertical */
+        position: relative;
+    }
+    .linha-vertical-container>h3 {
+        color: white
+        
+    }
 </style>
-<div class="bg-header">
+
+<div class="bg-header"> 
+        <h1 class="sejapatroci" style="background-color: #2e331c4d;">Seja um patrocinador voluntariÊ</h1>
+        <div class="linha-vertical-container">
+            <div class="linha-vertical"></div>
+            <h3 class="ps-3" style="background-color: #2e331c4d;">Torne-se um colaborador doando para projetos. Com isso você irá <br>contribuir para um futuro melhor e será reconhecido pelo site.</h3><br>
+        </div>
     <a href="#" class="btn fw-semibold d-grid col-2 saiba_mais" style="color:white; background-color:#A3A651;">saiba mais</a>
 </div>
 <div class="min-vh-100"></div>

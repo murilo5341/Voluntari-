@@ -25,7 +25,6 @@
   white-space: pre-wrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-family: 'lato';
   display: -webkit-box;
   -webkit-line-clamp: 4; /* Limita o número de linhas */
   -webkit-box-orient: vertical;

@@ -6,7 +6,6 @@ from util.templates import obter_jinja_templates
 router = APIRouter(prefix="/administrador")
 templates = obter_jinja_templates("templates/administrador")
 
-
 @router.get("/", response_class=HTMLResponse)
 async def get_root(request: Request):
     return templates.TemplateResponse("pages/index.html", {"request": request})
@@ -30,18 +29,23 @@ async def get_exibirModerador(request: Request):
 @router.get("/alterarsenha", response_class=HTMLResponse)
 async def get_alterarsenha(request: Request):
     return templates.TemplateResponse("pages/alterarsenhaadministrador.html", {"request": request})
+
 @router.get("/notificacao", response_class=HTMLResponse)
 async def get_alterarsenha(request: Request):
     return templates.TemplateResponse("pages/notificacaoadministrador.html", {"request": request})
+
 @router.get("/denunciausuario", response_class=HTMLResponse)
 async def get_denunciaProjeto(request: Request):
     return templates.TemplateResponse("pages/denunciausuario.html", {"request": request})
+
 @router.get("/denunciausuarioaprovada", response_class=HTMLResponse)
 async def get_denunciaProjeto(request: Request):
     return templates.TemplateResponse("pages/denunciausuarioaprovada.html", {"request": request})
+
 @router.get("/usuariobanido", response_class=HTMLResponse)
 async def get_denunciaProjeto(request: Request):
     return templates.TemplateResponse("pages/usuariobanido.html", {"request": request})
+
 @router.get("/visualizardenuncia", response_class=HTMLResponse)
 async def get_denunciaProjeto(request: Request):
     return templates.TemplateResponse("pages/visualizardenuncia.html", {"request": request})

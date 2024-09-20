@@ -1,0 +1,137 @@
+{% extends "pages/base.html" %}
+
+{% block subtitulo %}Usuários banidos{% endblock %}
+{% block conteudo %}
+
+<style>
+    .container-options {
+        width: 270px;
+        margin-top: 80px;
+        background-color: #ffffff; 
+    }
+    .container-forms {
+        margin-top: 40px;
+        background-color: #2e331c07;
+    }
+    .botao-verde{
+        --bs-btn-bg: #aeb073;
+
+    }
+    .person{
+      color: #aeb073;
+    }
+    .link-ativo {
+      color: #aeb073 !important; 
+  }
+  .campo{
+    width: 400px;
+  }
+
+  .link-verde {
+    color: #aeb073;
+    text-decoration: underline;
+}
+/* Deixar as linhas transparentes */
+tbody tr {
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+/* Destacar a linha selecionada */
+tbody tr.selected {
+    background-color: rgba(174, 176, 115, 0.5);
+    border: 2px solid #aeb073;
+}
+
+</style>
+<div class="container my-3">
+    <div class="row">
+        {% include "includes/menuAdministrador.html" %}
+        <div class="col-6">
+            <div class="p-3">
+                <div style="font-size: 35px;">
+                    <p class="text-center">Usuários banidos</p>
+                </div>
+            </div><br>
+            <table class="table table-hover table-striped">
+                <thead class="table-success">
+                    <tr>
+                        <th scope="col">Voluntário</th>
+                        <th scope="col">Motivo</th>
+                        <th scope="col">Reportado por</th>
+                        <th scope="col">Data</th>
+                    </tr>
+                </thead>
+                <tbody id="banidos-table-body">
+                    <tr data-id="002">
+                        <th scope="row">nick 002</th>
+                        <td>Spam</td>
+                        <td>Sérgio</td>
+                        <td>01/06/2024</td>
+                    </tr>
+                    <tr data-id="003">
+                        <th scope="row">nick 003</th>
+                        <td>Outros</td>
+                        <td>Alice</td>
+                        <td>01/06/2024</td>
+                    </tr>
+                    <tr data-id="004">
+                        <th scope="row">nick 004</th>
+                        <td>Spam</td>
+                        <td>Camila</td>
+                        <td>01/06/2024</td>
+                    </tr>
+                    <tr data-id="005">
+                        <th scope="row">nick 005</th>
+                        <td>Spam</td>
+                        <td>Leila</td>
+                        <td>01/06/2024</td>
+                    </tr>
+                    <tr data-id="006">
+                        <th scope="row">nick 006</th>
+                        <td>Spam</td>
+                        <td>Carlos</td>
+                        <td>01/06/2024</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="d-flex">
+                <a href="#" id="visualizar-denuncia" class="link-verde" style="pointer-events: none;">Visualizar denúncia</a>
+                <a href="#" id="desbanir-usuario" class="link-verde ms-auto" style="pointer-events: none;">Desbanir usuário</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Função para selecionar uma linha e habilitar os links
+    const tableBody = document.getElementById('banidos-table-body');
+    let selectedRow = null;
+
+    tableBody.addEventListener('click', function(e) {
+        const row = e.target.closest('tr');
+        if (!row) return;
+
+        // Remove a seleção anterior, se houver
+        if (selectedRow) {
+            selectedRow.classList.remove('selected');
+        }
+
+        // Seleciona a nova linha
+        row.classList.add('selected');
+        selectedRow = row;
+
+        // Habilita os links e define suas ações
+        document.getElementById('visualizar-denuncia').style.pointerEvents = 'auto';
+        document.getElementById('desbanir-usuario').style.pointerEvents = 'auto';
+
+        const userId = row.getAttribute('data-id');
+
+        // Adiciona ações aos links
+        document.getElementById('visualizar-denuncia').href = `visualizardenuncia`;
+        document.getElementById('desbanir-usuario').href = `desbanirusuario`;
+    });
+</script>
+
+  
+{% endblock %}

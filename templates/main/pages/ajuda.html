@@ -3,169 +3,114 @@
 {% block conteudo %}
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-
-        .ajuda {
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        
-
-        .containerajuda img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
+        .card-header {
+            background-color: #2e331cde;
+            color: white;
         }
 
         h1 {
             font-size: 36px;
-            color: #2E331C; /* Cor especificada */
-            margin-top: 20px;
-            text-align: center;
+            color: #2E331C;
+            margin-bottom: 40px;
         }
 
         h3 {
             font-size: 24px;
-            color: #798848; /* Cor especificada */
-            margin-top: 15px;
-            margin-bottom: 10px;
+            color: #705747;
+            margin-top: 20px;
         }
 
         p {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 10px;
-            line-height: 1.5;
+            font-size: 16px;
+            color: #6c757d;
         }
 
-        @media (max-width: 768px) {
-            .titleajuda {
-                font-size: 60px;
-            }
-
-            h1 {
-                font-size: 28px;
-            }
-
-            h3 {
-                font-size: 20px;
-            }
-
-            p {
-                font-size: 16px;
-            }
+        .card {
+            margin-bottom: 30px;
         }
 
-        @media (max-width: 480px) {
-            .titleajuda {
-                font-size: 40px;
-            }
-
-            h1 {
-                font-size: 24px;
-            }
-
-            h3 {
-                font-size: 18px;
-            }
-
-            p {
-                font-size: 14px;
-            }
+        .containerajuda img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 30px;
         }
+
     </style>
-    <link rel="stylesheet" href="/static/css/estilos.css">
+    
+    <div class="container text-center">
+        <img src="/static/img/logo/logopreta.png" alt="Logo" width="170px" class="pt-5">
+        <h1 class="pt-5 pb-4">Central de Ajuda</h1>
 
-</head>
-<body>
-    <div class="ajuda">
-        <div class="container text-center" style="background-color:#798848;">
-            <img src="/static/img/logo/logo_voluntarie.png" alt="Descrição da imagem" width="250px" class="pt-4 pb-4" >
+        <!-- Seção: Criar um projeto -->
+        <div class="card">
+            <div class="card-header">
+                <h2><i class="fas fa-folder-plus"></i> Criar um Projeto</h2>
+            </div>
+            <div class="card-body">
+                <h3>Como criar um projeto?</h3>
+                <p>- Clique no botão "Criar Projeto" no menu principal.</p>
+                <p>- Preencha o formulário com as informações do projeto.</p>
+                <p>- Adicione fotos e vídeos para ilustrar seu projeto.</p>
+                <p>- Clique em "Enviar" para publicar seu projeto.</p>
+                
+                <h3>Quais são os requisitos?</h3>
+                <p>- Conta registrada no site.</p>
+                <p>- Informações detalhadas e alinhadas com as diretrizes do site.</p>
+            </div>
         </div>
-        <h1 class="mt-4 pb-4"style=";">Ajuda</h1>
 
-        <h1 class="pt-3">Criar um projeto</h1>
-        <h3>Como criar um projeto?</h3>
-        <p>- Clique no botão "Criar Projeto" no menu principal.</p>
-        <p>- Preencha o formulário com as informações do projeto, incluindo nome, descrição, localização, datas, e necessidades de voluntariado.</p>
-        <p>- Adicione fotos e vídeos para ilustrar seu projeto.</p>
-        <p>- Clique em "Enviar" para publicar seu projeto.</p>
+        <!-- Seção: Ingressar em projetos -->
+        <div class="card">
+            <div class="card-header">
+                <h2><i class="fas fa-hands-helping"></i> Ingressar em Projetos</h2>
+            </div>
+            <div class="card-body">
+                <h3>Como encontrar projetos?</h3>
+                <p>- Navegue pela aba "Projetos".</p>
+                <p>- Use os filtros para buscar projetos específicos.</p>
 
-        <h3>Quais são os requisitos para criar um projeto?</h3>
-        <p>- Ter uma conta registrada no site.</p>
-        <p>- Fornecer informações detalhadas e precisas sobre o projeto.</p>
-        <p>- Garantir que o projeto esteja alinhado com as diretrizes e valores do site.</p>
+                <h3>Como se inscrever?</h3>
+                <p>- No detalhe do projeto, clique em "Ingressar".</p>
+                <p>- Preencha as informações e aguarde a confirmação.</p>
+            </div>
+        </div>
 
-        <h3>Como posso editar ou excluir meu projeto?</h3>
-        <p>- Acesse a aba "Meus Projetos" no seu perfil.</p>
-        <p>- Selecione o projeto que deseja editar ou excluir.</p>
-        <p>- Clique em "Editar" para fazer alterações ou em "Excluir" para removê-lo.</p>
+        <!-- Seção: Doações -->
+        <div class="card">
+            <div class="card-header">
+                <h2><i class="fas fa-donate"></i> Doar para Projetos</h2>
+            </div>
+            <div class="card-body">
+                <h3>Como posso doar?</h3>
+                <p>- Encontre o projeto e clique no botão "Doar".</p>
+                <p>- Escolha o valor e o método de pagamento.</p>
+            </div>
+        </div>
 
-        <h1>Ingressar em projetos</h1>
-        <h3>Como encontrar projetos para voluntariar?</h3>
-        <p>- Navegue pela aba "Projetos" no menu principal.</p>
-        <p>- Utilize os filtros para buscar projetos por localização, data, e necessidades específicas.</p>
-        <p>- Clique em um projeto para ver mais detalhes.</p>
+        <!-- Seção: Conta e configurações -->
+        <div class="card">
+            <div class="card-header">
+                <h2><i class="bi bi-person-fill-gear"></i> Conta e Configurações</h2>
+            </div>
+            <div class="card-body">
+                <h3>Como criar uma conta?</h3>
+                <p>- Clique em "Registrar" e preencha o formulário.</p>
 
-        <h3>Como se inscrever em um projeto?</h3>
-        <p>- No detalhe do projeto, clique no botão "Ingressar".</p>
-        <p>- Preencha as informações solicitadas e envie sua inscrição.</p>
-        <p>- Aguarde a confirmação do responsável pelo projeto.</p>
+                <h3>Como recuperar a senha?</h3>
+                <p>- Clique em "Esqueci minha senha" e siga as instruções.</p>
+            </div>
+        </div>
 
-        <h3>Como acompanhar minha inscrição?</h3>
-        <p>- Acesse a aba "Minhas Inscrições" no seu perfil.</p>
-        <p>- Veja o status das suas inscrições e comunique-se com os responsáveis pelos projetos.</p>
-
-        <h1>Doar para projetos</h1>
-        <h3>Como posso fazer uma doação?</h3>
-        <p>- Encontre o projeto que deseja apoiar na aba "Projetos".</p>
-        <p>- Clique no botão "Doar".</p>
-        <p>- Escolha o valor da doação e o método de pagamento.</p>
-        <p>- Complete o processo de pagamento para finalizar a doação.</p>
-
-        <h3>As doações são seguras?</h3>
-        <p>- Sim, utilizamos plataformas de pagamento seguras e criptografia para proteger suas informações.</p>
-
-        <h1>Conta e configurações</h1>
-        <h3>Como crio uma conta?</h3>
-        <p>- Clique no botão "Registrar" no menu principal.</p>
-        <p>- Preencha o formulário com suas informações pessoais.</p>
-        <p>- Confirme seu e-mail para ativar a conta.</p>
-
-        <h3>Como recupero minha senha?</h3>
-        <p>- Clique em "Esqueci minha senha" na página de login.</p>
-        <p>- Siga as instruções enviadas para o seu e-mail para redefinir sua senha.</p>
-
-        <h3>Como posso alterar minhas informações pessoais?</h3>
-        <p>- Acesse a aba "Configurações" no seu perfil.</p>
-        <p>- Edite suas informações e clique em "Salvar" para atualizar.</p>
-
-        <h1>Suporte e Contato</h1>
-        <h3>Como entro em contato com o suporte?</h3>
-        <p>- Acesse a aba "Contato" no menu principal.</p>
-        <p>- Preencha o formulário de contato ou envie um e-mail para <a href="mailto:suporte@exemplo.com">suporte@exemplo.com</a>.</p>
-        <p>- Nosso time de suporte responderá o mais rápido possível.</p>
-
-        <h3>Onde encontro respostas para outras dúvidas?</h3>
-        <p>- Consulte nossa seção de <a href="/faq">FAQ</a> para respostas a perguntas frequentes.</p>
-        <p>- Participe do nosso fórum de usuários para trocar experiências e dicas.</p>
+        <!-- Seção: Suporte e Contato -->
+        <div class="card">
+            <div class="card-header">
+                <h2><i class="bi bi-headset"></i> Suporte e Contato</h2>
+            </div>
+            <div class="card-body">
+                <h3>Como entrar em contato?</h3>
+                <p>- Acesse a aba "Contato" no menu ou envie um e-mail para <a href="mailto:suporte@exemplo.com" style="color:#81c22bf3">suporte@exemplo.com</a>.</p>
+            </div>
+        </div>
     </div>
-    <script>
-        window.onload = function() {
-            var element = document.querySelector('.termos-de-uso');
-            var height = element.offsetHeight; // Obtém a altura atual
-            element.style.height = (height + 100) + 'px'; // Adiciona 100px à altura atual
-        };
-    </script>
-</body>
-</html>
-{% endblock %}
 
+{% endblock %}

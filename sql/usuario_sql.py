@@ -58,3 +58,9 @@ SQL_EMAIL_EXISTE = """
     FROM usuario
     WHERE email=?
 """
+
+SQL_CHECAR_CREDENCIAIS = """
+    SELECT nome, email, perfil, senha
+    FROM usuario
+    WHERE email = ?
+"""

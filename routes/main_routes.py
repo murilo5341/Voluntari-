@@ -19,8 +19,8 @@ async def get_index(request: Request):
 @router.get("/entrar")
 async def get_root(request: Request):
     usuario = request.state.usuario if hasattr(request.state, "usuario") else None
-    if not usuario:
-        return templates.TemplateResponse("pages/entrar.html", {"request": request})
+    if not usuario or not usuario.perfil:
+        return templates.TemplateResponse("pages/entrar.html", {"request": request})    
     if usuario.perfil == 1:
         return RedirectResponse("/voluntario", status_code=status.HTTP_303_SEE_OTHER)
     if usuario.perfil == 2:

@@ -9,7 +9,7 @@ from util.templates import obter_jinja_templates
 router = APIRouter()
 templates = obter_jinja_templates("templates/main")
 @router.get("/", response_class=HTMLResponse)
-async def get_cadastro(request: Request):
+async def get_index(request: Request):
     return templates.TemplateResponse("pages/index.html", {"request": request})
 
 

@@ -91,3 +91,4 @@ async def get_projetosfinalizados(request: Request):
 @router.get("/doacoesfeitas", response_class=HTMLResponse)
 async def get_doacoesfeitas(request: Request):
     return templates.TemplateResponse("pages/doacoesfeitas.html", {"request": request})
+

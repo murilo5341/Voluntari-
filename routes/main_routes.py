@@ -8,12 +8,15 @@ from util.templates import obter_jinja_templates
 
 router = APIRouter()
 templates = obter_jinja_templates("templates/main")
+@router.get("/", response_class=HTMLResponse)
+async def get_cadastro(request: Request):
+    return templates.TemplateResponse("pages/index.html", {"request": request})
 
 
 # @router.get("/", response_class=HTMLResponse)
 # async def get_root(request: Request):
 #     return templates.TemplateResponse("pages/index.html", {"request": request})
-@router.get("/")
+@router.get("/entrar")
 async def get_root(request: Request):
     usuario = request.state.usuario if hasattr(request.state, "usuario") else None
     if not usuario:

@@ -43,24 +43,13 @@ class UsuarioRepo:
             with obter_conexao() as conexao:
                 cursor = conexao.cursor()
                 cursor.execute(
-                    SQL_ALTERAR,
+                    SQL_ATUALIZAR_DADOS,
                     (
                         usuario.nome,
                         usuario.email,
                         usuario.id,
                     ),
                 )
-                return cursor.rowcount > 0
-        except sqlite3.Error as ex:
-            print(ex)
-            return False
-
-    @classmethod
-    def alterar_token(cls, id: int, token: str) -> bool:
-        try:
-            with obter_conexao() as conexao:
-                cursor = conexao.cursor()
-                cursor.execute(SQL_ALTERAR_TOKEN, (id, token))
                 return cursor.rowcount > 0
         except sqlite3.Error as ex:
             print(ex)
@@ -83,36 +72,6 @@ class UsuarioRepo:
             with obter_conexao() as conexao:
                 cursor = conexao.cursor()
                 tupla = cursor.execute(SQL_OBTER_POR_ID, (id,)).fetchone()
-                if tupla:
-                    usuario = Usuario(*tupla)
-                    return usuario
-                else:
-                    return None
-        except sqlite3.Error as ex:
-            print(ex)
-            return None
-        
-    @classmethod
-    def obter_por_email(cls, email: str) -> Optional[Usuario]:
-        try:
-            with obter_conexao() as conexao:
-                cursor = conexao.cursor()
-                tupla = cursor.execute(SQL_OBTER_POR_EMAIL, (email,)).fetchone()
-                if tupla:
-                    usuario = Usuario(*tupla)
-                    return usuario
-                else:
-                    return None
-        except sqlite3.Error as ex:
-            print(ex)
-            return None
-        
-    @classmethod
-    def obter_por_token(cls, token: str) -> Optional[Usuario]:
-        try:
-            with obter_conexao() as conexao:
-                cursor = conexao.cursor()
-                tupla = cursor.execute(SQL_OBTER_POR_TOKEN, (token,)).fetchone()
                 if tupla:
                     usuario = Usuario(*tupla)
                     return usuario
@@ -163,3 +122,19 @@ class UsuarioRepo:
                 if conferir_senha(senha, dados[3]):
                     return (dados[0], dados[1], dados[2])
             return None
+    
+    @classmethod
+    def atualizar_senha(cls, email: str, senha: str) -> bool:
+        with obter_conexao() as db:
+            cursor = db.cursor()
+            resultado = cursor.execute(
+                SQL_ATUALIZAR_SENHA, (senha, email))
+            return resultado.rowcount > 0
+        
+    @classmethod
+    def excluir_usuario(cls, email: str) -> bool:
+        with obter_conexao() as db:
+            cursor = db.cursor()
+            resultado = cursor.execute(
+                SQL_EXCLUIR_USUARIO, (email,))
+            return resultado.rowcount > 0

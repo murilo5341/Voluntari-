@@ -14,25 +14,13 @@ SQL_INSERIR = """
     VALUES (?, ?, ?)
 """
 
-SQL_ALTERAR = """
-    UPDATE usuario
-    SET nome=?, email=?
-    WHERE id=?
-"""
-
 SQL_EXCLUIR = """
     DELETE FROM usuario    
     WHERE id=?
 """
 
 SQL_OBTER_POR_ID = """
-    SELECT id, nome, email, perfil, token
-    FROM usuario
-    WHERE id=?
-"""
-
-SQL_OBTER_POR_EMAIL = """
-    SELECT id, nome, email, perfil, token
+    SELECT id, nome, email, senha, data_nascimento, telefone, perfil
     FROM usuario
     WHERE id=?
 """
@@ -51,5 +39,20 @@ SQL_EMAIL_EXISTE = """
 SQL_CHECAR_CREDENCIAIS = """
     SELECT nome, email, perfil, senha
     FROM usuario
+    WHERE email = ?
+"""
+
+SQL_ATUALIZAR_DADOS = """
+    UPDATE usuario
+    SET nome = ?, email = ?, telefone = ?
+    WHERE email = ?
+"""
+SQL_ATUALIZAR_SENHA = """
+    UPDATE usuario
+    SET senha = ?
+    WHERE email = ?
+"""
+SQL_EXCLUIR_USUARIO = """
+    DELETE FROM usuario
     WHERE email = ?
 """

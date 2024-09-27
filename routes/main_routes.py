@@ -37,7 +37,7 @@ async def post_entrar(
     senha: str = Form(...)):
     usuario = UsuarioRepo.checar_credenciais(email, senha)
     if usuario is None:
-        response = RedirectResponse("/", status_code=status.HTTP_303_SEE_OTHER)
+        response = RedirectResponse("/entrar", status_code=status.HTTP_303_SEE_OTHER)
         return response
     token = criar_token(usuario[0], usuario[1], usuario[2], usuario[3])
     nome_perfil = None
@@ -70,7 +70,7 @@ async def post_cadastro(
     confsenha: str = Form(...),
     perfil: int = Form(...)):
     if senha != confsenha:
-        return RedirectResponse("/cadastrar", status_code=status.HTTP_303_SEE_OTHER)
+        return RedirectResponse("/cadastro", status_code=status.HTTP_303_SEE_OTHER)
     senha_hash = obter_hash_senha(senha)
     usuario = Usuario(None, nome, email, telefone, senha_hash, None, perfil)
     UsuarioRepo.inserir(usuario)

@@ -1,5 +1,3 @@
-import json
-import sqlite3
 from typing import Optional
 from models.usuario_model import Usuario
 from sql.usuario_sql import *
@@ -10,106 +8,76 @@ from util.database import obter_conexao
 class UsuarioRepo:
     @classmethod
     def criar_tabela(cls):
-        with obter_conexao() as conexao:
-            cursor = conexao.cursor()
+        with obter_conexao() as db:
+            cursor = db.cursor()
             cursor.execute(SQL_CRIAR_TABELA)
 
     @classmethod
-    def inserir(cls, usuario: Usuario) -> Optional[Usuario]:
-        try:
-            with obter_conexao() as conexao:
-                cursor = conexao.cursor()
-                cursor.execute(
-                    SQL_INSERIR,
+    def inserir(cls, usuario: Usuario) -> bool:
+            with obter_conexao() as db:
+                cursor = db.cursor()
+                resultado = cursor.execute(
+                    SQL_INSERIR_USUARIO,
                     (
-                        usuario.id,
                         usuario.nome,
                         usuario.email,
                         usuario.senha,
+                        usuario.cpf,
                         usuario.data_nascimento,                        
                         usuario.telefone,
-                        usuario.perfil,
-                    ),
+                        usuario.perfil
+                    )
                 )
-                if cursor.rowcount > 0:
-                    return usuario
-        except sqlite3.Error as ex:
-            print(ex)
-            return None
+                return resultado.rowcount > 0
 
     @classmethod
     def alterar(cls, usuario: Usuario) -> bool:
-        try:
-            with obter_conexao() as conexao:
-                cursor = conexao.cursor()
-                cursor.execute(
+            with obter_conexao() as db:
+                cursor = db.cursor()
+                resultado = cursor.execute(
                     SQL_ATUALIZAR_DADOS,
                     (
                         usuario.nome,
                         usuario.email,
+                        usuario.data_nascimento,
+                        usuario.telefone,
                         usuario.id,
                     ),
                 )
-                return cursor.rowcount > 0
-        except sqlite3.Error as ex:
-            print(ex)
-            return False
+                return resultado.rowcount > 0
 
-    @classmethod
-    def excluir(cls, id: int) -> bool:
-        try:
-            with obter_conexao() as conexao:
-                cursor = conexao.cursor()
-                cursor.execute(SQL_EXCLUIR, (id,))
-                return cursor.rowcount > 0
-        except sqlite3.Error as ex:
-            print(ex)
-            return None
+  
 
     @classmethod
     def obter_por_id(cls, id: int) -> Optional[Usuario]:
-        try:
-            with obter_conexao() as conexao:
-                cursor = conexao.cursor()
-                tupla = cursor.execute(SQL_OBTER_POR_ID, (id,)).fetchone()
-                if tupla:
-                    usuario = Usuario(*tupla)
-                    return usuario
-                else:
-                    return None
-        except sqlite3.Error as ex:
-            print(ex)
+        with obter_conexao() as db:
+            cursor = db.cursor()
+            dados = cursor.execute(
+                SQL_OBTER_POR_ID, (id,)).fetchone()
+            if dados:
+                return Usuario(*dados)
             return None
 
-    @classmethod
-    def obter_quantidade(cls) -> int:
-        try:
-            with obter_conexao() as conexao:
-                cursor = conexao.cursor()
-                tupla = cursor.execute(SQL_OBTER_QUANTIDADE).fetchone()
-                return int(tupla[0])
-        except sqlite3.Error as ex:
-            print(ex)
-            return 0
+    # @classmethod
+    # def obter_quantidade(cls) -> int:
+    #     try:
+    #         with obter_conexao() as conexao:
+    #             cursor = conexao.cursor()
+    #             tupla = cursor.execute(
+    #                 SQL_OBTER_QUANTIDADE).fetchone()
 
-    @classmethod
-    def inserir_dados_json(cls):
-        if UsuarioRepo.obter_quantidade() == 0:
-            with open("sql/usuarios.json", "r", encoding="utf-8") as arquivo:
-                usuarios = json.load(arquivo)
-                for usuario in usuarios:
-                    UsuarioRepo.inserir(Usuario(**usuario))
 
-    @classmethod
-    def email_existe(cls, email: str) -> bool:
-        try:
-            with obter_conexao() as conexao:
-                cursor = conexao.cursor()
-                tupla = cursor.execute(SQL_EMAIL_EXISTE, (email,)).fetchone()
-                return tupla[0] > 0
-        except sqlite3.Error as ex:
-            print(ex)
-            return False
+
+    # @classmethod
+    # def email_existe(cls, email: str) -> bool:
+    #     try:
+    #         with obter_conexao() as conexao:
+    #             cursor = conexao.cursor()
+    #             tupla = cursor.execute(SQL_EMAIL_EXISTE, (email,)).fetchone()
+    #             return tupla[0] > 0
+    #     except sqlite3.Error as ex:
+    #         print(ex)
+    #         return False
         
           
     @classmethod
@@ -124,17 +92,17 @@ class UsuarioRepo:
             return None
     
     @classmethod
-    def atualizar_senha(cls, email: str, senha: str) -> bool:
+    def atualizar_senha(cls, id: int, senha: str) -> bool:
         with obter_conexao() as db:
             cursor = db.cursor()
             resultado = cursor.execute(
-                SQL_ATUALIZAR_SENHA, (senha, email))
+                SQL_ATUALIZAR_SENHA, (senha, id))
             return resultado.rowcount > 0
         
     @classmethod
-    def excluir_usuario(cls, email: str) -> bool:
+    def excluir_usuario(cls, id: int) -> bool:
         with obter_conexao() as db:
             cursor = db.cursor()
             resultado = cursor.execute(
-                SQL_EXCLUIR_USUARIO, (email,))
-            return resultado.rowcount > 0
+                SQL_EXCLUIR_USUARIO, (id,))
+            return resultado.rowcount > 0    

@@ -4,23 +4,20 @@ SQL_CRIAR_TABELA = """
         nome TEXT NOT NULL,
         email TEXT NOT NULL UNIQUE,
         senha TEXT NOT NULL,
+        cpf TEXT NOT NULL ,
         data_nascimento DATE NOT NULL,
-        telefone TEXT NOT NULL,
+        telefone TEXT NOT NULL UNIQUE,
         perfil INT NOT NULL)
 """
 
-SQL_INSERIR = """
-    INSERT INTO usuario(id, nome, email, senha, data_nascimento, telefone, perfil)
-    VALUES (?, ?, ?)
+SQL_INSERIR_USUARIO = """
+    INSERT INTO usuario(id, nome, email, senha, cpf, data_nascimento, telefone, perfil)
+    VALUES (?, ?, ?, ?, ?, ?, ?)
 """
 
-SQL_EXCLUIR = """
-    DELETE FROM usuario    
-    WHERE id=?
-"""
 
 SQL_OBTER_POR_ID = """
-    SELECT id, nome, email, senha, data_nascimento, telefone, perfil
+    SELECT id, nome, email, senha, cpf, data_nascimento, telefone, perfil
     FROM usuario
     WHERE id=?
 """
@@ -37,7 +34,7 @@ SQL_EMAIL_EXISTE = """
 """
 
 SQL_CHECAR_CREDENCIAIS = """
-    SELECT nome, email, perfil, senha
+    SELECT nome, email, senha, perfil
     FROM usuario
     WHERE email = ?
 """

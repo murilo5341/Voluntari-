@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Form, Request, status
 from fastapi.responses import HTMLResponse, RedirectResponse
 
-from models.usuario_model import Usuario
+from models.usuario_model import *
 from repositories.usuario_repo import UsuarioRepo
 from util.auth import NOME_COOKIE_AUTH, criar_token, obter_hash_senha
 from util.templates import obter_jinja_templates
@@ -65,14 +65,15 @@ async def get_cadastro(request: Request):
 async def post_cadastro(
     nome: str = Form(...),
     email: str = Form(...),
-    telefone: str = Form(...),
     senha: str = Form(...),
-    confsenha: str = Form(...),
-    perfil: int = Form(...)):
+    cpf: str = Form(...),
+    data_nascimento: str = Form(...),
+    telefone: str = Form(...),
+    confsenha: str = Form(...)):
     if senha != confsenha:
         return RedirectResponse("/cadastro", status_code=status.HTTP_303_SEE_OTHER)
     senha_hash = obter_hash_senha(senha)
-    usuario = Usuario(None, nome, email, telefone, senha_hash, None, perfil)
+    usuario = Usuario(None, nome, email,senha_hash, cpf,data_nascimento,telefone,perfil=1 )
     UsuarioRepo.inserir(usuario)
     return RedirectResponse("/", status_code=status.HTTP_303_SEE_OTHER)
 
@@ -121,6 +122,14 @@ async def get_EsqueciSenha(request: Request):
 async def get_assinarPlanoAnual(request: Request):
     return templates.TemplateResponse("pages/assinarPlanoAnual.html", {"request": request})
 
+
+@router.get("/assinatura", response_class=HTMLResponse)
+async def get_assinatura(request: Request):
+    return templates.TemplateResponse("pages/assinatura.html", {"request": request})
+
+@router.get("/dadosCartaoPlanoAnual", response_class=HTMLResponse)
+async def get_dadosCartaoPlanoAnual(request: Request):
+    return templates.TemplateResponse("pages/dadosCartaoPlanoAnual.html", {"request": request})
 
 
 

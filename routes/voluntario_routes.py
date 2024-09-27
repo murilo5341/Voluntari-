@@ -32,9 +32,7 @@ async def get_avaliacoes(request: Request):
 async def get_ingressarProjeto(request: Request):
     return templates.TemplateResponse("pages/ingressarProjeto.html", {"request": request})
 
-@router.get("/assinatura", response_class=HTMLResponse)
-async def get_assinatura(request: Request):
-    return templates.TemplateResponse("pages/assinatura.html", {"request": request})
+
 
 @router.get("/criarprojeto", response_class=HTMLResponse)
 async def get_criarProjeto(request: Request):

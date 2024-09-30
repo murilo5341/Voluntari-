@@ -127,9 +127,9 @@ async def get_assinarPlanoAnual(request: Request):
 async def get_assinatura(request: Request):
     return templates.TemplateResponse("pages/assinatura.html", {"request": request})
 
-@router.get("/dadosCartaoPlanoAnual", response_class=HTMLResponse)
-async def get_dadosCartaoPlanoAnual(request: Request):
-    return templates.TemplateResponse("pages/dadosCartaoPlanoAnual.html", {"request": request})
+@router.get("/mtdPagamentoAnual", response_class=HTMLResponse)
+async def get_mtdPagamentoAnual(request: Request):
+    return templates.TemplateResponse("pages/mtdPagamentoAnual.html", {"request": request})
 
 
 

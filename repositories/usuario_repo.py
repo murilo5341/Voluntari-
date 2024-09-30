@@ -25,7 +25,6 @@ class UsuarioRepo:
                         usuario.cpf,
                         usuario.data_nascimento,                        
                         usuario.telefone,
-                        usuario.perfil
                     )
                 )
                 return resultado.rowcount > 0

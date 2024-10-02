@@ -42,7 +42,7 @@
     <div class="container col-md-5  bg-light rounded mt-3">
         <div class="fw-semibold fs-4 text-center mt-3">Assinatura Anual</div>
         <hr>
-        <div class="text-secondary text-center fw-semibold">
+        <div class="text-secondary text-center fw-semibold" style="font-size: 20px;">
             12 meses por R$153,00 <br>
             15% de desconto em relação ao plano mensal
         </div>
@@ -50,6 +50,21 @@
     </div>
 </div>
 <div class=" text-center mb-5 mt-3">
-    <a class="btn btn-secondary border p-2 botao-verde" href="#">Próximo</a>
+    <a class="btn btn-secondary border p-2 botao-verde" onclick="redirecionar()">Próximo</a>
 </div>
+<script>
+    function redirecionar() {
+        const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
+
+        if (paymentMethod) {
+            if (paymentMethod.value === 'pix') {
+                window.location.href = '/mtdPagamentoPìxAnual';
+            } else if (paymentMethod.value === 'credit') {
+                window.location.href = '/mtdPagamentoCreditoAnual';
+            }
+        } else {
+            alert('Por favor, selecione um plano de assinatura.');
+        }
+    }
+</script>
 {% endblock %}

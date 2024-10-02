@@ -127,9 +127,13 @@ async def get_assinarPlanoAnual(request: Request):
 async def get_assinatura(request: Request):
     return templates.TemplateResponse("pages/assinatura.html", {"request": request})
 
-@router.get("/mtdPagamentoAnual", response_class=HTMLResponse)
-async def get_mtdPagamentoAnual(request: Request):
-    return templates.TemplateResponse("pages/mtdPagamentoAnual.html", {"request": request})
+@router.get("/mtdPagamentoCreditoAnual", response_class=HTMLResponse)
+async def get_mtdPagamentoCreditoAnual(request: Request):
+    return templates.TemplateResponse("pages/mtdPagamentoCreditoAnual.html", {"request": request})
+
+@router.get("/mtdPagamentoCreditoMensal", response_class=HTMLResponse)
+async def get_mtdPagamentoCreditoMensal(request: Request):
+    return templates.TemplateResponse("pages/mtdPagamentoCreditoMensal.html", {"request": request})
 
 @router.get("/assinarPlanoMensal", response_class=HTMLResponse)
 async def get_assinarPlanoMensal(request: Request):

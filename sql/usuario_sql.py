@@ -11,7 +11,7 @@ SQL_CRIAR_TABELA = """
 """
 
 SQL_INSERIR_USUARIO = """
-    INSERT INTO usuario(id, nome, email, senha, cpf, data_nascimento, telefone, perfil)
+    INSERT INTO usuario(nome, email, senha, cpf, data_nascimento, telefone, perfil)
     VALUES (?, ?, ?, ?, ?, ?, ?)
 """
 

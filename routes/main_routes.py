@@ -118,7 +118,7 @@ async def get_EsqueciSenha(request: Request):
 async def get_EsqueciSenha(request: Request):
     return templates.TemplateResponse("pages/sobre.html", {"request": request})
 
-@router.get("/assinarplano", response_class=HTMLResponse)
+@router.get("/assinarPlanoAnual", response_class=HTMLResponse)
 async def get_assinarPlanoAnual(request: Request):
     return templates.TemplateResponse("pages/assinarPlanoAnual.html", {"request": request})
 
@@ -131,6 +131,8 @@ async def get_assinatura(request: Request):
 async def get_mtdPagamentoAnual(request: Request):
     return templates.TemplateResponse("pages/mtdPagamentoAnual.html", {"request": request})
 
-
+@router.get("/assinarPlanoMensal", response_class=HTMLResponse)
+async def get_assinarPlanoMensal(request: Request):
+    return templates.TemplateResponse("pages/assinarPlanoMensal.html", {"request": request})
 
 

@@ -1,0 +1,17 @@
+{% extends "pages/base.html" %}
+
+{% block subtitulo %}Assinar Plano Mensal{% endblock %}
+{% block conteudo %}
+{% include "includes/menuAssinaturaMensal.html"%}
+
+<div class="container col-md-5  bg-light rounded mt-3">
+    <div class="fw-semibold fs-4 text-center mt-3">Assinatura Anual</div>
+    <hr>
+    <div class="text-secondary text-center fw-semibold">
+        12 meses por R$153,00 <br>
+        15% de desconto em relação ao plano mensal
+    </div>
+    <p class="text-secondary text-center mt-5 small">A renovação não é automática</p>
+</div>
+
+{% endblock %}

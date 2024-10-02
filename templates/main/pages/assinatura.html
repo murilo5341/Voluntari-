@@ -136,7 +136,7 @@
 </style>
 
 <div class="container">
-    <div class="row">
+ 
         <div class="col-6 offset-3">
             <h1 class="title">Assinatura para os voluntários</h1>
             <h2 class="subtitle">A assinatura eleva sua experiência em nosso site. Escolha o plano que mais combine com
@@ -208,9 +208,9 @@
 
         if (plano) {
             if (plano.value === 'mensal') {
-                window.location.href = '/assinarplanomensal';
+                window.location.href = '/assinarPlanoMensal';
             } else if (plano.value === 'anual') {
-                window.location.href = '/assinarplano';
+                window.location.href = '/assinarPlanoAnual';
             }
         } else {
             alert('Por favor, selecione um plano de assinatura.');

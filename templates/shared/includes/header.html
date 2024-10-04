@@ -1,64 +1,88 @@
-{% set usuario = request.state.usuario %}    
-<nav class="navbar navbar-expand-lg navbar-dark cor-navbar">
-    <div class="container">
-        <a class="navbar-brand" href="/">
-            <img src="/static/img/logo/logo_voluntarie.png" alt="Logotipo" height="48">
-        </a>
-        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse p-3" id="collapsibleNavId" align-center>
-            <ul class="navbar-nav mt-2 mt-lg-0 w-100 d-flex justify-content-evenly">
-                <li class="nav-item dropdown">
-                    {% if (usuario.perfil == 1 or usuario.perfil == 2 or usuario.perfil == 3): %}
-                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-person-fill"></i>
-                            Olá, {{usuario.nome}}
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="/entrar">Meus dados</a></li>
-                            <li><a class="dropdown-item" href="/sair">Sair</a></li>
-                        </ul>
-                    {% else %}
+<style>
+    .navbar{
+        z-index: 1
+    }
+</style>
+<div>
+    <nav class="navbar navbar-expand-lg navbar-dark cor-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="/static/img/logo/logo_voluntarie.png" alt="Logotipo" height="48">
+            </a>
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse p-3" id="collapsibleNavId" align-center>
+                <ul class="navbar-nav mt-2 mt-lg-0 w-100 d-flex justify-content-evenly">
+                    <li class="nav-item">
                         <a class="nav-link active" href="/entrar">
                             <i class="bi bi-person-fill"></i>
-                            Entrar
+                            Olá, Fulano
                         </a>
-                    {% endif %}
-                </li>
-                
-                <li class="nav-item">
-                    <a class="nav-link" href="/projetos">Projetos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/colaboradores">Colaboradores</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/patrocinador">Patrocinadores</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/ajuda">Ajuda</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/sobre">Sobre Nós</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="bi bi-bell text-white"></i>
-                    </a>
-                </li>
-
-            </ul>
-            <form class="d-flex my-2 my-lg-0  buscar">
-                <input class="form-control me-sm-2 rounded-5  border-0 backgroundbuscar" type="text"
-                    placeholder="Buscar..." style="width: 300px;">
-                <button class="btn my-2 my-sm-0" type="submit">
-                    <i class="bi bi-search text-white"></i>
-                </button>
-            </form>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/projetos">Projetos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/colaboradores">Colaboradores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/patrocinador">Patrocinadores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ajuda">Ajuda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sobre">Sobre Nós</a>
+                    </li>
+                    
+                    <!-- Dropdown de Notificações -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button" 
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-bell text-white"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown">
+                            <!-- Título do Dropdown -->
+                            <li><h6 class="dropdown-header" style="color:darkolivegreen;">Notificações</h6></li>
+                            <li>
+                                <a class="dropdown-item small" href="#">
+                                    <i class="bi bi-bell-fill me-2"></i> Projeto Aprovado...
+                                </a>
+                                <small class="text-muted d-block ms-4 small">10:30 AM - 04 Out</small>
+                            </li>
+                            <li>
+                                <a class="dropdown-item small" href="#">
+                                    <i class="bi bi-bell-fill me-2 small"></i> Projeto Negado...
+                                </a>
+                                <small class="text-muted d-block ms-4 small">11:15 AM - 03 Out</small>
+                            </li>
+                            <li>
+                                <a class="dropdown-item small" href="#">
+                                    <i class="bi bi-bell-fill me-2"></i> Nova Mensagem...
+                                </a>
+                                <small class="text-muted d-block ms-4 small">01:45 PM - 02 Out</small>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="text-center">
+                                <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#allNotificationsModal">Mostrar mais</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+    
+                <!-- Barra de busca -->
+                <form class="d-flex my-2 my-lg-0 buscar">
+                    <input class="form-control me-sm-2 rounded-5 border-0 backgroundbuscar" type="text"
+                        placeholder="Buscar..." style="width: 300px;">
+                    <button class="btn my-2 my-sm-0" type="submit">
+                        <i class="bi bi-search text-white"></i>
+                    </button>
+                </form>
+            </div>
         </div>
-    </div>
-
-</nav>
+    </nav>

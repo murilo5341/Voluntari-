@@ -39,7 +39,7 @@ async def post_entrar(
     if usuario is None:
         response = RedirectResponse("/entrar", status_code=status.HTTP_303_SEE_OTHER)
         return response
-    token = criar_token(usuario[0], usuario[1], usuario[2], usuario[3])
+    token = criar_token(usuario[0], usuario[1], usuario[2])
     nome_perfil = None
     match (usuario[2]):
         case 1: nome_perfil = "voluntario"
@@ -139,11 +139,15 @@ async def get_mtdPagamentoCreditoMensal(request: Request):
 async def get_assinarPlanoMensal(request: Request):
     return templates.TemplateResponse("pages/assinarPlanoMensal.html", {"request": request})
 
-
-@router.get("/confFinalizacaoPixAnual", response_class=HTMLResponse)
-async def get_confFinalizacaoPixAnual(request: Request):
-    return templates.TemplateResponse("pages/confFinalizacaoPixAnual.html", {"request": request})
-
-    
+@router.get("/confPagamentoAnual", response_class=HTMLResponse)
+async def get_confPagamentoAnual(request: Request):
+    return templates.TemplateResponse("pages/confPagamentoAnual.html", {"request": request})
 
 
+@router.get("/confPagamentoMensal", response_class=HTMLResponse)
+async def get_confPagamentoMensal(request: Request):
+    return templates.TemplateResponse("pages/confPagamentoMensal.html", {"request": request})
+
+@router.get("/pagamentoAprovado", response_class=HTMLResponse)
+async def get_pagamentoAprovado(request: Request):
+    return templates.TemplateResponse("pages/pagamentoAprovado.html", {"request": request})

@@ -20,7 +20,11 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="/entrar">
                             <i class="bi bi-person-fill"></i>
-                            Olá, {{ usuario.nome }}
+                            {% if (usuario.perfil == 1 or usuario.perfil == 2 or usuario.perfil == 3): %}
+                                Olá, {{usuario.nome}}
+                            {% else %}
+                                Entrar
+                            {% endif %}
                         </a>
                     </li>
                     <li class="nav-item">

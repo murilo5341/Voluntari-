@@ -151,3 +151,14 @@ async def get_confPagamentoMensal(request: Request):
 @router.get("/pagamentoAprovado", response_class=HTMLResponse)
 async def get_pagamentoAprovado(request: Request):
     return templates.TemplateResponse("pages/pagamentoAprovado.html", {"request": request})
+
+@router.get("/sair")
+async def get_sair():
+    response = RedirectResponse("/", status_code=status.HTTP_307_TEMPORARY_REDIRECT)
+    response.set_cookie(
+        key=NOME_COOKIE_AUTH,
+        value="",
+        max_age=1,
+        httponly=True,
+        samesite="lax")
+    return response    

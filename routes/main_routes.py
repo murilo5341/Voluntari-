@@ -143,6 +143,11 @@ async def get_assinarPlanoMensal(request: Request):
 async def get_confPagamentoAnual(request: Request):
     return templates.TemplateResponse("pages/confPagamentoAnual.html", {"request": request})
 
+
 @router.get("/confPagamentoMensal", response_class=HTMLResponse)
 async def get_confPagamentoMensal(request: Request):
     return templates.TemplateResponse("pages/confPagamentoMensal.html", {"request": request})
+
+@router.get("/pagamentoAprovado", response_class=HTMLResponse)
+async def get_pagamentoAprovado(request: Request):
+    return templates.TemplateResponse("pages/pagamentoAprovado.html", {"request": request})

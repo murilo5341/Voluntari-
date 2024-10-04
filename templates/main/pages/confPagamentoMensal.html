@@ -1,6 +1,6 @@
 {% extends "pages/base.html" %}
 
-{% block subtitulo %}Confirmação pagamento anual{% endblock %}
+{% block subtitulo %}Confirmação pagamento mensal{% endblock %}
 {% block conteudo %}
     <style>
         .container-pagamento {
@@ -32,10 +32,10 @@
             background-color: #aeb073;
             color: white;
             border: none;
-            padding: 10px;/* Diminua o padding */
+            padding: 10px;
             border-radius: 5px;
             cursor: pointer;
-            width: 60%; /* Reduza a largura */
+            width: 60%; 
         }
         
         .botao-verde:hover {
@@ -45,17 +45,17 @@
         
     </style>
 
-    <!-- Centralizar conteúdo -->
+
     <div class="container text-center">
         <img src="/static/img/logo/logoverde.png" alt="VOLUNTÁRIE" width="240px" style="padding: 50px;">
     </div>
 
-    <!-- Caixa de pagamento centralizada -->
+
     <div class="container-pagamento">
         <h2 style="color: #727760; border-bottom: 1px solid #d3d6c8; padding-bottom: 20px;";>Finalizar Pagamento</h2>
         <div class="details">
-            <p><span>Tipo da Assinatura:</span> Anual</p>
-            <p><span>Valor:</span> R$153,00</p>
+            <p><span>Tipo da Assinatura:</span> Mensal</p>
+            <p><span>Valor:</span> R$15,00</p>
             <p><span>Forma de Pagamento:</span> Cartão de Crédito</p>
             <p><span>Dígitos finais do cartão:</span> ****</p>
         </div>
@@ -64,7 +64,7 @@
             Ao realizar a Assinatura, você concorda integralmente com os termos de uso.
         </p>
         
-        <!-- Botão de confirmação -->
+
         <button class="botao-verde" type="submit">Confirmar</button>
     </div>
 

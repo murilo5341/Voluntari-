@@ -140,3 +140,6 @@ async def get_assinarPlanoMensal(request: Request):
     return templates.TemplateResponse("pages/assinarPlanoMensal.html", {"request": request})
 
 
+@router.get("/confPagamentoAnual", response_class=HTMLResponse)
+async def get_confPagamentoAnual(request: Request):
+    return templates.TemplateResponse("pages/confPagamentoAnual.html", {"request": request})

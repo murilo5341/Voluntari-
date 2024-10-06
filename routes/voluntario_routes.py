@@ -94,21 +94,21 @@ async def get_doacoesfeitas(request: Request):
 async def get_assinarPlanoAnual(request: Request):
     return templates.TemplateResponse("pages/assinarPlanoAnual.html", {"request": request})
 
-@router.get("/mtdPagamentoCreditoAnual", response_class=HTMLResponse)
-async def get_mtdPagamentoCreditoAnual(request: Request):
-    return templates.TemplateResponse("pages/mtdPagamentoCreditoAnual.html", {"request": request})
+@router.get("/PagamentoCreditoAnual", response_class=HTMLResponse)
+async def get_pagamentoCreditoAnual(request: Request):
+    return templates.TemplateResponse("pages/pagamentoCreditoAnual.html", {"request": request})
 
-@router.get("/mtdPagamentoCreditoMensal", response_class=HTMLResponse)
-async def get_mtdPagamentoCreditoMensal(request: Request):
-    return templates.TemplateResponse("pages/mtdPagamentoCreditoMensal.html", {"request": request})
+@router.get("/PagamentoCreditoMensal", response_class=HTMLResponse)
+async def get_pagamentoCreditoMensal(request: Request):
+    return templates.TemplateResponse("pages/pagamentoCreditoMensal.html", {"request": request})
 
 @router.get("/PagamentoPixAnual", response_class=HTMLResponse)
-async def get_confFinalizacaoPixAnual(request: Request):
-    return templates.TemplateResponse("pages/confFinalizacaoPixAnual.html", {"request": request})
+async def get_pagamentoPixAnual(request: Request):
+    return templates.TemplateResponse("pages/pagamentoPixAnual.html", {"request": request})
 
 @router.get("/PagamentoPixMensal", response_class=HTMLResponse)
-async def get_confFinalizacaoPixMensal(request: Request):
-    return templates.TemplateResponse("pages/confFinalizacaoPixMensal.html", {"request": request})
+async def get_pagamentoPixMensal(request: Request):
+    return templates.TemplateResponse("pages/pagamentoPixMensal.html", {"request": request})
 
 @router.get("/assinarPlanoMensal", response_class=HTMLResponse)
 async def get_assinarPlanoMensal(request: Request):
@@ -125,4 +125,8 @@ async def get_confPagamentoMensal(request: Request):
 @router.get("/pagamentoAprovado", response_class=HTMLResponse)
 async def get_pagamentoAprovado(request: Request):
     return templates.TemplateResponse("pages/pagamentoAprovado.html", {"request": request})
+
+@router.get("/pagamentoPixAprovado", response_class=HTMLResponse)
+async def get_pagamentoPixAprovado(request: Request):
+    return templates.TemplateResponse("pages/pagamentoPixAprovado.html", {"request": request})
 

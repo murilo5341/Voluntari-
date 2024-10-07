@@ -17,6 +17,7 @@
     width: 100%;
   }
 </style>
+<div>  {% set usuario = request.state.usuario %}
 <div class="bg-header">
 </div>
 <div class="min-vh-100"></div>
@@ -298,10 +299,19 @@
 </div><br>
 <div class="image-container d-flex">
   <img src="/static/img/homepageCriarProjeto.png" alt="Imagem de fundo">
+  {% if (usuario.perfil == 1 or usuario.perfil == 2 or usuario.perfil == 3): %}
   <div class="centered-content">
     <h1 class="mb-5">Crie seu próprio projeto!</h1>
+    
     <a href="/voluntario/criarprojeto" class="rounded-2 fs-5" style="background-color: #7b7e45; color:white;">Criar Projeto</a>
   </div>
+  {% else %}
+  <div class="centered-content">
+    <h1 class="mb-5">Crie seu próprio projeto!</h1>
+    
+    <a href="/entrar" class="rounded-2 fs-5" style="background-color: #7b7e45; color:white;">Criar Projeto</a>
+  </div>
+  {% endif %}
 </div>
 <h1 id="titulo1">Avaliações recentes de projetos</h1>
 <div id="carouselExampleControls3" class="carousel slide" data-ride="carousel">
@@ -471,6 +481,6 @@
       <span class="carousel-control-next-icon"></span>
     </button>
   </div>
-
+</div>
   {% endblock %}
   

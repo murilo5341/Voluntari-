@@ -15,10 +15,6 @@ async def get_root(request: Request):
 async def get_voluntarioassinante(request: Request):
     return templates.TemplateResponse("pages/voluntarioassinante.html", {"request": request})
 
-@router.get("/visualizarprojeto", response_class=HTMLResponse)
-async def get_voluntarioassinante(request: Request):
-    return templates.TemplateResponse("pages/visualizarProjeto.html", {"request": request})
-
 
 @router.get("/desativarconta", response_class=HTMLResponse)
 async def get_desativarconta(request: Request):

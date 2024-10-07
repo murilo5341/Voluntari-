@@ -118,7 +118,9 @@ async def get_EsqueciSenha(request: Request):
 async def get_EsqueciSenha(request: Request):
     return templates.TemplateResponse("pages/sobre.html", {"request": request})
 
-
+@router.get("/visualizarprojeto", response_class=HTMLResponse)
+async def get_voluntarioassinante(request: Request):
+    return templates.TemplateResponse("pages/visualizarProjeto.html", {"request": request})
 
 
 @router.get("/sair")

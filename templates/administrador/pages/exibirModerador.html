@@ -108,7 +108,7 @@
         }
     }
 </style>
-
+{% set usuario = request.state.usuario %}
 <div class="container my-3">
     <div class="row">
 {% include "includes/menuAdministrador.html" %}
@@ -121,9 +121,9 @@
                 </div>
 
                 <div class="info-container mb-4">
-                    <div class="title">Nome: Joana D'Arc</div>
-                    <div class="title">Celular: (28)999436131</div>
-                    <div class="title">Email: Joanadarc0@gmail.com</div>
+                    <div class="title">Nome: {{usuario.nome}}</div>
+                    <div class="title">telefone: {{usuario.telefone}}</div>
+                    <div class="title">Email: {{usuario.Email}}</div>
                 </div>
 
                 <div class="project-stats">

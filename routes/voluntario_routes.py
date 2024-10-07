@@ -32,8 +32,6 @@ async def get_avaliacoes(request: Request):
 async def get_ingressarProjeto(request: Request):
     return templates.TemplateResponse("pages/ingressarProjeto.html", {"request": request})
 
-
-
 @router.get("/criarprojeto", response_class=HTMLResponse)
 async def get_criarProjeto(request: Request):
     return templates.TemplateResponse("pages/criarProjeto.html", {"request": request})

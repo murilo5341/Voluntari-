@@ -45,39 +45,42 @@
                 </li>
                 
                 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button" 
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-bell text-white"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown">
-                        <li><h6 class="dropdown-header" style="color:darkolivegreen;">Notificações</h6></li>
-                        <li>
-                            <a class="dropdown-item small" href="#">
-                                <i class="bi bi-bell-fill me-2"></i> Projeto Aprovado...
-                            </a>
-                            <small class="text-muted d-block ms-4 small">10:30 AM - 04 Out</small>
-                        </li>
-                        <li>
-                            <a class="dropdown-item small" href="#">
-                                <i class="bi bi-bell-fill me-2 small"></i> Projeto Negado...
-                            </a>
-                            <small class="text-muted d-block ms-4 small">11:15 AM - 03 Out</small>
-                        </li>
-                        <li>
-                            <a class="dropdown-item small" href="#">
-                                <i class="bi bi-bell-fill me-2"></i> Nova Mensagem...
-                            </a>
-                            <small class="text-muted d-block ms-4 small">01:45 PM - 02 Out</small>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li class="text-center">
-                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#allNotificationsModal">Mostrar mais</a>
-                        </li>
-                    </ul>
-                </li>
+                {% if usuario.perfil %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button" 
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-bell text-white"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown">
+                            <!-- Título do Dropdown -->
+                            <li><h6 class="dropdown-header" style="color:darkolivegreen;">Notificações</h6></li>
+                            <li>
+                                <a class="dropdown-item small" href="#">
+                                    <i class="bi bi-bell-fill me-2"></i> Projeto Aprovado...
+                                </a>
+                                <small class="text-muted d-block ms-4 small">10:30 AM - 04 Out</small>
+                            </li>
+                            <li>
+                                <a class="dropdown-item small" href="#">
+                                    <i class="bi bi-bell-fill me-2 small"></i> Projeto Negado...
+                                </a>
+                                <small class="text-muted d-block ms-4 small">11:15 AM - 03 Out</small>
+                            </li>
+                            <li>
+                                <a class="dropdown-item small" href="#">
+                                    <i class="bi bi-bell-fill me-2"></i> Nova Mensagem...
+                                </a>
+                                <small class="text-muted d-block ms-4 small">01:45 PM - 02 Out</small>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="text-center">
+                                <a class="dropdown-item" href="/voluntario/notificacaovoluntario">Mostrar mais</a>
+                            </li>
+                        </ul>
+                    </li>
+                {% endif %}
             </ul>
 
             

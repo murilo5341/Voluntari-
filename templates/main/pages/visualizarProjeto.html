@@ -27,7 +27,7 @@
         background-color: #E0E0C9; /* Cor de fundo quando o mouse está sobre o objeto */
     }
 </style>
-
+<div>  {% set usuario = request.state.usuario %}
 <div class="container my-3">
     <div class="row">
         <div class="container-forms p-3 rounded"> <!--PARTE DE CIMA (verde) -->
@@ -71,6 +71,7 @@
                     </div>
                 </div> 
             </div>
+            {% if (usuario.perfil == 1 or usuario.perfil == 2 or usuario.perfil == 3): %}
             <div class="justify-content-center d-flex">
                 <a href="/voluntario/ingressarprojeto" class="btn btn-secondary mt-3 mb-4 border p-2" type="button" style="background-color: #a3a651; font-weight: 500;">Inscrever-se</a>
             </div><!-- FALTA ALINHAR OS BOTOES -->

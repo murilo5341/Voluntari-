@@ -39,7 +39,7 @@ async def post_entrar(
     if usuario is None:
         response = RedirectResponse("/entrar", status_code=status.HTTP_303_SEE_OTHER)
         return response
-    token = criar_token(usuario[0], usuario[1], usuario[2])
+    token = criar_token(usuario[0], usuario[1], usuario[2], usuario[3])
     nome_perfil = None
     match (usuario[2]):
         case 1: nome_perfil = "voluntario"

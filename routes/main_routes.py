@@ -75,7 +75,24 @@ async def post_cadastro(
     senha_hash = obter_hash_senha(senha)
     usuario = Usuario(None, nome, email,senha_hash, cpf,data_nascimento,telefone,perfil=1 )
     UsuarioRepo.inserir(usuario)
-    return RedirectResponse("/", status_code=status.HTTP_303_SEE_OTHER)
+    usuario = UsuarioRepo.checar_credenciais(email, senha)
+    token = criar_token(usuario[0], usuario[1], usuario[2])
+    nome_perfil = None
+    match (usuario[2]):
+        case 1: nome_perfil = "voluntario"
+        case 2: nome_perfil = "administrador"
+        case 3: nome_perfil = "moderador"
+        case _: nome_perfil = ""
+
+    response = RedirectResponse(f"/{nome_perfil}", status_code=status.HTTP_303_SEE_OTHER)    
+    response.set_cookie(
+        key=NOME_COOKIE_AUTH,
+        value=token,
+        max_age=3600*24*365*10,
+        httponly=True,
+        samesite="lax"
+    )
+    return response
 
 
 @router.get("/termos", response_class=HTMLResponse)

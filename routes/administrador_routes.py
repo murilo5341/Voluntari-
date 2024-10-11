@@ -51,3 +51,7 @@ async def get_denunciaProjeto(request: Request):
 @router.get("/visualizardenuncia", response_class=HTMLResponse)
 async def get_denunciaProjeto(request: Request):
     return templates.TemplateResponse("pages/visualizardenuncia.html", {"request": request})
+
+@router.get("/patrocinadores", response_class=HTMLResponse)
+async def get_denunciaProjeto(request: Request):
+    return templates.TemplateResponse("pages/patrocinadores.html", {"request": request})

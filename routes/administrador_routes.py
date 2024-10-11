@@ -53,5 +53,8 @@ async def get_denunciaProjeto(request: Request):
     return templates.TemplateResponse("pages/visualizardenuncia.html", {"request": request})
 
 @router.get("/patrocinadores", response_class=HTMLResponse)
-async def get_denunciaProjeto(request: Request):
+async def get_patrocinadores(request: Request):
     return templates.TemplateResponse("pages/patrocinadores.html", {"request": request})
+@router.get("/administradores", response_class=HTMLResponse)
+async def get_administradores(request: Request):
+    return templates.TemplateResponse("pages/administradores.html", {"request": request})

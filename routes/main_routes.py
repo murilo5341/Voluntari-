@@ -76,7 +76,7 @@ async def post_cadastro(
     usuario = Usuario(None, nome, email,senha_hash, cpf,data_nascimento,telefone,perfil=1 )
     UsuarioRepo.inserir(usuario)
     usuario = UsuarioRepo.checar_credenciais(email, senha)
-    token = criar_token(usuario[0], usuario[1], usuario[2])
+    token = criar_token(usuario[0], usuario[1], usuario[2], usuario[3])
     nome_perfil = None
     match (usuario[2]):
         case 1: nome_perfil = "voluntario"

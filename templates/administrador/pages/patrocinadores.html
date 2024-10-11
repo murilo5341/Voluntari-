@@ -7,35 +7,51 @@
     .container-options {
         width: 270px;
         margin-top: 80px;
-        background-color: #ffffff; 
+        background-color: #ffffff;
     }
+
     .container-forms {
         margin-top: 40px;
         background-color: #2e331c07;
     }
-    .botao-verde{
+
+    .botao-verde {
         --bs-btn-bg: #aeb073;
 
     }
-    .person{
-      color: #aeb073;
-    }
-    .link-ativo {
-      color: #aeb073 !important; 
-  }
 
-  .form-label{
-    text-align: left;
+    .person {
+        color: #aeb073;
+    }
+
+    .link-ativo {
+        color: #aeb073 !important;
+    }
+
+    .form-label {
+        text-align: left;
         font-weight: 500;
-        display: block; /* Garante que o label seja exibido como bloco */
-        margin-bottom: .5rem; /* Espaço abaixo do label */
-  }
+        display: block;
+        /* Garante que o label seja exibido como bloco */
+        margin-bottom: .5rem;
+        /* Espaço abaixo do label */
+    }
+    .image{
+
+        width: 15%;
+        height: 15%;
+    }
+
 </style>
 <div class="container my-3 mb-5  ">
     <div class="row">
         {%include "includes/menuAdministrador.html"%}
-        <div class="col-md-6 mx-lg-5">
-
+        <div class="col-md-6 mx-lg-5 background005 rounded-3">
+            <div class="row">
+                {% for i in range(24) %}
+                <img src="/static/img/logo/adidassvg.svg" alt="patrocinador" class="image mt-5" >
+                {% endfor %}
+            </div>
         </div>
     </div>
 </div>

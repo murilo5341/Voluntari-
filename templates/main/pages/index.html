@@ -16,6 +16,11 @@
     left: 0;
     width: 100%;
   }
+
+  .star-rating{
+  color: #7b7e45;
+  }
+  
 </style>
 <div>  {% set usuario = request.state.usuario %}
 <div class="bg-header">
@@ -313,6 +318,7 @@
   </div>
   {% endif %}
 </div>
+
 <h1 id="titulo1">Avaliações recentes de projetos</h1>
 <div id="carouselExampleControls3" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
@@ -326,20 +332,20 @@
             </div>
             <h6 class="card-subtitle text-center mt-3">MitoFazoL</h6>
 
-            <ul class="avaliacao">
-              <li class="star-icon ativo" data-avaliacao="1"></li>
-              <li class="star-icon" data-avaliacao="2"></li>
-              <li class="star-icon" data-avaliacao="3"></li>
-              <li class="star-icon" data-avaliacao="4"></li>
-              <li class="star-icon" data-avaliacao="5"></li>
-            </ul>
+            <div class="star-rating  text-center justify-content-between">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star"></i>
+            </div>
 
             <p class="card-text text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam quidem
               commodi cupiditate quaerat doloribus minima id aspernatur quo tempora perferendis quas aliquid adipisci
               inventore dignissimos, voluptates, voluptas dolore? Ratione sit quidem praesentium, ea consectetur odit
               tempora aperiam quas rerum ullam? Sed, magnam. Sapiente explicabo laudantium neque voluptatibus. Eius
               sequi quam qui est placeat culpa, eos, repellendus, numquam porro vel repellat.</p>
-            <a href="voluntario/avaliacoes" class="btn fw-semibold d-grid gap-2 col-6 mx-auto"
+            <a href="avaliacoes" class="btn fw-semibold d-grid gap-2 col-6 mx-auto"
               style="color:white; background-color:#7d8d45;">Ver avaliação</a>
             <p class="text-center pt-2" style="color: #A3A651; font-size: 15px;"> 19/02/2024</p>
           </div>
@@ -350,20 +356,20 @@
               style="width: 125px; height:125px;">
           </div>
           <h6 class="card-subtitle text-center mt-3">Bruninho</h6>
-          <ul class="avaliacao">
-            <li class="star-icon ativo" data-avaliacao="1"></li>
-            <li class="star-icon" data-avaliacao="2"></li>
-            <li class="star-icon" data-avaliacao="3"></li>
-            <li class="star-icon" data-avaliacao="4"></li>
-            <li class="star-icon" data-avaliacao="5"></li>
-          </ul>
+          <div class="star-rating  text-center justify-content-between">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
           <div class="card-body">
             <p class="card-text text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam quidem
               commodi cupiditate quaerat doloribus minima id aspernatur quo tempora perferendis quas aliquid adipisci
               inventore dignissimos, voluptates, voluptas dolore? Ratione sit quidem praesentium, ea consectetur odit
               tempora aperiam quas rerum ullam? Sed, magnam. Sapiente explicabo laudantium neque voluptatibus. Eius
               sequi quam qui est placeat culpa, eos, repellendus, numquam porro vel repellat.</p>
-            <a href="voluntario/avaliacoes" class="btn fw-semibold d-grid gap-2 col-6 mx-auto"
+            <a href="avaliacoes" class="btn fw-semibold d-grid gap-2 col-6 mx-auto"
               style="color:white; background-color:#7d8d45;">Ver avaliação</a>
             <p class="text-center pt-2" style="color: #A3A651; font-size: 15px;"> 19/02/2024</p>
           </div>
@@ -375,20 +381,20 @@
           </div>
           <h6 class="card-subtitle text-center mt-3">BranqueloAmericano</h6>
 
-          <ul class="avaliacao">
-            <li class="star-icon ativo" data-avaliacao="1"></li>
-            <li class="star-icon" data-avaliacao="2"></li>
-            <li class="star-icon" data-avaliacao="3"></li>
-            <li class="star-icon" data-avaliacao="4"></li>
-            <li class="star-icon" data-avaliacao="5"></li>
-          </ul>
+          <div class="star-rating  text-center justify-content-between">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star"></i>
+              <i class="bi bi-star"></i>
+              <i class="bi bi-star"></i>
+              <i class="bi bi-star"></i>
+            </div>
           <div class="card-body">
             <p class="card-text text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam quidem
               commodi cupiditate quaerat doloribus minima id aspernatur quo tempora perferendis quas aliquid adipisci
               inventore dignissimos, voluptates, voluptas dolore? Ratione sit quidem praesentium, ea consectetur odit
               tempora aperiam quas rerum ullam? Sed, magnam. Sapiente explicabo laudantium neque voluptatibus. Eius
               sequi quam qui est placeat culpa, eos, repellendus, numquam porro vel repellat.</p>
-            <a href="voluntario/avaliacoes" class="btn fw-semibold d-grid gap-2 col-6 mx-auto"
+            <a href="avaliacoes" class="btn fw-semibold d-grid gap-2 col-6 mx-auto"
               style="color:white; background-color:#7d8d45;">Ver avaliação</a>
             <p class="text-center pt-2" style="color: #A3A651; font-size: 15px;"> 19/02/2024</p>
           </div>
@@ -404,20 +410,20 @@
           </div>
           <h6 class="card-subtitle text-center mt-3">TaxinhaDoAmor</h6>
 
-          <ul class="avaliacao">
-            <li class="star-icon ativo" data-avaliacao="1"></li>
-            <li class="star-icon" data-avaliacao="2"></li>
-            <li class="star-icon" data-avaliacao="3"></li>
-            <li class="star-icon" data-avaliacao="4"></li>
-            <li class="star-icon" data-avaliacao="5"></li>
-          </ul>
+          <div class="star-rating  text-center justify-content-between">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
           <div class="card-body">
             <p class="card-text text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam quidem
               commodi cupiditate quaerat doloribus minima id aspernatur quo tempora perferendis quas aliquid adipisci
               inventore dignissimos, voluptates, voluptas dolore? Ratione sit quidem praesentium, ea consectetur odit
               tempora aperiam quas rerum ullam? Sed, magnam. Sapiente explicabo laudantium neque voluptatibus. Eius
               sequi quam qui est placeat culpa, eos, repellendus, numquam porro vel repellat.</p>
-            <a href="voluntario/avaliacoes" class="btn fw-semibold d-grid gap-2 col-6 mx-auto"
+            <a href="avaliacoes" class="btn fw-semibold d-grid gap-2 col-6 mx-auto"
               style="color:white; background-color:#7d8d45;">Ver avaliação</a>
             <p class="text-center pt-2" style="color: #A3A651; font-size: 15px;"> 19/02/2024</p>
           </div>
@@ -429,20 +435,20 @@
           </div>
           <h6 class="card-subtitle text-center mt-3">Velhinho Carismatico</h6>
 
-          <ul class="avaliacao">
-            <li class="star-icon ativo" data-avaliacao="1"></li>
-            <li class="star-icon" data-avaliacao="2"></li>
-            <li class="star-icon" data-avaliacao="3"></li>
-            <li class="star-icon" data-avaliacao="4"></li>
-            <li class="star-icon" data-avaliacao="5"></li>
-          </ul>
+          <div class="star-rating  text-center justify-content-between">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
           <div class="card-body">
             <p class="card-text text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam quidem
               commodi cupiditate quaerat doloribus minima id aspernatur quo tempora perferendis quas aliquid adipisci
               inventore dignissimos, voluptates, voluptas dolore? Ratione sit quidem praesentium, ea consectetur odit
               tempora aperiam quas rerum ullam? Sed, magnam. Sapiente explicabo laudantium neque voluptatibus. Eius
               sequi quam qui est placeat culpa, eos, repellendus, numquam porro vel repellat.</p>
-            <a href="voluntario/avaliacoes" class="btn fw-semibold d-grid gap-2 col-6 mx-auto"
+            <a href="avaliacoes" class="btn fw-semibold d-grid gap-2 col-6 mx-auto"
               style="color:white; background-color:#7d8d45;">Ver avaliação</a>
             <p class="text-center pt-2" style="color: #A3A651; font-size: 15px;"> 19/02/2024</p>
           </div>
@@ -454,20 +460,20 @@
           </div>
           <h6 class="card-subtitle text-center mt-3">AcessaMeuLinkedn</h6>
 
-          <ul class="avaliacao">
-            <li class="star-icon ativo" data-avaliacao="1"></li>
-            <li class="star-icon" data-avaliacao="2"></li>
-            <li class="star-icon" data-avaliacao="3"></li>
-            <li class="star-icon" data-avaliacao="4"></li>
-            <li class="star-icon" data-avaliacao="5"></li>
-          </ul>
+          <div class="star-rating  text-center justify-content-between">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star"></i>
+              <i class="bi bi-star"></i>
+            </div>
           <div class="card-body">
             <p class="card-text text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam quidem
               commodi cupiditate quaerat doloribus minima id aspernatur quo tempora perferendis quas aliquid adipisci
               inventore dignissimos, voluptates, voluptas dolore? Ratione sit quidem praesentium, ea consectetur odit
               tempora aperiam quas rerum ullam? Sed, magnam. Sapiente explicabo laudantium neque voluptatibus. Eius
               sequi quam qui est placeat culpa, eos, repellendus, numquam porro vel repellat.</p>
-            <a href="voluntario/avaliacoes" class="btn fw-semibold d-grid gap-2 col-6 mx-auto"
+            <a href="avaliacoes" class="btn fw-semibold d-grid gap-2 col-6 mx-auto"
               style="color:white; background-color:#7d8d45;">Ver avaliação</a>
             <p class="text-center pt-2" style="color: #A3A651; font-size: 15px;"> 19/02/2024</p>
           </div>
@@ -482,5 +488,5 @@
     </button>
   </div>
 </div>
-  {% endblock %}
+{% endblock %}
   

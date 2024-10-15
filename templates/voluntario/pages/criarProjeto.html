@@ -23,12 +23,12 @@
     <div class="row">
         <div class="bg-light rounded">
             <div class="container text-center">
-                <p class="fs-2 pt-3" style="color: #aeb073;">Criação de Projeto</p>
-                <img src="/static/img/quemSomos.png" class="img-fluid mt-2" alt="..." style="width: 350px; height:200px; border-radius: 10px;">
+                <p class="fs-2 pt-3 fw-semibold" style="color: #53533a;">Criação de Projeto</p>
+                <img id="previewImage" src="/static/img/reflorestamento.jpeg" class="img-fluid mt-2" alt="..." style="width: 350px; height:200px; border-radius: 10px;">
             </div>
             <div class="w-75" style="margin-left:70px;">
                 <div class="input-group mb-3 mx-auto mt-5">
-                    <input type="file" class="form-control" id="inputGroupFile02">
+                    <input type="file" class="form-control" id="inputGroupFile02" onchange="previewFile()">
                     <label class="input-group-text" for="inputGroupFile02">Upload</label>
                 </div>
                 <label class="text-secondary">Título do Projeto:</label>
@@ -42,14 +42,14 @@
 
                 <label class="text-secondary" for="estado">Estado:</label>
                 <div>
-                <select class="border border-1 rounded p-2 w-100 mb-3" id="estado" onchange="carregarMunicipios()">
+                <select class="border border-1 rounded p-2 w-100 mb-3" id="estado" onchange="carregarMunicipios()"required>
                     <option value="">Selecione o Estado</option>
                 </select>
                 </div>
                 
                 <label class="text-secondary" for="cidade">Município:</label>
                 <div>
-                <select class="border border-1 rounded p-2 w-100 mb-3" id="cidade">
+                <select class="border border-1 rounded p-2 w-100 mb-3" id="cidade"required>
                     <option value="">Selecione o Município</option>
                 </select>
                 </div>
@@ -68,7 +68,7 @@
                 </div>
                 <label class="text-secondary">Meta a ser atingida através das doações:</label>
                 <div>
-                    <input class="currency-input border border-1 rounded p-2 w-100 mb-3" id="meta" type="search" min="0" name="meta" placeholder="Escreva apenas o número" required><br>
+                    <input class="currency-input border border-1 rounded p-2 w-100 mb-3" id="meta" type="number" min="0" name="meta" placeholder="Escreva apenas o número" required><br>
                 </div>
                 <label class="text-secondary">Descrição do Projeto:</label>
                 <div>
@@ -115,11 +115,25 @@
             }
         }
 
+        function previewFile() {
+            const file = document.getElementById('inputGroupFile02').files[0];
+            const preview = document.getElementById('previewImage');
+            const reader = new FileReader();
+
+            reader.onloadend = function () {
+                preview.src = reader.result; // Atualiza a imagem com o novo arquivo
+            }
+
+            if (file) {
+                reader.readAsDataURL(file); // Lê o arquivo como uma URL de dados
+            } else {
+                preview.src = "/static/img/reflorestamento.jpeg"; // Reseta para a imagem padrão, se nenhum arquivo for selecionado
+            }
+        }
+
         window.onload = () => {
             carregarEstados(); // Carrega os estados ao iniciar a página
         };
     </script>
-
-    
 
 {% endblock %}

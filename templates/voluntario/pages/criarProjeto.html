@@ -39,6 +39,21 @@
                 <div>
                     <input class="border border-1 rounded p-2 w-100 mb-3" type="number" min="0" max="20" id="qtdvoluntarios" name="qtdvoluntarios" placeholder="Ex: 5" required>
                 </div>
+
+                <label class="text-secondary" for="estado">Estado:</label>
+                <div>
+                <select class="border border-1 rounded p-2 w-100 mb-3" id="estado" onchange="carregarMunicipios()">
+                    <option value="">Selecione o Estado</option>
+                </select>
+                </div>
+                
+                <label class="text-secondary" for="cidade">Município:</label>
+                <div>
+                <select class="border border-1 rounded p-2 w-100 mb-3" id="cidade">
+                    <option value="">Selecione o Município</option>
+                </select>
+                </div>
+
                 <label class="text-secondary">Endereço do Projeto:</label>
                 <div>
                     <input class="border border-1 rounded p-2 w-100 mb-3" id="endereco" name="endereco" placeholder=" Ex: Rua Evanilda Lima Soares" required>
@@ -65,5 +80,46 @@
                 </div>
         </div>
     </div>
-</main>
+    </main>
+    <script>
+        async function carregarEstados() {
+            const response = await fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados/');
+            const estados = await response.json();
+
+            const estadoSelect = document.getElementById("estado");
+
+            estados.forEach(estado => {
+                const option = document.createElement("option");
+                option.value = estado.sigla; // Usa a sigla do estado como valor
+                option.text = estado.nome; // Nome do estado para exibir
+                estadoSelect.add(option);
+            });
+        }
+
+        async function carregarMunicipios() {
+            const estadoSelecionado = document.getElementById("estado").value;
+
+            if (estadoSelecionado) {
+                const response = await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estadoSelecionado}/municipios`);
+                const municipios = await response.json();
+
+                const municipioSelect = document.getElementById("cidade");
+                municipioSelect.innerHTML = ""; // Limpa as cidades anteriores
+
+                municipios.forEach(municipio => {
+                    const option = document.createElement("option");
+                    option.value = municipio.id; // Usando o ID do município
+                    option.text = municipio.nome; // Nome do município para exibir
+                    municipioSelect.add(option);
+                });
+            }
+        }
+
+        window.onload = () => {
+            carregarEstados(); // Carrega os estados ao iniciar a página
+        };
+    </script>
+
+    
+
 {% endblock %}

@@ -1,10 +1,9 @@
 import logging
 from fastapi import FastAPI, HTTPException, Request, status
 from fastapi.responses import RedirectResponse
-from util.cookies import adicionar_mensagem_erro
-from util.templates import obter_jinja_templates
-
-templates = obter_jinja_templates("templates/public")
+from fastapi.templating import Jinja2Templates
+from util.mensagens import adicionar_mensagem_erro
+templates = Jinja2Templates("templates")
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -54,7 +53,7 @@ def configurar_excecoes(app: FastAPI):
     async def page_not_found_exception_handler(request: Request, _):
         usuario = request.state.usuario if hasattr(request.state, "usuario") else None
         return templates.TemplateResponse(
-            "pages/404.html",
+            "shared/pages/404.html",
             {
                 "request": request,
                 "usuario": usuario,

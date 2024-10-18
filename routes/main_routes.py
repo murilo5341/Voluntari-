@@ -7,22 +7,22 @@ from util.auth import NOME_COOKIE_AUTH, criar_token, obter_hash_senha
 from util.templates import obter_jinja_templates
 
 router = APIRouter()
-templates = obter_jinja_templates("templates/main")
+templates = obter_jinja_templates("templates")
 
 
 @router.get("/", response_class=HTMLResponse)
 async def get_index(request: Request):
-    return templates.TemplateResponse("pages/index.html", {"request": request})
+    return templates.TemplateResponse("main/pages/index.html", {"request": request})
 
 
 # @router.get("/", response_class=HTMLResponse)
 # async def get_root(request: Request):
-#     return templates.TemplateResponse("pages/index.html", {"request": request})
+#     return templates.TemplateResponse("main/pages/index.html", {"request": request})
 @router.get("/entrar")
 async def get_root(request: Request):
     usuario = request.state.usuario if hasattr(request.state, "usuario") else None
     if not usuario or not usuario.perfil:
-        return templates.TemplateResponse("pages/entrar.html", {"request": request})    
+        return templates.TemplateResponse("main/pages/entrar.html", {"request": request})    
     if usuario.perfil == 1:
         return RedirectResponse("/voluntario", status_code=status.HTTP_303_SEE_OTHER)
     if usuario.perfil == 2:
@@ -31,7 +31,7 @@ async def get_root(request: Request):
         return RedirectResponse("/moderador", status_code=status.HTTP_303_SEE_OTHER)
 # @router.get("/post_entrar", response_class=HTMLResponse)
 # async def get_entrar(request: Request):
-#     return templates.TemplateResponse("pages/entrar.html", {"request": request})
+#     return templates.TemplateResponse("main/pages/entrar.html", {"request": request})
 
 @router.post("/post_entrar")
 async def post_entrar(
@@ -61,7 +61,7 @@ async def post_entrar(
 
 @router.get("/cadastro", response_class=HTMLResponse)
 async def get_cadastro(request: Request):
-    return templates.TemplateResponse("pages/cadastro.html", {"request": request})
+    return templates.TemplateResponse("main/pages/cadastro.html", {"request": request})
 
 @router.post("/post_cadastro")
 async def post_cadastro(
@@ -99,47 +99,47 @@ async def post_cadastro(
 
 @router.get("/termos", response_class=HTMLResponse)
 async def get_termos(request: Request):
-    return templates.TemplateResponse("pages/termos.html", {"request": request})
+    return templates.TemplateResponse("main/pages/termos.html", {"request": request})
 
 @router.get("/ajuda", response_class=HTMLResponse)
 async def get_termos(request: Request):
-    return templates.TemplateResponse("pages/ajuda.html", {"request": request})
+    return templates.TemplateResponse("main/pages/ajuda.html", {"request": request})
 
 @router.get("/projetos", response_class=HTMLResponse)
 async def get_termos(request: Request):
-    return templates.TemplateResponse("pages/projetos.html", {"request": request})
+    return templates.TemplateResponse("main/pages/projetos.html", {"request": request})
 
 @router.get("/colaboradores", response_class=HTMLResponse)
 async def get_termos(request: Request):
-    return templates.TemplateResponse("pages/colaboradores.html", {"request": request})
+    return templates.TemplateResponse("main/pages/colaboradores.html", {"request": request})
 
 @router.get("/modalidadespatrocinio", response_class=HTMLResponse)
 async def get_modalidadesPatrocinio(request: Request):
-    return templates.TemplateResponse("pages/modalidadesPatrocinio.html", {"request": request})
+    return templates.TemplateResponse("main/pages/modalidadesPatrocinio.html", {"request": request})
 
 @router.get("/esquecisenha", response_class=HTMLResponse)
 async def get_EsqueciSenha(request: Request):
-    return templates.TemplateResponse("pages/esquecisenha.html", {"request": request})
+    return templates.TemplateResponse("main/pages/esquecisenha.html", {"request": request})
 
 @router.get("/projetosingressados", response_class=HTMLResponse)
 async def get_projetosIngressados(request: Request):
-    return templates.TemplateResponse("pages/projetosingressados.html", {"request": request})
+    return templates.TemplateResponse("main/pages/projetosingressados.html", {"request": request})
 
 @router.get("/patrocinador", response_class=HTMLResponse)
 async def get_root(request: Request):
-    return templates.TemplateResponse("pages/patrocinador.html", {"request": request})
+    return templates.TemplateResponse("main/pages/patrocinador.html", {"request": request})
 
 @router.get("/verificaremail", response_class=HTMLResponse)
 async def get_EsqueciSenha(request: Request):
-    return templates.TemplateResponse("pages/verificaremail.html", {"request": request})
+    return templates.TemplateResponse("main/pages/verificaremail.html", {"request": request})
 
 @router.get("/sobre", response_class=HTMLResponse)
 async def get_EsqueciSenha(request: Request):
-    return templates.TemplateResponse("pages/sobre.html", {"request": request})
+    return templates.TemplateResponse("main/pages/sobre.html", {"request": request})
 
 @router.get("/visualizarprojeto", response_class=HTMLResponse)
 async def get_voluntarioassinante(request: Request):
-    return templates.TemplateResponse("pages/visualizarProjeto.html", {"request": request})
+    return templates.TemplateResponse("main/pages/visualizarProjeto.html", {"request": request})
 
 
 @router.get("/sair")

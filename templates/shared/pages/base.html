@@ -11,11 +11,11 @@
     <title>VoluntariÊ :: {% block subtitulo %}{% endblock %}</title>
     </head>
 <body class="d-flex flex-column min-vh-100">
-    {%include "shared/includes/header.html"%}
+    {% include "shared/includes/header.html" %}
     <main class="container">
         {% block conteudo %}{% endblock %}
     </main>
-    {%include "shared/includes/footer.html"%}
+    {% include "shared/includes/footer.html" %}
     <script src="/static/lib/bootstrap/js/bootstrap.bundle.js"></script>
 </body>
 </html>

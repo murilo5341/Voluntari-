@@ -125,3 +125,23 @@ async def get_pagamentoAprovado(request: Request):
 async def get_pagamentoPixAprovado(request: Request):
     return templates.TemplateResponse("voluntario/pages/pagamentoPixAprovado.html", {"request": request})
 
+@router.get("/doarProjeto", response_class=HTMLResponse)
+async def get_doarProjeto(request: Request):
+    return templates.TemplateResponse("voluntario/pages/doarProjeto.html", {"request": request})
+
+@router.get("/cartaodoarProjeto", response_class=HTMLResponse)
+async def get_cartaodoarProjeto(request: Request):
+    return templates.TemplateResponse("voluntario/pages/cartaodoarProjeto.html", {"request": request})
+
+@router.get("/confdoacaoCartao", response_class=HTMLResponse)
+async def get_confdoacaoCartao(request: Request):
+    return templates.TemplateResponse("voluntario/pages/confdoacaoCartao.html", {"request": request})
+
+@router.get("/pixdoarProjeto", response_class=HTMLResponse)
+async def get_pixdoarProjeto(request: Request):
+    return templates.TemplateResponse("voluntario/pages/pixdoarProjeto.html", {"request": request})
+
+
+@router.get("/doacaoRealizada", response_class=HTMLResponse)
+async def get_doacaoRealizada(request: Request):
+    return templates.TemplateResponse("voluntario/pages/doacaoRealizada.html", {"request": request})

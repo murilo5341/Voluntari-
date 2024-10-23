@@ -87,8 +87,8 @@ class UsuarioRepo:
             dados = cursor.execute(
                 SQL_CHECAR_CREDENCIAIS, (email,)).fetchone()
             if dados:
-                if conferir_senha(senha, dados[2]):#alterando dados[3] para dados [1]
-                    return (dados[0], dados[1], dados[3])
+                if conferir_senha(senha, dados[3]):
+                    return (dados[0], dados[1], dados[2], dados[4])
             return None
     
     @classmethod

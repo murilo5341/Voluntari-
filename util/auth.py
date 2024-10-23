@@ -16,6 +16,7 @@ async def obter_usuario_logado(request: Request) -> dict:
             return None
         dados = validar_token(token)
         usuario = UsuarioAutenticado(
+            id = int(dados["id"]),
             nome = dados["nome"], 
             email = dados["email"], 
             perfil= dados["perfil"])
@@ -66,8 +67,9 @@ def conferir_senha(senha: str, hash_senha: str) -> bool:
         return False
     
 
-def criar_token(nome: str, email: str, perfil: int) -> str:
+def criar_token(id: int, nome: str, email: str, perfil: int) -> str:
     payload = {
+        "id": id,
         "nome": nome,
         "email": email,
         "perfil": perfil,

@@ -21,11 +21,20 @@
    }
 
 </style>
+<div>  {% set usuario = request.state.usuario %}
+  {% if (usuario.perfil == 1 or usuario.perfil == 2 or usuario.perfil == 3): %}
 <div class="bg-header text-center">
   <h1 class=" fw-bold text-light fixed-text">Você também pode criar um <br> projeto!</h1><br>
   <p class=" text-light fixed-text">Quem ama preserva, quem ama ajuda</p><br>
-  <a href="#" class="btn fw-semibold"style="color:white; background-color:#A3A651;">Crie seu projeto</a>
+  <a href="/voluntario/criarprojeto" class="btn fw-semibold"style="color:white; background-color:#A3A651;">Crie seu projeto</a>
 </div>
+{% else %}
+<div class="bg-header text-center">
+  <h1 class=" fw-bold text-light fixed-text">Você também pode criar um <br> projeto!</h1><br>
+  <p class=" text-light fixed-text">Quem ama preserva, quem ama ajuda</p><br>
+  <a href="/entrar" class="btn fw-semibold"style="color:white; background-color:#A3A651;">Crie seu projeto</a>
+</div>
+{% endif %}
 <div class="min-vh-100"></div>
 <br>
 <p class="text-secondary">Ordenar Por</p>
@@ -42,162 +51,148 @@
   <div class="card">
     <img src="/static/img/gatoabandonado.png" class="card-img-top " alt="...">
     <div class="card-body">
-      <h5 class="card-title text-center fs-4">Abandono de Animais</h5>
-      <h6 class="card-subtitle text-center">@nickCreator</h6>
-      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit,
-        repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit
-        aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
+      <h5 class="card-title text-center fs-4">Resgate de gatos</h5>
+      <h6 class="card-subtitle  text-center">@resgataGato</h6>
+      <p class="card-text">Dedicado ao resgate de gatos abandonados, o ResgataGato atua no acolhimento, tratamento e adoção responsável de felinos em situação de risco. Com uma equipe de voluntários apaixonados por animais, o projeto realiza campanhas de conscientização, parcerias com veterinários e feiras de adoção, garantindo que cada gatinho tenha uma nova chance de encontrar um lar amoroso e seguro. Participe e ajude-nos a transformar vidas, uma patinha de cada vez!</p>
       <p>
-        <span class="address">Rua Lorem Ipsum, 91, ES </span>
+        <span class="address">Rua das Amendoeiras – 120, Bairro Jardim das Flores </span>
         <span class="date">19/02/2024</span>
       </p>
-      <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver
+      <a href="/visualizarprojeto" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver
+        projeto</a>
+      <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i>
+        5/10</p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="/static/img/tartaruga.png" class="card-img-top " alt="...">
+    <div class="card-body">
+      <h5 class="card-title text-center fs-4">Ajude as tartarugas</h5>
+      <h6 class="card-subtitle text-center">@Leandrapin</h6>
+      <p class="card-text"> Este projeto tem como objetivo principal a limpeza e conservação das praias onde as tartarugas marinhas se reproduzem. Com a participação de voluntários e comunidades locais, organizamos mutirões de limpeza periódicos para remover lixo e detritos que ameaçam o habitat dessas espécies.</p>
+      <p>
+        <span class="address">Avenida do Sol Nascente – 3450, Bairro Bela Vista
+        </span>
+        <span class="date">18/06/2024</span>
+      </p>
+      <a href="/visualizarprojeto" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver
         projeto</a>
       <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i>
         8/10</p>
     </div>
   </div>
   <div class="card">
-    <img src="/static/img/gatoabandonado.png" class="card-img-top " alt="...">
+    <img src="/static/img/limpezarios.png" class="card-img-top " alt="...">
     <div class="card-body">
-      <h5 class="card-title text-center fs-4">Abandono de Animais</h5>
-      <h6 class="card-subtitle text-center">@nickCreator</h6>
-      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit,
-        repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit
-        aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
+      <h5 class="card-title text-center fs-4">limpando a mata ciliar</h5>
+      <h6 class="card-subtitle text-center">@leomendes</h6>
+      <p class="card-text">Esse projeto é uma iniciativa voltada para a recuperação e preservação das matas ciliares ao longo de rios e lagos. Com uma equipe de voluntários e parcerias com escolas e organizações ambientais, realizamos mutirões de limpeza para remover lixo e materiais poluentes, promovendo a restauração do habitat natural.</p>
       <p>
-        <span class="address">Rua Lorem Ipsum, 91, ES </span>
-        <span class="date">19/02/2024</span>
+        <span class="address">Travessa Lírio Azul – 65, Bairro Campo Sereno</span>
+        <span class="date">20/10/2024</span>
       </p>
-      <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver
+      <a href="/visualizarprojeto" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver
         projeto</a>
       <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i>
-        8/10</p>
-    </div>
-  </div>
-  <div class="card">
-    <img src="/static/img/gatoabandonado.png" class="card-img-top " alt="...">
-    <div class="card-body">
-      <h5 class="card-title text-center fs-4">Abandono de Animais</h5>
-      <h6 class="card-subtitle text-center">@nickCreator</h6>
-      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit,
-        repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit
-        aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
-      <p>
-        <span class="address">Rua Lorem Ipsum, 91, ES </span>
-        <span class="date">19/02/2024</span>
-      </p>
-      <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver
-        projeto</a>
-      <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i>
-        8/10</p>
+        9/10</p>
     </div>
   </div>
   <!-- 3 CARDS POR LINHA -->
   <div class="card">
-    <img src="/static/img/gatoabandonado.png" class="card-img-top " alt="...">
+    <img src="/static/img/prenvencaodengue.png" class="card-img-top " alt="...">
     <div class="card-body">
-      <h5 class="card-title text-center fs-4">Abandono de Animais</h5>
-      <h6 class="card-subtitle text-center">@nickCreator</h6>
-      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit,
-        repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit
-        aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
+      <h5 class="card-title text-center fs-4">Dengue Zero</h5>
+      <h6 class="card-subtitle text-center">@Denguezero</h6>
+      <p class="card-text">O Dengue Zero é uma iniciativa comunitária dedicada ao combate e prevenção da dengue em áreas urbanas. Com o apoio de voluntários, realizamos campanhas de conscientização, distribuindo materiais educativos sobre como eliminar focos de mosquitos e proteger a saúde da comunidade. </p>
       <p>
-        <span class="address">Rua Lorem Ipsum, 91, ES </span>
-        <span class="date">19/02/2024</span>
+        <span class="address">Rua dos Cedros – 789, Bairro Colinas Verdes
+        </span>
+        <span class="date">29/07/2024</span>
       </p>
-      <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver
+      <a href="/visualizarprojeto" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver
         projeto</a>
       <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i>
-        8/10</p>
+        3/10</p>
     </div>
   </div>
   <div class="card">
-    <img src="/static/img/gatoabandonado.png" class="card-img-top " alt="...">
+    <img src="/static/img/ong.png" class="card-img-top " alt="...">
     <div class="card-body">
-      <h5 class="card-title text-center fs-4">Abandono de Animais</h5>
-      <h6 class="card-subtitle text-center">@nickCreator</h6>
-      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit,
-        repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit
-        aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
+      <h5 class="card-title text-center fs-4">Adote um amigo</h5>
+      <h6 class="card-subtitle text-center">@LucileneFraga</h6>
+      <p class="card-text">O Adote um Amigo é uma iniciativa voltada para a adoção responsável de cães resgatados. Com a missão de encontrar lares amorosos para nossos peludos, organizamos feiras de adoção em parques e eventos comunitários, onde os interessados podem conhecer os cães disponíveis. Além disso, oferecemos suporte e orientação sobre cuidados e treinamento, garantindo que cada adoção seja bem-sucedida.</p>
       <p>
-        <span class="address">Rua Lorem Ipsum, 91, ES </span>
-        <span class="date">19/02/2024</span>
+        <span class="address">Alameda das Estrelas – 250, Bairro Parque Celeste
+        </span>
+        <span class="date">17/04/2024</span>
       </p>
-      <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver
+      <a href="/visualizarprojeto" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver
         projeto</a>
       <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i>
-        8/10</p>
+        9/10</p>
     </div>
   </div>
   <div class="card">
-    <img src="/static/img/gatoabandonado.png" class="card-img-top " alt="...">
+    <img src="/static/img/sujeira.png" class="card-img-top " alt="...">
     <div class="card-body">
-      <h5 class="card-title text-center fs-4">Abandono de Animais</h5>
-      <h6 class="card-subtitle text-center">@nickCreator</h6>
-      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit,
-        repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit
-        aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
+      <h5 class="card-title text-center fs-4">Limpeza da rua</h5>
+      <h6 class="card-subtitle text-center">@CarlosRobertoMiranda</h6>
+      <p class="card-text">sou morador ha 23 anos do Vento do norte e de 5 anos para ca a rua não permanece limpa e a prefeitura nao faz nada. Venho aqui pedir ajuda para a limpeza da rua para garantir uma maior qualidde de vida aos moradoes das redondezas.</p>
       <p>
-        <span class="address">Rua Lorem Ipsum, 91, ES </span>
-        <span class="date">19/02/2024</span>
+        <span class="address">Rua Vento do Norte – 1560, Bairro Pôr do Sol </span>
+        <span class="date">30/01/2024</span>
       </p>
-      <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver
+      <a href="/visualizarprojeto" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver
         projeto</a>
       <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i>
-        8/10</p>
+        6/10</p>
     </div>
   </div>
   <!-- 3 CARDS POR LINHA -->
   <div class="card">
-    <img src="/static/img/gatoabandonado.png" class="card-img-top " alt="...">
+    <img src="/static/img/equipe.png" class="card-img-top " alt="...">
     <div class="card-body">
-      <h5 class="card-title text-center fs-4">Abandono de Animais</h5>
-      <h6 class="card-subtitle text-center">@nickCreator</h6>
-      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit,
-        repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit
-        aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
+      <h5 class="card-title text-center fs-4">Equipe LimpaMar</h5>
+      <h6 class="card-subtitle text-center">@LimpaMar</h6>
+      <p class="card-text">LimpaMar é uma iniciativa criada por moradores da região costeira, focada na limpeza e preservação das praias locais. Com a participação de voluntários, realizamos mutirões bimestrais para coletar lixo e resíduos que ameaçam a fauna e flora marinha.</p>
       <p>
-        <span class="address">Rua Lorem Ipsum, 91, ES </span>
-        <span class="date">19/02/2024</span>
+        <span class="address">Rua do Horizonte – 980, Bairro Vale do Sol</span>
+        <span class="date">05/11/2024</span>
       </p>
-      <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver
+      <a href="/visualizarprojeto" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver
         projeto</a>
       <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i>
-        8/10</p>
+        9/10</p>
     </div>
   </div>
   <div class="card">
-    <img src="/static/img/gatoabandonado.png" class="card-img-top " alt="...">
+    <img src="/static/img/tampinhasracao.png" class="card-img-top " alt="...">
     <div class="card-body">
-      <h5 class="card-title text-center fs-4">Abandono de Animais</h5>
-      <h6 class="card-subtitle text-center">@nickCreator</h6>
-      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit,
-        repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit
-        aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
+      <h5 class="card-title text-center fs-4">Doe tampinhas</h5>
+      <h6 class="card-subtitle text-center">@ongcaofeliz</h6>
+      <p class="card-text">Doe tampinhas para arrecadarmos dinheiro para comprar rações para os nossos cãezinhos da ong, nossa ong fica localizada na Alameda dos Ipês – 543, Bairro Bosque, onde estamos 24h a disposição para receber as doações, e dia 06/02/2024 haverá um mutirão de arrecadação das tampinhas. Vem partiipar!</p>
       <p>
-        <span class="address">Rua Lorem Ipsum, 91, ES </span>
-        <span class="date">19/02/2024</span>
+        <span class="address">Alameda dos Ipês – 543, Bairro Bosque </span>
+        <span class="date">06/02/2024</span>
       </p>
-      <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver
+      <a href="/visualizarprojeto" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver
         projeto</a>
       <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i>
-        8/10</p>
+        10/10</p>
     </div>
   </div>
   <div class="card">
-    <img src="/static/img/gatoabandonado.png" class="card-img-top " alt="...">
+    <img src="/static/img/plantar.png" class="card-img-top " alt="...">
     <div class="card-body">
-      <h5 class="card-title text-center fs-4">Abandono de Animais</h5>
-      <h6 class="card-subtitle text-center">@nickCreator</h6>
-      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis nihil corporis? Suscipit,
-        repellendus dolore. Laborum eius eveniet ea, maiores ipsa totam rerum, ullam incidunt iure soluta aliquid, velit
-        aut repellat perspiciatis amet dignissimos vero illo. Eos temporibus sapiente voluptas.</p>
+      <h5 class="card-title text-center fs-4">Plantação de arvores nativas</h5>
+      <h6 class="card-subtitle text-center">@celinelua</h6>
+      <p class="card-text"> Essa é uma iniciativa ativa desde 2005 que é dedicada ao plantio de árvores nativas em áreas degradadas da nossa cidade. Com o apoio de voluntários, realizamos eventos trimestrais de plantio, promovendo a restauração da biodiversidade e a recuperação de habitats naturais. .</p>
       <p>
-        <span class="address">Rua Lorem Ipsum, 91, ES </span>
-        <span class="date">19/02/2024</span>
+        <span class="address">Travessa Lua Branca – 12, Bairro Vila dos Pássaros
+        </span>
+        <span class="date">15/12/2024</span>
       </p>
-      <a href="#" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver
+      <a href="/visualizarprojeto" class="btn fw-semibold d-grid gap-2 col-6 mx-auto" style="color:white; background-color:#2E331C;">Ver
         projeto</a>
       <p class="text-center pt-3" style="color: #A3A651; font-size: 15px;"><i class="bi bi-person-fill people-icon"></i>
         8/10</p>

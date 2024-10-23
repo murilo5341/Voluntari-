@@ -34,7 +34,7 @@ SQL_EMAIL_EXISTE = """
 """
 
 SQL_CHECAR_CREDENCIAIS = """
-    SELECT nome, email, senha, perfil
+    SELECT id, nome, email, senha, perfil
     FROM usuario
     WHERE email = ?
 """

@@ -1,4 +1,4 @@
-{% set usuario = request.state.usuario %}    
+{% set usuario = request.state.usuario %}
 <nav class="navbar navbar-expand-lg navbar-dark cor-navbar">
     <div class="container">
         <a class="navbar-brand" href="/">
@@ -28,7 +28,6 @@
                         </a>
                     {% endif %}
                 </li>
-                
                 <li class="nav-item">
                     <a class="nav-link" href="/projetos">Projetos</a>
                 </li>
@@ -44,15 +43,48 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/sobre">Sobre Nós</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="bi bi-bell text-white"></i>
-                    </a>
-                </li>
-
+                
+                
+                {% if usuario.perfil %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button" 
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-bell text-white"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown">
+                            <li><h6 class="dropdown-header" style="color:darkolivegreen;">Notificações</h6></li>
+                            <li>
+                                <a class="dropdown-item small" href="#">
+                                    <i class="bi bi-bell-fill me-2"></i> Projeto Aprovado...
+                                </a>
+                                <small class="text-muted d-block ms-4 small">10:30 AM - 04 Out</small>
+                            </li>
+                            <li>
+                                <a class="dropdown-item small" href="#">
+                                    <i class="bi bi-bell-fill me-2 small"></i> Projeto Negado...
+                                </a>
+                                <small class="text-muted d-block ms-4 small">11:15 AM - 03 Out</small>
+                            </li>
+                            <li>
+                                <a class="dropdown-item small" href="#">
+                                    <i class="bi bi-bell-fill me-2"></i> Nova Mensagem...
+                                </a>
+                                <small class="text-muted d-block ms-4 small">01:45 PM - 02 Out</small>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="text-center">
+                                <a class="dropdown-item" href="/voluntario/notificacaovoluntario">Mostrar mais</a>
+                            </li>
+                        </ul>
+                    </li>
+                {% endif %}
             </ul>
-            <form class="d-flex my-2 my-lg-0  buscar">
-                <input class="form-control me-sm-2 rounded-5  border-0 backgroundbuscar" type="text"
+
+            
+            <form class="d-flex my-2 my-lg-0 buscar">
+                <input class="form-control me-sm-2 rounded-5 border-0 backgroundbuscar" type="text"
                     placeholder="Buscar..." style="width: 300px;">
                 <button class="btn my-2 my-sm-0" type="submit">
                     <i class="bi bi-search text-white"></i>
@@ -60,5 +92,4 @@
             </form>
         </div>
     </div>
-
 </nav>

@@ -1,6 +1,6 @@
 {% extends "pages/base.html" %}
 
-{% block subtitulo %}Assinar Plano Mensal{% endblock %}
+{% block subtitulo %}Assinar Plano Anual{% endblock %}
 {% block conteudo %}
 
 <div class="mt-5 text-center pb-3">
@@ -40,11 +40,11 @@
     </div>
 
     <div class="container col-md-5  bg-light rounded mt-3">
-        <div class="fw-semibold fs-4 text-center mt-3">Assinatura Mensal</div>
+        <div class="fw-semibold fs-4 text-center mt-3">Assinatura Anual</div>
         <hr>
         <div class="text-secondary text-center fw-semibold" style="font-size: 20px;">
-            R$15,00/mês <br>
-            R$180,00 por ano
+            12 meses por R$153,00 <br>
+            15% de desconto em relação ao plano mensal
         </div>
         <p class="text-secondary text-center mt-5 small">A renovação não é automática</p>
     </div>
@@ -58,9 +58,9 @@
 
         if (paymentMethod) {
             if (paymentMethod.value === 'pix') {
-                window.location.href = '/mtdPagamentoPìxMensal';
+                window.location.href = '/voluntario/PagamentoPixAnual';
             } else if (paymentMethod.value === 'credit') {
-                window.location.href = '/mtdPagamentoCreditoMensal';
+                window.location.href = '/voluntario/PagamentoCreditoAnual';
             }
         } else {
             alert('Por favor, selecione um plano de assinatura.');

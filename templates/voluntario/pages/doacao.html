@@ -3,22 +3,6 @@
 {% block subtitulo %}doacao{% endblock %}
 {% block conteudo %}
 <style>
-    .container-doacao {
-        background-color: rgba(46, 51, 28, 0.05);
-        margin: 8% 18%;
-        padding: 2cm;
-        border-radius: 3%;
-        position: relative;
-    }
-
-    .container-passos {
-        text-align: center;
-        font-family: "Lato", sans-serif;
-        font-weight: bold;
-        color: #2E331C;
-        margin-bottom: 2rem;
-    }
-
     .medalhas {
         display: flex;
         justify-content: center;
@@ -32,19 +16,12 @@
         margin-top: 4%;
     }
 
-    .opcoes {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 2rem;
-    }
-
     .opcao-doacao {
         background-color: white;
         border: 2px solid #A3A651;
         border-radius: 5%;
         text-align: center;
-        padding: 1rem;
+        
         flex: 1 1 30%;
         cursor: pointer;
         transition: background-color 0.3s, border-color 0.3s, transform 0.5s;
@@ -69,7 +46,7 @@
         border-color: #8a9a5b;
     }
 
-    .opcao-doacao h3 {
+    .opcao-doacao h5 {
         color: rgb(163, 166, 81);
     }
 
@@ -87,15 +64,10 @@
 
     .non-container {
         text-align: center;
-        font-family: 'Lato';
         font-style: normal;
         margin-top: 4%;
     }
 
-    .input-custom {
-        width: 40%;
-        display: block;
-    }
 
     .input-custom::placeholder {
         color: #888;
@@ -123,63 +95,67 @@
         text-align: center;
         color: white;
     }
-    .image-top-container {
-        width: 100px;
-        display: block;
-        margin: 0 auto 1rem;
-        margin-top: 3%;
-        margin-bottom: 5%;
-    }
+    
     .confirmar:hover{
         background-color: #4C5630;
         color: white
     }
 </style>
-<div class="custom-container">
-    <img src="/static/img/logo/logopreta.png" alt="Doação" class="image-top-container">
+<div class="text-center mt-5 mb-5">
+    <img src="/static/img/logo/logopreta.png" alt="Doação" class="image-top-container" width="140px">
 </div>
 
-<div class="row flex-column justify-content-center principal">
-
-    
-    <div class="col-6 mx-auto backgroundnormal p-4 rounded-top-4 doacao-superior">
-        <h1>DOACAO</h1><br>
-        <h3>DOE PARA UM PROJETO</h3>
+<div class="container col-12 col-md-6 mb-5 text-center">
+    <div class="backgroundnormal p-4 rounded-top-4 doacao-superior">
+        <h1>Doação</h1><br>
+        <h5>Doe para um projeto</h5>
         <br>
-        <h6>"SUA DOAÇÃO HOJE É A ESPERANÇA DE UM FUTURO MELHOR DE AMANHÃ."</h6>
+        <h6>"Sua doação hoje é a esperança de um futuro melhor de amanhã."</h6>
 
     </div>
-    <div class="col-6 mx-auto  background005 p-4 rounded-bottom-4">
-        <h5 class="text-center mx-auto fw-bold mb-5">MODALIDADES</h5>
-        <div class="medalhas">
-            <div class="medalha-ouro"><img src="/static/img/gold-medal.png" alt="Medalha de Ouro"></div>
-            <div class="medalha-prata"><img src="/static/img/silver-medal.png" alt="Medalha de Prata"></div>
-            <div class="medalha-bronze"><img src="/static/img/bronze-medal.png" alt="Medalha de Bronze"></div>
-        </div>
-        <div class="d-flex gap-5">
+    <div class=" background005 p-4 rounded-bottom-4">
+        <h5 class="text-center mb-5 fs-3" style="color: #2E331C;">Modalidades</h5>
+        <div class="row justify-content-between">
+            <div class="ouro col-4">
+            <div class="text-center mb-3"><img src="/static/img/gold-medal.png" alt="Medalha de Ouro" width="30px"></div>
             <button class="opcao-doacao">
-                <h3>R$60,00</h3>
+                <div class="p-2">
+                <h5>R$60,00</h5>
                 <h6>O doador terá seu nome exibido na categoria ouro</h6>
+                </div>
             </button>
-            <button class="opcao-doacao">
-                <h3>R$35,00</h3>
-                <h6>O doador terá seu nome exibido na categoria prata</h6>
-            </button>
-            <button class="opcao-doacao">
-                <h3>R$15,00</h3>
-                <h6>O doador terá seu nome exibido na categoria bronze</h6>
-            </button>
+            </div>
+            <div class="prata col-4">
+                <div class="text-center mb-3"><img src="/static/img/silver-medal.png" alt="Medalha de Prata" width="30px"></div>
+                <button class="opcao-doacao">
+                    <div class="p-2">
+                    <h5>R$35,00</h5>
+                    <h6>O doador terá seu nome exibido na categoria prata</h6>
+                    </div>
+                </button>
+                </div>
+                <div class="bronze col-4">
+                    <div class="text-center mb-3"><img src="/static/img/bronze-medal.png" alt="Medalha de Bronze" width="30px"></div>
+                    <button class="opcao-doacao">
+                        <div class="p-2">
+                        <h5>R$15,00</h5>
+                        <h6>O doador terá seu nome exibido na categoria bronze</h6>
+                        </div>
+                    </button>
+                    </div>
+  
         </div>
-        <h6 class="non-container">Quer doar mais? Insira abaixo a quantia desejada</h6>
+        
+        <h6 class="mt-3">Quer doar mais? Insira abaixo a quantia desejada</h6>
 
-        <div class="valor-adicional">
-            <p>Apenas valores acima de R$60,00</p>
-            <input class="form-control me-1 input-custom" type="search" placeholder="ex: R$100,00" aria-label="Search">
+        <div class="text-center">
+            <p class="small fw-semibold">Apenas valores acima de R$60,00</p>
+            <input class="currency-input border small border-1 rounded p-2 w-50 mb-3" id="meta" type="search" min="0" name="meta" placeholder="Ex:R$100,00" required>
+            <a href="#" class="btn fw-semibold btn-secondary  w-50" style="background-color: #8a9a5b;">Confirmar</a>
         </div>
-        <a href="#" class="btn fw-semibold d-grid col-2 confirmar">Confirmar</a>
     </div>
 </div>
-<br><br><br>
+
 
 <script>
     document.querySelectorAll('.opcao-doacao').forEach(button => {

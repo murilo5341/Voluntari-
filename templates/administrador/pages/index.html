@@ -31,7 +31,6 @@
         margin-bottom: .5rem; /* Espaço abaixo do label */
   }
 </style>
-
 <div class="container my-3 mb-5  ">
     <div class="row">
         {%include "includes/menuAdministrador.html"%}
@@ -51,11 +50,11 @@
                     <div class="w-75 text-center mt-3 container">
                         <div class="text-start mb-3">
                             <label for="nome" class="form-label">Nome:</label>
-                            <input class="border border-1 rounded p-2 mb-3 w-100" id="nome" name="nome" placeholder="administrador" required>
+                            <input class="border border-1 rounded p-2 mb-3 w-100" id="nome" name="nome" value="{{usuario.nome}}" required>
                         </div>
                         <div class="text-start mb-3">
-                            <label for="email" class="form-label">Celular:</label>
-                            <input class="border border-1 rounded p-2 mb-3 w-100" id="celular" name="celular" placeholder="(28)00000-0000" required><br>
+                            <label for="email" class="form-label">telefone:</label>
+                            <input class="border border-1 rounded p-2 mb-3 w-100" id="telefone" name="telefone" value="{{usuario.telefone}}" required><br>
                         </div>
                         <div>
                             <button class="btn btn-secondary mt-3 border botao-verde" type="submit">alterar dados</button>

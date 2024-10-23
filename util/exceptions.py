@@ -1,10 +1,10 @@
 import logging
 from fastapi import FastAPI, HTTPException, Request, status
 from fastapi.responses import RedirectResponse
-from util.cookies import adicionar_mensagem_erro
-from util.templates import obter_jinja_templates
+from fastapi.templating import Jinja2Templates
+from util.mensagens import adicionar_mensagem_erro
 
-templates = obter_jinja_templates("templates/public")
+templates = Jinja2Templates("templates")
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -15,7 +15,7 @@ def configurar_excecoes(app: FastAPI):
     async def unauthorized_exception_handler(request: Request, _):
         return_url = f"?return_url={request.url.path}"
         response = RedirectResponse(
-            f"/entrar{return_url}", status_code=status.HTTP_302_FOUND
+            f"/entrar{return_url}", status_code=status.HTTP_302_FOUUsuarioRepo.criar_tabela()
         )
         adicionar_mensagem_erro(
             response,
@@ -54,7 +54,7 @@ def configurar_excecoes(app: FastAPI):
     async def page_not_found_exception_handler(request: Request, _):
         usuario = request.state.usuario if hasattr(request.state, "usuario") else None
         return templates.TemplateResponse(
-            "pages/404.html",
+            "shared/pages/404.html",
             {
                 "request": request,
                 "usuario": usuario,
@@ -71,7 +71,7 @@ def configurar_excecoes(app: FastAPI):
             "detail": "Erro na requisição HTTP.",
         }
         return templates.TemplateResponse(
-            "pages/error.html",
+            "shared/pages/error.html",
             view_model,
             status_code=ex.status_code,
         )
@@ -86,7 +86,7 @@ def configurar_excecoes(app: FastAPI):
             "detail": "Erro interno do servidor.",
         }
         return templates.TemplateResponse(
-            "pages/error.html",
+            "shared/pages/error.html",
             view_model,
             status_code=500,
         )

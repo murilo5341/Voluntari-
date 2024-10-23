@@ -1,0 +1,76 @@
+{% extends "pages/base.html" %} 
+
+{% block subtitulo %}Confirmação{% endblock %}
+{% block conteudo %}
+    <style>
+        .container-pagamento {
+            background-color: #f8f8f8;
+            padding: 30px;
+            border-radius: 10px;
+            width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .details {
+            text-align: center;
+            color: #90947d;
+            margin-bottom: 20px;
+        }
+
+        .details span {
+            font-weight: bold;
+        }
+
+        .botao-verde {
+            background-color: #aeb073;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 60%; 
+        }
+        
+        .botao-verde:hover {
+            background-color: #8f9657;
+        }
+        
+        .checkbox-container {
+            margin: 30px 0 20px 0; /* Aumentei a margem superior */
+            text-align: left;
+            display: flex; /* Flexbox para alinhar os itens na mesma linha */
+            align-items: center; /* Centraliza verticalmente */
+        }
+
+        .terms-label {
+            font-size: 11px; /* Tamanho da fonte menor */
+            color: #7a7a7a;
+            margin-left: 5px; /* Espaçamento entre checkbox e texto */
+        }
+        
+    </style>
+
+    <div class="container text-center">
+        <img src="/static/img/logo/logoverde.png" alt="VOLUNTÁRIE" width="240px" style="padding: 50px;">
+    </div>
+
+    <div class="container-pagamento">
+        <h2 style="color: #727760; border-bottom: 1px solid #d3d6c8; padding-bottom: 20px;">Finalizar Doação</h2>
+        <div class="details">
+            <p>Nome do Projeto: Adote um amigo</p>
+            <p>Modalidade: Prata</p>
+            <p>Valor: R$35,00</p>
+            <p>Forma de Pagamento: Cartão de Crédito</p>
+            <p>Dígitos finais do cartão: ****</p>
+        </div>  
+
+        <div class="checkbox-container">
+            <input type="checkbox" id="terms-checkbox" required>
+            <label for="terms-checkbox" class="terms-label">Ao realizar a doação, você concorda integralmente com os <a href="/termos-de-uso" target="_blank">termos de uso</a>.</label>
+        </div>
+
+        <button class="botao-verde" type="submit">Confirmar</button>
+    </div>
+
+{% endblock %}

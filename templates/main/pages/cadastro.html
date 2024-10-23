@@ -1,5 +1,5 @@
 {% extends "pages/base.html" %}
-
+{% from "macros.html" import input_text, input_date, input_email, input_password, input_radios %}
 {% block subtitulo %}Cadastro{% endblock %}
 {% block conteudo %}
 
@@ -25,21 +25,36 @@
             <form action="/post_cadastro" method="post">
                 <div class="mt-3">
 
+                    {#
                     <div class="text-center">
                         <input class="border border-1 rounded p-2 w-75 mb-3" id="nome" name="nome" placeholder="Nome"required><br>
                     </div>
+                    #}
 
+
+                    {#
                     <div class="text-center">
                         <input type="email" class="border border-1 rounded p-2 w-75 mb-3" id="email" name="email" placeholder="Email"required><br>
                     </div>
+                    #}
 
-                    <div class="text-center"></div>
-                        <input type="password" class="border border-1 rounded p-2 w-75 mb-3" id="senha" name="senha" placeholder="Senha"required><br>
-                    </div>
-
+                    {#
                     <div class="text-center">
                         <input class="border border-1 rounded p-2 w-75 mb-3" id="cpf" name="cpf" placeholder="CPF"required><br>
                     </div>
+                    #}
+
+                    {{input_text("nome", "Nome", "required autofocus data-mask='nome'")}}
+                    {{input_email("email", "Email", "required")}}
+                    {{input_password("senha", "Senha", "required")}}
+                    {{input_text("cpf", "CPF", "required")}}
+                    {{input_date("data", "Data Nascimento", "required")}}
+                   
+                    
+                    
+                    
+
+                    
 
                     <div class="text-center">
                         <input type="date" class="border border-1 rounded p-2 w-75 mb-3" id="data_nascimento" name="data_nascimento" placeholder="Data de Nascimento"required><br>
@@ -90,4 +105,5 @@
     </div>
 </main>
 
+<script src="/static/js/mascararCampos.js"></script>
 {% endblock %}

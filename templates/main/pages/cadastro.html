@@ -1,5 +1,5 @@
 {% extends "pages/base.html" %}
-{% from "macros.html" import input_text, input_date, input_email, input_password, input_radios %}
+{% from "macros.html" import input_text, input_date, input_email, input_password%}
 {% block subtitulo %}Cadastro{% endblock %}
 {% block conteudo %}
 
@@ -25,49 +25,40 @@
             <form action="/post_cadastro" method="post">
                 <div class="mt-3">
 
-                    {#
+                    
+                    {#SEM MACRO 
+                    
                     <div class="text-center">
                         <input class="border border-1 rounded p-2 w-75 mb-3" id="nome" name="nome" placeholder="Nome"required><br>
                     </div>
-                    #}
 
-
-                    {#
                     <div class="text-center">
                         <input type="email" class="border border-1 rounded p-2 w-75 mb-3" id="email" name="email" placeholder="Email"required><br>
                     </div>
-                    #}
-
-                    {#
+                                        
                     <div class="text-center">
                         <input class="border border-1 rounded p-2 w-75 mb-3" id="cpf" name="cpf" placeholder="CPF"required><br>
                     </div>
-                    #}
-
-                    {{input_text("nome", "Nome", "required autofocus data-mask='nome'")}}
-                    {{input_email("email", "Email", "required")}}
-                    {{input_password("senha", "Senha", "required")}}
-                    {{input_text("cpf", "CPF", "required")}}
-                    {{input_date("data", "Data Nascimento", "required")}}
-                   
                     
-                    
-                    
-
-                    
-
                     <div class="text-center">
                         <input type="date" class="border border-1 rounded p-2 w-75 mb-3" id="data_nascimento" name="data_nascimento" placeholder="Data de Nascimento"required><br>
                     </div>
 
                     <div class="text-center">
-                    <input class="border border-1 rounded p-2 w-75 mb-3" id="telefone" name="telefone" placeholder="Telefone"required><br>
+                        <input class="border border-1 rounded p-2 w-75 mb-3" id="telefone" name="telefone" placeholder="Telefone"required><br>
                     </div>
 
-                    <div class="text-center">
+                   <div class="text-center">
                         <input type="password" class="border border-1 rounded p-2 w-75 mb-3" id="confsenha" name="confsenha" placeholder="Confirmar Senha"required><br>
-                    </div>
-                    
+                    </div>#}
+
+                    {{input_text("nome", "Nome", "required autofocus data-mask='nome'",div_classes="col-12 mb-4")}}
+                    {{input_email("email", "Email", "required",div_classes="col-12 mb-4")}}
+                    {{input_password("senha", "Senha", "required",div_classes="col-12 mb-4")}}
+                    {{input_text("cpf", "CPF", "required autofocus data-mask='cpf'",div_classes="col-12 mb-4")}}
+                    {{input_date("data", "Data Nascimento", "required",div_classes="col-12 mb-4")}}
+                    {{input_text("telefone", "Telefone", "required  data-mask='telefone'",div_classes="col-12 mb-4")}}
+                    {{input_password("confsenha", "Confirmar Senha", "required",div_classes="col-12 mb-4")}}
 
                     
                     <div class="mt-2 rounded-2" style="background-color: #aeb0732c; color:#606148;">

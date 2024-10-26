@@ -4,7 +4,6 @@ import jwt
 from datetime import datetime
 from datetime import timedelta
 from fastapi import HTTPException, Request, status
-
 from dtos.usuario_autenticado import UsuarioAutenticado
 
 NOME_COOKIE_AUTH = "jwt-token"

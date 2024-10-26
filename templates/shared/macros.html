@@ -24,7 +24,7 @@
 
 <div class="{{div_classes}}">
     <div class="form-floating">
-        <input type="email" name="{{email}}" id="{{email}}" class="form-control" placeholder=" " {{attributes|safe}} value="{{value|e}}">
+        <input type="email" name="{{name}}" id="{{name}}" class="form-control" placeholder=" " {{attributes|safe}} value="{{value|e}}">
         <label for="{{name}}">{{label}}</label>
     </div>
 </div>
@@ -33,14 +33,14 @@
 
 {% macro input_date(name, label, attributes='', value='', div_classes='') %}
 {#
-<div class="text-center">
+<div class="text-center"> 
     <input type="date"  id="{{data_nascimento}}" class="form-control mb-4" name="{{data_nascimento}}" placeholder="{{label}}" {{attributes|safe}}>
 </div>
 #}
 
 <div class="{{div_classes}}">
     <div class="form-floating">
-        <input type="date" name="{{data_nascimento}}" id="{{data_nascimento}}" class="form-control" placeholder=" " {{attributes|safe}} value="{{value|e}}">
+        <input type="date" name="{{name}}" id="{{name}}" class="form-control" placeholder=" " {{attributes|safe}} value="{{value|e}}">
         <label for="{{name}}">{{label}}</label>
     </div>
 </div>
@@ -49,13 +49,11 @@
 {% macro input_password(name, label, attributes='', div_classes='') %}
 <div class="{{div_classes}}">
     <div class="form-floating">
-        <input type="password" name="{{senha}}" id="{{senha}}" class="form-control" placeholder=" " {{attributes|safe}}>
+        <input type="password" name="{{name}}" id="{{name}}" class="form-control" placeholder=" " {{attributes|safe}}>
         <label for="{{name}}">{{label}}</label>
     </div>
 </div>
 
-
-{#TENTA COLOCAR O FORM CONTROL DEPOIS MURILO#}
 {#<div class="text-center">
     <input type="password"  id="{{senha}}" class="form-control mb-4" name="{{senha}}" placeholder="{{label}}" {{attributes|safe}} >
 </div>#}

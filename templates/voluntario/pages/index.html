@@ -1,5 +1,5 @@
 {% extends "pages/base.html" %}
-
+{% from "macros.html" import input_text, input_date, input_email, input_password%}
 {% block subtitulo %}Perfil{% endblock %}
 {% block conteudo %}
 
@@ -90,6 +90,7 @@
                 <form action="/formulario_enviado" method="post">
                     <div class="w-75 text-center mt-3 container">
                         <div class="text-start mb-3">
+                            {{input_text("nome", "Nome", "required autofocus data-mask='nome'",value='{{usuario.nome}}',div_classes=" rounded p-2 mb-3 w-100")}}
                             <label for="nome" class="form-label">Nome:</label>
                             <input class="border border-1 rounded p-2 mb-3 w-100" id="nome" name="nome" value="{{usuario.nome}}">
                         </div>

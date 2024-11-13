@@ -90,18 +90,16 @@
                 <form action="/formulario_enviado" method="post">
                     <div class="w-75 text-center mt-3 container">
                         <div class="text-start mb-3">
-                            {{input_text("nome", "Nome", "required autofocus data-mask='nome'",value='{{usuario.nome}}',div_classes=" rounded p-2 mb-3 w-100")}}
-                            <label for="nome" class="form-label">Nome:</label>
-                            <input class="border border-1 rounded p-2 mb-3 w-100" id="nome" name="nome" value="{{usuario.nome}}">
-                        </div>
-                        <div class="text-start mb-3">
-                            <label for="telefone" class="form-label">telefone:</label>
-                            <input class="border border-1 rounded p-2 mb-3 w-100" id="telefone" name="telefone" value="{{usuario.telefone}}"><br>
-                        </div>
-                        <div>
+                            {{input_text("nome", "Nome", "required autofocus data-mask='nome'",value=usuario.nome,div_classes=" rounded p-2 mb-3 w-100")}}
+                            {{input_text("telefone", "Telefone", "required  data-mask='telefone'",value=usuario.telefone,div_classes=" rounded p-2 mb-3 w-100")}}
+
+                            
+                        <div class="text-center">
                             <button class="btn btn-secondary mt-3 border botao-verde" type="submit">Gravar</button>
                         </div>
+                        </div>
                     </div>
+                    
                 </form>
             </div>
             <a href="solicitarmoderacao" class="text-dark d-flex justify-content-center">Quero ser moderador</a>

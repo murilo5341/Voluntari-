@@ -1,5 +1,5 @@
 {% extends "pages/base.html" %}
-
+{% from "macros.html" import input_text, input_date, input_textarea, input_email, input_password, input_select, input_number%}
 {% block subtitulo %}Criar Projeto{% endblock %}
 {% block conteudo %}
 
@@ -31,6 +31,85 @@
                     <input type="file" class="form-control" id="inputGroupFile02" onchange="previewFile()">
                     <label class="input-group-text" for="inputGroupFile02">Upload</label>
                 </div>
+                
+
+                    {{ input_text("nome", 
+                    "Título do Projeto", 
+                    "required autofocus",
+                    div_classes="rounded p-2 w-100 mb-3'"
+                    ) }}
+                
+                    {{ input_number(
+                        'qtdvoluntarios', 
+                        'Quantidade de Voluntários', 
+                        min='0', 
+                        max='20', 
+                        attributes='required oninput="limitValue(this, 20)"', 
+                        div_classes='rounded p-2 w-100 mb-3'
+                    ) }}
+                    
+                    {{ input_select(
+                        'estado', 
+                        'Selecione o Estado', 
+                        options=[], 
+                        attributes='onchange="carregarMunicipios()" required', 
+                        div_classes='rounded p-2 w-100 mb-3'
+                    ) }}
+                
+                    {{ input_select(
+                        'cidade', 
+                        'Município:', 
+                        options=[], 
+                        attributes='required', 
+                        div_classes='rounded p-2 w-100 mb-3'
+                    ) }}
+                
+                    {{ input_text(
+                        'endereco', 
+                        'Endereço do Projeto', 
+                        attributes='required placeholder="Ex: Rua Evanilda Lima Soares"', 
+                        div_classes=' rounded p-2 w-100 mb-3'
+                    ) }}
+                
+
+                
+                    {{ input_date(
+                        'dtinicio', 
+                        'Data de Início do Projeto', 
+                        attributes='required', 
+                        div_classes=' rounded p-2 w-100 mb-3'
+                    ) }}
+                
+
+                
+                    {{ input_date(
+                        'dttermino', 
+                        'Data de Previsão do Término do Projeto', 
+                        attributes='required', 
+                        div_classes=' rounded p-2 w-100 mb-3'
+                    ) }}
+                
+
+                
+                    {{ input_number(
+                        'meta', 
+                        'Meta a ser atingida através das doações', 
+                        min='0', 
+                        attributes='required placeholder="Escreva apenas o número"', 
+                        div_classes=' rounded p-2 w-100 mb-3'
+                    ) }}
+                
+
+                
+                    {{ input_textarea(
+                        'descricao', 
+                        'Descrição do Projeto', 
+                        attributes='required placeholder="Escreva do que se trata o projeto"', 
+                        div_classes=' rounded p-2 w-100 mb-3'
+                    ) }}
+                
+
+{#
                 <label class="text-secondary">Título do Projeto:</label>
                 <div>
                     <input class="border border-1 rounded p-2 w-100 mb-3" id="titulo" name="titulo" placeholder="Ex: Projeto do Gugu Gaiteiro" required>
@@ -58,23 +137,27 @@
                 <div>
                     <input class="border border-1 rounded p-2 w-100 mb-3" id="endereco" name="endereco" placeholder=" Ex: Rua Evanilda Lima Soares" required>
                 </div>
+
                 <label class="text-secondary">Data de Início do Projeto:</label>
                 <div>
                     <input class="border border-1 rounded p-2 w-100 mb-3" type="date" id="dtinicio" name="dtinicio" required>
                 </div>
+
                 <label class="text-secondary">Data de Previsão do Término do Projeto:</label>
                 <div>
                     <input class="border border-1 rounded p-2 w-100 mb-3" id="dttermino" type="date" name="dttermino" required>
                 </div>
+
                 <label class="text-secondary">Meta a ser atingida através das doações:</label>
                 <div>
                     <input class="currency-input border border-1 rounded p-2 w-100 mb-3" id="meta" type="number" min="0" name="meta" placeholder="Escreva apenas o número" required><br>
                 </div>
+
                 <label class="text-secondary">Descrição do Projeto:</label>
                 <div>
                     <textarea class="border border-1 rounded p-2 w-100 mb-3" id="descricao" name="descricao" placeholder="Escreva do que se trata o projeto" required></textarea>
                 </div>
-            </div>
+            </div>#}
                 <div class="text-center">
                     <button class="btn btn-secondary mb-3 border p-2 botao-verde w-50" type="submit">Criar Projeto</button>
                 </div>
@@ -82,6 +165,14 @@
     </div>
     </main>
     <script>
+
+        
+            function limitValue(input, max) {
+                if (parseInt(input.value) > max) {
+                    input.value = max;
+                }
+            }
+        
         async function carregarEstados() {
             const response = await fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados/');
             const estados = await response.json();

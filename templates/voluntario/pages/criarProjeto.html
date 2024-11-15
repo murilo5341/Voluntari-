@@ -99,7 +99,7 @@
                         div_classes=' rounded p-2 w-100 mb-3'
                     ) }}
                 
-
+                    
                 
                     {{ input_textarea(
                         'descricao', 
@@ -166,7 +166,8 @@
     </main>
     <script>
 
-        
+        src="/static/js/mascararCampos.js"
+
             function limitValue(input, max) {
                 if (parseInt(input.value) > max) {
                     input.value = max;
@@ -225,6 +226,8 @@
         window.onload = () => {
             carregarEstados(); // Carrega os estados ao iniciar a página
         };
+
+
     </script>
 
 {% endblock %}

@@ -1,6 +1,6 @@
 
 {% extends "pages/base.html" %}
-
+{% from "macros.html" import input_text, input_date, input_email, input_password%}
 {% block subtitulo %}Alterar Senha{% endblock %}
 {% block conteudo %}
 
@@ -28,11 +28,19 @@
         <div class="text-center" style="font-size: 28px; font-weight: 500;">Alterar sua senha</div>
         <form action="/formulario_enviado" method="post">
             <div class="text-center mt-3">
-                <input class="border border-1 rounded p-2 w-75 mb-3" id="senhaatual" name="senhaatual" placeholder="Senha atual" required><br>
+
+                {{input_password("senha", "Senha Atual", "required",div_classes="col-12 mb-4")}}
+
+                {{input_password("senha", "Nova senha", "required",div_classes="col-12 mb-4")}}
+
+                {{input_password("confsenha", "Confirmar senha", "required",div_classes="col-12 mb-4")}}
+
+
+                <!-- <input class="border border-1 rounded p-2 w-75 mb-3" id="senhaatual" name="senhaatual" placeholder="Senha atual" required><br>
 
                 <input class="border border-1 rounded p-2 w-75 mb-3" id="novasenha" name="novasenha" placeholder="Nova senha" required><br>
 
-                <input class="border border-1 rounded p-2 w-75 mb-3" id="confnovasenha" name="confnovasenha" placeholder="Confirmar nova senha" required><br>
+                <input class="border border-1 rounded p-2 w-75 mb-3" id="confnovasenha" name="confnovasenha" placeholder="Confirmar nova senha" required><br> -->
 
                 <button class="btn btn-secondary mt-3 border p-2 botao-verde w-75" type="submit">Confirmar</button>
             </div>

@@ -22,7 +22,7 @@
 <div class="row">
     <div class="mt-3 container col-md-5 bg-light rounded">
         {#
-        MACRO FUNCIONANDO, ENTRETANTO SEM NENHUMA MUDANÇA, PEDIR EXPLICAÇÃO AO MAROQUIO (PEGO DO CHATGPT) 
+        
         
         <div class="form-check py-2 mt-3 border align-content-center" style="background-color: white;">
             <input class="form-check-input ms-1 mt-2" type="radio" name="paymentMethod" value="pix" id="pix" />
@@ -37,15 +37,15 @@
         </div>#}
 
 
-       
+       <p class="fs-5 mt-3 fw-semibold">Formas de pagamento</p>
        {{ input_radios(
             "paymentMethod",
-            "Forma de Pagamento",
+            "",
             [
                 {"value": "pix", "label": '<img src="/static/img/pix.svg" alt="Pix" width="30px" class="ms-1"> Pix'},
                 {"value": "credit", "label": '<i class="bi bi-credit-card text-danger ms-1 fs-4"></i> Cartão de crédito'}
             ],
-            div_classes="py-2 mt-3 border align-content-center bg-white",
+            div_classes=" mt-3 align-content-center",
             value=""
         ) }}
         

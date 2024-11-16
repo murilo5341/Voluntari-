@@ -1,4 +1,5 @@
 {% extends "pages/base.html" %}
+{% from "macros.html" import input_radios%}
 
 {% block subtitulo %}Assinar Plano Anual{% endblock %}
 {% block conteudo %}
@@ -19,6 +20,9 @@
 
 <div class="row">
     <div class="mt-3 container col-md-5 bg-light rounded">
+        {#
+        
+        
         <div class="form-check py-2 mt-3 border align-content-center" style="background-color: white;">
             <input class="form-check-input ms-1 mt-2" type="radio" name="paymentMethod" value="pix" id="pix" />
             <img src="/static/img/pix.svg" alt="" width="30px" class="ms-4">
@@ -29,7 +33,21 @@
             <input class="form-check-input ms-1 mt-2" type="radio" name="paymentMethod" value="credit" id="credit-card" />
             <i class="bi bi-credit-card text-danger ms-4 fs-4"></i>
             <label class="form-check-label ms-1 fs-5" for="credit-card">Cartão de crédito</label>
-        </div>
+        </div>#}
+
+
+       <p class="fs-5 mt-3 fw-semibold">Formas de pagamento</p>
+       {{ input_radios(
+            "paymentMethod",
+            "",
+            [
+                {"value": "pix", "label": '<img src="/static/img/pix.svg" alt="Pix" width="30px" class="ms-1"> Pix'},
+                {"value": "credit", "label": '<i class="bi bi-credit-card text-danger ms-1 fs-4"></i> Cartão de crédito'}
+            ],
+            div_classes=" mt-3 align-content-center",
+            value=""
+        ) }}
+        
         <div class="small text-secondary mt-2 mb-2">Bandeiras aceitas</div>
         <div class="pb-2">
         <img src="/static/img/elocard.svg" alt="" height="30" >
@@ -38,6 +56,7 @@
         <img src="/static/img/hipercard.svg" alt="" height="30"class="ms-4">
     </div>
     </div>
+
 
     <div class="container col-md-5  bg-light rounded mt-3">
         <div class="fw-semibold fs-4 text-center mt-3">Assinatura Anual</div>

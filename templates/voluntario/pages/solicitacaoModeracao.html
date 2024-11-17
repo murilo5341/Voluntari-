@@ -1,5 +1,6 @@
 
 {% extends "pages/base.html" %}
+{% from "macros.html" import input_radios %}
 
 {% block subtitulo %}Solicitar Moderação{% endblock %}
 {% block conteudo %}
@@ -43,8 +44,8 @@
                 <div class="mt-3">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"required>
-                        <label class="form-check-label" for="flexRadioDefault1" style="font-size: 13px; font-weight:550;">Concordo com os termos e condições do site</label>
-                      </div>
+                        {{ input_radios("termos", "Concordo com os termos e condições do site", "required",div_classes="fw-semibold") }}
+
                       <div class="text-center">
                     <button class="btn btn-secondary mt-3 border p-2 botao-verde w-25" type="submit" text-center>Enviar Solicitação</button>
                 </div>

@@ -1,4 +1,5 @@
 {% extends "pages/base.html" %}
+{% from "macros.html" import input_textarea, input_radios %}
 
 {% block subtitulo %}Avaliações{% endblock %}
 
@@ -298,7 +299,8 @@
                     </div>
                 </div>
                 
-                <textarea class="form-control mb-3" rows="4" placeholder="Conte-nos um pouco mais sobre a sua experiência no projeto"></textarea>
+
+                {{input_textarea("campoavaliacao","Conte-nos um pouco mais sobre a sua experiência no projeto","required")}}
         
                 <p class="text-center" style="color: #7D7D7D;">Lembre-se de ser gentil em seu comentário</p>
                 <p class="text-center mb-4" style="color: #7D7D7D;">Seu feedback será muito importante para novos voluntários!</p>
@@ -313,28 +315,25 @@
 
 <!-- Overlay Denunciar Avaliação -->
 <div id="overlayavaliacao" class="overlay">
-    <div class="container mt-5" style="max-width: 500px;">
+    <div class="container mt-5 col-12" >
         <div class="feedback-container p-4">
             <h3 class="text-center mb-2" style="color: #2E331C; font-weight: 500;">Denunciar avaliação</h3>
             <p class="text-center" style="color: #7D7D7D;">Por favor, selecione o motivo do relatório</p>
             
-            <div class="form-check form-check-inline">
-                <input class="form-text-input" type="radio" name="disponibilidade" id="manha" value="sim">
-                <label class="form-text-label mt-1" for="manha">Avaliação rude/abusiva/grosseira</label><br>
-                
-                <input class="form-text-input" type="radio" name="disponibilidade" id="tarde" value="sim">
-                <label class="form-text-label mt-1" for="tarde">Spam</label><br>
-                
-                <input class="form-text-input" type="radio" name="disponibilidade" id="noite" value="sim">
-                <label class="form-text-label mt-1" for="noite">Exposição de informações/dados pessoais</label><br>
-                
-                <input class="form-text-input" type="radio" name="disponibilidade" id="fds" value="sim">
-                <label class="form-text-label mt-1" for="fds">Direcionamento para fora da plataforma</label><br>
-
-                <input class="form-text-input" type="radio" name="disponibilidade" id="fds" value="sim">
-                <label class="form-text-label mt-1" for="fds">Outros</label>
-                
-            </div><br>
+            <!-- PEDIR AJUDA MAROQUIO PARA AJEITAR O ESPAÇAMENTO -->
+            {{ input_radios(
+                'motivodenuncia',  
+                '',                 
+                [                   
+                    {'value': 'outros', 'label': 'Outros'},
+                    {'value': 'spam', 'label': 'Spam'},
+                    {'value': 'dados', 'label': 'Exposição de informações/dados pessoais'},
+                    {'value': 'externo', 'label': 'Direcionamento para fora da plataforma'},
+                    {'value': 'rude', 'label': 'Avaliação rude/abusiva/grosseira'}
+                    
+                ],
+                div_classes="col-1"
+            ) }}
             
 
             <div class="text-center">

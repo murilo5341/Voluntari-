@@ -1,4 +1,5 @@
 {% extends "pages/base.html" %}
+{% from "macros.html" import input_number %}
 
 {% block subtitulo %}doacao{% endblock %}
 {% block conteudo %}
@@ -100,6 +101,9 @@
         background-color: #4C5630;
         color: white
     }
+    .form-check-input {
+        display: none;
+    }
 </style>
 <div class="text-center mt-5 mb-5">
     <img src="/static/img/logo/logopreta.png" alt="Doação" class="image-top-container" width="140px">
@@ -113,47 +117,60 @@
         <h6>"Sua doação hoje é a esperança de um futuro melhor de amanhã."</h6>
 
     </div>
-    <div class=" background005 p-4 rounded-bottom-4">
+
+    <form method="post" action="/processar_doacao" class=" background005 p-4 rounded-bottom-4">
         <h5 class="text-center mb-5 fs-3" style="color: #2E331C;">Modalidades</h5>
         <div class="row justify-content-between">
             <div class="ouro col-4">
             <div class="text-center mb-3"><img src="/static/img/gold-medal.png" alt="Medalha de Ouro" width="30px"></div>
-            <button class="opcao-doacao">
-                <div class="p-2">
+            <label class="opcao-doacao p-2 px-3" style="cursor: pointer;">
+                <input type="radio" name="valor_doacao" value="60" class="form-check-input me-2">
                 <h5>R$60,00</h5>
                 <h6>O doador terá seu nome exibido na categoria ouro</h6>
-                </div>
-            </button>
+            </label>
             </div>
-            <div class="prata col-4">
-                <div class="text-center mb-3"><img src="/static/img/silver-medal.png" alt="Medalha de Prata" width="30px"></div>
-                <button class="opcao-doacao">
-                    <div class="p-2">
-                    <h5>R$35,00</h5>
-                    <h6>O doador terá seu nome exibido na categoria prata</h6>
-                    </div>
-                </button>
-                </div>
-                <div class="bronze col-4">
-                    <div class="text-center mb-3"><img src="/static/img/bronze-medal.png" alt="Medalha de Bronze" width="30px"></div>
-                    <button class="opcao-doacao">
-                        <div class="p-2">
-                        <h5>R$15,00</h5>
-                        <h6>O doador terá seu nome exibido na categoria bronze</h6>
-                        </div>
-                    </button>
-                    </div>
+        <div class="prata col-4">
+            <div class="text-center mb-3"><img src="/static/img/silver-medal.png" alt="Medalha de Prata" width="30px"></div>
+            <label class="opcao-doacao p-2 px-3" style="cursor: pointer;">
+                <input type="radio" name="valor_doacao" value="35" class="form-check-input me-2">
+                <h5>R$35,00</h5>
+                <h6>O doador terá seu nome exibido na categoria prata</h6>
+            </label>
+        </div>
+            <div class="bronze col-4">
+            <div class="text-center mb-3"><img src="/static/img/bronze-medal.png" alt="Medalha de Bronze" width="30px"></div>
+            <label class="opcao-doacao p-2 px-3" style="cursor: pointer;">
+                <input type="radio" name="valor_doacao" value="15" class="form-check-input me-2">
+                <h5>R$15,00</h5>
+                <h6>O doador terá seu nome exibido na categoria bronze</h6>
+            </label>
+            </div>
   
         </div>
         
+        
+
+
         <h6 class="mt-3">Quer doar mais? Insira abaixo a quantia desejada</h6>
 
         <div class="text-center">
+            
             <p class="small fw-semibold">Apenas valores acima de R$60,00</p>
-            <input class="currency-input border small border-1 rounded p-2 w-50 mb-3" id="meta" type="search" min="0" name="meta" placeholder="Ex:R$100,00" required>
-            <a href="#" class="btn fw-semibold btn-secondary  w-50" style="background-color: #8a9a5b;">Confirmar</a>
+            
+
+            {{ input_number(
+                'doacao_personalizada', 
+                'Valor da doação desejada R$', 
+                min='60', 
+                attributes='required placeholder="Escreva apenas o número"', 
+                div_classes=' rounded p-2 w-100 mb-3'
+            ) }}
+            
+            <button type="submit" class="btn fw-semibold btn-secondary w-50" style="background-color: #8a9a5b;">
+                Confirmar
+            </button>
         </div>
-    </div>
+    </form>
 </div>
 
 

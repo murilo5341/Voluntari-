@@ -1,4 +1,5 @@
 {% extends "pages/base.html" %}
+{% from "macros.html" import input_text%}
 
 {% block subtitulo %}Perfil{% endblock %}
 {% block conteudo %}
@@ -116,13 +117,8 @@
                 <form action="/formulario_enviado" method="post">
                     <div class="text-center-custom mt-3">
                         <div class="text-start mb-3">
-                            <label for="nome" class="form-label">Nome:</label>
-                            <input class="campo border border-1 rounded p-2 mb-3" id="nome" name="nome" value="{{usuario.nome}}">
-                        </div>
-                        <div class="text-start mb-3">
-                            <label for="email" class="form-label">Email:</label>
-                            <input class="campo border border-1 rounded p-2 mb-3" id="email" name="email" value="{{usuario.email}}">
-                        </div>
+                            {{input_text("nome", "Nome", "required autofocus data-mask='nome'",value=usuario.nome,div_classes=" rounded p-2 mb-3 w-100")}}
+                            {{input_text("telefone", "Telefone", "required  data-mask='telefone'",value=usuario.telefone,div_classes=" rounded p-2 mb-3 w-100")}}
                         <div>
                             <button class="btn btn-secondary mt-3 border p-2 botao-verde w-25" type="submit">Gravar</button>
                         </div>

@@ -1,4 +1,5 @@
 {% extends "pages/base.html" %}
+{% from "macros.html" import input_text%}
 
 {% block subtitulo %}Cadastrar Patrocinador{% endblock %}
 {% block conteudo %}
@@ -53,12 +54,10 @@
                 <form action="/formulario_enviado" method="post">
                     <div class="w-75 text-center mt-3 container">
                         <div class="text-start mb-3">
-                            <label for="nomeFantasia" class="form-label">Nome Fantasia:</label>
-                            <input type="text" id="nomeFantasia" class="campo border border-1 rounded p-2 mb-3 w-100" required>
+                            {{input_text("nome", "Nome Fantasia", "required autofocus",div_classes="col-12 mb-4")}}
                         </div>
                         <div class="text-start mb-3">
-                            <label for="cnpj" class="form-label">CNPJ:</label>
-                            <input type="text" id="cnpj" class="campo border border-1 rounded p-2 mb-3 w-100" required>
+                            {{input_text("cnpj", "CPNJ", "required autofocus data-mask='cnpj'",div_classes="col-12 mb-4")}}
                         </div>
                         <div>
                             <button class="btn btn-secondary mt-3 border p-2 botao-verde w-25" type="submit">Cadastrar</button>
@@ -69,5 +68,6 @@
         </div>
     </div>
 </div>
+<script src="/static/js/mascararCampos.js"></script>
 
 {% endblock %}

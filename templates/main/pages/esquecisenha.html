@@ -1,5 +1,5 @@
 {% extends "pages/base.html" %}
-
+{% from "macros.html" import input_email%}
 {% block subtitulo %}Redefinir senha{% endblock %}
 {% block custom_header %}{% endblock %}
 {% block conteudo %}
@@ -47,9 +47,11 @@
             <div class="text-center" style="font-size: 40px;">Redefina a senha</div>
             <div class="text-center mt-2">Recupere sua conta</div>
             <form action="/formulario_enviado" method="post">
-                <div class="text-center mt-3">
-                    <input class="border border-1 rounded p-2 w-75 mb-3" id="email" name="email" placeholder="Email" required><br>
+                <div class="mt-3">
+                    {{input_email("email", "Email", "required")}}
+                    <div class="text-center">
                     <button class="btn btn-secondary mt-2 border p-2 botao-verde w-50" type="submit">Próximo</button>
+                    </div>
                 </div>
             </form>
             <div class="mt-3 mb-3 text-center">

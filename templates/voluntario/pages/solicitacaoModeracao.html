@@ -43,8 +43,8 @@
             <form action="/solicitacao_enviada" method="post">
                 <div class="mt-3">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"required>
-                        {{ input_radios("termos", "Concordo com os termos e condições do site", "required",div_classes="fw-semibold") }}
+                        <!-- MACRO DO INPUT_RADIOS N QUER PEGAR -->
+                        {{ input_radios("termos", "Concordo com os termos e condições do site", solicitado, "required") }}
 
                       <div class="text-center">
                     <button class="btn btn-secondary mt-3 border p-2 botao-verde w-25" type="submit" text-center>Enviar Solicitação</button>

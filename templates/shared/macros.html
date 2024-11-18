@@ -1,5 +1,4 @@
 {% macro input_text(name, label, attributes='', value='', div_classes='') %}
-
 <div class="{{div_classes}}">
         <label for="{{name}}">{{label}}</label>
         <input type="text" name="{{name}}" id="{{name}}" class="form-control"  {{attributes|safe}} value="{{value|e}}">  
@@ -78,19 +77,21 @@
 
 {% macro input_radios(name, label, options, attributes='', value='', div_classes='') %}
 <div class="{{div_classes}}">
-        <label  for="{{name}}{{loop.index}}">{{option.label|safe}}</label>
         <legend class="text-secondary" style="font-size:13px">{{label}}</legend>
         <div class="row gx-3 col-12 ">
             {% for option in options %}
             {%- set checked = "checked" if option.value == value -%}
             <div class="col">
                 <input type="radio"  name="{{name}}" id="{{name}}{{loop.index}}" value="{{option.value}}" autocomplete="off" {{checked}}>
-                
+                <label  for="{{name}}{{loop.index}}">{{option.label|safe}}</label>
+
             </div>
             {% endfor %}
         </div>
 </div>
 {% endmacro %}
+
+
 
 {%- macro input_switch(name, label, attributes='', value='', div_classes='') -%}
 {% set checked = "checked" if valor else "" %}

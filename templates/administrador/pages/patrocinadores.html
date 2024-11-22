@@ -45,17 +45,41 @@
     
 
 </style>
-<div class="container my-3 mb-5  ">
+
+<div class="container my-3 mb-5">
     <div class="row">
-        {%include "includes/menuAdministrador.html"%}
+        {% include "includes/menuAdministrador.html" %}
         <div class="col-md-6 mt-5 mb-3 mx-lg-5 background005 rounded-3">
             <div class="row">
-                {% for i in range(24) %}
-                <img src="/static/img/logo/adidassvg.svg" alt="patrocinador" class="image mt-5" >
-                {% endfor %}
+                <!-- Imagens diferentes -->
+                <img src="/static/img/browser-chrome.svg" alt="Imagem 1" class="image mt-5">
+                <img src="/static/img/bank.svg" alt="Imagem 2" class="image mt-5">
+                <img src="/static/img/apple.svg" alt="Imagem 3" class="image mt-5">
+                <img src="/static/img/android2 (1).svg" alt="Imagem 4" class="image mt-5">
+                <img src="/static/img/browser-edge.svg" alt="Imagem 5" class="image mt-5">
+                <img src="/static/img/microsoft.svg" alt="Imagem 6" class="image mt-5">
+                <img src="/static/img/linkedin.svg" alt="Imagem 7" class="image mt-5">
+                <img src="/static/img/instagram.svg" alt="Imagem 8" class="image mt-5">
+                <img src="/static/img/hypnotize.svg" alt="Imagem 9" class="image mt-5">
+                <img src="/static/img/google-play.svg" alt="Imagem 10" class="image mt-5">
+                <img src="/static/img/globe2.svg" alt="Imagem 11" class="image mt-5">
+                <img src="/static/img/gitlab.svg" alt="Imagem 12" class="image mt-5">
+                <img src="/static/img/dice-3-fill.svg" alt="Imagem 13" class="image mt-5">
+                <img src="/static/img/flower1.svg" alt="Imagem 14" class="image mt-5">
+                <img src="/static/img/facebook.svg" alt="Imagem 15" class="image mt-5">
+                <img src="/static/img/browser-firefox.svg" alt="Imagem 16" class="image mt-5">
+                <img src="/static/img/person-arms-up.svg" alt="Imagem 17" class="image mt-5">
+                <img src="/static/img/cpu-fill.svg" alt="Imagem 18" class="image mt-5">
+                <img src="/static/img/egg-fried.svg" alt="Imagem 19" class="image mt-5">
+                <img src="/static/img/dpad.svg" alt="Imagem 20" class="image mt-5">
+                <img src="/static/img/droplet.svg" alt="Imagem 21" class="image mt-5">
+                <img src="/static/img/building.svg" alt="Imagem 22" class="image mt-5">
+                <img src="/static/img/browser-safari.svg" alt="Imagem 23" class="image mt-5">
+                <img src="/static/img/logo/adidassvg.svg" alt="Patrocinador Adidas" class="image mt-5">
             </div>
         </div>
-<a href="cadastrarpatrocinador" class="button btn ms-auto me-auto ms-4 " style="background-color: #8a9a5b; width:40%; color:white;" >Cadastrar novo patrocinador</a>    
+        <a href="cadastrarpatrocinador" class="button btn ms-auto me-auto ms-4" style="background-color: #8a9a5b; width:40%; color:white;">Cadastrar novo patrocinador</a>
     </div>
 </div>
+        
 {% endblock %}

@@ -43,7 +43,7 @@ async def checar_autorizacao(request: Request):
     area_do_moderador = request.url.path.startswith("/moderador")
     if (area_do_usuario or area_do_voluntario or area_do_administrador or area_do_moderador) and (not usuario or not usuario.perfil):
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED)
-    if area_do_voluntario and usuario.perfil != 1:
+    if area_do_voluntario and usuario.perfil != 1 and usuario.perfil != 3:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN)
     if area_do_administrador and usuario.perfil != 2:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN)

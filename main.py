@@ -6,6 +6,7 @@ from routes.main_routes import router as main_router
 from routes.administrador_routes import router as administrador_router
 from routes.voluntario_routes import router as voluntario_router
 from routes.moderador_routes import router as moderador_router
+from routes.usuario_routes import router as usuario_router
 from util.auth import checar_autenticacao, checar_autorizacao
 from util.exceptions import configurar_excecoes
 
@@ -21,4 +22,6 @@ app.include_router(main_router)
 app.include_router(voluntario_router)
 app.include_router(administrador_router)
 app.include_router(moderador_router)
+app.include_router(usuario_router)
+
 

@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Request
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, RedirectResponse
 
 from repositories.usuario_repo import UsuarioRepo
 from util.templates import obter_jinja_templates
@@ -10,7 +10,8 @@ templates = obter_jinja_templates("templates")
 @router.get("/", response_class=HTMLResponse)
 async def get_root(request: Request):
     usuario = UsuarioRepo.obter_por_id(request.state.usuario.id)
-    return templates.TemplateResponse("voluntario/pages/index.html", {"request": request, "usuario": usuario})
+    # return templates.TemplateResponse("voluntario/pages/index.html", {"request": request, "usuario": usuario})
+    return RedirectResponse("/usuario", 303)
 
 @router.get("/voluntarioassinante", response_class=HTMLResponse)
 async def get_voluntarioassinante(request: Request):
@@ -60,10 +61,6 @@ async def get_notificacaovoluntario(request: Request):
 @router.get("/alterarsenha", response_class=HTMLResponse)
 async def get_alterarsenha(request: Request):
     return templates.TemplateResponse("voluntario/pages/alterarsenha.html", {"request": request})
-
-@router.get("/projetoscriados", response_class=HTMLResponse)
-async def get_projetoscriados(request: Request):
-    return templates.TemplateResponse("voluntario/pages/projetoscriados.html", {"request": request})
 
 @router.get("/assinatura", response_class=HTMLResponse)
 async def get_assinatura(request: Request):

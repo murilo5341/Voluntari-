@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Request
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, RedirectResponse
 
 from repositories.usuario_repo import UsuarioRepo
 from util.templates import obter_jinja_templates
@@ -10,7 +10,8 @@ templates = obter_jinja_templates("templates")
 @router.get("/", response_class=HTMLResponse)
 async def get_root(request: Request):
     usuario = UsuarioRepo.obter_por_id(request.state.usuario.id)
-    return templates.TemplateResponse("/moderador/pages/index.html", {"request": request, "usuario": usuario})
+    # return templates.TemplateResponse("/moderador/pages/index.html", {"request": request, "usuario": usuario})
+    return RedirectResponse("/usuario", 303)
 
 @router.get("/perfilmoderador", response_class=HTMLResponse)
 async def get_perfilModerador(request: Request):

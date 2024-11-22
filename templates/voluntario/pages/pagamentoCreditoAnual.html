@@ -22,7 +22,8 @@
     <div class="mt-3 container col-md-5 bg-light rounded">
         <div class="py-2 mt-3 align-content-center">
             <div class="text-center">
-                <p class="fs-3 ps-2"><i class="bi bi-credit-card text-danger ms-3 fs-4"></i>Cartão de crédito</p>
+                <p class="fs-3 ps-2"><i class="bi bi-credit-card text-danger p-2 fs-4"></i>Cartão de crédito</p>
+            </div>
                 {{input_text("nmrcartao", "Número do cartão", "required data-mask='cartao'",div_classes="col-12 mb-4")}}
                 {{input_text("nome", "Nome", "required autofocus data-mask='nome'",div_classes="col-12 mb-4")}}
                 {{input_text("dtvalidade", "Data Validade", "required data-mask='mes_ano'",div_classes="col-12 mb-4")}}
@@ -33,7 +34,7 @@
                     {'value': '3', 'label': '3x sem juros'}
                 ] %}
                 {{ input_select('parcelas', 'Número de parcelas', options, attributes='required', div_classes='mb-3') }}
-            </div>
+            
         </div>
     
         

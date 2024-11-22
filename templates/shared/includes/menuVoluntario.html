@@ -38,11 +38,16 @@
                 <a href="/voluntario/notificacaovoluntario" class="link-dark link-underline-opacity-0">Notificações</a>
             </div>
             <div class="col-12">
-                <a href="/voluntario/alterarsenha" class="link-dark link-underline-opacity-0">Alterar Senha</a>
+                <a href="/usuario/alterarsenha" class="link-dark link-underline-opacity-0">Alterar Senha</a>
             </div>
             <div class="col-12">
                 <a href="/voluntario/assinatura" class="link-dark link-underline-opacity-0">Assinatura</a>
             </div>
+            {% if (usuario.perfil == 3): %}
+            <div class="col-12">
+                <a href="/moderador/resumodeatividades" class="link-dark link-underline-opacity-0"><i class="pe-2 bi bi-ui-checks-grid" style="color:#7b7e45"></i>Painel do Moderador</a>
+            </div>
+            {% endif %}
         </div>
     </div>
 </div>

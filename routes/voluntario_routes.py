@@ -58,10 +58,6 @@ async def get_solicitarmoderacao(request: Request):
 async def get_notificacaovoluntario(request: Request):
     return templates.TemplateResponse("voluntario/pages/notificacaoVoluntario.html", {"request": request})
 
-@router.get("/alterarsenha", response_class=HTMLResponse)
-async def get_alterarsenha(request: Request):
-    return templates.TemplateResponse("voluntario/pages/alterarsenha.html", {"request": request})
-
 @router.get("/assinatura", response_class=HTMLResponse)
 async def get_assinatura(request: Request):
     return templates.TemplateResponse("voluntario/pages/assinatura.html", {"request": request})

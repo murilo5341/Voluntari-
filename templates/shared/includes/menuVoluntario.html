@@ -43,7 +43,8 @@
             <div class="col-12">
                 <a href="/voluntario/assinatura" class="link-dark link-underline-opacity-0">Assinatura</a>
             </div>
-            {% if (usuario.perfil == 3): %}
+            {#O NOTIFICAO NAO ESTAVA CARREGANDO, PORTANTO UTILIZEI A ESTRUTURA DE IF ABAIXO PARA PELO MENOS ACESSAR A PAGINA#}
+            {% if usuario is defined and usuario.perfil == 3 %}
             <div class="col-12">
                 <a href="/moderador/resumodeatividades" class="link-dark link-underline-opacity-0"><i class="pe-2 bi bi-ui-checks-grid" style="color:#7b7e45"></i>Painel do Moderador</a>
             </div>

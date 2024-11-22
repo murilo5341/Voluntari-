@@ -11,7 +11,6 @@ templates = obter_jinja_templates("templates")
 async def get_root(request: Request):
     usuario = UsuarioRepo.obter_por_id(request.state.usuario.id)
     return templates.TemplateResponse("usuario/pages/index.html", {"request": request, "usuario": usuario})
-
 @router.get("/alterarsenha", response_class=HTMLResponse)
 async def get_alterarsenha(request: Request):
     return templates.TemplateResponse("usuario/pages/alterarsenha.html", {"request": request})

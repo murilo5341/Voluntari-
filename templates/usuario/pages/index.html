@@ -101,9 +101,11 @@
                     </div>
                     
                 </form>
+                {%if (usuario.perfil == 1 ): %}
             </div>
             <a href="solicitarmoderacao" class="text-dark d-flex justify-content-center">Quero ser moderador</a>
         </div>
+                {% endif %}
     </div>
 </div>
 

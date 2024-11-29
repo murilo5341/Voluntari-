@@ -1,3 +1,5 @@
+import datetime
+from urllib import request
 import bcrypt
 from fastapi import APIRouter, Form, Request, status
 from fastapi.responses import HTMLResponse, RedirectResponse
@@ -7,6 +9,7 @@ from repositories.usuario_repo import UsuarioRepo
 from util.auth import NOME_COOKIE_AUTH, criar_token, obter_hash_senha
 from util.mensagens import adicionar_mensagem_erro, adicionar_mensagem_sucesso
 from util.templates import obter_jinja_templates
+from util.validators import is_date_between, is_email, is_matching_fields, is_password, is_person_fullname, is_size_between
 
 router = APIRouter()
 templates = obter_jinja_templates("templates")
@@ -119,8 +122,13 @@ async def post_cadastro(
     data_nascimento: str = Form(...),
     telefone: str = Form(...),
     confsenha: str = Form(...)):
+    
     if senha != confsenha:
-        return RedirectResponse("/cadastro", status_code=status.HTTP_303_SEE_OTHER)
+        response = RedirectResponse("/cadastro", status.HTTP_303_SEE_OTHER)
+        adicionar_mensagem_erro(response,
+            "As senhas não conferem",
+        )
+        return response
     senha_hash = obter_hash_senha(senha)
     usuario = Usuario(None, nome, email,senha_hash, cpf,data_nascimento,telefone,perfil=1 )
     UsuarioRepo.inserir(usuario)
@@ -142,7 +150,6 @@ async def post_cadastro(
         samesite="lax"
     )
     return response
-
 
 @router.get("/termos", response_class=HTMLResponse)
 async def get_termos(request: Request):

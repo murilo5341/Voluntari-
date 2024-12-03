@@ -72,25 +72,25 @@ async def post_senha(request: Request):
     usuarioAutenticadoDto = (
         request.state.usuario if hasattr(request.state, "usuario") else None
     )
-    senha_atual = dados["Senha Atual"]
-    nova_senha = dados["Nova Senha"]
-    confirmacao_nova_senha = dados["confirmacao_nova_senha"]
-    senha_hash = UsuarioRepo.obter_senha_por_email(usuarioAutenticadoDto.email)
+    senha_atual = dados["senha"]
+    nova_senha = dados["novasenha"]
+    confirmacao_nova_senha = dados["confsenha"]
+    senha_hash = UsuarioRepo.obter_senha_por_email(usuarioAutenticadoDto.email, )
     if not senha_hash or not bcrypt.checkpw(senha_atual.encode(), senha_hash.encode()):
-        response = RedirectResponse("/usuario/senha", status.HTTP_303_SEE_OTHER)
+        response = RedirectResponse("/usuario/alterar_senha", status.HTTP_303_SEE_OTHER)
         adicionar_mensagem_erro(
             response, "Senha atual inválida! Cheque o valor digitado e tente novamente."
         )
         return response
     if nova_senha != confirmacao_nova_senha:
-        response = RedirectResponse("/usuario/senha", status.HTTP_303_SEE_OTHER)
+        response = RedirectResponse("/usuario/alterar_senha", status.HTTP_303_SEE_OTHER)
         adicionar_mensagem_erro(
             response,
             "Nova senha e confirmação não conferem! Cheque os valores digitados e tente novamente.",
         )
         return response
     if nova_senha == senha_atual:
-        response = RedirectResponse("/usuario/senha", status.HTTP_303_SEE_OTHER)
+        response = RedirectResponse("/usuario/alterar_senha", status.HTTP_303_SEE_OTHER)
         adicionar_mensagem_erro(
             response,
             "Nova senha deve ser diferente da senha atual! Cheque os valores digitados e tente novamente.",
@@ -102,7 +102,7 @@ async def post_senha(request: Request):
         adicionar_mensagem_sucesso(response, "Senha atualizada com sucesso!")
         return response
     else:
-        response = RedirectResponse("/usuario/senha", status.HTTP_303_SEE_OTHER)
+        response = RedirectResponse("/usuario/alterar_senha", status.HTTP_303_SEE_OTHER)
         adicionar_mensagem_erro(
             response,
             "Ocorreu um problema ao atualizar sua senha. Tente novamente mais tarde.",
@@ -122,13 +122,8 @@ async def post_cadastro(
     data_nascimento: str = Form(...),
     telefone: str = Form(...),
     confsenha: str = Form(...)):
-    
     if senha != confsenha:
-        response = RedirectResponse("/cadastro", status.HTTP_303_SEE_OTHER)
-        adicionar_mensagem_erro(response,
-            "As senhas não conferem",
-        )
-        return response
+        return RedirectResponse("/cadastro", status_code=status.HTTP_303_SEE_OTHER)
     senha_hash = obter_hash_senha(senha)
     usuario = Usuario(None, nome, email,senha_hash, cpf,data_nascimento,telefone,perfil=1 )
     UsuarioRepo.inserir(usuario)

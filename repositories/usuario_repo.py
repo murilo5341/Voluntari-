@@ -46,7 +46,15 @@ class UsuarioRepo:
                 )
                 return resultado.rowcount > 0
 
-  
+    @staticmethod
+    def obter_senha_por_email(email: str, senha: str) -> Optional[str]:
+        with obter_conexao() as db:
+            cursor = db.cursor()
+            cursor.execute(SQL_OBTER_SENHA_POR_EMAIL, (email,))
+            dados = cursor.fetchone()
+            if dados is None:
+                return None
+            return dados[senha]
 
     @classmethod
     def obter_por_id(cls, id: int) -> Optional[Usuario]:
@@ -91,13 +99,12 @@ class UsuarioRepo:
                     return (dados[0], dados[1], dados[2], dados[4])
             return None
     
-    @classmethod
-    def atualizar_senha(cls, id: int, senha: str) -> bool:
+    @staticmethod
+    def atualizar_senha(id: int, senha: str) -> bool:
         with obter_conexao() as db:
             cursor = db.cursor()
-            resultado = cursor.execute(
-                SQL_ATUALIZAR_SENHA, (senha, id))
-            return resultado.rowcount > 0
+            cursor.execute(SQL_ATUALIZAR_SENHA, (senha, id))
+            return cursor.rowcount > 0
         
     @classmethod
     def excluir_usuario(cls, id: int) -> bool:

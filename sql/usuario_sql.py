@@ -47,9 +47,15 @@ SQL_ATUALIZAR_DADOS = """
 SQL_ATUALIZAR_SENHA = """
     UPDATE usuario
     SET senha = ?
-    WHERE email = ?
+    WHERE id = ?
 """
 SQL_EXCLUIR_USUARIO = """
     DELETE FROM usuario
+    WHERE email = ?
+"""
+
+SQL_OBTER_SENHA_POR_EMAIL = """
+    SELECT senha
+    FROM usuario
     WHERE email = ?
 """

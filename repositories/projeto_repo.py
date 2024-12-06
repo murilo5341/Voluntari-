@@ -4,7 +4,7 @@ from sql.projeto_sql import *
 from util.database import obter_conexao
 
 
-class UsuarioRepo:
+class ProjetoRepo:
     @classmethod
     def criar_tabela(cls):
         with obter_conexao() as db:

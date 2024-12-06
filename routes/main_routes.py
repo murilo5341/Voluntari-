@@ -5,6 +5,7 @@ from fastapi import APIRouter, Form, Request, status
 from fastapi.responses import HTMLResponse, RedirectResponse
 
 from models.usuario_model import *
+from repositories.projeto_repo import ProjetoRepo
 from repositories.usuario_repo import UsuarioRepo
 from util.auth import NOME_COOKIE_AUTH, criar_token, obter_hash_senha
 from util.mensagens import adicionar_mensagem_erro, adicionar_mensagem_sucesso
@@ -17,7 +18,8 @@ templates = obter_jinja_templates("templates")
 
 @router.get("/", response_class=HTMLResponse)
 async def get_index(request: Request):
-    return templates.TemplateResponse("main/pages/index.html", {"request": request})
+    projeto =  ProjetoRepo.obter_por_id(request.state.projeto.id)
+    return templates.TemplateResponse("main/pages/index.html", {"request": request}, {"projeto": projeto} )
 
 
 # @router.get("/", response_class=HTMLResponse)

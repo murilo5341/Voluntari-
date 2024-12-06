@@ -1,12 +1,12 @@
 SQL_CRIAR_TABELA_PROJETO = """
 CREATE TABLE IF NOT EXISTS "projeto" (
 	"id" INTEGER PRIMARY KEY AUTOINCREMENT,
-	"nome do projeto" TEXT NOT NULL,
+	"nome_projeto" TEXT NOT NULL,
 	"qtd_voluntarios" INTEGER NOT NULL,
-	"Estado" TEXT NOT NULL,
-	"Municipio"	TEXT NOT NULL,
-	"Data_inicio" DATE NOT NULL,
-	"Data_fim" DATE NOT NULL,
+	"estado" TEXT NOT NULL,
+	"municipio"	TEXT NOT NULL,
+	"data_inicio" DATE NOT NULL,
+	"data_fim" DATE NOT NULL,
 	"meta_doacao" INTEGER NOT NULL,
 	"descricao" TEXT NOT NULL,
 	"endereco" TEXT NOT NULL
@@ -14,12 +14,12 @@ CREATE TABLE IF NOT EXISTS "projeto" (
 """
 SQL_INSERIR_PROJETO = """
     INSERT INTO projeto(
-        "nome do projeto", 
+        "nome_projeto", 
         "qtd_voluntarios", 
-        "Estado", 
-        "Municipio", 
-        "Data_inicio", 
-        "Data_fim", 
+        "estado", 
+        "municipio", 
+        "data_inicio", 
+        "data_fim", 
         "meta_doacao", 
         "descricao", 
         "endereco"
@@ -30,12 +30,12 @@ SQL_INSERIR_PROJETO = """
 SQL_OBTER_PROJETO_POR_ID = """
     SELECT 
         id, 
-        "nome do projeto", 
+        "nome_projeto", 
         "qtd_voluntarios", 
-        "Estado", 
-        "Municipio", 
-        "Data_inicio", 
-        "Data_fim", 
+        "estado", 
+        "municipio", 
+        "data_inicio", 
+        "data_fim", 
         "meta_doacao", 
         "descricao", 
         "endereco"
@@ -51,18 +51,18 @@ SQL_OBTER_QUANTIDADE_PROJETOS = """
 SQL_NOME_PROJETO_EXISTE = """
     SELECT COUNT(*)
     FROM projeto
-    WHERE "nome do projeto"=?
+    WHERE "nome_projeto"=?
 """
 
 SQL_ATUALIZAR_PROJETO = """
     UPDATE projeto
     SET 
-        "nome do projeto" = ?, 
+        "nome_projeto" = ?, 
         "qtd_voluntarios" = ?, 
-        "Estado" = ?, 
-        "Municipio" = ?, 
-        "Data_inicio" = ?, 
-        "Data_fim" = ?, 
+        "estado" = ?, 
+        "municipio" = ?, 
+        "data_inicio" = ?, 
+        "data_fim" = ?, 
         "meta_doacao" = ?, 
         "descricao" = ?, 
         "endereco" = ?

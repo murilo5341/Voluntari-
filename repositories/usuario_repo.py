@@ -47,14 +47,14 @@ class UsuarioRepo:
                 return resultado.rowcount > 0
 
     @staticmethod
-    def obter_senha_por_email(email: str, senha: str) -> Optional[str]:
+    def obter_senha_por_email(email: str) -> Optional[str]:
         with obter_conexao() as db:
             cursor = db.cursor()
             cursor.execute(SQL_OBTER_SENHA_POR_EMAIL, (email,))
             dados = cursor.fetchone()
             if dados is None:
                 return None
-            return dados[senha]
+            return dados[0]
 
     @classmethod
     def obter_por_id(cls, id: int) -> Optional[Usuario]:

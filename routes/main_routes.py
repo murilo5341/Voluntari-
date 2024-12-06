@@ -75,7 +75,7 @@ async def post_senha(request: Request):
     senha_atual = dados["senha"]
     nova_senha = dados["novasenha"]
     confirmacao_nova_senha = dados["confsenha"]
-    senha_hash = UsuarioRepo.obter_senha_por_email(usuarioAutenticadoDto.email, )
+    senha_hash = UsuarioRepo.obter_senha_por_email(usuarioAutenticadoDto.email)
     if not senha_hash or not bcrypt.checkpw(senha_atual.encode(), senha_hash.encode()):
         response = RedirectResponse("/usuario/alterar_senha", status.HTTP_303_SEE_OTHER)
         adicionar_mensagem_erro(

@@ -1,4 +1,5 @@
 import datetime
+import math
 from urllib import request
 import bcrypt
 from fastapi import APIRouter, Form, Request, status
@@ -203,3 +204,27 @@ async def get_sair():
         httponly=True,
         samesite="lax")
     return response    
+
+@router.get("/buscar")
+async def get_buscar(
+    request: Request,
+    q: str,
+    p: int = 1,
+    tp: int = 6,
+    o: int = 1,
+):
+    projeto = ProjetoRepo.obter_busca(q, p, tp, o)
+    qtde_projeto = ProjetoRepo.obter_quantidade_busca(q)
+    qtde_paginas = math.ceil(qtde_projeto / float(tp))
+    return templates.TemplateResponse(
+        "pages/buscar.html",
+        {
+            "request": request,
+            "projetos": projeto,
+            "quantidade_paginas": qtde_paginas,
+            "tamanho_pagina": tp,
+            "pagina_atual": p,
+            "termo_busca": q,
+            "ordem": o,
+        },
+    )

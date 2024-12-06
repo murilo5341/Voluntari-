@@ -1,5 +1,5 @@
 from typing import Optional
-from models.usuario_model import Usuario
+from models.projeto_model import Projeto
 from sql.projeto_sql import *
 from util.database import obter_conexao
 
@@ -12,57 +12,51 @@ class UsuarioRepo:
             cursor.execute(SQL_CRIAR_TABELA)
 
     @classmethod
-    def inserir(cls, usuario: Usuario) -> bool:
+    def inserir(cls, projeto: Projeto) -> bool:
             with obter_conexao() as db:
                 cursor = db.cursor()
                 resultado = cursor.execute(
-                    SQL_INSERIR_USUARIO,
+                    SQL_INSERIR,
                     (
-                        usuario.nome,
-                        usuario.email,
-                        usuario.senha,
-                        usuario.cpf,
-                        usuario.data_nascimento,                        
-                        usuario.telefone,
-                        usuario.perfil,
+                        projeto.nome_projeto,
+                        projeto.qtd_voluntarios,
+                        projeto.estado,
+                        projeto.municipio,
+                        projeto.data_inicio,                        
+                        projeto.data_fim,
+                        projeto.meta_doacao,
+                        projeto.descricao,
+                        projeto.endereco,
+
                     )
                 )
                 return resultado.rowcount > 0
 
     @classmethod
-    def alterar(cls, usuario: Usuario) -> bool:
+    def alterar(cls, projeto: Projeto) -> bool:
             with obter_conexao() as db:
                 cursor = db.cursor()
                 resultado = cursor.execute(
-                    SQL_ATUALIZAR_DADOS,
+                    SQL_ATUALIZAR,
                     (
-                        usuario.nome,
-                        usuario.email,
-                        usuario.data_nascimento,
-                        usuario.telefone,
-                        usuario.id,
+                        projeto.nome_projeto,
+                        projeto.data_inicio,
+                        projeto.data_fim,
+                        projeto.descricao,
+                        projeto.id,
                     ),
                 )
                 return resultado.rowcount > 0
 
-    @staticmethod
-    def obter_senha_por_email(email: str, senha: str) -> Optional[str]:
-        with obter_conexao() as db:
-            cursor = db.cursor()
-            cursor.execute(SQL_OBTER_SENHA_POR_EMAIL, (email,))
-            dados = cursor.fetchone()
-            if dados is None:
-                return None
-            return dados[senha]
 
     @classmethod
-    def obter_por_id(cls, id: int) -> Optional[Usuario]:
+    def obter_por_id(cls, id: int) -> Optional[Projeto]:
         with obter_conexao() as db:
             cursor = db.cursor()
             dados = cursor.execute(
                 SQL_OBTER_POR_ID, (id,)).fetchone()
             if dados:
-                return Usuario(*dados)
+                return Projeto(*dados)
             return None
 
     # @classmethod
@@ -87,28 +81,11 @@ class UsuarioRepo:
     #         return False
         
           
+
     @classmethod
-    def checar_credenciais(cls, email: str, senha: str) -> Optional[tuple]:
-        with obter_conexao() as db:
-            cursor = db.cursor()
-            dados = cursor.execute(
-                SQL_CHECAR_CREDENCIAIS, (email,)).fetchone()
-            if dados:
-                if conferir_senha(senha, dados[3]):
-                    return (dados[0], dados[1], dados[2], dados[4])
-            return None
-    
-    @staticmethod
-    def atualizar_senha(id: int, senha: str) -> bool:
-        with obter_conexao() as db:
-            cursor = db.cursor()
-            cursor.execute(SQL_ATUALIZAR_SENHA, (senha, id))
-            return cursor.rowcount > 0
-        
-    @classmethod
-    def excluir_usuario(cls, id: int) -> bool:
+    def excluir_projeto(cls, id: int) -> bool:
         with obter_conexao() as db:
             cursor = db.cursor()
             resultado = cursor.execute(
-                SQL_EXCLUIR_USUARIO, (id,))
+                SQL_EXCLUIR, (id,))
             return resultado.rowcount > 0    

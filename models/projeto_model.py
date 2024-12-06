@@ -12,7 +12,7 @@ class Projeto:
     municipio: Optional[str] = None
     data_inicio: Optional[date] = None
     data_fim: Optional[date] = None
-    meta_doacao: Optional[int] = None
+    meta_doacao: Optional[float] = None
     descricao: Optional[int] = None
     endereco: Optional[int] = None
     

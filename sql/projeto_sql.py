@@ -1,4 +1,4 @@
-SQL_CRIAR_TABELA_PROJETO = """
+SQL_CRIAR_TABELA = """
 CREATE TABLE IF NOT EXISTS "projeto" (
 	"id" INTEGER PRIMARY KEY AUTOINCREMENT,
 	"nome_projeto" TEXT NOT NULL,
@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS "projeto" (
 	"endereco" TEXT NOT NULL
 )
 """
-SQL_INSERIR_PROJETO = """
+SQL_INSERIR = """
     INSERT INTO projeto(
         "nome_projeto", 
         "qtd_voluntarios", 
@@ -27,7 +27,7 @@ SQL_INSERIR_PROJETO = """
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
 """
 
-SQL_OBTER_PROJETO_POR_ID = """
+SQL_OBTER_POR_ID = """
     SELECT 
         id, 
         "nome_projeto", 
@@ -43,18 +43,18 @@ SQL_OBTER_PROJETO_POR_ID = """
     WHERE id=?
 """
 
-SQL_OBTER_QUANTIDADE_PROJETOS = """
+SQL_OBTER_QUANTIDADE = """
     SELECT COUNT(*)
     FROM projeto
 """
 
-SQL_NOME_PROJETO_EXISTE = """
+SQL_NOME_EXISTE = """
     SELECT COUNT(*)
     FROM projeto
     WHERE "nome_projeto"=?
 """
 
-SQL_ATUALIZAR_PROJETO = """
+SQL_ATUALIZAR = """
     UPDATE projeto
     SET 
         "nome_projeto" = ?, 
@@ -69,7 +69,7 @@ SQL_ATUALIZAR_PROJETO = """
     WHERE id = ?
 """
 
-SQL_EXCLUIR_PROJETO = """
+SQL_EXCLUIR = """
     DELETE FROM projeto
     WHERE id = ?
 """

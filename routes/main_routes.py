@@ -18,8 +18,8 @@ templates = obter_jinja_templates("templates")
 
 @router.get("/", response_class=HTMLResponse)
 async def get_index(request: Request):
-    projeto =  ProjetoRepo.obter_por_id(request.state.projeto.id)
-    return templates.TemplateResponse("main/pages/index.html", {"request": request}, {"projeto": projeto} )
+    
+    return templates.TemplateResponse("main/pages/index.html", {"request": request})
 
 
 # @router.get("/", response_class=HTMLResponse)
